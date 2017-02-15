@@ -1,0 +1,60 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="KojtoCAD.UnitTests.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="nonexistingRootDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BLAAAAAAAAA</Value>
+    </Setting>
+    <Setting Name="nonexistingFileNamePart" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BLAAAAAA!</Value>
+    </Setting>
+    <Setting Name="nullFileExtension" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="falseTraverseSubdirectories" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="existingRootDirectorty" Type="System.String" Scope="User">
+      <Value Profile="(Default)">..\..\IFileService.TestFiles</Value>
+    </Setting>
+    <Setting Name="singleFileNamePart" Type="System.String" Scope="User">
+      <Value Profile="(Default)">windows</Value>
+    </Setting>
+    <Setting Name="multipleFileNamePart" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Angel</Value>
+    </Setting>
+    <Setting Name="notAccessibleSubDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\\</Value>
+    </Setting>
+    <Setting Name="properFileExtension" Type="System.String" Scope="User">
+      <Value Profile="(Default)">pub</Value>
+    </Setting>
+    <Setting Name="unproperFileExtension" Type="System.String" Scope="User">
+      <Value Profile="(Default)">qq</Value>
+    </Setting>
+    <Setting Name="singleFullFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">windows123</Value>
+    </Setting>
+    <Setting Name="promptMessage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PromptForSomething</Value>
+    </Setting>
+    <Setting Name="defaultValue0_0" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="fileNameWithPoint" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*.dwg</Value>
+    </Setting>
+    <Setting Name="trueTraverseSubDirectories" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="exactFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">INTEL</Value>
+    </Setting>
+    <Setting Name="correctIntegerValue" Type="System.String" Scope="User">
+      <Value Profile="(Default)">6 </Value>
+    </Setting>
+    <Setting Name="ESCkeyUnicode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\x1b</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CustomizationSection name="KojtoCAD"
+                      xmlns="http://www.kojto.com/KojtoCAD"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ToolBar name="Help Lines">
+    <ToolBarButton methodName="HelpLineHorizontal">Horizontal helpline</ToolBarButton>
+    <ToolBarButton methodName="HelpLineVertical">Vertical helpline</ToolBarButton>
+    <ToolBarButton methodName="HelpLineCrossed">Crossed helpline</ToolBarButton>
+    <ToolBarButton methodName="HelpLineAngular">Angular helpline</ToolBarButton>
+    <ToolBarButton methodName="HelpLine45">45 degrees helpline</ToolBarButton>
+    <ToolBarButton methodName="HelpLineOffset">Offset helpline</ToolBarButton>
+    <ToolBarButton methodName="HelpLinesDelete">Delete all helplines</ToolBarButton> 
+    </ToolBar>
+  <ToolBar name="Blocks">
+    <ToolBarButton methodName="ProfileSearchEngine">Prototyp block library</ToolBarButton>
+    <ToolBarButton methodName="DrawingFrame">Drawing Frame</ToolBarButton>
+    <ToolBarButton methodName="ReplaceBlockWithFile">Replace Block with File</ToolBarButton>
+    <ToolBarButton methodName="CopyBlockDefInNewDef">Copy block definition</ToolBarButton>
+    <ToolBarButton methodName="RenameBlockDefInNewDef">Rename block definition</ToolBarButton>
+  </ToolBar>
+  <ToolBar name="Viewport Commands">
+    <ToolBarButton methodName="LockViewPort">Lock viewport</ToolBarButton>
+    <ToolBarButton methodName="UnlockViewPort">Unlock viewport</ToolBarButton>
+    <ToolBarButton methodName="CreateViewportFromModel">Create Viewport from Model</ToolBarButton>
+    <ToolBarButton methodName="AlignViewportsHorizontaly">Align Viewport Horizontally</ToolBarButton>
+    <ToolBarButton methodName="AlignViewportsVerticaly">Align Viewport Vertically</ToolBarButton>
+  </ToolBar>
+  <ToolBar name="General tools">
+    <ToolBarButton methodName="SolidProjection">Solid Projection</ToolBarButton>
+    <ToolBarButton methodName="Join3DLinesToPoly">Make Joined 3Dpolyline</ToolBarButton>
+    <ToolBarButton methodName="RegionDescription">Region description</ToolBarButton>
+  </ToolBar>
+  <ToolBar name="System">
+    <ToolBarButton methodName="LoadSettings">Import settings</ToolBarButton>
+    <ToolBarButton methodName="ShowCommandsList">Show Commands</ToolBarButton>
+    <ToolBarButton methodName="CloseDwgProperly">Close properly</ToolBarButton>
+ </ToolBar>
+  <ToolBar name="Graphics Tools">
+    <ToolBarButton methodName="SingleGlassUnit">Single glass</ToolBarButton>
+    <ToolBarButton methodName="DoubleGlassUnit">Double glass</ToolBarButton>
+    <ToolBarButton methodName="TripleGlassUnit">Tripple glass</ToolBarButton>
+    <ToolBarButton methodName="SiliconJointSimple">Silicon joint</ToolBarButton>
+    <ToolBarButton methodName="SiliconJointWithSilica">Silicon joint with filling</ToolBarButton>
+    <ToolBarButton methodName="WeldingLine">Welding line</ToolBarButton>
+    <ToolBarButton methodName="WeldingMark">Welding Mark</ToolBarButton>
+    <ToolBarButton methodName="SlottedHoleRect">Rectanglular slotted hole</ToolBarButton>
+    <ToolBarButton methodName="SlottedHoleRound">Round Slotted hole</ToolBarButton>
+  </ToolBar>
+  <ToolBar name="Symbols">
+    <ToolBarButton methodName="ArrowMark">Arrow mark</ToolBarButton>
+    <ToolBarButton methodName="SectionArrowMark">Section Arrow mark</ToolBarButton>
+    <ToolBarButton methodName="SectionArrowPairMark">Section Pair mark</ToolBarButton>
+    <ToolBarButton methodName="TitleMark">Title Mark</ToolBarButton>
+    <ToolBarButton methodName="ElevationMark">Elevation</ToolBarButton>
+    <ToolBarButton methodName="PositionMark">Position Mark</ToolBarButton>
+    <ToolBarButton methodName="LevelHeightSign">Level</ToolBarButton>
+    <ToolBarButton methodName="RecalcLevelHeightSign">Level Recalculate</ToolBarButton>    
+  </ToolBar>
+  <ToolBar name="Insulations">
+    <ToolBarButton methodName="RigidInsulation">Rigid</ToolBarButton>
+    <ToolBarButton methodName="SoftInsulation">Soft</ToolBarButton>
+    <ToolBarButton methodName="HydroInsulation">Waterproofing</ToolBarButton>
+  </ToolBar>
+  <ToolBar name="Layer Management">
+    <ToolBarButton methodName="SwitchOffAllLayersButOne">Switch off all but one</ToolBarButton>
+    <ToolBarButton methodName="SwitchOffLayer">Switch off only one</ToolBarButton>
+    <ToolBarButton methodName="SwitchOnAllLayers">Switch on all</ToolBarButton>
+  </ToolBar>
+  <ToolBar name="Sheets and Profiles">
+    <ToolBarButton methodName="PolyToProfile">Polyline to profile</ToolBarButton>
+    <ToolBarButton methodName="ProfileToPoly">Profile to polyline</ToolBarButton>
+    <ToolBarButton methodName="Unfold3dSheetProfile">Unfold 3D</ToolBarButton>
+    <ToolBarButton methodName="Unfold2dSheetProfile">Unfold 2D</ToolBarButton>
+    <ToolBarButton methodName="SheetDescription">Sheet description</ToolBarButton>
+  </ToolBar>
+  <ToolBar name="Misc">
+    <ToolBarButton methodName="Gears">Gear</ToolBarButton>
+    <ToolBarButton methodName="PointCloud">PointCloud</ToolBarButton>
+    <ToolBarButton methodName="Plotter">Plotter</ToolBarButton>
+    <ToolBarButton methodName="ExtractAttributes">Extract attributes</ToolBarButton>
+    <ToolBarButton methodName="ChkAttrIsInExcel">Check attributes</ToolBarButton>
+  </ToolBar>
+</CustomizationSection>

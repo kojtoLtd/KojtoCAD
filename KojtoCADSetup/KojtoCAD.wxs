@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" >
+  <Product  Id="F43E9A7F-725C-43F5-A3FF-4AC70285583B"
+            Name="KojtoCAD 1.0.0"
+            Language="1033"
+            Version="1.0.0"
+            Manufacturer="Kojto Ltd"
+            UpgradeCode="6F14D711-9EBE-4198-B3BE-982301F89391"
+            Codepage="1252" >
+
+    <Package  Id="*"
+              InstallerVersion="200"
+              Compressed="yes"
+              InstallScope="perMachine"
+              Manufacturer="3d Soft Solutions"
+              Description="Installs KojtoCAD plugin for AutoCAD 2012+"
+              Keywords="Kojto,CAD,AutoCAD plug-in"
+              Comments="(c) 2013 3d Soft Solutions"
+              Platform="x64" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    <MediaTemplate EmbedCab="yes"
+                   CompressionLevel="high" />
+    <UI>
+      <Dialog Id="ExitDialog" Width="450" Height="125" Title="Success!">
+        <Control Id="SuccessMessage" Type="Text" X="50" Y="20" Width="350" Height="15" Text="Thank you for installing this product!">
+        </Control>
+        <Control Id="Exit" Type="PushButton" X="200" Y="95" Width="50" Height="15" Default="yes" Cancel="yes" Text="Done!">
+          <Publish Event="EndDialog" Value="Return">1</Publish>
+        </Control>
+      </Dialog>
+
+      <TextStyle Id="DefaultFont" FaceName="Tahoma" Size="8" />
+      <Property Id="DefaultUIFont" Value="DefaultFont" />
+
+      <InstallUISequence>
+        <Show Dialog="ExitDialog" OnExit="success" />
+      </InstallUISequence>
+
+      <AdminUISequence>
+        <Show Dialog="ExitDialog" OnExit="success" />
+      </AdminUISequence>
+    </UI>
+
+    <Feature Id="MainProduct"
+             Title="Main Product"
+             Level="1">
+      <ComponentGroupRef Id="KojtoCADComponents" />
+    </Feature>
+    <Feature Id="CreateRegistryEntries" Title="Create registry entries" Level="1">
+      <ComponentRef Id="RegistryEntries" />
+    </Feature>
+
+
+    <!--<Icon Id="myIcon" SourceFile="..\myIcon.ico" /> 
+<Property Id="ARPPRODUCTICON" Value="myIcon" />-->
+    <Property Id="ARPINSTALLLOCATION" Value="1" />
+    <Property Id="ARPCOMMENTS" Value="(c) 3d Soft Solutions" />
+    <Property Id="ARPNOREPAIR" Value="1" />
+    <Property Id="ARPNOMODIFY" Value="1" />
+    <Property Id="ARPCONTACT" Value="support@3dsoft.bg" />
+    <Property Id="ARPHELPLINK" Value="http://www.3dsoft.bg/KojtoCAD/support.html"/>
+    <Property Id="ARPREADME" Value="http://www.3dsoft.bg/KojtoCAD/readme.html" />
+
+    <CustomAction Id="AssignTargetDir" Property="TARGETDIR" Value="C:\" Execute="firstSequence" />
+    <InstallUISequence>
+      <Custom Action="AssignTargetDir" Before="CostInitialize">TARGETDIR="AssignTargetDir"</Custom>
+    </InstallUISequence>
+    <InstallExecuteSequence>
+      <Custom Action="AssignTargetDir" Before="CostInitialize">TARGETDIR="AssignTargetDir"</Custom>
+    </InstallExecuteSequence>
+  </Product>
+
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir" >
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="AutodeskFolder" Name="Autodesk">
+          <Directory Id="AutodeskApplicationPluginsFolder" Name="ApplicationPlugins" >
+            <Directory Id="INSTALLFOLDER" Name="KojtoCAD.bundle" />
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="TARGETDIR">
+      <Component Id="RegistryEntries" Guid="FBC14ECA-813F-4D5D-95F9-125334E741FB">
+        <RegistryKey Root="HKLM"
+                     Key="Software\Bricsys\ObjectDRX\V17x64\Applications\KojtoCAD"
+              Action="createAndRemoveOnUninstall">
+          <RegistryValue Type="string" Name="LOADER" Value="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCad.bundle\KojtoCAD.BricsCAD.dll" KeyPath="yes"/>
+          <RegistryValue Type="string" Name="DESCRIPTION" Value="KojtoCAD"/>
+          <RegistryValue Type="integer" Name="LOADCTRLS" Value="14"/>
+          <RegistryValue Type="integer" Name="MANAGED" Value="1"/>
+        </RegistryKey>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>
+

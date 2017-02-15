@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CustomizationSection name="KojtoCAD_3D"
+                      xmlns="http://www.kojto.com/KojtoCAD"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Menu label="CALCULATE FORMULA" macro="^C^CKCAD_CALCULATE_FORMULA" type="MenuItem"></Menu>
+
+  <Menu type="Separator"></Menu>
+
+  <Menu label="NETLOAD" macro="^C^CNETLOAD" type="MenuItem"></Menu>
+
+  <Menu type="Separator"></Menu>
+
+  <Menu label="HELP" macro="^C^CKCAD_HELP" type="MenuItem"></Menu>
+
+  <Menu type="Separator"></Menu>
+
+  <Menu label="SETTINGS" macro="^C^CKCAD_SETTINGS" type="MenuItem"></Menu>
+
+  <Menu type="Separator"></Menu>
+
+  <Menu label="MESH" type="SubMenu">
+    <Menu label="CREATE  MESH" macro="^C^CKCAD_CREATEMESH" type="MenuItem"></Menu>
+    <Menu label="READ MESH FROM CSV file" macro="^C^CKCAD_READ_MESH_FROM_CSV" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="READ  MESH from this DWG (from dictionary)" macro="^C^CKCAD_READMESH" type="MenuItem"></Menu>
+    <Menu label="READ  MESH from External TXT file" macro="^C^CKCAD_READ_CONTAINER_FROM_EXTERNAL_FILE" type="MenuItem"></Menu>
+    <Menu label="Read mesh HELP topic" macro="^C^CKCAD_READMESH_GET_HELP" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="SAVE  MESH in this DWG (in dictionary)" macro="^C^CKCAD_SAVEMESH" type="MenuItem"></Menu>
+    <Menu label="SAVE  MESH to External TXT File" macro="^C^CKCAD_SAVE_CONTAINER_IN_EXTERNAL_FILE" type="MenuItem"></Menu>
+    <Menu label="Save mesh HELP topic" macro="^C^CKCAD_SAVEMESH_GET_HELP" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="Delete Mesh Data from Dictionary" macro="^C^CKCAD_DELETE_MESH_DATA" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="Teoretical mesh (No fictive Bends) - Center of Gravity" macro="^C^CKCAD_GET_TEORETICAL_BENDS_CENTROID" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="DRAW" macro="^C^CKCAD_DRAW" type="MenuItem"></Menu>
+    <Menu label="DRAW  NORMALS" macro="^C^CKCAD_DRAW_NORMALS" type="MenuItem"></Menu>
+    <Menu label="LINK the ENDS of NORMALS in the NODES" macro="^C^CKCAD_DRAW_SECOND_MESH" type="MenuItem"></Menu>
+    <Menu label="CREATE NEW MESH FROM CURRENT THROUGH END OF NORMALS" macro="^C^CKCAD_SMB" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="DRAW  NODE NORMALS BY NoFictive Bends" macro="^C^CKCAD_DRAW_NODES_NORMALS_BY_NOFICTIVE" type="MenuItem"></Menu>
+    <Menu label="HELP" macro="^C^CKCAD_DRAW_NODES_NORMALS_BY_NOFICTIVE_HELP" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="DRAW  NODE UCS BY NoFictive Bends" macro="^C^CKCAD_DRAW_NODE_UCS" type="MenuItem"></Menu>
+    <Menu label="DRAW  NUMERS" macro="^C^CKCAD_DRAW_NUMERS" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="GET_BY_NUMER" macro="^C^CKCAD_GET_BY_NUMER" type="MenuItem"></Menu>
+    <Menu label="GET_BY_SELECTION" macro="^C^CKCAD_GET_BY_SELECTION" type="MenuItem"></Menu>
+    <Menu label="Angle between the NORMALS of the adjacent Triangles" macro="^C^CKCAD_ANGLE_BETWEEN_TRIANGLES" type="MenuItem"></Menu>
+    
+    <Menu type="Separator"></Menu>
+
+    <Menu label="Minimum Distance to .." type="SubMenu">
+      <Menu label="to Node" macro="^C^CKCAD_NEAREST_FROM_NODES" type="MenuItem"></Menu>
+      <Menu label="to Bend Mid Point" macro="^C^CKCAD_NEAREST_BEND_MIDPOINT" type="MenuItem"></Menu>
+      <Menu label="to Triangle Centroid" macro="^C^CKCAD_NEAREST_TRIANGLE_MIDPOINT" type="MenuItem"></Menu>
+    </Menu>
+    
+    <Menu type="Separator"></Menu>
+
+    <Menu label="MODIFY NORMALS" type="SubMenu">
+      <Menu label="REVERSE NORMALS" macro="^C^CKCAD_REVERSE" type="MenuItem"></Menu>
+
+      <Menu type="Separator"></Menu>
+
+      <Menu label="SET EXPLICIT BENDS NORMALS BY DIRECTION" macro="^C^CKCAD_CHANGE_SELECTED_BENDS_NORMALS" type="MenuItem"></Menu>
+      <Menu label="RESTORE BENDS NORMALS" macro="^C^CKCAD_RESTORE_BENDS_NORMALS" type="MenuItem"></Menu>
+      <Menu label="RESTORE BEND NORMAL" macro="^C^CKCAD_RESTORE_BEND_NORMAL" type="MenuItem"></Menu>
+
+      <Menu type="Separator"></Menu>
+
+      <Menu label="SET EXPLICIT NODE NORMAL" macro="^C^CKCAD_SET_EXPLICIT_NODE_NORMAL_BY_POSITION" type="MenuItem"></Menu>
+      <Menu label="SET ALL NOES NORMALS EXPLICIT (by bends midpoints centroid)" macro="^C^CKCAD_SET_ALL_NODES_NORMALS_EXPLICIT" type="MenuItem"></Menu>
+      <Menu label="RESTORE NODE NORMALS" macro="^C^CKCAD_RESTORE_NODES_NORMALS" type="MenuItem"></Menu>
+      <Menu label="RESTORE NODE NORMAL BY SELECTION" macro="^C^CKCAD_RESTORE_NODE_NORMAL_BY_SELECTION" type="MenuItem"></Menu>
+      <Menu label="CHENGE EXPLICIT NORMAL LENGTH SELECTION" macro="^C^CKCAD_CHANGE_EXPLICIT_NORMAL_LENGTH_SELECTION" type="MenuItem"></Menu>
+    </Menu>
+  </Menu>
+  
+  <Menu type="Separator"></Menu>
+
+  <Menu label="GLASS" type="SubMenu">
+    <Menu label="MAKE and SHOW  GLASS" macro="^C^CKCAD_SHOW_GLASS" type="MenuItem"></Menu>
+    <Menu label="HIDE  GLASS" macro="^C^CKCAD_HIDE_GLASS" type="MenuItem"></Menu>
+    <Menu label="SHOW HIDEN GLASS" macro="^C^CKCAD_SHOW_HIDEN_GLASS" type="MenuItem"></Menu>
+    <Menu label="ERASE GLASS 3D and from database" macro="^C^CKCAD_PLACEMENT_3D_GLASS_DELETE" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="spots from glass on the triangles - Center of Gravity" macro="^C^CKCAD_GET_GLASS_CONTURS_CENTROID" type="MenuItem"></Menu>
+    <Menu label="SHOW GLASS EDGES (spots from glass on the triangles)" macro="^C^CKCAD_GLASS_EDGES_BY_FOLD_BASE" type="MenuItem"></Menu>
+    <Menu label="SHOW GlASS_CONTURS_BY_LEVEL" macro="^C^CGET_GlASS_CONTURS_BY_LEVEL" type="MenuItem"></Menu>
+    <Menu label="SHOW GlASS_CONTURS_UNFOLD_BY_LEVEL" macro="^C^CGET_GlASS_CONTURS_UNFOLD_BY_LEVEL" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="SEPARATE ALL - GlASS UNFOLDS BY LEVEL" macro="^C^CKCAD_GlASS_UNFOLDS_BY_LEVEL" type="MenuItem"></Menu>
+    <Menu label="SEPARATE BY NUMER - TRIANGLE GLASS UNFOLDS" macro="^C^CKCAD_GlASS_TRIANGLE_UNFOLDS_BY_LEVEL" type="MenuItem"></Menu>
+    <Menu label="SEPARATE BY NUMER- POLYGON GLASS UNFOLDS" macro="^C^CKCAD_GlASS_POLYGON_UNFOLDS_BY_LEVEL" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="DOUBLE GLASS" type="SubMenu">
+      <Menu label="SHOW" macro="^C^CKCAD_SHOW_DOUBLE_GLAS" type="MenuItem"></Menu>
+      <Menu label="HIDE DOUBLE GLASS" macro="^C^CKCAD_HIDE_DOUBLE_GLASS" type="MenuItem"></Menu>
+      <Menu label="SHOW HIDEN DOUBLE GLASS" macro="^C^CKCAD_SHOW_HIDEN_DOUBLE_GLASS" type="MenuItem"></Menu>
+      <Menu label="ERASE GLASS 3D and from database" macro="^C^CKCAD_PLACEMENT_3D_GLASS_DELETE" type="MenuItem"></Menu>
+
+      <Menu type="Separator"></Menu>
+
+      <Menu label="UNFOLD TRIANGULAR GLASS" macro="^C^CKCAD_DOUBLE_GlASS_UNFOLDS_TRIANGLE" type="MenuItem"></Menu>
+      <Menu label="BENDS TO SEPARATE DRAWINGS" macro="^C^CKCAD_BENDS_TO_SEPARATE_DRAWINGS" type="MenuItem"></Menu>
+      <Menu label="BENDS SECTIONS TO SEPARATE DRAWINGS" macro="^C^CKCAD_BEND_SECTION_TO_SEPARATE_DRAWINGS" type="MenuItem"></Menu>
+    </Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="GLASS  DISTANCE  FOR  BEND" macro="^C^CKCAD_SET_GLASS_DISTANCE_FOR_BEND" type="MenuItem"></Menu>
+    <Menu label="GLASS  DISTANCE  FOR  ALL BENDS" macro="^C^CKCAD_SET_GLASS_DISTANCE_FOR_ALL_BENDS" type="MenuItem"></Menu>
+    <Menu label="SET GLASS DISTANCE TO BEND BY NUMER" macro="^C^CKCAD_SET_GLASS_DISTANCE_TO_BEND_BY_NUMER" type="MenuItem"></Menu>
+  </Menu>
+
+  <Menu type="Separator"></Menu>
+
+  <Menu label="CAM Tools" type="SubMenu">
+    <Menu label="Node to CNC" macro="^C^CKCAD_NODE_TO_CNC" type="MenuItem"></Menu>
+    <Menu label="Node to CSV" macro="^C^CKCAD_NODE_TO_CSV" type="MenuItem"></Menu>
+  </Menu>
+
+  <Menu type="Separator"></Menu>
+
+  <Menu label="PROFILES" type="SubMenu">
+    <Menu label="SOLID EXTRUDE FROM REGIONS IN BLOCK" macro="^C^CKCAD_EXPROF" type="MenuItem"></Menu>
+    <Menu label="CUT WITH EXTRUDED SOLID" macro="^C^CKCAD_EXTRIM" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+    
+    <Menu label="DRAW PROFILE SOLID by CSV" macro="^C^CKCAD_DRAW_PROFILE_SOLID" type="MenuItem"></Menu>
+    <Menu label="DRAW PROFILE by CSV and ERASE PROFILE LINE" macro="^C^CKCAD_DRAW_PROFILE_SOLID_A" type="MenuItem"></Menu>
+    
+    <Menu type="Separator"></Menu>
+    
+    <Menu label="KCAD PREPARE PROFILE UNFOLD" macro="^C^CKCAD_PREPARE_PROFILE_UNFOLD" type="MenuItem"></Menu>
+    
+    <Menu type="Separator"></Menu>
+    
+    <Menu label="ADD PROFILE POINTS TO_FILE" macro="^C^CKCAD_ADD_PROFILE_POINT_TO_FILE" type="MenuItem"></Menu>
+  </Menu>
+
+  <Menu type="Separator"></Menu>
+
+  <Menu label="SHOW PLACEMENT IN 3D" type="SubMenu">
+    <Menu label="Real Center of Gravity" macro="^C^CKCAD_GET_REAL_CENTROID" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+    
+    <Menu label="NODES 3D" type="SubMenu">
+      <Menu label="PLACEMENT OF NODE 3D IN POSITION" macro="^C^CKCAD_PLACEMENT_OF_NODE_3D_IN_POSITION" type="MenuItem"></Menu>
+      <Menu label="PLACEMENT HIDE from Display" macro="^C^CKCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_HIDE" type="MenuItem"></Menu>
+      <Menu label="PLACEMENT SHOW to Display" macro="^C^CKCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_SHOW" type="MenuItem"></Menu>
+      <Menu label="PLACEMENT DELETE and from Data Base" macro="^C^CKCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_DELETE" type="MenuItem"></Menu>
+    </Menu>
+
+    <Menu type="Separator"></Menu>
+    
+    <Menu label="BENDS NOZZLE 3D" type="SubMenu">
+      <Menu label="PLACEMENT OF BENDS NOZZLE BLOCKS IN NODES" macro="^C^CKCAD_PLACEMENT_OF_BENDS_NOZZLE_BLOCKS_IN_NODES" type="MenuItem"></Menu>
+      <Menu label="PLACEMENT HIDE from Display" macro="^C^CKCAD_PLACEMENT_OF_BENDS_NOZZLE_3D_IN_POSITION_HIDE" type="MenuItem"></Menu>
+      <Menu label="PLACEMENT SHOW to Display" macro="^C^CKCAD_PLACEMENT_OF_BENDS_NOZZLE_3D_IN_POSITION_SHOW" type="MenuItem"></Menu>
+      <Menu label="PLACEMENT DELETE and from Data Base" macro="^C^CKCAD_PLACEMENT_OF_BEND_NOZZLE_3D_DELETE" type="MenuItem"></Menu>
+    </Menu>
+
+    <Menu type="Separator"></Menu>
+    
+    <Menu label="BENDS 3D" type="SubMenu">
+      <Menu label="PLACEMENT BENDS 3D" macro="^C^CKCAD_PLACEMENT_BENDS_3D" type="MenuItem"></Menu>
+      <Menu label="PLACEMENT BENDS 3D  ( at the end of normals )" macro="^C^CKCAD_PLACEMENT_BENDS_3D_BY_NORMALS" type="MenuItem"></Menu>
+      <Menu label="KCAD ATTACHING AN SOLID3D TO BEND" macro="^C^CKCAD_ATTACHING_A_SOLID3D_TO_BEND" type="MenuItem"></Menu>
+
+      <Menu type="Separator"></Menu>
+
+      <Menu label="BENDS 3D HIDE" macro="^C^CKCAD_PLACEMENT_OF_BENDS_3D_IN_POSITION_HIDE" type="MenuItem"></Menu>
+      <Menu label="BENDS 3D SHOW" macro="^C^CKCAD_PLACEMENT_OF_BENDS_3D_IN_POSITION_SHOW" type="MenuItem"></Menu>
+      <Menu label="BENDS 3D DELETE  and from Data Base" macro="^C^CKCAD_PLACEMENT_BEND_3D_DELETE" type="MenuItem"></Menu>
+
+      <Menu type="Separator"></Menu>
+      
+      <Menu label="KCAD CUTTING BENDS IN NODES" macro="^C^CKCAD_CUTTING_BENDS_IN_NODES" type="MenuItem"></Menu>
+      <Menu label="* Explicit Cutting Method for Ends of 3D Bends In given Node" macro="^C^CKCAD_EXPLICIT_CUTTING_METHOD_FOR_ENDS_IN_NODE" type="MenuItem"></Menu>
+      <Menu label="*Clear Explicit Cutting Method for All Bend" macro="^C^CKCAD_CLEAR_EXPLICIT_CUTTING_METHOD_FOR_ALL" type="MenuItem"></Menu>
+    </Menu>
+
+    <Menu type="Separator"></Menu>
+    
+    <Menu label="CALC MIN CAM RADIUS" macro="^C^CKCAD_CALC_MIN_CAM_RADIUS" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+    
+    <Menu label="Fixing Elements" type="SubMenu">
+      <Menu label="ADD FIXING ELEMENTS" macro="^C^CKCAD_ADD_FIXING_ELEMENTS" type="MenuItem"></Menu>
+    </Menu>
+  </Menu>
+
+  <Menu type="Separator"></Menu>
+
+  <Menu label="CSV files" type="SubMenu">
+    <Menu label="NODES" type="SubMenu">
+      <Menu label="NODE NUMER and POSITION to file" macro="^C^CKCAD_NODE_NUMER_POSITION_CSV" type="MenuItem"></Menu>
+    </Menu>
+    <Menu label="BENDS" type="SubMenu">
+      <Menu label="BEND JOINTS NUMERS" macro="^C^CKCAD_BEND_JOINTS_NUMERS_CSV" type="MenuItem"></Menu>
+    </Menu>
+    <Menu label="TRIANGLES" type="SubMenu">
+      <Menu label="TRIANGLES" macro="^C^CKCAD_TRIANGLES_CSV" type="MenuItem"></Menu>
+    </Menu>
+    <Menu label="POLYGONS" macro="^C^CKCAD_POLYGONS_CSV" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="READ NAMED POINTS FROM CSV" macro="^C^CKCAD_READ_NAMED_POINTS_FROM_CSV" type="MenuItem"></Menu>
+    <Menu label="DRAW NAMED POINTS BY ARRAY NAME" macro="^C^CKCAD_NAMED_POINTS_DRAW" type="MenuItem"></Menu>
+  </Menu>
+
+  <Menu type="Separator"></Menu>
+
+  <Menu label="Deviation tools" type="SubMenu">
+    <Menu label="Deviation tools" type="SubMenu">
+      <Menu label="Analise and DRAW Lines" macro="^C^CKCAD_AGT" type="MenuItem"></Menu>
+      <Menu label="DRAW TEXT in TRIANGLES" macro="^C^CKCAD_AGT" type="MenuItem"></Menu>
+    </Menu>
+    <Menu label="POLIGONs DEVIATION" macro="^C^CKCAD_AGP" type="MenuItem"></Menu>
+  </Menu>
+
+  <Menu type="Separator"></Menu>
+
+  <Menu label="Solid Geometry" type="SubMenu">
+    <Menu label="Minimal Distance between Solids3D" macro="^C^CKCAD_MIN_DISTANCE_BETWEEN_SOLID3D" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+    
+    <Menu label="Intersction Line between two Planes" macro="^C^CKCAD_INTERSECTION_LINE_BETWEEN_TWO_PLANES" type="MenuItem"></Menu>
+    <Menu label="Line and Plane - Intersection" macro="^C^CKCAD_ILP" type="MenuItem"></Menu>
+    <Menu label="Two Lines - Crossing" macro="^C^CKCAD_DBP" type="MenuItem"></Menu>
+    <Menu label="Projection of the Point on the Plane" macro="^C^CKCAD_PROJECT_POINT_TO_PLANE" type="MenuItem"></Menu>
+
+    <Menu type="Separator"></Menu>
+    
+    <Menu label="CUT PARAMETERS" type="SubMenu">
+      <Menu label="Global - Ratio of Length of the Extensions" macro="^C^CKCAD_SET_CUT_SOLID_LK" type="MenuItem"></Menu>
+      <Menu label="Global - Thicnes of the CutProfile" macro="^C^CKCAD_SET_CUT_SOLID_TH" type="MenuItem"></Menu>
+      <Menu label="Global - Extrude Ratio" macro="^C^CKCAD_SET_CUT_SOLID_ER" type="MenuItem"></Menu>
+
+      <Menu type="Separator"></Menu>
+
+      <Menu label="By Bend Selection - Solid Extrude Ratio" macro="^C^CKCAD_EX_RATIO_BY_BEND" type="MenuItem"></Menu>
+      <Menu label="By Bend Numer - Ratio of Length /  Thicnes of the CutProfile" macro="^C^CKCAD_SET_BEND_EXPLICIT_PARAMETERS" type="MenuItem"></Menu>
+
+      <Menu type="Separator"></Menu>
+
+      <Menu label="Trimming Vertices on/off" macro="^C^CKCAD_CHANGE_PICK_TRIM_VARIANT" type="MenuItem"></Menu>
+    </Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="Minimum Distance to ..." type="SubMenu">
+      <Menu label="to Node" macro="^C^CKCAD_NEAREST_FROM_NODES" type="MenuItem"></Menu>
+      <Menu label="to Bend Mid Point" macro="^C^CKCAD_NEAREST_BEND_MIDPOINT" type="MenuItem"></Menu>
+      <Menu label="to Triangle Centroid" macro="^C^CKCAD_NEAREST_TRIANGLE_MIDPOINT" type="MenuItem"></Menu>
+    </Menu>
+
+    <Menu type="Separator"></Menu>
+
+    <Menu label="Angle between the NORMALS of the adjacent Triangles" macro="^C^CKCAD_ANGLE_BETWEEN_TRIANGLES" type="MenuItem"></Menu>
+  </Menu>
+</CustomizationSection>

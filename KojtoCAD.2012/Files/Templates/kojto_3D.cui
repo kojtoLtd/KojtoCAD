@@ -1,0 +1,1941 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<CustSection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FileVersion IncrementalVersion="1" MajorVersion="0" MinorVersion="6" UserVersion="1"/>
+  <Header>
+    <CommonConfiguration>
+      <CommonItems>
+        <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+      </CommonItems>
+    </CommonConfiguration>
+    <LSPFiles xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    <WorkspaceRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <WorkspaceConfigRoot/>
+    </WorkspaceRoot>
+  </Header>
+  <MenuGroup Name="KOJTO_3D" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <MacroGroup Name="KOJTO_3D">
+      <MenuMacro UID="ID_KCAD_SETTINGS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_83B25" xlate="true">KCAD_SETTINGS</Name>
+          <Command>^C^CKCAD_SETTINGS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_NETLOAD">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_0C9DB" xlate="true">KCAD_NETLOAD</Name>
+          <Command>^C^CNETLOAD</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_CREATEMESH">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_44129" xlate="true">KCAD_CREATEMESH</Name>
+          <Command>^C^CKCAD_CREATEMESH</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_READ_MESH_FROM_CSV">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_CC235" xlate="true">KCAD_READ_MESH_FROM_CSV</Name>
+          <Command>^C^CKCAD_READ_MESH_FROM_CSV</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_DELETE_MESH_DATA">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_6182C" xlate="true">KCAD_DELETE_MESH_DATA</Name>
+          <Command>^C^CKCAD_DELETE_MESH_DATA</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_READMESH">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_4CB76" xlate="true">KCAD_READMESH</Name>
+          <Command>^C^CKCAD_READMESH</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SAVEMESH">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_58C33" xlate="true">KCAD_SAVEMESH</Name>
+          <Command>^C^CKCAD_SAVEMESH</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_DRAW">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_4FCA8" xlate="true">KCAD_DRAW</Name>
+          <Command>^C^CKCAD_DRAW</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_DRAW_NORMAL">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_6F8D8" xlate="true">KCAD_DRAW_NORMAL</Name>
+          <Command>^C^CKCAD_DRAW_NORMALS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_DRAW_NODE_UCS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_047B2" xlate="true">KCAD_DRAW_NODE_UCS</Name>
+          <Command>^C^CKCAD_DRAW_NODE_UCS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SET_GLASS_DISTANCE_FOR_BEND">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_AA2C5" xlate="true">KCAD_SET_GLASS_DISTANCE_FOR_BEND</Name>
+          <Command>^C^CKCAD_SET_GLASS_DISTANCE_FOR_BEND</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SET_GLASS_DISTANCE_FOR_ALL_BENDS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_C3EC4" xlate="true">KCAD_SET_GLASS_DISTANCE_FOR_ALL_BENDS</Name>
+          <Command>^C^CKCAD_SET_GLASS_DISTANCE_FOR_ALL_BENDS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SHOW_GLASS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_FD77B" xlate="true">KCAD_SHOW_GLASS</Name>
+          <Command>^C^CKCAD_SHOW_GLASS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_GLASS_EDGES">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_63780" xlate="true">KCAD_GLASS_EDGES</Name>
+          <Command>^C^CKCAD_GLASS_EDGES_BY_FOLD_BASE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="MMU_190_D9E38">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_2E295" xlate="true">KCAD_GLASS_EDGES_</Name>
+          <Command>^C^CKCAD_GLASS_EDGES_BY_UNFOLD_BASE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_REVERSE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_825E5" xlate="true">KCAD_REVERSE</Name>
+          <Command>^C^CKCAD_REVERSE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_GlASS_CONTURS_BY_LEVEL">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_3279D" xlate="true">KCAD_GlASS_CONTURS_BY_LEVEL</Name>
+          <Command>^C^CGET_GlASS_CONTURS_BY_LEVEL</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_GlASS_CONTURS_UNFOLD_BY_LEVEL">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_ADE60" xlate="true">KCAD_GlASS_CONTURS_UNFOLD_BY_LEVEL</Name>
+          <Command>^C^CGET_GlASS_CONTURS_UNFOLD_BY_LEVEL</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_GET_BY_NUMER">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_5EE62" xlate="true">KCAD_GET_BY_NUMER</Name>
+          <Command>^C^CKCAD_GET_BY_NUMER</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_GET_BY_SELECTION">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_1E74E" xlate="true">KCAD_GET_BY_SELECTION</Name>
+          <Command>^C^CKCAD_GET_BY_SELECTION</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_SET_GLASS_DISTANCE_TO_BEND_BY_NUMER">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_59C8F" xlate="true">KCAD_SET_GLASS_DISTANCE_TO_BEND_BY_NUMER</Name>
+          <Command>^C^CKCAD_SET_GLASS_DISTANCE_TO_BEND_BY_NUMER</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_GlASS_UNFOLDS_BY_LEVEL">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_46ADC" xlate="true">KCAD_GlASS_UNFOLDS_BY_LEVEL</Name>
+          <Command>^C^CKCAD_GlASS_UNFOLDS_BY_LEVEL</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_DRAW_NODES_NORMALS_BY_NOFICTIVE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_394A8" xlate="true">KCAD_DRAW_NODES_NORMALS_BY_NOFICTIVE</Name>
+          <Command>^C^CKCAD_DRAW_NODES_NORMALS_BY_NOFICTIVE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_CHANGE_SELECTED_BENDS_NORMALS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_35F41" xlate="true">KCAD_CHANGE_SELECTED_BENDS_NORMALS</Name>
+          <Command>^C^CKCAD_CHANGE_SELECTED_BENDS_NORMALS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SET_EXPLICIT_NODE_NORMAL_BY_POSITION">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_80AD6" xlate="true">KCAD_SET_EXPLICIT_NODE_NORMAL_BY_POSITION</Name>
+          <Command>^C^CKCAD_SET_EXPLICIT_NODE_NORMAL_BY_POSITION</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_KCAD_DRAW_PROFILE_SOLID">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_D9CC0" xlate="true">KCAD_READ_PROFILE_DATA</Name>
+          <Command>^C^CKCAD_DRAW_PROFILE_SOLID</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_KCAD_DRAW_PROFILE_SOLID_A">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_0AA7A" xlate="true">KCAD_READ_PROFILE_DATA_A</Name>
+          <Command>^C^CKCAD_DRAW_PROFILE_SOLID_A</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_ADD_PROFILE_POINT_TO_FILE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_2A365" xlate="true">KCAD_ADD_PROFILE_POINT_TO_FILE</Name>
+          <Command>^C^CKCAD_ADD_PROFILE_POINT_TO_FILE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PREPARE_PROFILE_UNFOLD">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_563C2" xlate="true">KCAD_PREPARE_PROFILE_UNFOLD</Name>
+          <Command>^C^CKCAD_PREPARE_PROFILE_UNFOLD</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_NODE_TO_CNC">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_9D6A2" xlate="true">KCAD_NODE_TO_CNC</Name>
+          <Command>^C^CKCAD_NODE_TO_CNC</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_NODE_TO_CSV">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_1F685" xlate="true">KCAD_NODE_TO_CSV</Name>
+          <Command>^C^CKCAD_NODE_TO_CSV</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_POLIGONS_CSV">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_22C44" xlate="true">KCAD_POLYGONS_CSV</Name>
+          <Command>^C^CKCAD_POLYGONS_CSV</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PLACEMENT_OF_NODE_3D_IN_POSITION">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_27407" xlate="true">KCAD_PLACEMENT_OF_NODE_3D_IN_POSITION</Name>
+          <Command>^C^CKCAD_PLACEMENT_OF_NODE_3D_IN_POSITION</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_DELETE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_65D28" xlate="true">KCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_DELETE</Name>
+          <Command>^C^CKCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_DELETE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_HIDE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_CCE3C" xlate="true">KCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_HIDE</Name>
+          <Command>^C^CKCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_HIDE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_SHOW">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_86E6B" xlate="true">KCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_SHOW</Name>
+          <Command>^C^CKCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_SHOW</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PLACEMENT_OF_BENDS_NOZZLE_BLOCKS_IN_NODES">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_0BB9F" xlate="true">PLACEMENT_OF_BENDS_NOZZLE_BLOCKS_IN_NODES</Name>
+          <Command>^C^CKCAD_PLACEMENT_OF_BENDS_NOZZLE_BLOCKS_IN_NODES</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PLACEMENT_OF_BENDS_NOZZLE_3D_IN_POSITION_HIDE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_D577C" xlate="true">KCAD_PLACEMENT_OF_BENDS_NOZZLE_3D_IN_POSITION_HIDE</Name>
+          <Command>^C^CKCAD_PLACEMENT_OF_BENDS_NOZZLE_3D_IN_POSITION_HIDE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PLACEMENT_OF_BENDS_NOZZLE_3D_IN_POSITION_SHOW">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_F3A74" xlate="true">KCAD_PLACEMENT_OF_BENDS_NOZZLE_3D_IN_POSITION_SHOW</Name>
+          <Command>^C^CKCAD_PLACEMENT_OF_BENDS_NOZZLE_3D_IN_POSITION_SHOW</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PLACEMENT_OF_BEND_NOZZLE_3D_DELETE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_8BCA9" xlate="true">PLACEMENT_OF_BEND_NOZZLE_3D_DELETE</Name>
+          <Command>^C^CKCAD_PLACEMENT_OF_BEND_NOZZLE_3D_DELETE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PLACEMENT_BENDS_3D">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_E1056" xlate="true">KCAD_PLACEMENT_BENDS_3D</Name>
+          <Command>^C^CKCAD_PLACEMENT_BENDS_3D</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PLACEMENT_BEND_3D_DELETE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_CCD4C" xlate="true">KCAD_PLACEMENT_BEND_3D_DELETE</Name>
+          <Command>^C^CKCAD_PLACEMENT_BEND_3D_DELETE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PLACEMENT_OF_BENDS_3D_IN_POSITION_HIDE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_7A556" xlate="true">KCAD_PLACEMENT_OF_BENDS_3D_IN_POSITION_HIDE</Name>
+          <Command>^C^CKCAD_PLACEMENT_OF_BENDS_3D_IN_POSITION_HIDE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PLACEMENT_OF_BENDS_3D_IN_POSITION_SHOW">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_E104E" xlate="true">KCAD_PLACEMENT_OF_BENDS_3D_IN_POSITION_SHOW</Name>
+          <Command>^C^CKCAD_PLACEMENT_OF_BENDS_3D_IN_POSITION_SHOW</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_CALC_MIN_CAM_RADIUS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_8D2D3" xlate="true">KCAD_CALC_MIN_CAM_RADIUS</Name>
+          <Command>^C^CKCAD_CALC_MIN_CAM_RADIUS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_ADD_FIXING_ELEMENTS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_3E36C" xlate="true">KCAD_ADD_FIXING_ELEMENTS</Name>
+          <Command>^C^CKCAD_ADD_FIXING_ELEMENTS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_RESTORE_BENDS_NORMALS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_4A04F" xlate="true">KCAD_RESTORE_BENDS_NORMALS</Name>
+          <Command>^C^CKCAD_RESTORE_BENDS_NORMALS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_RESTORE_NODES_NORMALS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_B8585" xlate="true">KCAD_RESTORE_NODES_NORMALS</Name>
+          <Command>^C^CKCAD_RESTORE_NODES_NORMALS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SET_ALL_NODES_NORMALS_EXPLICIT">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_51C7D" xlate="true">KCAD_SET_ALL_NODES_NORMALS_EXPLICIT</Name>
+          <Command>^C^CKCAD_SET_ALL_NODES_NORMALS_EXPLICIT</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SHOW_DOUBLE_GLAS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_83AE6" xlate="true">KCAD_SHOW_DOUBLE_GLAS</Name>
+          <Command>^C^CKCAD_SHOW_DOUBLE_GLAS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_DOUBLE_GlASS_UNFOLDS_TRIANGLE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_7F9F8" xlate="true">KCAD_DOUBLE_GlASS_UNFOLDS_TRIANGLE</Name>
+          <Command>^C^CKCAD_DOUBLE_GlASS_UNFOLDS_TRIANGLE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_BENDS_TO_SEPARATE_DRAWINGS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_CFDB7" xlate="true">KCAD_BENDS_TO_SEPARATE_DRAWINGS</Name>
+          <Command>^C^CKCAD_BENDS_TO_SEPARATE_DRAWINGS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PLACEMENT_BENDS_3D_BY_NORMALS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_25B3F" xlate="true">KCAD_PLACEMENT_BENDS_3D_BY_NORMALS</Name>
+          <Command>^C^CKCAD_PLACEMENT_BENDS_3D_BY_NORMALS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_BEND_SECTION_TO_SEPARATE_DRAWINGS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_8DD27" xlate="true">KCAD_BEND_SECTION_TO_SEPARATE_DRAWINGS</Name>
+          <Command>^C^CKCAD_BEND_SECTION_TO_SEPARATE_DRAWINGS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_DRAW_NUMERS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_14956" xlate="true">KCAD_DRAW_NUMERS</Name>
+          <Command>^C^CKCAD_DRAW_NUMERS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_DRAW_SECOND_MESH">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_4179D" xlate="true">KCAD_DRAW_SECOND_MESH</Name>
+          <Command>^C^CKCAD_DRAW_SECOND_MESH</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_RESTORE_NODE_NORMAL_BY_SELECTION">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_BC84B" xlate="true">KCAD_RESTORE_NODE_NORMAL_BY_SELECTION</Name>
+          <Command>^C^CKCAD_RESTORE_NODE_NORMAL_BY_SELECTION</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_CHANGE_EXPLICIT_NORMAL_LENGTH_SELECTION">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_75C01" xlate="true">KCAD_KCAD_CHANGE_EXPLICIT_NORMAL_LENGTH_SELECTION</Name>
+          <Command>^C^CKCAD_CHANGE_EXPLICIT_NORMAL_LENGTH_SELECTION</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_ATTACHING_A_SOLID3D_TO_BEND">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_BB67D" xlate="true">KCAD_KCAD_ATTACHING_A_SOLID3D_TO_BEND</Name>
+          <Command>^C^CKCAD_ATTACHING_A_SOLID3D_TO_BEND</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_RESTORE_BEND_NORMAL">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_E89EE" xlate="true">KCAD_KCAD_RESTORE_BEND_NORMAL</Name>
+          <Command>^C^CKCAD_RESTORE_BEND_NORMAL</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_EXPROF">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_FD088" xlate="true">KCAD_KCAD_EXPROF</Name>
+          <Command>^C^CKCAD_EXPROF</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_EXTRIM">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_7932F" xlate="true">KCAD_EXTRIM</Name>
+          <Command>^C^CKCAD_EXTRIM</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_GlASS_POLYGON_UNFOLDS_BY_LEVEL">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_8EA89" xlate="true">KCAD_GlASS_POLYGON_UNFOLDS_BY_LEVEL</Name>
+          <Command>^C^CKCAD_GlASS_POLYGON_UNFOLDS_BY_LEVEL</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_GlASS_TRIANGLE_UNFOLDS_BY_LEVEL">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_B791C" xlate="true">KCAD_GlASS_TRIANGLE_UNFOLDS_BY_LEVEL</Name>
+          <Command>^C^CKCAD_GlASS_TRIANGLE_UNFOLDS_BY_LEVEL</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_READMESH_GET_HELP">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_B0D8E" xlate="true">KCAD_READMESH_GET_HELP</Name>
+          <Command>^C^CKCAD_READMESH_GET_HELP</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SAVEMESH_GET_HELP">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_DC58D" xlate="true">KCAD_SAVEMESH_GET_HELP</Name>
+          <Command>^C^CKCAD_SAVEMESH_GET_HELP</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_DRAW_NODES_NORMALS_BY_NOFICTIVE_HELP">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_AED20" xlate="true">KCAD_DRAW_NODES_NORMALS_BY_NOFICTIVE_HELP</Name>
+          <Command>^C^CKCAD_DRAW_NODES_NORMALS_BY_NOFICTIVE_HELP</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_HELP">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_CFE55" xlate="true">KCAD_HELP</Name>
+          <Command>^C^CKCAD_HELP</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_CUTTING_BENDS_IN_NODES">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_28F71" xlate="true">KCAD_CUTTING_BENDS_IN_NODES</Name>
+          <Command>^C^CKCAD_CUTTING_BENDS_IN_NODES</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_READ_NAMED_POINTS_FROM_CSV">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_3C23C" xlate="true">KCAD_READ_NAMED_POINTS_FROM_CSV</Name>
+          <Command>^C^CKCAD_READ_NAMED_POINTS_FROM_CSV</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_NAMED_POINTS_DRAW">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_C1809" xlate="true">KCAD_NAMED_POINTS_DRAW</Name>
+          <Command>^C^CKCAD_NAMED_POINTS_DRAW</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_HIDE_GLASS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_45B17" xlate="true">HIDE GLASS</Name>
+          <Command>^C^CKCAD_HIDE_GLASS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SHOW_HIDEN_GLASS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_D53C8" xlate="true">SHOW HIDEN GLASS</Name>
+          <Command>^C^CKCAD_SHOW_HIDEN_GLASS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_HIDE_DOUBLE_GLASS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_EBA16" xlate="true">HIDE DOUBLE GLASS</Name>
+          <Command>^C^CKCAD_HIDE_DOUBLE_GLASS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SHOW_HIDEN_DOUBLE_GLASS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_C372A" xlate="true">SHOW HIDEN DOUBLE GLASS</Name>
+          <Command>^C^CKCAD_SHOW_HIDEN_DOUBLE_GLASS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_GET_REAL_CENTROID">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_C84F2" xlate="true">CENTER of Gravity</Name>
+          <Command>^C^CKCAD_GET_REAL_CENTROID</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_GET_GLASS_CONTURS_CENTROID">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_EB67C" xlate="true">SPOTS from glass on the triangles - CENTER of Gravity</Name>
+          <Command>^C^CKCAD_GET_GLASS_CONTURS_CENTROID</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_GET_TEORETICAL_BENDS_CENTROID">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_A6102" xlate="true">TEORETICAL MESH CENTROID</Name>
+          <Command>^C^CKCAD_GET_TEORETICAL_BENDS_CENTROID</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SET_CUT_SOLID_LK">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_3CB9B" xlate="true">SET_CUT_PROFILE_PARAM_GLOBAL</Name>
+          <Command>^C^CKCAD_SET_CUT_SOLID_LK</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SET_CUT_SOLID_TH">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_BE339" xlate="true">SET_CUT_PROFILE_PARAM_GLOBAL</Name>
+          <Command>^C^CKCAD_SET_CUT_SOLID_TH</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SET_CUT_SOLID_ER">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_7D720" xlate="true">SET_CUT_SOLID_ER_GLOBAL</Name>
+          <Command>^C^CKCAD_SET_CUT_SOLID_ER</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SET_BEND_EXPLICIT_PARAMETERS">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_8F56D" xlate="true">SET_CUT_PROFILE_PARAM_BY_BEND_NUMER</Name>
+          <Command>^C^CKCAD_SET_BEND_EXPLICIT_PARAMETERS</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_CHANGE_PICK_TRIM_VARIANT">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_06E5D" xlate="true">TRIMING_VERTICES_VARIANT</Name>
+          <Command>^C^CKCAD_CHANGE_PICK_TRIM_VARIANT</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PLACEMENT_3D_GLASS_DELETE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_6FC23" xlate="true">ERASE_GLASS_3D</Name>
+          <Command>^C^CKCAD_PLACEMENT_3D_GLASS_DELETE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_EX_RATIO_BY_BEND">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_E2903" xlate="true">EX_RATIO_BY_BEND</Name>
+          <Command>^C^CKCAD_EX_RATIO_BY_BEND</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_EXPLICIT_CUTTING_METHOD_FOR_ENDS_IN_NODE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_EB2EB" xlate="true">EXPLICIT_CUTTING_METHOD</Name>
+          <Command>^C^CKCAD_EXPLICIT_CUTTING_METHOD_FOR_ENDS_IN_NODE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_CLEAR_EXPLICIT_CUTTING_METHOD_FOR_ALL">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_434B4" xlate="true">CLEAR_EXPLICIT_CUTTING_METHOD</Name>
+          <Command>^C^CKCAD_CLEAR_EXPLICIT_CUTTING_METHOD_FOR_ALL</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_PROJECT_POINT_TO_PLANE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_FCDD3" xlate="true">PROJECT_POINT_TO_PLANE</Name>
+          <Command>^C^CKCAD_PROJECT_POINT_TO_PLANE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_ANGLE_BETWEEN_TRIANGLES">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_8667F" xlate="true">ANGLE BETWEEN TRIANGLES</Name>
+          <Command>^C^CKCAD_ANGLE_BETWEEN_TRIANGLES</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_NEAREST_FROM_NODES">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_B7961" xlate="true">MINIMUMU DISTANCE TO NODE</Name>
+          <Command>^C^CKCAD_NEAREST_FROM_NODES</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_NEAREST_BEND_MIDPOINT">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_42876" xlate="true">MINIMUMU DISTANCE TO BEND MID</Name>
+          <Command>^C^CKCAD_NEAREST_BEND_MIDPOINT</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_NEAREST_TRIANGLE_MIDPOINT">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_AE042" xlate="true">MINIMUMU DISTANCE TO TRIANGLE MID</Name>
+          <Command>^C^CKCAD_NEAREST_TRIANGLE_MIDPOINT</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_READ_CONTAINER_FROM_EXTERNAL_FILE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_C5D55" xlate="true">READ MESH FROM EXTERNAL</Name>
+          <Command>^C^CKCAD_READ_CONTAINER_FROM_EXTERNAL_FILE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_SAVE_CONTAINER_IN_EXTERNAL_FILE">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_2F52B" xlate="true">SAVE MESH TO EXTERNAL</Name>
+          <Command>^C^CKCAD_SAVE_CONTAINER_IN_EXTERNAL_FILE</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="MMU_190_C24EB">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_C01A6" xlate="true">CREATE NEW MESH FROM CURRENT THROUGH END OF NORMALS</Name>
+          <Command>^C^CKCAD_SMB</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_MIN_DISTANCE_BETWEEN_SOLID3D">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_2517D" xlate="true">REURN MINIMAL DISTANCE BETWEEN SOLIDS</Name>
+          <Command>^C^CKCAD_MIN_DISTANCE_BETWEEN_SOLID3D</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_INTERSECTION_LINE_BETWEEN_TWO_PLANES">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_AB9F5" xlate="true">INTERSECTION LINE BETWEE TWO PLANES</Name>
+          <Command>^C^CKCAD_INTERSECTION_LINE_BETWEEN_TWO_PLANES</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_CALCULATE_FORMULA">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_33584" xlate="true">CALCULATE FORMULA</Name>
+          <Command>^C^CKCAD_CALCULATE_FORMULA</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_NODE_NUMER_POSITION_CSV">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_F2FBF" xlate="true">KCAD_NODE_NUMER_POSITION_CSV</Name>
+          <Command>^C^CKCAD_NODE_NUMER_POSITION_CSV</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_BEND_JOINTS_NUMERS_CSV">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_2FDE1" xlate="true">KCAD_BEND_JOINTS_NUMERS_CSV</Name>
+          <Command>^C^CKCAD_BEND_JOINTS_NUMERS_CSV</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_TRIANGLES_CSV">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_B2877" xlate="true">KCAD_TRIANGLES_CSV</Name>
+          <Command>^C^CKCAD_TRIANGLES_CSV</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_AGT">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_AA269" xlate="true">KCAD_AGT</Name>
+          <Command>^C^CKCAD_AGT</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_AGT_DRAW">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_6646A" xlate="true">KCAD_AGT_DRAW</Name>
+          <Command>^C^CKCAD_AGT_DRAW</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_AGP">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_6CB99" xlate="true">KCAD_AGP</Name>
+          <Command>^C^CKCAD_AGP</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_ILP">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_72CB7" xlate="true">Line and Plane - Intersection</Name>
+          <Command>^C^CKCAD_ILP</Command>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ID_KCAD_DBP">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_EBF18" xlate="true">TWO_LINES</Name>
+          <Command>^C^CKCAD_DBP</Command>
+        </Macro>
+      </MenuMacro>
+    </MacroGroup>
+    <MenuRoot>
+      <AcceleratorRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <DigitizerButtonRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <DoubleClickRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <ImageMenuRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <MouseButtonRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <OverrideRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <PanelSetRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <PopMenuRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <PopMenu UID="ID_MyPop1" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Alias>POP15</Alias>
+          <Name UID="XLS_190_05194" xlate="true">KOJTO_3D</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_79389" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_B287D" xlate="true">CALCULATE FORMULA</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_CALCULATE_FORMULA"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_A2477" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_F7CE0" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_0615F" xlate="true">NETLOAD</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_NETLOAD"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_47D53" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_D61F4" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_0C05E" xlate="true">HELP</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_HELP"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_25F8E" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_CE0DD" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_60DFD" xlate="true">SETTINGS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SETTINGS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_BC21B" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_60CC8" pUID="ID_SubscMESH">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_EA69B" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_FAC88" pUID="ID_GLASS">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_69113" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_27AAC" pUID="ID_CAM_Tools">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_95069" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_BE8F1" pUID="ID_SubProfiles">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_C9FBD" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_0AB27" pUID="ID_Placement_3D">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_6E68B" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_8840D" pUID="ID_CSV_Elements">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_E3615" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_85352" pUID="ID_Deviation_tools">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_7D55B" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_86F1C" pUID="ID_Solid_Geometry">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+        </PopMenu>
+        <PopMenu UID="ID_SubscMESH" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_ACA9E" xlate="true">MESH</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_1795E" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_086C4" xlate="true">CREATE  MESH</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_CREATEMESH"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_33EE0" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_87BF5" xlate="true">READ MESH FROM CSV file</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_READ_MESH_FROM_CSV"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_BB79A" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_054EF" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_52D48" xlate="true">READ  MESH from this DWG (from dictionary)</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_READMESH"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_EF7B8" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_C049F" xlate="true">READ  MESH from External TXT file</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_READ_CONTAINER_FROM_EXTERNAL_FILE"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_1503C" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_1D189" xlate="true">Read mesh HELP topic</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_READMESH_GET_HELP"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_CFBE3" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_B6935" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_C753C" xlate="true">SAVE  MESH in this DWG (in dictionary)</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SAVEMESH"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_68CA1" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_4112A" xlate="true">SAVE  MESH to External TXT File</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SAVE_CONTAINER_IN_EXTERNAL_FILE"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_7D709" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_369C8" xlate="true">Save mesh HELP topic</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SAVEMESH_GET_HELP"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_C437F" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_05ACB" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_4CDBB" xlate="true">Delete Mesh Data from Dictionary</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_DELETE_MESH_DATA"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_3A2A3" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_106E9" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_9B9DB" xlate="true">Teoretical mesh (No fictive Bends) - Center of Gravity</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_GET_TEORETICAL_BENDS_CENTROID"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_64F7E" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_F11BE" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_79D1E" xlate="true">DRAW</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_DRAW"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_D9DFF" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_41512" xlate="true">DRAW  NORMALS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_DRAW_NORMAL"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_69EFB" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_47BF8" xlate="true">LINK the ENDS of NORMALS in the NODES</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_DRAW_SECOND_MESH"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_B3378" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_E3B1F" xlate="true">CREATE NEW MESH FROM CURRENT THROUGH END OF NORMALS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="MMU_190_C24EB"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_E9426" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_B51AF" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_DCAFC" xlate="true">DRAW  NODE NORMALS BY NoFictive Bends</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_DRAW_NODES_NORMALS_BY_NOFICTIVE"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_F0DDE" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_7CC4A" xlate="true">HELP</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_DRAW_NODES_NORMALS_BY_NOFICTIVE_HELP"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_C28FD" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_0AD04" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_AFE8C" xlate="true">DRAW  NODE UCS BY NoFictive Bends</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_DRAW_NODE_UCS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_ECDBB" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_BCFD6" xlate="true">DRAW  NUMERS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_DRAW_NUMERS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_74B63" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_244F4" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_C488C" xlate="true">GET_BY_NUMER</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_GET_BY_NUMER"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_0E14E" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_A102E" xlate="true">GET_BY_SELECTION</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_GET_BY_SELECTION"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_3445D" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_DDD71" xlate="true">Angle between the NORMALS of the adjacent Triangles</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_ANGLE_BETWEEN_TRIANGLES"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_DADE8" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_853C3" pUID="ID_MINDIST">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_15954" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_EDBFB" pUID="PMU_190_FE4BC">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+        </PopMenu>
+        <PopMenu UID="ID_MINDIST" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_6F224" xlate="true">Minimum Distance to ..</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_41A32" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_45976" xlate="true">to Node</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_NEAREST_FROM_NODES"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_29F2B" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_17CB3" xlate="true">to Bend Mid Point</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_NEAREST_BEND_MIDPOINT"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_F43A9" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_3345C" xlate="true">to Triangle Centroid</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_NEAREST_TRIANGLE_MIDPOINT"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="PMU_190_FE4BC" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_341E4" xlate="true">MODIFY NORMALS</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_499ED" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_A1E06" xlate="true">REVERSE NORMALS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_REVERSE"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_1D23F" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_84985" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_7BA1A" xlate="true">SET EXPLICIT BENDS NORMALS BY DIRECTION</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_CHANGE_SELECTED_BENDS_NORMALS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_628F5" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_46DE9" xlate="true">RESTORE BENDS NORMALS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_RESTORE_BENDS_NORMALS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_511A3" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_402EB" xlate="true">RESTORE BEND NORMAL</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_RESTORE_BEND_NORMAL"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_ABE42" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_7DD33" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_67924" xlate="true">SET EXPLICIT NODE NORMAL</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SET_EXPLICIT_NODE_NORMAL_BY_POSITION"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_4352B" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_A9D13" xlate="true">SET ALL NOES NORMALS EXPLICIT (by bends midpoints centroid)</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SET_ALL_NODES_NORMALS_EXPLICIT"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_EA317" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_B3872" xlate="true">RESTORE NODE NORMALS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_RESTORE_NODES_NORMALS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_2BF34" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_D204E" xlate="true">RESTORE NODE NORMAL BY SELECTION</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_RESTORE_NODE_NORMAL_BY_SELECTION"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_8F41B" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_87577" xlate="true">CHENGE EXPLICIT NORMAL LENGTH SELECTION</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_CHANGE_EXPLICIT_NORMAL_LENGTH_SELECTION"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_GLASS" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_1323C" xlate="true">GLASS</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_7C475" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_77D29" xlate="true">MAKE and SHOW  GLASS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SHOW_GLASS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_D9CDF" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_53613" xlate="true">HIDE  GLASS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_HIDE_GLASS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_B515A" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_C270F" xlate="true">SHOW HIDEN GLASS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SHOW_HIDEN_GLASS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_94CBB" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_975F5" xlate="true">ERASE GLASS 3D and from database</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_3D_GLASS_DELETE"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_0B6F8" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_92E2C" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_D2047" xlate="true">spots from glass on the triangles - Center of Gravity</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_GET_GLASS_CONTURS_CENTROID"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_A582C" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_01774" xlate="true">SHOW GLASS EDGES (spots from glass on the triangles)</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_GLASS_EDGES"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_FC3C0" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_9F0B7" xlate="true">SHOW GlASS_CONTURS_BY_LEVEL</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_GlASS_CONTURS_BY_LEVEL"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_7F524" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_9868A" xlate="true">SHOW GlASS_CONTURS_UNFOLD_BY_LEVEL</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_GlASS_CONTURS_UNFOLD_BY_LEVEL"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_6F276" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_4B73B" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_8BA21" xlate="true">SEPARATE ALL - GlASS UNFOLDS BY LEVEL</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_GlASS_UNFOLDS_BY_LEVEL"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_D9D86" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_49D9B" xlate="true">SEPARATE BY NUMER - TRIANGLE GLASS UNFOLDS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_GlASS_TRIANGLE_UNFOLDS_BY_LEVEL"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_31A11" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_A8B8F" xlate="true">SEPARATE BY NUMER- POLYGON GLASS UNFOLDS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_GlASS_POLYGON_UNFOLDS_BY_LEVEL"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_15651" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_29F77" pUID="ID_GLASS_DOUBLE">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_52C31" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_383DD" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_5346A" xlate="true">GLASS  DISTANCE  FOR  BEND</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SET_GLASS_DISTANCE_FOR_BEND"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_0964B" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_59C83" xlate="true">GLASS  DISTANCE  FOR  ALL BENDS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SET_GLASS_DISTANCE_FOR_ALL_BENDS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_E1BEA" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_74209" xlate="true">SET GLASS DISTANCE TO BEND BY NUMER</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_SET_GLASS_DISTANCE_TO_BEND_BY_NUMER"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_GLASS_DOUBLE" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_EBF76" xlate="true">DOUBLE GLASS</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_9B5CF" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_767D4" xlate="true">SHOW</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SHOW_DOUBLE_GLAS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_F4FF0" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_6B9E3" xlate="true">HIDE DOUBLE GLASS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_HIDE_DOUBLE_GLASS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_DF958" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_54F57" xlate="true">SHOW HIDEN DOUBLE GLASS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SHOW_HIDEN_DOUBLE_GLASS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_A7A60" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_5643B" xlate="true">ERASE GLASS 3D and from database</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_3D_GLASS_DELETE"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_9BCB1" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_10FEF" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_CD978" xlate="true">UNFOLD TRIANGULAR GLASS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_DOUBLE_GlASS_UNFOLDS_TRIANGLE"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_068F3" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_46ED2" xlate="true">BENDS TO SEPARATE DRAWINGS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_BENDS_TO_SEPARATE_DRAWINGS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_FE9C6" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_7321D" xlate="true">BENDS SECTIONS TO SEPARATE DRAWINGS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_BEND_SECTION_TO_SEPARATE_DRAWINGS"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_CAM_Tools" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_CC51A" xlate="true">CAM Tools</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_226F8" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_C9D8A" xlate="true">Node to CNC</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_NODE_TO_CNC"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_B313E" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_103A4" xlate="true">Node to CSV</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_NODE_TO_CSV"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_SubProfiles" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_FC540" xlate="true">PROFILES</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_0F611" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_5E69B" xlate="true">SOLID EXTRUDE FROM REGIONS IN BLOCK</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_EXPROF"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_67BD5" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_1793B" xlate="true">CUT WITH EXTRUDED SOLID</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_EXTRIM"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_A5BBF" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_02D30" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_4666E" xlate="true">DRAW PROFILE SOLID by CSV</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_KCAD_DRAW_PROFILE_SOLID"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_A72A3" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_D4C78" xlate="true">DRAW PROFILE by CSV and ERASE PROFILE LINE</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_KCAD_DRAW_PROFILE_SOLID_A"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_00DBD" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_9ACFF" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_E6C6F" xlate="true">KCAD PREPARE PROFILE UNFOLD</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PREPARE_PROFILE_UNFOLD"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_23CB1" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_137F8" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_D9183" xlate="true">ADD PROFILE POINTS TO_FILE</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_ADD_PROFILE_POINT_TO_FILE"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_Placement_3D" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_B04A7" xlate="true">SHOW PLACEMENT IN 3D</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_8DF81" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_EF9FD" xlate="true">Real Center of Gravity</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_GET_REAL_CENTROID"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_2FEE2" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_64528" pUID="ID_Bends_3D">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_64A9F" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_10D31" pUID="PMU_190_40601">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_12BCB" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_0A9C2" pUID="PMU_190_A119F">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_2DD34" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_634FA" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_8500E" xlate="true">CALC MIN CAM RADIUS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_CALC_MIN_CAM_RADIUS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_C7B6A" pUID="ID_Fixing_Elements">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+        </PopMenu>
+        <PopMenu UID="ID_Bends_3D" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_4352C" xlate="true">NODES 3D</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_3E722" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_9FFCC" xlate="true">PLACEMENT OF NODE 3D IN POSITION</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_OF_NODE_3D_IN_POSITION"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_53F03" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_AEE42" xlate="true">PLACEMENT HIDE from Display</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_HIDE"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_DFE35" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_54BF4" xlate="true">PLACEMENT SHOW to Display</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_SHOW"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_4C00E" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_5224B" xlate="true">PLACEMENT DELETE and from Data Base</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_OF_NODE_3D_IN_POSITION_DELETE"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="PMU_190_40601" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_90661" xlate="true">BENDS NOZZLE 3D</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_91C73" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_8A0CE" xlate="true">PLACEMENT OF BENDS NOZZLE BLOCKS IN NODES</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_OF_BENDS_NOZZLE_BLOCKS_IN_NODES"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_5FA7F" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_E8C91" xlate="true">PLACEMENT HIDE from Display</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_OF_BENDS_NOZZLE_3D_IN_POSITION_HIDE"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_2A1C0" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_18E45" xlate="true">PLACEMENT SHOW to Display</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_OF_BENDS_NOZZLE_3D_IN_POSITION_SHOW"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_2856D" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_93723" xlate="true">PLACEMENT DELETE and from Data Base</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_OF_BEND_NOZZLE_3D_DELETE"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="PMU_190_A119F" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_2B94F" xlate="true">BENDS 3D</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_8513B" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_348B1" xlate="true">PLACEMENT BENDS 3D</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_BENDS_3D"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_9D4F1" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_B6D2A" xlate="true">PLACEMENT BENDS 3D  ( at the end of normals )</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_BENDS_3D_BY_NORMALS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_C221F" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_9E2C2" xlate="true">KCAD ATTACHING AN SOLID3D TO BEND</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_ATTACHING_A_SOLID3D_TO_BEND"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_17161" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_36DB6" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_82D62" xlate="true">BENDS 3D HIDE</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_OF_BENDS_3D_IN_POSITION_HIDE"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_AADDD" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_7D6DB" xlate="true">BENDS 3D SHOW</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_OF_BENDS_3D_IN_POSITION_SHOW"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_E2755" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_7857F" xlate="true">BENDS 3D DELETE  and from Data Base</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_BEND_3D_DELETE"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_414A5" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_98FEB" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_FB844" xlate="true">KCAD CUTTING BENDS IN NODES</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_CUTTING_BENDS_IN_NODES"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_98F33" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_FB4BF" xlate="true">* Explicit Cutting Method for Ends of 3D Bends In given Node</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_EXPLICIT_CUTTING_METHOD_FOR_ENDS_IN_NODE"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_4DA74" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_8BCBB" xlate="true">*Clear Explicit Cutting Method for All Bend</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_CLEAR_EXPLICIT_CUTTING_METHOD_FOR_ALL"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_Fixing_Elements" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_0DD15" xlate="true">Fixing Elements</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_37C21" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_E417A" xlate="true">ADD FIXING ELEMENTS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_ADD_FIXING_ELEMENTS"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_CSV_Elements" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_37DE4" xlate="true">CSV files</Name>
+          <PopMenuRef UID="PMRU_190_97252" pUID="ID_NODES_CSV">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuRef UID="PMRU_190_88028" pUID="ID_BENDS_CSV">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuRef UID="PMRU_190_D2887" pUID="ID_TRIANGLE_CSV">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_2CB67" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_831DC" xlate="true">POLYGONS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_POLIGONS_CSV"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_9D864" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_C3CDF" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_5CDFF" xlate="true">READ NAMED POINTS FROM CSV</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_READ_NAMED_POINTS_FROM_CSV"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_2CFA6" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_4BE22" xlate="true">DRAW NAMED POINTS BY ARRAY NAME</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_NAMED_POINTS_DRAW"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_NODES_CSV" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_467FA" xlate="true">NODES  </Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_AFDD7" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_2A8C8" xlate="true">NODE NUMER and POSITION to file</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_NODE_NUMER_POSITION_CSV"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_BENDS_CSV" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_BD3FA" xlate="true">BENDS  </Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_A3954" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_86543" xlate="true">BEND JOINTS NUMERS</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_BEND_JOINTS_NUMERS_CSV"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_TRIANGLE_CSV" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_F3FA6" xlate="true">TRIANGLES  </Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_E8417" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_F6352" xlate="true">TRIANGLES</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_TRIANGLES_CSV"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_Deviation_tools" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_7CE2B" xlate="true">Deviation tools</Name>
+          <PopMenuRef UID="PMRU_190_6691D" pUID="ID_DEVIATION_TR_CSV">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_86DB5" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_31A6E" xlate="true">POLIGONs DEVIATION</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_AGP"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_DEVIATION_TR_CSV" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_CBE0C" xlate="true">TRIANGLES  </Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_42246" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_E84F3" xlate="true">Analise and DRAW Lines</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_AGT"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_CE288" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_9167A" xlate="true">DRAW TEXT in TRIANGLES</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_AGT"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_Solid_Geometry" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_32A3F" xlate="true">Solid Geometry</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_A6E0A" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_FCA18" xlate="true">Minimal Distance between Solids3D</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_MIN_DISTANCE_BETWEEN_SOLID3D"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_CA638" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_D8615" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_782D6" xlate="true">Intersction Line between two Planes</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_INTERSECTION_LINE_BETWEEN_TWO_PLANES"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_2C368" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_A95EE" xlate="true">Line and Plane - Intersection</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_ILP"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_D999D" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_29832" xlate="true">Two Lines - Crossing</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_DBP"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_6297B" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_4CDA6" xlate="true">Projection of the Point on the Plane</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_PROJECT_POINT_TO_PLANE"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_D36B6" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_8015F" pUID="ID_Cut_Solids">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_D4C5D" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuRef UID="PMRU_190_C9517" pUID="ID_MINDISTT">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuRef>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_9B92E" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_9D22C" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_7B661" xlate="true">Angle between the NORMALS of the adjacent Triangles</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_ANGLE_BETWEEN_TRIANGLES"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_Cut_Solids" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_53EF4" xlate="true">CUT PARAMETERS</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_89027" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_1CB0E" xlate="true">Global - Ratio of Length of the Extensions</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SET_CUT_SOLID_LK"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_0CE90" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_438A5" xlate="true">Global - Thicnes of the CutProfile</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SET_CUT_SOLID_TH"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_6CD4A" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_30078" xlate="true">Global - Extrude Ratio</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SET_CUT_SOLID_ER"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_5DA07" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_5727A" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_CB96E" xlate="true">By Bend Selection - Solid Extrude Ratio</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_EX_RATIO_BY_BEND"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_9F288" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_28A53" xlate="true">By Bend Numer - Ratio of Length /  Thicnes of the CutProfile</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_SET_BEND_EXPLICIT_PARAMETERS"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="true" UID="PMIU_190_691E8" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_27C06" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_911D7" xlate="true">Trimming Vertices on/off</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_CHANGE_PICK_TRIM_VARIANT"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+        <PopMenu UID="ID_MINDISTT" hasDiesel="false">
+          <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_190_AFC04" xlate="true">Minimum Distance to ...</Name>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_2166E" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_CFFAC" xlate="true">to Node</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_NEAREST_FROM_NODES"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_435A8" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_4B2C8" xlate="true">to Bend Mid Point</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_NEAREST_BEND_MIDPOINT"/>
+            </MenuItem>
+          </PopMenuItem>
+          <PopMenuItem IsSeparator="false" UID="PMIU_190_4F421" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_C4A8E" xlate="true">to Triangle Centroid</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_NEAREST_TRIANGLE_MIDPOINT"/>
+            </MenuItem>
+          </PopMenuItem>
+        </PopMenu>
+      </PopMenuRoot>
+      <QuickAccessToolbarRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <QuickPropertiesRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <RibbonRoot/>
+      <RolloverTooltipRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <ScreenMenuRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <TabletMenuRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <ToolPanelRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <ToolbarRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </MenuRoot>
+  </MenuGroup>
+
+</CustSection>

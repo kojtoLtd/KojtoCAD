@@ -1,0 +1,1296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DDB3238D-EB30-4496-82F2-90ECBA542B81}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KojtoCAD</RootNamespace>
+    <AssemblyName>KojtoCAD2012</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;acad2012</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <!-- <PlatformTarget>x64</PlatformTarget> -->
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;acad2012</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcCui, Version=18.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoCAD-2012.Net.Base.1.0.0\lib\net40\AcCui.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcDbMgd, Version=18.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoCAD-2012.Net.Base.1.0.0\lib\net40\AcDbMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="acdbmgdbrep, Version=18.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoCAD-2012.Net.Base.1.0.0\lib\net40\acdbmgdbrep.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcDx, Version=18.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoCAD-2012.Net.Base.1.0.0\lib\net40\AcDx.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcMgd, Version=18.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoCAD-2012.Net.Base.1.0.0\lib\net40\AcMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcMr, Version=18.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoCAD-2012.Net.Base.1.0.0\lib\net40\AcMr.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcTcMgd, Version=18.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoCAD-2012.Net.Base.1.0.0\lib\net40\AcTcMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AcWindows, Version=18.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoCAD-2012.Net.Base.1.0.0\lib\net40\AcWindows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AdWindows, Version=3.2.23.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\AutoCAD-2012.Net.Base.1.0.0\lib\net40\AdWindows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Autodesk.AutoCAD.Interop, Version=18.2.0.0, Culture=neutral, PublicKeyToken=eed84259d7cbf30b, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoCAD-2012.Net.Interop.x64.1.0.0\lib\net40\Autodesk.AutoCAD.Interop.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Autodesk.AutoCAD.Interop.Common, Version=18.2.0.0, Culture=neutral, PublicKeyToken=eed84259d7cbf30b, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoCAD-2012.Net.Interop.x64.1.0.0\lib\net40\Autodesk.AutoCAD.Interop.Common.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="colorComboboxControl, Version=1.0.4100.22946, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\colorComboboxControl.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\..\..\libs\openXML\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelWriter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\ExcelWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="LumenWorks.Framework.IO, Version=3.8.0.0, Culture=neutral, PublicKeyToken=5ad3ea2f85776344, processorArchitecture=MSIL">
+      <HintPath>..\packages\LumenWorks.Framework.IO.3.8.0\lib\net20\LumenWorks.Framework.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.4\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=7.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.Storage.7.2.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="XPTable, Version=1.6.1.15, Culture=neutral, PublicKeyToken=24950705800d2198, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\XPTable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attribute\AttributeHelper.cs" />
+    <Compile Include="Attribute\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attribute\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Attribute\CheckAttributes.cs" />
+    <Compile Include="Attribute\FieldAttribute.cs" />
+    <Compile Include="Attribute\FormChkAttrIsNumeric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Attribute\FormChkAttrIsNumeric.designer.cs">
+      <DependentUpon>FormChkAttrIsNumeric.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Attribute\MyBlock.cs" />
+    <Compile Include="BlockItems\DrawingFrame.cs" />
+    <Compile Include="GraphicItems\SheetProfile\SheetProfileEventHandler.cs" />
+    <Compile Include="IoC\UpdaterComponentsInstaller.cs" />
+    <Compile Include="KojtoCAD3D\MenuInterface\AcadMenuGenerator.cs" />
+    <Compile Include="KojtoCAD3D\Arrays_of_named_points_FORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KojtoCAD3D\Arrays_of_named_points_FORM.Designer.cs">
+      <DependentUpon>Arrays_of_named_points_FORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KojtoCAD3D\MenuInterface\BcadMenuGenerator.cs" />
+    <Compile Include="KojtoCAD3D\BlockSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KojtoCAD3D\BlockSelection.Designer.cs">
+      <DependentUpon>BlockSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KojtoCAD3D\Calculations3D.cs" />
+    <Compile Include="KojtoCAD3D\CamCncExport.cs" />
+    <Compile Include="KojtoCAD3D\Centroid.cs" />
+    <Compile Include="KojtoCAD3D\ContextVariablesProvider.cs" />
+    <Compile Include="KojtoCAD3D\CNC_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KojtoCAD3D\CNC_Settings.Designer.cs">
+      <DependentUpon>CNC_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KojtoCAD3D\Containers.cs" />
+    <Compile Include="KojtoCAD3D\DoubleGlass.cs" />
+    <Compile Include="KojtoCAD3D\DrawMeshItems.cs" />
+    <Compile Include="KojtoCAD3D\Fixing_Elements_Setings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KojtoCAD3D\Fixing_Elements_Setings.Designer.cs">
+      <DependentUpon>Fixing_Elements_Setings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KojtoCAD3D\Gaskets_FORM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KojtoCAD3D\Gaskets_FORM.Designer.cs">
+      <DependentUpon>Gaskets_FORM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KojtoCAD3D\GeometryToCsv.cs" />
+    <Compile Include="KojtoCAD3D\GetMeshItems.cs" />
+    <Compile Include="KojtoCAD3D\Glass.cs" />
+    <Compile Include="KojtoCAD3D\Kojto3DMesh.cs" />
+    <Compile Include="KojtoCAD3D\Kojto3DTrim.cs" />
+    <Compile Include="KojtoCAD3D\KojtoGlassDomes.cs" />
+    <Compile Include="KojtoCAD3D\MathLibKCAD.cs" />
+    <Compile Include="KojtoCAD3D\Settings.cs" />
+    <Compile Include="KojtoCAD3D\MenuInterface\Commands.cs" />
+    <Compile Include="KojtoCAD3D\Normals.cs" />
+    <Compile Include="KojtoCAD3D\Placement.cs" />
+    <Compile Include="KojtoCAD3D\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KojtoCAD3D\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KojtoCAD3D\UtilityClasses.cs" />
+    <Compile Include="KojtoCAD3D\WorkClasses.cs" />
+    <Compile Include="Updater\AppConfigurationProvider.cs" />
+    <Compile Include="Updater\AutoCadAutoloaderSettingsService.cs" />
+    <Compile Include="Updater\BricsCadAutoloaderSettingsService.cs" />
+    <Compile Include="Updater\InstallationPackageRepository.cs" />
+    <Compile Include="Updater\Interfaces\IAppConfigurationProvider.cs" />
+    <Compile Include="Updater\Interfaces\IAutoloaderSettingsService.cs" />
+    <Compile Include="Updater\Interfaces\IKojtoCadUpdater.cs" />
+    <Compile Include="Updater\Interfaces\IKojtoCadVersionProvider.cs" />
+    <Compile Include="Updater\Interfaces\IKojtoCadVersionService.cs" />
+    <Compile Include="Updater\Interfaces\IKojtoCadVersionValidator.cs" />
+    <Compile Include="Updater\Interfaces\IInstallationPackageRepository.cs" />
+    <Compile Include="Updater\KojtoCadUpdater.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\BcadUiGenerator.cs" />
+    <Compile Include="Ui\Commercial\PrototypBanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ui\Commercial\PrototypBanner.Designer.cs">
+      <DependentUpon>PrototypBanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ui\ResourceManagerBasedIconManager.cs" />
+    <Compile Include="Updater\KojtoCadVersion.cs" />
+    <Compile Include="Updater\KojtoCadVersionProvider.cs" />
+    <Compile Include="Updater\KojtoCadVersionService.cs" />
+    <Compile Include="Updater\KojtoCadVersionValidator.cs" />
+    <Compile Include="Updater\Ui\UpdateProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Updater\Ui\UpdateProgressDialog.Designer.cs">
+      <DependentUpon>UpdateProgressDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Updater\Ui\UpdateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Updater\Ui\UpdateDialog.Designer.cs">
+      <DependentUpon>UpdateDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Updater\UpdateProgressData.cs" />
+    <Compile Include="Utilities\BcadExtensionMethods.cs" />
+    <Compile Include="Utilities\Interfaces\IUtilityClass.cs" />
+    <Compile Include="Utilities\UtilityClass.cs" />
+    <Compile Include="Utilities\DirectoriesAndFiles.cs" />
+    <Compile Include="Utilities\ErrorReporting\Exceptions\MultipleFilesFoundException.cs" />
+    <Compile Include="Utilities\Interfaces\IEditorHelper.cs" />
+    <Compile Include="Utilities\SmartLogger.cs" />
+    <Compile Include="Utilities\DefaultBlockProvider.cs" />
+    <Compile Include="BlockItems\Interfaces\IBlockDrawingProvider.cs" />
+    <Compile Include="IoC\BlockItemsComponentsInstaller.cs" />
+    <Compile Include="IoC\MarksComponentInstaller.cs" />
+    <Compile Include="IoC\UtilitiesComponentsInstaller.cs" />
+    <Compile Include="LayerCommands\LayerCommands.cs" />
+    <Compile Include="Utilities\ErrorReporting\Exceptions\MenuSchemaProviderException.cs" />
+    <Compile Include="Utilities\ErrorReporting\Exceptions\UiGeneratorException.cs" />
+    <Compile Include="Utilities\ErrorReporting\Exceptions\IconProviderException.cs" />
+    <Compile Include="Utilities\ErrorReporting\Exceptions\FileServiceException.cs" />
+    <Compile Include="Utilities\ErrorReporting\Exceptions\LayerDoesNotExist.cs" />
+    <Compile Include="Utilities\FileService.cs" />
+    <Compile Include="BlockItems\GlassUnits\Double\Double.cs" />
+    <Compile Include="BlockItems\GlassUnits\Single\Single.cs" />
+    <Compile Include="BlockItems\GlassUnits\Triple\Triple.cs" />
+    <Compile Include="BlockItems\Level.cs" />
+    <Compile Include="BlockItems\Marks\ElevationMark.cs" />
+    <Compile Include="BlockItems\Marks\PositionMark.cs" />
+    <Compile Include="BlockItems\Marks\SectionArrowPairMark.cs" />
+    <Compile Include="BlockItems\Marks\SectionArrowMark.cs" />
+    <Compile Include="BlockItems\Marks\TitleMark.cs" />
+    <Compile Include="BlockItems\Marks\WeldingMark.cs" />
+    <Compile Include="BlockItems\ProfileSearchEngine\ProfileSearchEngineStarter.cs" />
+    <Compile Include="IoC\UiComponentsInstaller.cs" />
+    <Compile Include="IoC\ContainerRegistrar.cs" />
+    <Compile Include="GraphicItems\DefaultDrawingFrameContourFactory.cs" />
+    <Compile Include="GraphicItems\Gear\ImportGearForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphicItems\Gear\ImportGearForm.designer.cs">
+      <DependentUpon>ImportGearForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicItems\Interfaces\IDrawingFrameContourFactory.cs" />
+    <Compile Include="KojtoCadInitializer.cs" />
+    <Compile Include="Mathematics\Algebra\FloatsComparer.cs" />
+    <Compile Include="Mathematics\Geometry\Complex.cs" />
+    <Compile Include="Mathematics\Geometry\KLine2D.cs" />
+    <Compile Include="Mathematics\Geometry\Matrix.cs" />
+    <Compile Include="Mathematics\Geometry\KPlane.cs" />
+    <Compile Include="Mathematics\Geometry\Quaternion.cs" />
+    <Compile Include="Mathematics\Geometry\UCS.cs" />
+    <Compile Include="Mathematics\Geometry\UCS2d.cs" />
+    <Compile Include="BlockItems\GlassUnits\Double\ImportDoubleGlassUnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BlockItems\GlassUnits\Double\ImportDoubleGlassUnitForm.designer.cs">
+      <DependentUpon>ImportDoubleGlassUnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BlockItems\GlassUnits\Single\ImportSingleGlassUnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BlockItems\GlassUnits\Single\ImportSingleGlassUnitForm.designer.cs">
+      <DependentUpon>ImportSingleGlassUnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BlockItems\GlassUnits\Triple\ImportTripleGlassUnitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BlockItems\GlassUnits\Triple\ImportTripleGlassUnitForm.designer.cs">
+      <DependentUpon>ImportTripleGlassUnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicItems\Insulations\HydroInsulation.cs" />
+    <Compile Include="GraphicItems\Insulations\RigidInsulation.cs" />
+    <Compile Include="GraphicItems\Insulations\SoftInsulation.cs" />
+    <Compile Include="BlockItems\Marks\ArrowMark.cs" />
+    <Compile Include="GraphicItems\SiliconJoint\SiliconJointSimple.cs" />
+    <Compile Include="GraphicItems\SiliconJoint\SiliconJointWithSilica.cs" />
+    <Compile Include="LayoutCommands\LayoutHelper.cs" />
+    <Compile Include="LayoutCommands\LayoutSplitter.cs" />
+    <Compile Include="LayoutCommands\Pair.cs" />
+    <Compile Include="ObjectCopier\DrawingObjectCopier.cs" />
+    <Compile Include="Plotter\PlotterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plotter\PlotterForm.designer.cs">
+      <DependentUpon>PlotterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plotter\PrototypPlotter.cs" />
+    <Compile Include="Plotter\PublishStatusDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plotter\PublishStatusDlg.designer.cs">
+      <DependentUpon>PublishStatusDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plotter\XmlUtils.cs" />
+    <Compile Include="PointCloud\LoadPointCloudForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PointCloud\LoadPointCloudForm.designer.cs">
+      <DependentUpon>LoadPointCloudForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointCloud\PointCloud.cs" />
+    <Compile Include="RegionCommands\RegionDescriptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegionCommands\RegionDescriptionForm.designer.cs">
+      <DependentUpon>RegionDescriptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicItems\SheetProfile\SheetDescriptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphicItems\SheetProfile\SheetDescriptionForm.designer.cs">
+      <DependentUpon>SheetDescriptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicItems\SheetProfile\SheetProfileGenerationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphicItems\SheetProfile\SheetProfileGenerationForm.designer.cs">
+      <DependentUpon>SheetProfileGenerationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicItems\SlottedHoleRound.cs" />
+    <Compile Include="GraphicItems\SlottedHoleRectangular.cs" />
+    <Compile Include="SettingsManager.cs" />
+    <Compile Include="Solids\SolidsUtilities.cs" />
+    <Compile Include="Ui\DefaultIconManager.cs" />
+    <Compile Include="Ui\DefaultMenuSchemaProvider.cs" />
+    <Compile Include="Ui\Interfaces\IIconManager.cs" />
+    <Compile Include="Ui\Interfaces\IMenuSchemaProvider.cs" />
+    <Compile Include="Ui\Interfaces\IUiGenerator.cs" />
+    <Compile Include="Ui\RibbonUiGenerator.cs" />
+    <Compile Include="Ui\Interfaces\UiGenerator.cs" />
+    <Compile Include="Unfold\2d\Unfold2d.cs" />
+    <Compile Include="Unfold\2d\Unfold2dForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unfold\2d\Unfold2dForm.designer.cs">
+      <DependentUpon>Unfold2dForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unfold\3d\BAHelpWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unfold\3d\BAHelpWin.designer.cs">
+      <DependentUpon>BAHelpWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unfold\3d\BDHelpWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unfold\3d\BDHelpWin.designer.cs">
+      <DependentUpon>BDHelpWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unfold\3d\KFHelpWin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unfold\3d\KFHelpWin.designer.cs">
+      <DependentUpon>KFHelpWin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unfold\3d\Unfold3d.cs" />
+    <Compile Include="Unfold\3d\Unfold3dForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unfold\3d\Unfold3dForm.designer.cs">
+      <DependentUpon>Unfold3dForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\acThumbnailReader.cs" />
+    <Compile Include="Attribute\Extractor.cs" />
+    <Compile Include="Utilities\CommandLineHelper.cs" />
+    <Compile Include="Utilities\DocumentHelper.cs" />
+    <Compile Include="DemandLoader\DemandLoadingRegistrar.cs" />
+    <Compile Include="GraphicItems\Gear\Gear.cs" />
+    <Compile Include="Mathematics\Geometry\GeometryUtility.cs" />
+    <Compile Include="Mathematics\Geometry\GeometryUtilityCommands.cs" />
+    <Compile Include="GraphicItems\HelpLines\HelpLine.cs" />
+    <Compile Include="BlockItems\ProfileSearchEngine\ProfileSearchEngine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BlockItems\ProfileSearchEngine\ProfileSearchEngine.designer.cs">
+      <DependentUpon>ProfileSearchEngine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\EditorHelper.cs" />
+    <Compile Include="Utilities\Interfaces\IFileService.cs" />
+    <Compile Include="Utilities\Interfaces\IPaperSizeFactory.cs" />
+    <Compile Include="Utilities\LayerManipulator.cs" />
+    <Compile Include="Macros.cs" />
+    <Compile Include="Mathematics\Geometry\Constants.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\DefaultPaperSizeFactory.cs" />
+    <Compile Include="Utilities\RectangleJig.cs" />
+    <Compile Include="RegionCommands\RegionDescription.cs" />
+    <Compile Include="GraphicItems\SheetProfile\SheetDescription.cs" />
+    <Compile Include="GraphicItems\SheetProfile\SheetProfile.cs" />
+    <Compile Include="Ui\ClassicUiGenerator.cs" />
+    <Compile Include="GraphicItems\Welding\WeldingLine.cs" />
+    <Compile Include="Utilities\MeasurementUnitsConverter.cs" />
+    <Compile Include="ViewportCommads\ViewPortCommands.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Attribute\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Attribute\FormChkAttrIsNumeric.resx">
+      <DependentUpon>FormChkAttrIsNumeric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphicItems\Gear\ImportGearForm.resx">
+      <DependentUpon>ImportGearForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BlockItems\GlassUnits\Double\ImportDoubleGlassUnitForm.resx">
+      <DependentUpon>ImportDoubleGlassUnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BlockItems\GlassUnits\Single\ImportSingleGlassUnitForm.resx">
+      <DependentUpon>ImportSingleGlassUnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BlockItems\GlassUnits\Triple\ImportTripleGlassUnitForm.resx">
+      <DependentUpon>ImportTripleGlassUnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KojtoCAD3D\Arrays_of_named_points_FORM.resx">
+      <DependentUpon>Arrays_of_named_points_FORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KojtoCAD3D\BlockSelection.resx">
+      <DependentUpon>BlockSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KojtoCAD3D\CNC_Settings.resx">
+      <DependentUpon>CNC_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KojtoCAD3D\Fixing_Elements_Setings.resx">
+      <DependentUpon>Fixing_Elements_Setings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KojtoCAD3D\Gaskets_FORM.resx">
+      <DependentUpon>Gaskets_FORM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KojtoCAD3D\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plotter\PlotterForm.resx">
+      <DependentUpon>PlotterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plotter\PublishStatusDlg.resx">
+      <DependentUpon>PublishStatusDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointCloud\LoadPointCloudForm.resx">
+      <DependentUpon>LoadPointCloudForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegionCommands\RegionDescriptionForm.resx">
+      <DependentUpon>RegionDescriptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphicItems\SheetProfile\SheetDescriptionForm.resx">
+      <DependentUpon>SheetDescriptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphicItems\SheetProfile\SheetProfileGenerationForm.resx">
+      <DependentUpon>SheetProfileGenerationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BlockItems\ProfileSearchEngine\ProfileSearchEngine.resx">
+      <DependentUpon>ProfileSearchEngine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ui\Commercial\PrototypBanner.resx">
+      <DependentUpon>PrototypBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unfold\2d\Unfold2dForm.resx">
+      <DependentUpon>Unfold2dForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unfold\3d\BAHelpWin.resx">
+      <DependentUpon>BAHelpWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unfold\3d\BDHelpWin.resx">
+      <DependentUpon>BDHelpWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unfold\3d\KFHelpWin.resx">
+      <DependentUpon>KFHelpWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unfold\3d\Unfold3dForm.resx">
+      <DependentUpon>Unfold3dForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Updater\Ui\UpdateProgressDialog.resx">
+      <DependentUpon>UpdateProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Updater\Ui\UpdateDialog.resx">
+      <DependentUpon>UpdateDialog.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\Dynamic_blocks\SlottedHoleRectangular.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\SlottedHoleRoundDoubleAxis.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\SlottedHoleRoundSingleAxis.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Templates\KojtoCAD_3D.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Templates\KOJTO_3D.cuix">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Templates\kojto.cui">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Templates\kojto_3D.cui">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\banner-prototyp_750x300px_var2.jpg" />
+    <None Include="Resources\Prototyp.png" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Files\Documentation\KojtoCAD.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\Marks\ArrowMark.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\DGU\PSYMB_DGU_Inner_Laminated.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\DGU\PSYMB_DGU_Laminated.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\DGU\PSYMB_DGU_Monolitic.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\DGU\PSYMB_DGU_Outer_Laminated.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\Marks\ElevationMark.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\Marks\PositionMark.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\DrawingFrame.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\Level.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\SiliconJointSimple.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\SiliconJointWithSilica.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\Marks\SectionArrowMark.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\Marks\SectionArrowPairMark.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\SGU\PSYMB_SGU.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\SGU\PSYM_SGU_Laminated.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\TGU\PSYMB_TGU_Inner_Laminated.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\TGU\PSYMB_TGU_Laminated.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\TGU\PSYMB_TGU_Monolitic.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\TGU\PSYMB_TGU_Outer_Laminated.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\Marks\TitleMark.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Dynamic_blocks\Marks\WeldingMark.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\AlignViewportsHorizontalyLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\AlignViewportsHorizontalyMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\AlignViewportsHorizontalySmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\AlignViewportsVerticalyLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\AlignViewportsVerticalyMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\AlignViewportsVerticalySmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ArrowMarkLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ArrowMarkMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ArrowMarkSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ChkAttrIsInExcelLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ChkAttrIsInExcelMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ChkAttrIsInExcelSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\CloseDwgProperlyLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\CloseDwgProperlyMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\CloseDwgProperlySmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\CopyBlockDefInNewDefLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\CopyBlockDefInNewDefMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\CopyBlockDefInNewDefSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\CreateViewportFromModelLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\CreateViewportFromModelMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\CreateViewportFromModelSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\DeleteHelpLinesLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\DeleteHelpLinesMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\DeleteHelpLinesSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\DoubleGlassUnitLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\DoubleGlassUnitMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\DoubleGlassUnitSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ElevationMarkLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ElevationMarkMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ElevationMarkSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ExtractAttributesLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ExtractAttributesMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ExtractAttributesSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\DrawingFrameLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\DrawingFrameMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\DrawingFrameSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\GearsLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\GearsMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\GearsSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLine45Large.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLine45Medium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLine45Small.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineAngular.largr.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineAngularLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineAngularMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineAngularSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineCrossedLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineCrossedMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineCrossedSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineHorizontalLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineHorizontalMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineHorizontalSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineOffsetLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineOffsetMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineOffsetSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLinesDeleteLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLinesDeleteMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLinesDeleteSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineVerticalLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineVerticalMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HelpLineVerticalSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HydroInsulationLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HydroInsulationMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\HydroInsulationSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\Join3DLinesToPolyLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\Join3DLinesToPolyMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\Join3DLinesToPolySmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\LevelHeightSignLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\LevelHeightSignMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\LevelHeightSignSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\LoadSettingsLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\LoadSettingsMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\LoadSettingsSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\LockViewPortLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\LockViewPortMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\LockViewPortSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PcadSettingsLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PcadSettingsMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PcadSettingsSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PlotterLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PlotterMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PlotterSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PointCloudLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PointCloudMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PointCloudSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PolyToProfileLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PolyToProfileMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PolyToProfileSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PositionMarkLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PositionMarkMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PositionMarkSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ProfileSearchEngineLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ProfileSearchEngineMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ProfileSearchEngineSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ProfileToPolyLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ProfileToPolyMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ProfileToPolySmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PrototypLogoLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PrototypLogoMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\PrototypLogoSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\RecalcLevelHeightSignLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\RecalcLevelHeightSignMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\RecalcLevelHeightSignSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\RegionDescriptionLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\RegionDescriptionMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\RegionDescriptionSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\RenameBlockDefInNewDefLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\RenameBlockDefInNewDefMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\RenameBlockDefInNewDefSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ReplaceBlockWithFileLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ReplaceBlockWithFileMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ReplaceBlockWithFileSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\RigidInsulationLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\RigidInsulationMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\RigidInsulationSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SectionArrowMarkLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SectionArrowMarkMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SectionArrowMarkSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SectionArrowPairMarkLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SectionArrowPairMarkMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SectionArrowPairMarkSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SectionPairMarkLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SectionPairMarkMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SectionPairMarkSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SheetDescriptionLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SheetDescriptionMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SheetDescriptionSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ShowCommandsListLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ShowCommandsListMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\ShowCommandsListSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SiliconJointSimpleLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SiliconJointSimpleMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SiliconJointSimpleSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SiliconJointWithSilicaLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SiliconJointWithSilicaMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SiliconJointWithSilicaSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SingleGlassUnitLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SingleGlassUnitMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SingleGlassUnitSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SlottedHoleRoundLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SlottedHoleRoundMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SlottedHoleRectLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SlottedHoleRectMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SlottedHoleRectSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SlottedHoleRoundSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SoftInsulationLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SoftInsulationMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SoftInsulationSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SolidProjectionLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SolidProjectionMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SolidProjectionSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SwitchOffAllLayersButOneLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SwitchOffAllLayersButOneMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SwitchOffAllLayersButOneSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SwitchOffLayerLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SwitchOffLayerMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SwitchOffLayerSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SwitchOnAllLayersLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SwitchOnAllLayersMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\SwitchOnAllLayersSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\TitleMarkLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\TitleMarkMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\TitleMarkSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\TripleGlassUnitLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\TripleGlassUnitMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\TripleGlassUnitSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\Unfold2dSheetProfileLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\Unfold2dSheetProfileMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\Unfold2dSheetProfileSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\Unfold3dSheetProfileLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\Unfold3dSheetProfileMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\Unfold3dSheetProfileSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\UnlockViewPortLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\UnlockViewPortMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\UnlockViewPortSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\WeldingLineLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\WeldingLineMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\WeldingLineSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\WeldingMarkLarge.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\WeldingMarkMedium.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Icons\WeldingMarkSmall.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Lisp\CopyRenameBlockV1-2.lsp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Lisp\pedit3d.lsp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Lisp\smash.lsp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Lisp\vpts.lsp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Lisp\flat.lsp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PackageContents.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Files\PlotStyles\mono.ctb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\PlotStyles\Prototyp_a0.ctb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\PlotStyles\prototyp_a3.ctb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\PlotStyles\waagner_biro.ctb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\PlotStyles\waagner_biro_duen.ctb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Templates\KojtoCAD.dwt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Lisp\blockReplacer.lsp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Files\Tables\Aluminum.bend.deduction.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Tables\materials.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Tables\Stainless.Steel.bend.deduction.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Tables\Steel.bend.deduction.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\Templates\all.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kf.PNG" />
+    <None Include="Resources\bd.PNG" />
+    <None Include="Resources\ba.PNG" />
+    <Content Include="Files\Templates\KojtoCAD.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <SourceFiles Include="bin\Debug\**\*" />
+  </ItemGroup>
+  <PropertyGroup>
+    <Dest>C:\Program Files\Autodesk\ApplicationPlugins\KojtoCad.bundle\</Dest>
+  </PropertyGroup>
+  <Target Name="AfterBuild">
+    <CallTarget Condition=" '$(Configuration)' == 'Debug' " Targets="CopyFilesIfDebuging" />
+  </Target>
+  <Target Name="CopyFilesIfDebuging">
+    <Copy SourceFiles="@(SourceFiles)" DestinationFiles="@(SourceFiles->'$(Dest)%(RecursiveDir)%(FileName)%(Extension)')" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+</Project>

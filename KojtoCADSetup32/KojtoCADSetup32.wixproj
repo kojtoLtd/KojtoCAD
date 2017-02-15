@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\WiX.3.10.3\build\wix.props" Condition="Exists('..\packages\WiX.3.10.3\build\wix.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.7</ProductVersion>
+    <ProjectGuid>527d1a6f-6cbb-49af-ac9f-2c4727c5302a</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>KojtoCADx32</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug;FilesPath=$(MSBuildProjectDirectory)\..\KojtoCAD.2012\bin\Debug;FilesPath2013=$(MSBuildProjectDirectory)\..\KojtoCAD.2013\bin\Debug;FilesPathBcad=$(MSBuildProjectDirectory)\..\KojtoCAD.BricsCAD\bin\Debug</DefineConstants>
+    <SuppressAllWarnings>False</SuppressAllWarnings>
+    <Pedantic>True</Pedantic>
+    <VerboseOutput>True</VerboseOutput>
+    <SuppressValidation>True</SuppressValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <SuppressValidation>True</SuppressValidation>
+	<DefineConstants>Release;FilesPath=$(MSBuildProjectDirectory)\..\KojtoCAD.2012\bin\Release;FilesPath2013=$(MSBuildProjectDirectory)\..\KojtoCAD.2013\bin\Release;FilesPathBcad=$(MSBuildProjectDirectory)\..\KojtoCAD.BricsCAD\bin\Release</DefineConstants>
+    <SuppressAllWarnings>False</SuppressAllWarnings>
+    <Pedantic>True</Pedantic>
+    <VerboseOutput>True</VerboseOutput>
+  </PropertyGroup>
+  <PropertyGroup>
+    <WixToolPath>$(SolutionDir)packages\WiX.3.10.3\tools\</WixToolPath>
+    <WixTargetsPath>$(WixToolPath)Wix.targets</WixTargetsPath>
+    <WixTasksPath>$(WixToolPath)wixtasks.dll</WixTasksPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\KojtoCADSetup\KojtoCADComponents.wxs">
+      <Link>KojtoCADComponents.wxs</Link>
+    </Compile>
+    <Compile Include="Product.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KojtoCAD.2013\KojtoCAD.2013.csproj">
+      <Name>KojtoCAD.2013</Name>
+      <Project>{c69e9c18-fdc1-4805-b767-08893cd86593}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\WiX.3.10.3\build\wix.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\WiX.3.10.3\build\wix.props'))" />
+  </Target>
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

@@ -1,0 +1,1049 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="cmp7CC2A6AC4220DAC7231BB5E9C94B83A4" Guid="3AEAD993-1B3E-4A01-9737-09AEA459C131">
+        <File Id="fil28C4D02BAEC848ED4EF2F5CC9892E41E" KeyPath="yes" Source="$(var.FilesPath)\Castle.Core.dll" />
+      </Component>
+      <Component Id="cmpFE3F39E6F2A35B078BC0BAFD19511DAF" Guid="A7304EC2-DF8A-401E-B60D-C58E22E5111C">
+        <File Id="filC98BFEFBC7297728ADAD34FED982908B" KeyPath="yes" Source="$(var.FilesPath)\Castle.Windsor.dll" />
+      </Component>
+      <Component Id="cmp6ABA3CC4BA8F6176592DAB087CDF3F4A" Guid="BAA87A59-81C1-4087-8486-DC8B87257F97">
+        <File Id="filA529EA28BD5DE81B0DFF9F9A387C146A" KeyPath="yes" Source="$(var.FilesPath)\colorComboboxControl.dll" />
+      </Component>
+      <Component Id="cmp8E0BA9345D6467C6CE87127468E2DA60" Guid="9687DBEF-876E-42F3-83B7-89EEFE906DEC">
+        <File Id="fil425B2C707904C74CBB8D3C690296B481" KeyPath="yes" Source="$(var.FilesPath)\DocumentFormat.OpenXml.dll" />
+      </Component>
+      <Component Id="cmpC40811F029F043A254FEF20F838DAE62" Guid="C916B708-5039-4C3F-AF19-4DF12CFD1450">
+        <File Id="fil9E3C0D1DDD0D7552CD5F807442BEE6F9" KeyPath="yes" Source="$(var.FilesPath)\ExcelWriter.dll" />
+      </Component>
+      <!--<Component Id="cmp5E2573832CA5C768461ABA641FD92A6D" Guid="A3826A4C-F3FE-4AE6-A76F-2B63994267F5">
+        <File Id="filF41BCEE5AFD90CDDB359D5F590EB5C53" KeyPath="yes" Source="$(var.FilesPath)\GeometryExtensions.dll" />
+      </Component>-->
+      <Component Id="cmp86CEC0777768B8A4DA11D04BE64FF20B" Guid="747DFCFC-6048-4766-8CB0-D2B9B3D16D6A">
+        <File Id="filDCF866545E81006326F1A269D8F0B743" KeyPath="yes" Source="$(var.FilesPath)\KojtoCAD2012.dll" />
+      </Component>
+      <Component Id="cmp92AB8B13BA8D7AAF4D75DFB66B6DE0D5" Guid="7F0B79DD-7CB6-4658-86CF-047BCC22AA4C">
+        <File Id="fil15531E44235C1831D56033442597375E" KeyPath="yes" Source="$(var.FilesPath)\KojtoCAD2012.dll.config" />
+      </Component>
+      <Component Id="cmp9D906BC9D2C0D23A7D4160D8C9D66E28" Guid="7067E8AC-3FDA-4917-8CB3-10C1BB755E66">
+        <File Id="fil4C170FAC9E4F558002A9E46B29A15ECE" KeyPath="yes" Source="$(var.FilesPath)\KojtoCAD2012.pdb" />
+      </Component>
+      <Component Id="cmp4136bdfe328d4c46aba461a52be96e9b" Guid="45B16AA2-3D88-4251-9184-77D33D2C6496">
+        <File Id="filE83895C824C1485281AD75B253FA1C85" KeyPath="yes" Source="$(var.FilesPath2013)\KojtoCAD2013.dll" />
+      </Component>
+      <Component Id="cmp38f63aa7b2d8472fbe3fd98d1f21f4d6" Guid="E89E21F4-9C35-4E09-BD9A-D69DC55D5434">
+        <File Id="fil0950D0B886604DA2BF8A8B43B42FFEAF" KeyPath="yes" Source="$(var.FilesPath2013)\KojtoCAD2013.dll.config" />
+      </Component>
+      <Component Id="cmpee7f1b01df9e4229a30e8113865dce85" Guid="DCF4C14B-0B5A-41B2-81C8-7D7721FD5C82">
+        <File Id="filE8BB10F6979742FCADED371FA2A99A17" KeyPath="yes" Source="$(var.FilesPath2013)\KojtoCAD2013.pdb" />
+      </Component>
+      <Component Id="cmp3ABA2CE33B6243CD8F79FCCAE07FCC46" Guid="3347EBC6-F4D6-4334-B99C-E8A8948DF98D">
+        <File Id="filC0B0E4F4FC7244D19F00EFAFCBA94F4D" KeyPath="yes" Source="$(var.FilesPathBcad)\KojtoCAD.BricsCAD.dll" />
+      </Component>
+      <Component Id="cmpD25D0F7C476E47BBAB41452210E1006C" Guid="3819ED0A-4117-4601-B471-ACFD602E7B8A">
+        <File Id="filF89261966E7F41D383488A854EC827D7" KeyPath="yes" Source="$(var.FilesPathBcad)\KojtoCAD.BricsCAD.dll.config" />
+      </Component>
+      <Component Id="cmp7CF547CED95847B590A4BD697D236975" Guid="57DC40C9-7491-4D7C-A0CE-B2CF7DAE0507">
+        <File Id="fil2173F02E448342A595F71187780DCA6D" KeyPath="yes" Source="$(var.FilesPathBcad)\KojtoCAD.BricsCAD.pdb" />
+      </Component>
+      <Component Id="cmp9DD47D0347AE254D923E22047764B092" Guid="9472E917-366A-4ACB-83F4-16C93D13551B">
+        <File Id="fil14B37B6F117880072CC8B3DD806A47D6" KeyPath="yes" Source="$(var.FilesPath)\LumenWorks.Framework.IO.dll" />
+      </Component>
+      <Component Id="cmp44D034D09C8D4DBDB49B7048F63EE2C0" Guid="26C0FF5E-F538-4D83-B5EE-32C1AE7C2DB2">
+        <File Id="fil590DCDF4ECAD4DAEBAA7265BC0774EB8" KeyPath="yes" Source="$(var.FilesPath)\Microsoft.Azure.KeyVault.Core.dll" />
+      </Component>
+      <Component Id="cmp3F5B7F848CC742B18B52EEFE8BCCDE7D" Guid="EDB2C754-CD49-4F35-AC76-151CC793A9B8">
+        <File Id="filB0A0615B806F4C1090B51AB1D4E856F5" KeyPath="yes" Source="$(var.FilesPath)\Microsoft.Data.Edm.dll" />
+      </Component>
+      <Component Id="cmpA7436ECA0A314017A4D937F680EE2102" Guid="F16BF830-1FB8-4C01-989D-AB37B8B724E2">
+        <File Id="fil2682289E43A245D28E38FBB4DB8C1818" KeyPath="yes" Source="$(var.FilesPath)\Microsoft.Data.OData.dll" />
+      </Component>
+      <Component Id="cmp99B65B1A734A48A1B0BB084409A13281" Guid="200E8C44-74E6-4B25-99AD-2CD37BB8C758">
+        <File Id="filB094046B932A416A8DCE275A10877920" KeyPath="yes" Source="$(var.FilesPath)\Microsoft.Data.Services.Client.dll" />
+      </Component>
+      <Component Id="cmpFF0C1DDF4C174E8BADA600FF1A62A2C5" Guid="4F85B290-21B0-472A-96EA-50C602DCE9C8">
+        <File Id="fil9C1C156273C843D0A12307D31C64DC55" KeyPath="yes" Source="$(var.FilesPath)\Microsoft.WindowsAzure.Storage.dll" />
+      </Component>
+      <Component Id="cmp65CB115975CB40D9B50E5ED16C13F70D" Guid="510B9CFC-3282-4D2F-85A1-EBF9DC937860">
+        <File Id="filB6C6C144AFDC4371ADD24ED67F09DB6F" KeyPath="yes" Source="$(var.FilesPath)\Newtonsoft.Json.dll" />
+      </Component>
+      <Component Id="cmp17F317F3B29DC444A1747D8270D1742C" Guid="3B9DA9FD-B5AB-4AC1-B1DC-01834186C373">
+        <File Id="fil203B1145C39613A695DA5653C74DA7A0" KeyPath="yes" Source="$(var.FilesPath)\PackageContents.xml" />
+      </Component>
+      <Component Id="cmp9DE2DDF45E74643DD83FF98E1D7C58ED" Guid="3D9A3D05-F512-42F4-9222-82FF2A5335C4">
+        <File Id="fil75AEF742F8EC2321378178AB15345D06" KeyPath="yes" Source="$(var.FilesPath)\XPTable.dll" />
+      </Component>
+      <Directory Id="dir69A81B71B3436B3F1BF22FB24CE6929D" Name="Files">
+        <Directory Id="dirDFAF9E8936489B468D2A3460CBEA597B" Name="Documentation">
+          <Component Id="cmpAAC79E9BC3A027B24DFCC360CD900D47" Guid="B045F6F9-E549-4201-AE32-DD296A5967EB">
+            <File Id="fil4A2FCE113EC6FE982528A5AF7FBAC11F" KeyPath="yes" Source="$(var.FilesPath)\Files\Documentation\KojtoCAD.chm" />
+          </Component>
+        </Directory>
+        <Directory Id="dirC959FBF7DD79708423CCFEB0883ABF9A" Name="Dynamic_blocks">
+           <Component Id="cmp0B2B5F62E1514C2FB76567F154156746" Guid="30A5E4DD-3BAB-4DC1-A7B0-C69FBC9C63B0">
+            <File Id="fil4AA820CBB70F4C918E1BB64792508CDB" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\SlottedHoleRectangular.dwg" />
+          </Component>
+           <Component Id="cmp0AA90C603ECF46709B6D57186FCA025E" Guid="7A00C78A-1676-490D-86DB-DBEF971DE38E">
+            <File Id="filF07F76012E5549C99A579B9549C1CEAC" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\SlottedHoleRoundDoubleAxis.dwg" />
+          </Component>
+          <Component Id="cmp4079DCD8EF3C4D8CB0AE969B05632165" Guid="25910511-1072-4B8A-9C6B-2374F20EC649">
+            <File Id="fil938B684A79744531A0A6DEC01015AE24" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\SlottedHoleRoundSingleAxis.dwg" />
+          </Component>
+          <Component Id="cmpBB1AAEFD5775EAB32FE9CA7D2D2A77FA" Guid="3AC62E70-5F68-44B2-B7FA-865569574D19">
+            <File Id="fil02DF8E4C0AE99B8EDB79FC919B71E105" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\DrawingFrame.dwg" />
+          </Component>
+          <Component Id="cmpD29BFE5A5ACB89375D57D96CDECAE9E3" Guid="442A5023-9416-4B2B-8D55-F13DB66A4D30">
+            <File Id="filDA2B9B41B3291298124CBFE3CAAE7EA9" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\Level.dwg" />
+          </Component>
+          <Component Id="cmpEEC9B0100E4F04682E7EED90B9B0EEE1" Guid="576852C4-61A9-4A47-9622-BAECF6E34912">
+            <File Id="filD8DA15E5E79EDE0168EC174E52A3D09B" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\SiliconJointSimple.dwg" />
+          </Component>
+          <Component Id="cmpA45D61D039E1DB2F3561895928B4504F" Guid="4AC0D83B-52BC-4CAF-BA39-0D6592C3C3B7">
+            <File Id="filD3B81D73BC60350FE336ADC4DCFA3384" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\SiliconJointWithSilica.dwg" />
+          </Component>
+          <Directory Id="dir85DFCC1FE6934BBC9F434C5BD6EDE003" Name="DGU">
+            <Component Id="cmp6C4E3CD38FE93E6C5E5B4611008982D2" Guid="E8EEC392-15E9-40E1-884F-B52E9BEDA104">
+              <File Id="filAFEFA3563C9942DFDD2F5EDD9A2E0317" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\DGU\PSYMB_DGU_Inner_Laminated.dwg" />
+            </Component>
+            <Component Id="cmp12EDCBB84BF5B8C02B77B16278CC7762" Guid="C2A598B9-C893-4305-AEC5-1EF7DA573D59">
+              <File Id="fil1748E3E3F18B0A828ECB7070E97DC114" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\DGU\PSYMB_DGU_Laminated.dwg" />
+            </Component>
+            <Component Id="cmpB3547BBB0D31B101A95A33D460E30111" Guid="406AB455-ABC4-430A-B099-D31A50FD1680">
+              <File Id="fil544E90A0005411EAC1C8BDB5097408E1" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\DGU\PSYMB_DGU_Monolitic.dwg" />
+            </Component>
+            <Component Id="cmp84AEAF7BA8D312CCC297E37D202F613C" Guid="924D4A0B-5571-4563-B07C-234957F53F08">
+              <File Id="fil2FB72CCDEE5DEA1971ADCE6745F9FE05" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\DGU\PSYMB_DGU_Outer_Laminated.dwg" />
+            </Component>
+          </Directory>
+          <Directory Id="dirC452E13C69926BFE74CAFE244CC3A5EF" Name="Marks">
+            <Component Id="cmp73AD574E7A455CA81B8C33B3FE56B3CD" Guid="BD09B972-2935-4C9A-87AD-C16E1F378148">
+              <File Id="fil486072AC7D28C8EF9DFF4B7117C84504" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\Marks\ArrowMark.dwg" />
+            </Component>
+            <Component Id="cmp23545827BA395E28297746417CB1DF73" Guid="A956D85B-4948-4277-825E-3C2013083FE4">
+              <File Id="fil60D2A881D9D97B823625ED414EF3FA62" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\Marks\ElevationMark.dwg" />
+            </Component>
+            <Component Id="cmp201F36A3BAFA343CFA6756D3725DE0AE" Guid="5C2BEF8E-47EF-4422-8857-D8F8C462AB59">
+              <File Id="fil6A07387E2060E70611C4CD95B4557714" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\Marks\PositionMark.dwg" />
+            </Component>
+            <Component Id="cmp33AE1E07DE6547CF62B3F92EA4259CFC" Guid="FFCB53AD-240D-463C-8FE7-667495BE1661">
+              <File Id="fil57D3E2C2590B6CC54AB5131F4ECDBB92" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\Marks\SectionArrowMark.dwg" />
+            </Component>
+            <Component Id="cmpB2799D6F675020EF02413C268D299BBA" Guid="6D431E0A-BA77-431E-9FD9-E3276C99D0F8">
+              <File Id="filF431AAB453596AECD86370FD325602CE" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\Marks\SectionArrowPairMark.dwg" />
+            </Component>
+            <Component Id="cmp17D17D97F854B98A68332A2B6186724C" Guid="C1BEE9BC-B213-4D6B-94A7-5E04319336DC">
+              <File Id="filCC4F315746002AA152872DA88F6BAC3E" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\Marks\TitleMark.dwg" />
+            </Component>
+            <Component Id="cmp49BC3A60BA0A3CF092F10F987BA3B76B" Guid="9D95B238-5254-4F05-AD7C-AF530FA9124E">
+              <File Id="fil0BD91211F1D7769BF88C017B8A2F77C8" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\Marks\WeldingMark.dwg" />
+            </Component>
+          </Directory>
+          <Directory Id="dirE62554A785FF13614408CE2AE3EEA557" Name="SGU">
+            <Component Id="cmpD0DAE75C533BE0EEEF02BA02D2B55737" Guid="821D453C-8932-4A4B-92DF-AD81424DD928">
+              <File Id="fil8959484F5680104A393A2B0A5CFE661C" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\SGU\PSYMB_SGU.dwg" />
+            </Component>
+            <Component Id="cmpA6AF432D7F2A305C328C97FB44D5728C" Guid="28EBDE2E-36FA-4B0B-A4CF-8872AEF0FAC6">
+              <File Id="fil2F118A7BF69112E87FE60E40ED103508" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\SGU\PSYM_SGU_Laminated.dwg" />
+            </Component>
+          </Directory>
+          <Directory Id="dir507A1134781720D8759264410837F6E8" Name="TGU">
+            <Component Id="cmp8465A3F675B0CAB2CFA0C501A1F5BA58" Guid="D04C165D-8083-47FC-B7D0-B6FBDA1E571D">
+              <File Id="fil335F856C9F2AAFBEA7A7A8255A5764B8" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\TGU\PSYMB_TGU_Inner_Laminated.dwg" />
+            </Component>
+            <Component Id="cmpCC9E2DB0D28F9450B8BF476E70E7A7DB" Guid="8F50AD8F-B823-47CE-A7D5-B7496C97BFC4">
+              <File Id="filC6125D8B6A7B75BE2DDF602B8C1CE654" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\TGU\PSYMB_TGU_Laminated.dwg" />
+            </Component>
+            <Component Id="cmp9509C082B6488E3F9E8BEF651E9EFAFC" Guid="74A587D4-4F4B-41FC-8512-F6DE3E39C0B5">
+              <File Id="fil2A0ACAB33B124A0F10C0C5ECB34C12FF" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\TGU\PSYMB_TGU_Monolitic.dwg" />
+            </Component>
+            <Component Id="cmp7E50D6E0679681A890BF61B68B2DC57F" Guid="80A507E3-3A38-4676-A472-B88CE1ADD79B">
+              <File Id="fil9CBEB3601F3187966ABAC15D2C170CBF" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\TGU\PSYMB_TGU_Outer_Laminated.dwg" />
+            </Component>
+          </Directory>
+        </Directory>
+        <Directory Id="dir0C37EB6C4D95433A28C9A0EECECA58A8" Name="Icons">
+          <Component Id="cmp82D87B5FDF04CCE8908A03B9F208801A" Guid="278BF85F-3E4A-4FF4-9CFF-CCA846363B79">
+            <File Id="fil57CBFE5C2EC2EF87FABCF14C9D6228D7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsHorizontalyLarge.bmp" />
+          </Component>
+          <Component Id="cmp8B2BA9A95E2692BD3EE20C74EAAC31DE" Guid="5489013C-C3A5-4C53-A4F9-EB2D893D225E">
+            <File Id="fil01700DD06E2257397F3C3BA316CCDE9C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsHorizontalyMedium.bmp" />
+          </Component>
+          <Component Id="cmp12485C5BBA8D0067AF9D2D1CD7789AD1" Guid="28F57977-038A-4440-80C7-90EC8F4C2CC9">
+            <File Id="fil2E47AFF2D9AF43D488E160E57E9967AA" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsHorizontalySmall.bmp" />
+          </Component>
+          <Component Id="cmpB3AA51D89BD4F46DBC16680AC5782F9D" Guid="4765AD06-B15D-49A6-A0AD-9F806CC444E0">
+            <File Id="fil61E8E73193E590AFC127E3644220D775" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsVerticalyLarge.bmp" />
+          </Component>
+          <Component Id="cmpC5DB155C067B915DDEFA5C5DA8EA4F0F" Guid="17220315-839F-4DA3-89EC-3BEBC51B4E68">
+            <File Id="fil1ACD8CD7546D99BDEFB870DBCD851410" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsVerticalyMedium.bmp" />
+          </Component>
+          <Component Id="cmp9A6172CFDF1B49A8D926130B05D6E7C9" Guid="1CC95754-1451-40D0-AA2B-CB10F34586FE">
+            <File Id="filD75E01D6BC99D312E77A46BCDA749701" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsVerticalySmall.bmp" />
+          </Component>
+          <Component Id="cmpE2C06B96C0910F2B940709992D484851" Guid="53F2956D-98AA-432C-B274-408199AD387D">
+            <File Id="filF06845D511B6EEF42E80901C40FADEC9" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ArrowMarkLarge.bmp" />
+          </Component>
+          <Component Id="cmpE8E21E639A994A5621C2E89C09B38265" Guid="525D2711-32A1-4F0C-A19F-0C04DDC3F216">
+            <File Id="filF44067F1C21078C55CC34C9ED51BA86F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ArrowMarkMedium.bmp" />
+          </Component>
+          <Component Id="cmp59E319E752D38E129DA673A47A8B01E4" Guid="A027E88F-2384-42F3-A5CB-9206AA923DBC">
+            <File Id="filF1C045BEC8772020A60F01E12BCD9056" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ArrowMarkSmall.bmp" />
+          </Component>
+          <Component Id="cmp9F369989A55E68E9DB98490C9734F43C" Guid="7CA8E13B-131B-4C5B-99BC-B01AB8703DA4">
+            <File Id="fil7DB52DECF3EED1E3F7F835992EF6CDCF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ChkAttrIsInExcelLarge.bmp" />
+          </Component>
+          <Component Id="cmpB60CA706958EB684EB91DD9174EEE466" Guid="65AB7248-8463-4501-BD5B-B33977C98AF9">
+            <File Id="filC894B71782C8BEECA396BCD00521C7A3" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ChkAttrIsInExcelMedium.bmp" />
+          </Component>
+          <Component Id="cmp696689FDA04DC6CF374FE0A816A3687C" Guid="CBDB2F6F-9974-46FC-BA3C-0EF2A65C8FFF">
+            <File Id="fil94179E31150733E0F9BC0847290171A5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ChkAttrIsInExcelSmall.bmp" />
+          </Component>
+          <Component Id="cmp56C3B37B97CADD05F2FB140D0A8FF78B" Guid="1F323637-B9E0-4991-B136-06406255351D">
+            <File Id="filA4E7CBEC855EDC744A2B3B0091C646B7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CloseDwgProperlyLarge.bmp" />
+          </Component>
+          <Component Id="cmp3C649124A3FFB1E8E3CE07330B02659C" Guid="02B3AF25-A37A-4471-A81B-703D930BDE4E">
+            <File Id="filA1B2DB7A3D6B76F469D2BE92C64A299F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CloseDwgProperlyMedium.bmp" />
+          </Component>
+          <Component Id="cmpBB5F30B713FE18CCA6D21C5DF89057B1" Guid="10D9FE98-FEBC-4B43-8CD7-191A44083739">
+            <File Id="fil05D9D293E7EB533994ED19288D383BA6" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CloseDwgProperlySmall.bmp" />
+          </Component>
+          <Component Id="cmpF1E825811A0F6C01A382EDA94FE59BE5" Guid="54099AB5-3E3B-472E-BE38-E9C21846AB4E">
+            <File Id="filD5398CC29F1E034F8DE8AB188AFDB7A6" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CopyBlockDefInNewDefLarge.bmp" />
+          </Component>
+          <Component Id="cmpE6C32A260EE113B1FDC0FDC73E5B2452" Guid="A52224D2-2E61-4047-A1E8-72CB22B84001">
+            <File Id="filE103FDF3C7D2F21C6351384E5BDDDA1D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CopyBlockDefInNewDefMedium.bmp" />
+          </Component>
+          <Component Id="cmp4F539460095157E955B72355C172821F" Guid="95075ADB-CEAB-4D92-9690-8D1FE9D8641C">
+            <File Id="fil053B379074BE63817BCB8C7D7686F026" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CopyBlockDefInNewDefSmall.bmp" />
+          </Component>
+          <Component Id="cmp729F5523274B22B1F0FE7BC976C7967F" Guid="D3322F89-2169-4C11-8AFD-1E79556BB745">
+            <File Id="fil36D3400B3B18D8F79F9AD7E1B5D2BABB" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CreateViewportFromModelLarge.bmp" />
+          </Component>
+          <Component Id="cmpC9105EBC37438F91598780BB725BA44C" Guid="92C2D0E7-F62D-4CB4-B114-8AF3A39AE49A">
+            <File Id="filDDAB2E0CA291B7663B75A4E5B9D56628" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CreateViewportFromModelMedium.bmp" />
+          </Component>
+          <Component Id="cmp52A0D00DEF1A1B8B9A98F76E6A7B5637" Guid="C9ADFA05-2025-4C4E-9B28-9A076EDAD2B0">
+            <File Id="fil43F17DA7038F89E34BCF288442460697" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CreateViewportFromModelSmall.bmp" />
+          </Component>
+          <Component Id="cmpB482FC4F5E8F8E2B7C4D0217339EEED5" Guid="65194E0E-6BE3-4837-98D4-B1ADCB6F9820">
+            <File Id="fil56D3C9BF3E773A4702844B6D34C3F045" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DeleteHelpLinesLarge.bmp" />
+          </Component>
+          <Component Id="cmp133B2D207C4C823D48651C3FF1156C5E" Guid="7085B52E-52DB-4CD3-978D-329BB239CD60">
+            <File Id="fil8D29F71FC4F8EA8612B797AFA4B5CE3E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DeleteHelpLinesMedium.bmp" />
+          </Component>
+          <Component Id="cmp8799753BF5CA97F04DD7C5E0475FE323" Guid="51EA9C2F-B526-401D-AE20-FA770541ADAB">
+            <File Id="filC071F32953BF825BEEAB57787305D312" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DeleteHelpLinesSmall.bmp" />
+          </Component>
+          <Component Id="cmp1C88A073C3F8956FB1D0906A78067242" Guid="F8E9BF55-6009-4A82-8C45-891C5439B453">
+            <File Id="fil75E2D22BF4985BA5DE040131AA72C3D8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DoubleGlassUnitLarge.bmp" />
+          </Component>
+          <Component Id="cmp571E1E62F406DB6BED10A24E727FAEEF" Guid="F49C2805-EADF-494F-B7F5-CB11633FFB59">
+            <File Id="fil934ACB3D1E0C14474368CB84B2F29942" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DoubleGlassUnitMedium.bmp" />
+          </Component>
+          <Component Id="cmpF2BD6C89555082808DA61DE2AC9E49F6" Guid="4806E7BC-6134-40B9-88DA-71FC953888DA">
+            <File Id="fil9B2E1CBBCCA5B37C28FA2CA11A8E8FE4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DoubleGlassUnitSmall.bmp" />
+          </Component>
+          <Component Id="cmp8E7434F92CCC0A36F28069C6E20EEC05" Guid="A670CE08-D480-4CF7-864E-48F957617A7E">
+            <File Id="fil79156CB71C685921EDFD106C621E41FE" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DrawingFrameLarge.bmp" />
+          </Component>
+          <Component Id="cmpD7F0C4218015914901A78FD340A49B0B" Guid="A203B9C4-5E11-4AB5-90F2-0D8AD2E8DED9">
+            <File Id="fil23316638F0696430BF2F5A4A9B18B372" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DrawingFrameMedium.bmp" />
+          </Component>
+          <Component Id="cmpAFC6C7BC93EDAC636C60A6941B719301" Guid="7061A779-741F-4C06-AD7F-947D9BE9782B">
+            <File Id="fil0EE5585F9CD4A929223395759FC0A7A7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DrawingFrameSmall.bmp" />
+          </Component>
+          <Component Id="cmp40518939349EA360B048B84D3E0FAEE5" Guid="AA79421A-E64A-4900-824C-9B54ABB51FE5">
+            <File Id="fil0EBBEBFCA3704A39396F82B4717B96D7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ElevationMarkLarge.bmp" />
+          </Component>
+          <Component Id="cmp6E4887704A0D0791A08451DE2A3084E9" Guid="FDB69EF8-75C9-41DE-9F75-A79793732373">
+            <File Id="fil00D11A00B46AE0DE97D2DAE5810D258F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ElevationMarkMedium.bmp" />
+          </Component>
+          <Component Id="cmp962152146F62D5C9031A2D125C3DF663" Guid="EDEA4167-BB94-4B7D-84A1-3C36CA3C8D78">
+            <File Id="filD1A6C8B8BC7D01723B4B6A273B4C221D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ElevationMarkSmall.bmp" />
+          </Component>
+          <Component Id="cmpD74578088F91DE6E72E17D85AC042144" Guid="3824A27B-68D5-410A-B0CC-841343442261">
+            <File Id="fil8DB025C1BF52D26E61C1044287D97141" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ExtractAttributesLarge.bmp" />
+          </Component>
+          <Component Id="cmpD039D5445A975F159C3E089DC50E7479" Guid="5D41F9D6-1C0C-4892-9DA8-C62E99F9C4C7">
+            <File Id="fil1B1FEBB3697A7747FBCC5C7AD86073F4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ExtractAttributesMedium.bmp" />
+          </Component>
+          <Component Id="cmpBB2C3F5428812C13BABF7135E4A92F7D" Guid="68022940-670C-4588-AC10-E89DA1D81849">
+            <File Id="fil48343648FA10A9471124197877B7086C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ExtractAttributesSmall.bmp" />
+          </Component>
+          <Component Id="cmpD23BA1B6CD20D71C6E7D4EBD0879E862" Guid="F529998B-DEC6-4AFC-A2A8-7FF369640392">
+            <File Id="filC90514CC21483FEE75D40BBDF486225B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\GearsLarge.bmp" />
+          </Component>
+          <Component Id="cmp51E215F79A256AD9E5E162BA78F2D85B" Guid="F997DE48-AB1B-4AE1-A5D4-D1705C46E97E">
+            <File Id="fil4389A8D88F32F345722B8F726585BE42" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\GearsMedium.bmp" />
+          </Component>
+          <Component Id="cmp386A5F8775BAC80B8F85BE44A5150A10" Guid="76DC08B8-6A73-4646-869C-2BC0527E71B8">
+            <File Id="fil9E0BE49471BD514A45F7FBF748185025" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\GearsSmall.bmp" />
+          </Component>
+          <Component Id="cmpEA3B0D5622D0263F1A90619B2180F5E2" Guid="7468F345-E71C-4F32-B1AC-C3D37A514922">
+            <File Id="fil5E27B79195CC627F625A8E23E15978BD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLine45Large.bmp" />
+          </Component>
+          <Component Id="cmp2F4D3ED25283AFB28CA9F3E6908156FB" Guid="5EE488D3-BE6B-4734-B90C-6E8034CF8295">
+            <File Id="filA4DA3777531200B0618C54D071C5B81B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLine45Medium.bmp" />
+          </Component>
+          <Component Id="cmpC9504620B0CA25A4C56934581E69502F" Guid="49CDBB95-8019-4888-AEBF-6A59902BE04D">
+            <File Id="fil51ED26ABD6FF9C4C7771035F75D0725C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLine45Small.bmp" />
+          </Component>
+          <Component Id="cmp59A4599AD55E55B563E7244C538488D0" Guid="2F1AD988-EE92-4743-B68D-BE6E2DD424DC">
+            <File Id="fil9E50B7744749044B7377C6A2E371C370" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineAngular.largr.bmp" />
+          </Component>
+          <Component Id="cmp282E45650F234750305C30024CFE621A" Guid="02BE8F97-F65B-4862-8BB6-3EEDEDB579B0">
+            <File Id="filD87BB9FCA3A742A7B7C91B5B2CCA08CF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineAngularLarge.bmp" />
+          </Component>
+          <Component Id="cmpFEDD1B3BC4AC736786CD50D21326FFCE" Guid="CD321FF2-1CEE-4EC1-A66B-9359677CF7AF">
+            <File Id="fil821D2DDBC373C4AD75B3CF3CD387CABD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineAngularMedium.bmp" />
+          </Component>
+          <Component Id="cmp1B31C9248D53C3EB20246992CF7FB444" Guid="760FB31A-393C-4DEE-8B03-42F3788CCC0D">
+            <File Id="fil62C501AA0E4E5F890ED2C53BD8A8E526" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineAngularSmall.bmp" />
+          </Component>
+          <Component Id="cmp29C554353C2BF92A1B8869E00AF4F67C" Guid="FDC5B8AF-C78D-4451-992B-BDB4C676FA92">
+            <File Id="fil9A6BFA07C69BBF15E5EBBFF153E84512" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineCrossedLarge.bmp" />
+          </Component>
+          <Component Id="cmpD2AD2A800944341ECCC043BE71AF6178" Guid="45999898-F324-4B67-8B44-F0A7276B4EF3">
+            <File Id="fil5B0F8CB893F92D36B57B34EB1BEA8DC1" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineCrossedMedium.bmp" />
+          </Component>
+          <Component Id="cmpB4380381D275309C78C3B664F7B9BF5F" Guid="6E47B0EB-7D05-4A65-A850-FEC79161E8D6">
+            <File Id="fil21DE27EAC3EC7AEFCE70B8F8AC5C22F3" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineCrossedSmall.bmp" />
+          </Component>
+          <Component Id="cmp22E4EB1C460075D3D7B5CD4E8B3B1486" Guid="D3826CA1-1002-489D-9566-2AAC2CD1DE2E">
+            <File Id="fil70C6C6DE30DB0379C19A34241C482465" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineHorizontalLarge.bmp" />
+          </Component>
+          <Component Id="cmp98C4F91CCE94BF96C3457B88DA592193" Guid="1227484F-FAA1-4EDB-8AD3-65840D9CF655">
+            <File Id="fil8353469F0D1A80891082CF93E04424BE" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineHorizontalMedium.bmp" />
+          </Component>
+          <Component Id="cmp87A6E755FE91641B84B880204A433E0C" Guid="167C954A-6D64-440F-A3CA-7338D18764BB">
+            <File Id="filE39627BC2BA6E6CC7D1FF7A076587247" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineHorizontalSmall.bmp" />
+          </Component>
+          <Component Id="cmpFF1893F7298607724833C810F513F165" Guid="1A8D0DD7-578F-4E18-BCDE-26006D537359">
+            <File Id="fil48656CF362A18CAAC1B6AF4D1C3B8FF1" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineOffsetLarge.bmp" />
+          </Component>
+          <Component Id="cmp2F340608463E11FF30BF2E2E71C8D481" Guid="574240F7-20F4-4E83-B966-ED4DADDC8C35">
+            <File Id="fil60F9BFA238574ADF6E18F0B61DD39C66" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineOffsetMedium.bmp" />
+          </Component>
+          <Component Id="cmpCE119C2F6B8EA79A4ECD574AE3290D15" Guid="B34868DE-8A50-4450-8044-FBD08A8FFBE1">
+            <File Id="fil880BD2D1F8FC2BDBC009CC0A60C3E07E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineOffsetSmall.bmp" />
+          </Component>
+          <Component Id="cmpA0A96689C77C54B62A5A968A0D3CF734" Guid="79CB229B-5088-4DCE-91F5-F0FC50A3E184">
+            <File Id="filF3F4D26DBEC9EBF0509148B533E9AD35" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLinesDeleteLarge.bmp" />
+          </Component>
+          <Component Id="cmpDCF240053BB3632A91FA5D069FC354E2" Guid="ADED1360-D382-47EE-8563-C909926A2486">
+            <File Id="filDEA781A9D4D264F0EC17B49266C69C64" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLinesDeleteMedium.bmp" />
+          </Component>
+          <Component Id="cmp72E15074977DFCE2D7AF22C160B260B8" Guid="49906CB0-FC9B-4F44-AC70-AA0CA1A7859D">
+            <File Id="fil57069191A99C1D754DC5776F29A588DF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLinesDeleteSmall.bmp" />
+          </Component>
+          <Component Id="cmp24E291D5C8CE6966E69E3BD1017AD902" Guid="C4B4D8D2-CA70-4D02-A74F-1F9C92441959">
+            <File Id="filA9B1E7EFB99B836E4A7ACBAA2920033F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineVerticalLarge.bmp" />
+          </Component>
+          <Component Id="cmp310301E307A55135DD53FE9D0E89D0F6" Guid="40B84774-EBE7-4901-A984-8E0EFADDD776">
+            <File Id="fil9422C623F529FDB3F957E850DAE7770B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineVerticalMedium.bmp" />
+          </Component>
+          <Component Id="cmp6EB297277B039191FEBE03DEFF719AA8" Guid="338B546B-9367-4CF5-A63D-F82A5227F97A">
+            <File Id="fil857A54C65D567209CA7F7A9986A72001" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineVerticalSmall.bmp" />
+          </Component>
+          <Component Id="cmp599E30539AC1D000E09894E90DDBAF52" Guid="8BFF3AD5-6E67-402E-8802-9D3F0872F520">
+            <File Id="fil5A4C55D351A701DD9BE061604FFDE03B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HydroInsulationLarge.bmp" />
+          </Component>
+          <Component Id="cmp0368CD96F076FC2049F22256C140C360" Guid="59DF85E1-480E-4861-AAC0-87D71AE3DA62">
+            <File Id="fil03EE64384F218915AFAE5F73B65BA78C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HydroInsulationMedium.bmp" />
+          </Component>
+          <Component Id="cmp511F26705DD8059110845D8BBFA57E9A" Guid="82EDF4C5-B792-4D1C-8CE0-DFF2D07FC767">
+            <File Id="filE9B0AF00E6FA57F824654512B20E4A37" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HydroInsulationSmall.bmp" />
+          </Component>
+          <Component Id="cmpC689C7450CA2FC0F164C2B88F02313BD" Guid="918D76B8-7257-45FC-8956-BC86221ED100">
+            <File Id="filF8EE9324DDC3A66AF34821E5380F5EB4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Join3DLinesToPolyLarge.bmp" />
+          </Component>
+          <Component Id="cmp4AE191460F0AE15A8B449BBDAC93BF6E" Guid="F79F6240-8900-465E-9D44-7700C64CDF0E">
+            <File Id="filD00B0893BA8624DFE8DB75E8E29F26F8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Join3DLinesToPolyMedium.bmp" />
+          </Component>
+          <Component Id="cmp3E41F6C19C5A263690D1C39416FD4AD8" Guid="B95FEDC3-F169-4A55-BCC3-812E5AAFCDA8">
+            <File Id="filDE16A85D861AB2FB0F4BBDD708042727" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Join3DLinesToPolySmall.bmp" />
+          </Component>
+          <Component Id="cmp87938EF8198D2C85359E13EE99AA524E" Guid="2F07DCEC-4332-419F-8993-256DB4D592D7">
+            <File Id="fil27AE8A4513D7107686CC3FFEDAE3AF1E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LevelHeightSignLarge.bmp" />
+          </Component>
+          <Component Id="cmp4A1E3672558F46B8D40F245B8A7E5964" Guid="37D7F8BE-73DD-471D-A11F-1968E05B2259">
+            <File Id="fil2B6A7FC45552934EB5F8A50661907958" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LevelHeightSignMedium.bmp" />
+          </Component>
+          <Component Id="cmp51B006623AD3084E2BC124AA657D6F6E" Guid="A0CB1FB4-4FEC-4CE5-9434-8984EF8B9C08">
+            <File Id="filB594A2A6D2BFB9A2DDE7E019C1922129" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LevelHeightSignSmall.bmp" />
+          </Component>
+          <Component Id="cmp473519AD65934523664BFA03ED334C8B" Guid="E2243EF4-334C-41F4-9928-C205134B69EE">
+            <File Id="fil21565D8FF281DEB028CBC43021ACC17C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LoadSettingsLarge.bmp" />
+          </Component>
+          <Component Id="cmpDF4C6748D7D46AEECC42C10C439FD568" Guid="DA004AB7-882D-4531-93F9-2F5CA75D2CA1">
+            <File Id="fil046F80EFC76C2321E203B3823F98616E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LoadSettingsMedium.bmp" />
+          </Component>
+          <Component Id="cmp6FD58C393671CC6E0B1978A27F45F392" Guid="16564930-03A0-4C8A-9823-5ED8660DD78B">
+            <File Id="fil20649727BBE82B77E23078D4CF8EEFDA" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LoadSettingsSmall.bmp" />
+          </Component>
+          <Component Id="cmp5D771553BFD968F4E31818CEEBEA2C77" Guid="425AF38E-6D8B-4866-B51B-D4FE9A188F3E">
+            <File Id="filD3BE508D1E634C7D42958D0109268DE3" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LockViewPortLarge.bmp" />
+          </Component>
+          <Component Id="cmp2E92EEA040ED86D9103D03A526F4583D" Guid="A4DDD603-1BEA-4C27-98FA-271C34BFD3D9">
+            <File Id="fil09431CBCA06E1B851247C6A445ED8519" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LockViewPortMedium.bmp" />
+          </Component>
+          <Component Id="cmp7A9B9D0D35EE88C0E60B1C14A5C35E4D" Guid="9D833C69-A5FB-4878-AD41-EF5BCB3E3E0F">
+            <File Id="fil86D4CFF4791D1FB23924940374C0B136" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LockViewPortSmall.bmp" />
+          </Component>
+          <Component Id="cmp3EDC2F072D3CD1F7043C8CA7E54C133F" Guid="F1DA2CC8-CD89-4018-B38A-BEA5D56E5529">
+            <File Id="fil8477C1A1ECC32BCC4935A623A2854888" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PcadSettingsLarge.bmp" />
+          </Component>
+          <Component Id="cmp38032A70A9784C9D28734BA5296DC5A0" Guid="FC53DDF2-EE03-48E9-825B-63C59F55F447">
+            <File Id="filAE95A646B8AD34A6A54724FAD9D6D264" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PcadSettingsMedium.bmp" />
+          </Component>
+          <Component Id="cmpAA9BBC0727FEF4D770CE3421B6994256" Guid="3201D02D-B553-4B3D-8F9C-136F30C221ED">
+            <File Id="fil686BA782A10B0B0F6DC6A406EC4DC067" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PcadSettingsSmall.bmp" />
+          </Component>
+          <Component Id="cmp96755F03E1EBA82CAEB7E2E0A1E5610B" Guid="806A24ED-7ACF-4F15-A8CD-688EFACB6E28">
+            <File Id="filECAFA1F5E351322933B5AF20F97B64F7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PlotterLarge.bmp" />
+          </Component>
+          <Component Id="cmp845E179DC114208C3FB008EEC752CCB9" Guid="0C739190-BDE0-4999-85CD-A57E0376684C">
+            <File Id="filF4FB7405E6FD04246499D8AF8A931416" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PlotterMedium.bmp" />
+          </Component>
+          <Component Id="cmp54B010997DC87369A3146BB678EEEB72" Guid="98F6F9C8-B12C-4470-A445-A94C3B9CF07C">
+            <File Id="filDA9B60156CBF515DE7BEA1FCC2DE35E1" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PlotterSmall.bmp" />
+          </Component>
+          <Component Id="cmp242B780619BE1A080537B1B8CE0C8E7C" Guid="BC0DBD48-B581-4D41-9317-E0829FC47779">
+            <File Id="filB8CE8F5D555C3082C37DEEE3D4888E35" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PointCloudLarge.bmp" />
+          </Component>
+          <Component Id="cmp90F6660279F6197FCFFE78CF71799891" Guid="32459617-605C-4167-9715-581A8A9A9498">
+            <File Id="filE82D8B5B56C989C94D728B367674EAB2" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PointCloudMedium.bmp" />
+          </Component>
+          <Component Id="cmpF0E871BFC753933E97A2ABA97E23AB20" Guid="1069B3EC-2950-4B20-9FE5-7208CA057565">
+            <File Id="filCED78ED1B821BB839AA9F4056A8CB7F0" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PointCloudSmall.bmp" />
+          </Component>
+          <Component Id="cmp32B1659EFF7C288535FEC2F64FD9A237" Guid="3DE1C277-D65A-4F9E-9A60-43795479B09F">
+            <File Id="fil1ADB527002672D1F3B69116F9DE16F4D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PolyToProfileLarge.bmp" />
+          </Component>
+          <Component Id="cmpCC5FA9F99C5585E188BAF368F3C149BB" Guid="E5181544-A9E5-4B62-9DFF-8198158E7E0A">
+            <File Id="fil99FC418E99518E15230CBBE8B9F187E9" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PolyToProfileMedium.bmp" />
+          </Component>
+          <Component Id="cmp4D728408ABE9FC61F4B0399ECFF0D8E9" Guid="ACB9E1F5-476B-4AFC-9460-BA22A051E488">
+            <File Id="filEF8D2EFEF07D2332AF2A136F23E57067" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PolyToProfileSmall.bmp" />
+          </Component>
+          <Component Id="cmp8B4DB6A0157A30E7CAC65B4D27AC3A7D" Guid="12080273-FAF9-44A7-9429-AA7170980113">
+            <File Id="filC646E8AD873F11E64D995C6D54F53C84" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PositionMarkLarge.bmp" />
+          </Component>
+          <Component Id="cmp9177F954FFB4497CA051E8F3EB78CBDE" Guid="833BFB1A-951B-4B4D-B3A8-B55E010BFD92">
+            <File Id="filC93B953242DA34FCA7ED845B70D525A2" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PositionMarkMedium.bmp" />
+          </Component>
+          <Component Id="cmp40C28B9763991F0F6F1354BA5D97DC77" Guid="D7424131-198B-42B6-9E9D-F55964C8E241">
+            <File Id="filB5A6A65CAE5B5A29BA19AE91A2DC3EA7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PositionMarkSmall.bmp" />
+          </Component>
+          <Component Id="cmpB97A4764B6802FC610B35D8A15A31592" Guid="A3F69446-AF08-4756-BD74-235C1CDF9A4E">
+            <File Id="fil98D753DEF60E871B74B268078448EB8D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileSearchEngineLarge.bmp" />
+          </Component>
+          <Component Id="cmpA45145FE282E18453083998DA01B7AA8" Guid="D64DF3E1-C522-41CF-B7E6-EA02B552B1CF">
+            <File Id="fil3FDE773E5FCB8087071AD190EEB32732" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileSearchEngineMedium.bmp" />
+          </Component>
+          <Component Id="cmp6AF27152B836185F972DE1D6815042F2" Guid="C3F313F4-A9C8-43E5-9E35-62AA5ECACE1F">
+            <File Id="filDBC59A3DBFD33C610B24370F913F656B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileSearchEngineSmall.bmp" />
+          </Component>
+          <Component Id="cmp26E22D980CD3CF7EE946CD1E4B8DD860" Guid="F8763DDA-74FB-4C1C-A774-4C694912787A">
+            <File Id="fil1341421519AFB8F50ED860EFF0DB1C02" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileToPolyLarge.bmp" />
+          </Component>
+          <Component Id="cmp387676319F31A8707F6E680966B13A7F" Guid="AA6BABBC-958C-493B-9AA0-76D77DE0DE50">
+            <File Id="filB8D45806CE44286A2FFE41B19984BCAA" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileToPolyMedium.bmp" />
+          </Component>
+          <Component Id="cmpAEA06A9B67A0B3AD168EBDDB8A34225E" Guid="6FA2D891-189A-4FA8-9717-D1C357B7D882">
+            <File Id="filB707262741697E08DCFC4F877496D9A9" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileToPolySmall.bmp" />
+          </Component>
+          <Component Id="cmp8A8251ABC6AC4A5615F40628E5D80D5F" Guid="CC8CC457-6B10-4129-A9CB-033B592C7E5E">
+            <File Id="filB5A0C182306B75306E33EFA3E27DB7E2" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PrototypLogoLarge.bmp" />
+          </Component>
+          <Component Id="cmpBA9D87723BD20046986F04E62C9DEE5E" Guid="D3DC247F-1239-42F1-A8BE-ED17D7B9A53C">
+            <File Id="filD198EEEB9A37AF067BCA584B6E861E38" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PrototypLogoMedium.bmp" />
+          </Component>
+          <Component Id="cmpA42631671F0DFBE4B759C63F06BF3BE7" Guid="0F2A85C4-DB5A-4317-8AD6-D328AB4224D9">
+            <File Id="fil0067A79E8222971221343447236F66AF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PrototypLogoSmall.bmp" />
+          </Component>
+          <Component Id="cmp1E19821595ABDEC9A597AB8A14250640" Guid="810C6B5E-046B-4860-8CE8-8E99F2F33C1F">
+            <File Id="filA8FC26DF1CDD5F3892B9539B02659CD7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RecalcLevelHeightSignLarge.bmp" />
+          </Component>
+          <Component Id="cmp6BB73033FC82C6B1DC842C6E85CE75AD" Guid="7649AA5D-66E7-40C3-9E9A-CF40384E3A2F">
+            <File Id="filBAF172EB02D4B2BC2591709354867ECD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RecalcLevelHeightSignMedium.bmp" />
+          </Component>
+          <Component Id="cmp3D9FCAD1CCC443FAC93A9CB9455847DC" Guid="2DD4A026-EB59-4D42-887B-CD2C8C522B0B">
+            <File Id="filBB92E30968EBA4EB743411F9F9D47612" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RecalcLevelHeightSignSmall.bmp" />
+          </Component>
+          <Component Id="cmpD81DCA45044ABF43E5C0815E3918B010" Guid="9E9D606C-77A8-44DA-A944-EB28AFD89AC3">
+            <File Id="fil0B21806505A2BA2430E3036EC02E9B3D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RegionDescriptionLarge.bmp" />
+          </Component>
+          <Component Id="cmp56DFCDAAD7D9CFDD9EC709A7FC903F02" Guid="BDF21113-03D2-4185-8DBA-8E66EF4DBB5A">
+            <File Id="fil0D73412183C85775478016714851AD92" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RegionDescriptionMedium.bmp" />
+          </Component>
+          <Component Id="cmp0FA53024B746EBC67767C71C8833DC2B" Guid="13B8DEF8-6FF5-4F0B-9923-59719266B991">
+            <File Id="fil067E743CB3443F58C69A1BB520427FDD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RegionDescriptionSmall.bmp" />
+          </Component>
+          <Component Id="cmpB4FB03F7BEC3F5D52D1461E1B5F7829B" Guid="C271FC63-0992-4708-BCB3-09B8EDCE2B10">
+            <File Id="fil944B4CA2C0C23136C196457383B1DCD4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RenameBlockDefInNewDefLarge.bmp" />
+          </Component>
+          <Component Id="cmp440AC5CE95CF8E04EC711C35A713E003" Guid="C261E08D-07EB-4316-8AD9-77EB1A94D9EE">
+            <File Id="filAD290728B5D5B4A6B209561E77632E37" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RenameBlockDefInNewDefMedium.bmp" />
+          </Component>
+          <Component Id="cmpA4B99BB9ADF5B1CF3F7FB4FB03C8244F" Guid="F90C691B-BECF-49A6-9C84-A1853B74DD6C">
+            <File Id="filC80F9F371F4BC7D243BB2E9DFD033434" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RenameBlockDefInNewDefSmall.bmp" />
+          </Component>
+          <Component Id="cmp1655DCEEF48AA58003DF49CA6EAD1D50" Guid="67A23ED2-7BE0-46C1-89C1-27CAF50E9414">
+            <File Id="filFD9BFCADA0089A019124B0F06E4C241D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ReplaceBlockWithFileLarge.bmp" />
+          </Component>
+          <Component Id="cmp45B82790F2DAE83DC8FA4FF85D8219DF" Guid="A7E9A301-5456-4495-A4B3-EAD3695BDB33">
+            <File Id="filC9FA32F424AF26164CA7F81A8A899334" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ReplaceBlockWithFileMedium.bmp" />
+          </Component>
+          <Component Id="cmp91F38E07147BE7B6D177ACC304BB50A9" Guid="EC5525F5-4A0C-4122-AF3B-191E14D8E3BB">
+            <File Id="fil0B68F95FD0FB25280E9E65C44E472CA0" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ReplaceBlockWithFileSmall.bmp" />
+          </Component>
+          <Component Id="cmp996A819FE29B5DC8AD8CEFB71CBB9FE3" Guid="AB6B8698-C683-42A3-BF5A-A4B13E184B7B">
+            <File Id="fil00CB29A6FE79AC0C1D8043FB4663B231" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RigidInsulationLarge.bmp" />
+          </Component>
+          <Component Id="cmpB2A4D2673D0565CBC04144318373D258" Guid="0188DE14-34BA-421D-808D-7716B5B9418D">
+            <File Id="fil0CD382561AAB359E2CF9197B2B34D091" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RigidInsulationMedium.bmp" />
+          </Component>
+          <Component Id="cmp2B89BB6E0FA3D0359AF86AC1254CFB47" Guid="F00F47CB-9C2D-4BF8-A88B-234AA70E4FD5">
+            <File Id="fil730A4CB1B9572E821EEFCDEAA73280FC" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RigidInsulationSmall.bmp" />
+          </Component>
+          <Component Id="cmp59ED6C059EC758902E5B9D1C8A8C5837" Guid="22B10AEF-0858-41F7-A33D-7E5340BDAF18">
+            <File Id="fil56340F131AB297C85C767196669485D8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowMarkLarge.bmp" />
+          </Component>
+          <Component Id="cmp3592F20223622C447605FF0401068567" Guid="6237F796-E52E-4860-95B9-DD44FC97E139">
+            <File Id="filCA33321CB5C6876B875F20A28002512E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowMarkMedium.bmp" />
+          </Component>
+          <Component Id="cmpC7B9ACE19E694F4519B75EE5637CA739" Guid="B7F8D4D9-9292-4AD5-B957-5CE7750430E0">
+            <File Id="filDC400000853B39544FE2DE7E2FC1235A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowMarkSmall.bmp" />
+          </Component>
+          <Component Id="cmp90008EB48E2450B595A9A877885CF54F" Guid="8846ABB4-F103-4FF3-A873-73DF0E1EFBBD">
+            <File Id="filAA04D0740EF0AC27159B1AFAE48EE7E6" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowPairMarkLarge.bmp" />
+          </Component>
+          <Component Id="cmpFF7505765F18F0E9D1EB6A1DFB140DDB" Guid="7A1E1B2B-08E9-4F97-BF1A-4D91004624B3">
+            <File Id="fil9B24FBDCA51BD242BDCA028CCAD19174" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowPairMarkMedium.bmp" />
+          </Component>
+          <Component Id="cmp28655EE4545B3331D5CD056DCAC91394" Guid="29E64327-F999-4D2D-A018-58A782EDD2EB">
+            <File Id="fil2E2C178A2F40B9814D9F95C320C6259F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowPairMarkSmall.bmp" />
+          </Component>
+          <Component Id="cmp637770D094BBBC383101C4E98FBDBA19" Guid="9D989D39-8516-41A9-8FDB-3975A85EE78C">
+            <File Id="fil4FA9A78F87FF5A6F5682C39C6C3416B4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionPairMarkLarge.bmp" />
+          </Component>
+          <Component Id="cmpDDFAD6EAD1B5F7708FC28BA6D412B84B" Guid="0C387FCF-C7CA-4F63-9BA1-E79E1A4C86D2">
+            <File Id="fil17921F06EF803D0D673D0ECDBAE4CA6A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionPairMarkMedium.bmp" />
+          </Component>
+          <Component Id="cmp5832AE71E3E3B653DFC2D3DE8D86DA1D" Guid="1E54445A-7E0C-4CF0-87CB-E7692E064B14">
+            <File Id="fil330531D55D0A1F4D13CE28B0DF4EB07A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionPairMarkSmall.bmp" />
+          </Component>
+          <Component Id="cmp5DAA51902ED6005DB15CA07FBB45E813" Guid="D5849C61-7A0A-4841-BA51-D16123794444">
+            <File Id="fil158F677A01B6EF414F2CD3C4EBC0EA71" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SheetDescriptionLarge.bmp" />
+          </Component>
+          <Component Id="cmp169A114AA0AB1C1D1C245F0708DB11DF" Guid="B26A9017-2D69-4654-9220-DE8F4EFC0690">
+            <File Id="fil64C17EEFE46BE9B8E804A1E83D67F448" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SheetDescriptionMedium.bmp" />
+          </Component>
+          <Component Id="cmp8B733CB76A8E4FC8CA37FBD006287D16" Guid="255D23F9-F69F-4DBE-8091-7F1F3C15D562">
+            <File Id="filBFAF640488610500AD51A784A3A4A16E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SheetDescriptionSmall.bmp" />
+          </Component>
+          <Component Id="cmpC166DFFE4A4186ECD3269B34E69772C9" Guid="ED6BB810-CF7D-4E7A-A436-2168A5D0FB50">
+            <File Id="fil321FCCE510FE6BEEB04DE48B095C04AB" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ShowCommandsListLarge.bmp" />
+          </Component>
+          <Component Id="cmp1D70AE60AEBE9D6F1D9A5E372A4728E4" Guid="AA7E09E9-1DDB-4AC7-89E9-F7517B52493C">
+            <File Id="filD4A272CA00D6FAC82EE2D14DEF1B48A5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ShowCommandsListMedium.bmp" />
+          </Component>
+          <Component Id="cmp48CAACD083A718E59E1A1943E39D8455" Guid="5FAF5EEE-D20A-457A-9726-10D7E1C3C0A2">
+            <File Id="fil4A435313A65B03989FF6ED6121A1B5E1" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ShowCommandsListSmall.bmp" />
+          </Component>
+          <Component Id="cmp81915CBF0E6CED0C4F76B6DBD26AA5F7" Guid="4D3EFDD5-60E3-4D6B-9D74-139708BBA976">
+            <File Id="fil81880C23AE1E1591DCE180A31D596713" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointSimpleLarge.bmp" />
+          </Component>
+          <Component Id="cmp9EA4A4CE3B70E098BD1BE5C4F25C6955" Guid="749253DD-0B7E-4706-BB8A-8DC5DA84EC5E">
+            <File Id="fil30B66DFAB795010572D691F8A6F3EE7C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointSimpleMedium.bmp" />
+          </Component>
+          <Component Id="cmpDC03DFB4758C1115B92BD8A8CA38BABA" Guid="0270175A-CBFB-4F94-9676-C18992F57060">
+            <File Id="filD61AFB029790B40CC46370D1DA628FCF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointSimpleSmall.bmp" />
+          </Component>
+          <Component Id="cmp20BF1B636A32FB99E53C1A930C366E94" Guid="E978F2EC-76F7-45F0-9D63-CF1B34B12529">
+            <File Id="filD9E14AC99A8335564630F20082E58945" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointWithSilicaLarge.bmp" />
+          </Component>
+          <Component Id="cmp53B29D05DFDAC0DFEBAC37FAC5C792FD" Guid="87264C47-D361-423C-9D6A-5B24DD85D3CF">
+            <File Id="filEE5E50AEAEE8B2C21A6D52E307B22B3D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointWithSilicaMedium.bmp" />
+          </Component>
+          <Component Id="cmp635E5725C874DB810B4F012417A9D306" Guid="610F7819-78FB-40DA-9CA6-DE48C276546D">
+            <File Id="filCC5E66DA5A674F1889B1D632B38A9160" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointWithSilicaSmall.bmp" />
+          </Component>
+          <Component Id="cmp94A1377D7E10ACED248A9DBDC5723854" Guid="01156386-E2C4-4CD7-8F8E-AC7D21160F1F">
+            <File Id="filDFC025E7359D985684C170F1CC510B03" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SingleGlassUnitLarge.bmp" />
+          </Component>
+          <Component Id="cmp0D7D55612727AFC78D0431A74A518A62" Guid="5DB7B3D0-4D68-4014-8EFD-5A58C78AAB94">
+            <File Id="fil88E70D67D986FD7711ACE55DCEFF6AA2" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SingleGlassUnitMedium.bmp" />
+          </Component>
+          <Component Id="cmpA1E173BB645B68AAD61F3C7EE68D9BC4" Guid="A6CEAEE6-B3FF-4178-9CFE-2B7F28EEE525">
+            <File Id="fil878A85C6901FCA8C9D882215EE1BC82C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SingleGlassUnitSmall.bmp" />
+          </Component>
+          <Component Id="cmpE9E61D3D3B935F70809F3F6075D0ECB5" Guid="D3178196-DA9B-4F96-9FB9-AE3028203EE2">
+            <File Id="fil977989732FAD81AE930DE60BACB36378" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRectLarge.bmp" />
+          </Component>
+          <Component Id="cmpF38F2BCE4CB6C241FE8026724EA97136" Guid="E2CF928F-9E19-4371-8E19-1650107F8150">
+            <File Id="fil0826632F74B2FB83CE39985CA1164ABC" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRectMedium.bmp" />
+          </Component>
+          <Component Id="cmp4872B7B949BF8B2D01F8E9C3EF846112" Guid="A20A37CB-3EE3-4CF8-8809-471872DD7D49">
+            <File Id="filD5C572F8221945E2C2BEA8EC369A0B0E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRectSmall.bmp" />
+          </Component>
+          <Component Id="cmp3A4CF300337830E6E7BE5A9B9109A432" Guid="455134E9-8FDC-4F1D-BA19-9C98305F0938">
+            <File Id="fil0177AF153CD3808A3777934518D4CCFC" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRoundLarge.bmp" />
+          </Component>
+          <Component Id="cmpD8E86C2B5AA8FB97B9E94829D540CA65" Guid="C90FEA7C-A3F2-46FD-ABF6-A6A93B53C9A5">
+            <File Id="fil3362E9E53E2EF48A00472D13362168CF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRoundMedium.bmp" />
+          </Component>
+          <Component Id="cmp6EE252628B05F788764F8ECB6FEA7A0D" Guid="C10026F0-0D80-4F8C-BAB4-8E16BD880E0E">
+            <File Id="filA25AC1B651C3FF905D5D471C84EA920D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRoundSmall.bmp" />
+          </Component>
+          <Component Id="cmpE35672C6F590B3758809137A9D6BD121" Guid="961762E5-ED38-48DA-B459-7AD5B4E7D6BE">
+            <File Id="fil4B04BC1019D23417326C5ADC48EB451F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SoftInsulationLarge.bmp" />
+          </Component>
+          <Component Id="cmpE918E82681FBB29B1545A2CBDC772B7B" Guid="B276FCD0-7A55-42F5-B425-5FD2B14B0DE1">
+            <File Id="filE1336DEFF61CB1C900E6AB775E17D0D8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SoftInsulationMedium.bmp" />
+          </Component>
+          <Component Id="cmpB1E366A273C31CB7F67F65132F53B057" Guid="80B0200D-C974-4E17-ABE7-7544D4D46627">
+            <File Id="fil5BA2CCB30153E198F650745E81BE14B5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SoftInsulationSmall.bmp" />
+          </Component>
+          <Component Id="cmpBBFF3DF1A5A5EC50CA8783FF0D595B91" Guid="797A0D55-C78C-4DE5-BC41-7DB68B419E2B">
+            <File Id="fil2015AFDD32DE7389C553F6C79185D10C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SolidProjectionLarge.bmp" />
+          </Component>
+          <Component Id="cmp70F7D06432E3383884AF7685CC8E1523" Guid="7628A944-DB69-46B6-AB72-888FE42D3929">
+            <File Id="fil8E7D6C11AA35DB7E7AE11E533E40C6F4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SolidProjectionMedium.bmp" />
+          </Component>
+          <Component Id="cmp20080748A9E07E76B3790A60ACF438FE" Guid="BE7C062B-7BEA-4A92-98EF-7749CB081E09">
+            <File Id="filCE1BCB46F58638164C7C8CB2E2628563" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SolidProjectionSmall.bmp" />
+          </Component>
+          <Component Id="cmpB8D6CCFBA008BEF39EE112BF53833E1C" Guid="D8DF6E9E-23B2-4DED-A676-C2F0092CB222">
+            <File Id="filFD2792FE817AAD19E0F3FEEB63605EFF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffAllLayersButOneLarge.bmp" />
+          </Component>
+          <Component Id="cmpFD7BA2E051C29EB789ED193384F9C30E" Guid="D971B99B-1108-490A-BCEA-0DD85DB6F6C2">
+            <File Id="filD81D0BE1D4FE85731F636BAEF04BD397" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffAllLayersButOneMedium.bmp" />
+          </Component>
+          <Component Id="cmpC690A6C5606C2FB8DE3BEE3A83ADA4B1" Guid="552889F6-436B-4FED-ABDA-10A909D1335C">
+            <File Id="fil1EDEEAD066A331CCE592F33B2523523E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffAllLayersButOneSmall.bmp" />
+          </Component>
+          <Component Id="cmpD13585D36E2E2092951B4767000F3D3E" Guid="C187D576-0711-4372-B06E-647511B50E52">
+            <File Id="fil34AE85168E740997AA0E5E2DAFB837AD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffLayerLarge.bmp" />
+          </Component>
+          <Component Id="cmp34CB3116FDB5D19F9A0A9527F7C238C1" Guid="1C51B06D-2C87-4C3B-98A4-87E5A0BE3FE5">
+            <File Id="fil77601E88093F74CC8AAA82B3A5E30AA6" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffLayerMedium.bmp" />
+          </Component>
+          <Component Id="cmp1EAFBAF82A257DB403E850DDDD41950D" Guid="E2AE6673-F297-4897-B3C3-A0DED153B36B">
+            <File Id="fil47A642C8CFE30D7556B10B603C2F275A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffLayerSmall.bmp" />
+          </Component>
+          <Component Id="cmp712CEFD055C2FE8F8AC43B51082E3518" Guid="3A3834D6-F60D-47BA-A771-4803568262F7">
+            <File Id="fil5D05F3531BD0A2ACB952B1A5A98ACFB8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOnAllLayersLarge.bmp" />
+          </Component>
+          <Component Id="cmp5EDBDDE67C9816C28D83D4FCD0268B78" Guid="9D9B2268-D3D1-4B8E-889B-62318B0FB159">
+            <File Id="filE0485B3C092638394FB7BEF1AEE0A03A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOnAllLayersMedium.bmp" />
+          </Component>
+          <Component Id="cmp1126A0AA50C2DB3A17A4C215E039F7A5" Guid="926B23AF-95D5-4D11-BD6A-5C402E005C66">
+            <File Id="fil63AB389BCA574AF949A1EDABEF6C6A88" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOnAllLayersSmall.bmp" />
+          </Component>
+          <Component Id="cmpC6EA1A997DEC70C6DA55D2F512EC979B" Guid="7E41E007-3B7D-4F89-B478-9600AFE55477">
+            <File Id="filE11DB9C8D8957BF88B9390F6D3DD8966" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TitleMarkLarge.bmp" />
+          </Component>
+          <Component Id="cmp8F876FBAD7D1F548F29A25FF9F8E4902" Guid="D5A8D0EA-1927-4D99-A2B1-19D706D7354C">
+            <File Id="filA82CB85B30591A122F462EBC6270DDE3" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TitleMarkMedium.bmp" />
+          </Component>
+          <Component Id="cmp8EEEB03746BBBDE65ED3F2BF757C1D3D" Guid="E6501A54-7C24-4A8A-A9C8-252DD7445B8B">
+            <File Id="filB55309DB8E809089B0356A0CFC8E6102" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TitleMarkSmall.bmp" />
+          </Component>
+          <Component Id="cmpCE50111DB524898A7717D58EDF79A965" Guid="CA3E18D5-5B8F-4E8C-B3DB-E3687171D9CF">
+            <File Id="fil93C9BB97B3EC996A6A82FD512536A39F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TripleGlassUnitLarge.bmp" />
+          </Component>
+          <Component Id="cmpEE68D383F670AB6D7FF044A012D92496" Guid="43AE664E-0834-4BCA-8969-13008BE5BBBF">
+            <File Id="fil9AA741814FB3A34AA0D345FF708CFA9B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TripleGlassUnitMedium.bmp" />
+          </Component>
+          <Component Id="cmp566EDF7A939B5AB4A0CC4F4FF2D799E9" Guid="133D5EAB-8FA5-4FD2-A198-6584386E05C3">
+            <File Id="filDE89427962AB9E505972B14BE530C04F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TripleGlassUnitSmall.bmp" />
+          </Component>
+          <Component Id="cmpF6C0D310A375E532F4FAD1B14CC06D35" Guid="730BA5C3-B3F2-4F22-BC46-A674C0C0F250">
+            <File Id="fil7DBA7BDD0A684E0753989DFA153B8E89" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold2dSheetProfileLarge.bmp" />
+          </Component>
+          <Component Id="cmp4B1322FD2B971B43DAB98905C341E531" Guid="B9648BA1-20E6-4168-8301-66A342C11A79">
+            <File Id="filD9D4A58697FD0F53AE3654F02FD393ED" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold2dSheetProfileMedium.bmp" />
+          </Component>
+          <Component Id="cmpE692170AA03CDDB93AF2BBAA476D9059" Guid="274FEFFC-F65C-477F-8A89-7DE0C9DBE9B0">
+            <File Id="fil85EBFD24112C3D8B551F54640A5614A5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold2dSheetProfileSmall.bmp" />
+          </Component>
+          <Component Id="cmp9612D75223188A394C8AFF711EE03572" Guid="BB129A08-9713-40CA-81B6-D2C2A79BA174">
+            <File Id="fil873D0FE1873C9AD38A3A126FF9E235B8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold3dSheetProfileLarge.bmp" />
+          </Component>
+          <Component Id="cmp0D1CA653190540EF8D9F7B18333F30AD" Guid="A621D9D1-6ADC-4088-ADB8-C61034C2BE85">
+            <File Id="fil314B9E2897BEC9EE3815E1DE698F5C2D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold3dSheetProfileMedium.bmp" />
+          </Component>
+          <Component Id="cmpB0E037709203400E46D39E1057D248DF" Guid="2840B2DB-C0B4-4730-A841-FDEF962A2B9E">
+            <File Id="fil3AE0375E8D3E6E4C8FDFD6DDBD16D0B9" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold3dSheetProfileSmall.bmp" />
+          </Component>
+          <Component Id="cmpAD132200A6CE5F872E478EA69271F49C" Guid="D3E66EAA-7228-495B-BA6D-6990F98983F7">
+            <File Id="filFDFF6D611452BBD9AF9854BE421925EF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\UnlockViewPortLarge.bmp" />
+          </Component>
+          <Component Id="cmpB6A30F5A05B259FF0DC207F1BA46E0EA" Guid="DDCAEFED-A5D5-4237-983D-BE915BD495BB">
+            <File Id="fil1F26B46596029130B1640915D3DFAA32" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\UnlockViewPortMedium.bmp" />
+          </Component>
+          <Component Id="cmpD6CD276D570624CD2B862DBF0458CB11" Guid="8FAB8EA6-AC06-4715-8678-0AA431D390BE">
+            <File Id="fil6BFE43A85737CD624CDBF673422611CE" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\UnlockViewPortSmall.bmp" />
+          </Component>
+          <Component Id="cmpA38C1852DCF0A7B478559823CC63DB14" Guid="3EDCEA7D-A25E-4A14-9E5A-071B207298E6">
+            <File Id="fil2B4AE29BCE215710E8B3E2B46F6EB813" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingLineLarge.bmp" />
+          </Component>
+          <Component Id="cmp6F5C852C175D91CDCE80B53D7DFFECF1" Guid="D228B8FB-0012-4A3B-947D-46D55A867689">
+            <File Id="fil14039D41AA0E7BCB60FDFF4A99A3D0FE" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingLineMedium.bmp" />
+          </Component>
+          <Component Id="cmpFC39612134DBF4273606809ACD9E86F9" Guid="F6F1DDFC-6561-4201-9C64-9EF32B7A4C6E">
+            <File Id="fil38924D7BFF7DC7D20936563FF20E7195" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingLineSmall.bmp" />
+          </Component>
+          <Component Id="cmpDCF552513EBCAB3B9793F631A891BEAF" Guid="4216581B-299A-459F-8DCE-F4FDCC48C329">
+            <File Id="fil114F6F433D4126A10EF97390440C95C5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingMarkLarge.bmp" />
+          </Component>
+          <Component Id="cmpBCEE5CEAF2C3473EA5833DC809D6A558" Guid="274DC4CC-90EC-49F2-A0A7-AA984FA83F82">
+            <File Id="fil03B981C2889D50230F45E6B606631712" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingMarkMedium.bmp" />
+          </Component>
+          <Component Id="cmp0511555F52F990435211FCAA948033ED" Guid="2B46DCDF-0A10-47F8-825D-3806D9B18C25">
+            <File Id="fil57C7C7BB113CD60B324B1CF35665ECF5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingMarkSmall.bmp" />
+          </Component>
+        </Directory>
+        <Directory Id="dirD2D6B0ACE50556209D99D089DBB2F737" Name="Lisp">
+          <Component Id="cmpDD37952FFAF53455A8438A96D5C5D3DC" Guid="C0BBF820-6818-4402-A23C-A44173130724">
+            <File Id="fil0A554D173D63505F24D0EDB972A26E34" KeyPath="yes" Source="$(var.FilesPath)\Files\Lisp\blockReplacer.lsp" />
+          </Component>
+          <Component Id="cmp58A1D272BD55998DA48526706892773D" Guid="CD41BF63-0587-40B9-BD73-B7CE4C776E63">
+            <File Id="fil37D70DC248A521C1A6AED87AAD7CCF50" KeyPath="yes" Source="$(var.FilesPath)\Files\Lisp\CopyRenameBlockV1-2.lsp" />
+          </Component>
+          <Component Id="cmp625AA7420AAC5165E002832E7C77DBCD" Guid="CF9AB1F9-6BEB-4F9B-B453-F8CC6B1EAD95">
+            <File Id="fil934F1EBFEEC4E081FAD4384F5DE2AE4E" KeyPath="yes" Source="$(var.FilesPath)\Files\Lisp\pedit3d.lsp" />
+          </Component>
+          <Component Id="cmp0EEC15E3B0870A5401132F4DC98E40BC" Guid="25A744CC-B913-494B-8143-0DAABA3C9C0B">
+            <File Id="fil8EC27EDDD5D899F8A5879ABC1DDE082A" KeyPath="yes" Source="$(var.FilesPath)\Files\Lisp\smash.lsp" />
+          </Component>
+          <Component Id="cmpD4B67967B6E27E64DAEFC8F08F28712E" Guid="41F7B8E6-BB27-4BE9-AF73-2A0C609B024F">
+            <File Id="fil730CB275E233B51C7BB1398A3A4C0B8B" KeyPath="yes" Source="$(var.FilesPath)\Files\Lisp\vpts.lsp" />
+          </Component>
+          <Component Id="cmpA9F35E49B35047EA9672DCB0455AC31B" Guid="129A3763-C266-4626-99CD-4B7745F63B34">
+            <File Id="fil3899431F08904887BFC4D6CBB5B44882" KeyPath="yes" Source="$(var.FilesPath)\Files\Lisp\flat.lsp" />
+          </Component>
+        </Directory>
+        <Directory Id="dirF70CFE722FCC57A70705A23E4CB16A17" Name="PlotStyles">
+          <Component Id="cmp2962CDFFB2F7FF4798DFF512EB15271B" Guid="9B84B327-1AED-4BEA-8F0B-36D1C82A0953">
+            <File Id="filFCA474BAE1EE0DB75CDC062450444F54" KeyPath="yes" Source="$(var.FilesPath)\Files\PlotStyles\mono.ctb" />
+          </Component>
+          <Component Id="cmpC1386CCC30E7D2F39488E6D4073511C6" Guid="90ADDA34-54E7-4952-810D-30B1D0EA1313">
+            <File Id="fil2EB283792287A27E4744DF1FF6BBEC15" KeyPath="yes" Source="$(var.FilesPath)\Files\PlotStyles\Prototyp_a0.ctb" />
+          </Component>
+          <Component Id="cmp97BC66BFC5E296D75001DF3486259907" Guid="344D3F56-B884-4004-8E00-A7BD84191062">
+            <File Id="fil61A66487709D73E60F427CEE74435F34" KeyPath="yes" Source="$(var.FilesPath)\Files\PlotStyles\prototyp_a3.ctb" />
+          </Component>
+          <Component Id="cmpD76A6A4FA1B798766EE815A3C3E85223" Guid="362BA028-62D7-4952-A71C-0258B8D9E4A4">
+            <File Id="fil50C6DABC2BD864D7687E4EEAE39EF6A9" KeyPath="yes" Source="$(var.FilesPath)\Files\PlotStyles\waagner_biro.ctb" />
+          </Component>
+          <Component Id="cmpCD6AB4F0FABF08AAE5ED4C4FF3D2CBAC" Guid="8EAF04BC-E3D3-4393-9A1F-BD7FD68E44CC">
+            <File Id="filE18788ED8AC825562DC0EB6660EBF9B0" KeyPath="yes" Source="$(var.FilesPath)\Files\PlotStyles\waagner_biro_duen.ctb" />
+          </Component>
+        </Directory>
+        <Directory Id="dirAEB8DC9CCF2536B14E63EDCCE80382B2" Name="Tables">
+          <Component Id="cmp38DF571DC6CD29A0B81DD57D9EAF074E" Guid="2E05A7F1-FD22-4670-BB1F-D4C7A75096CC">
+            <File Id="filAA569AD7D902356DD949855007810090" KeyPath="yes" Source="$(var.FilesPath)\Files\Tables\Aluminum.bend.deduction.csv" />
+          </Component>
+          <Component Id="cmp4C7B07F00FB61EAE245744F38BEAB7EB" Guid="87D300E1-D370-4AB8-95FA-06B4BE1759C5">
+            <File Id="filB8CC7B72713437AF40385B6C1A62B6F4" KeyPath="yes" Source="$(var.FilesPath)\Files\Tables\materials.csv" />
+          </Component>
+          <Component Id="cmp9BBB56818E62D2C91CC67CF6BFD1F290" Guid="97D4088F-3CC8-4D71-83FB-4E0991133D79">
+            <File Id="fil33F52BE5018CE17F0DE8CEDBEB795958" KeyPath="yes" Source="$(var.FilesPath)\Files\Tables\Stainless.Steel.bend.deduction.csv" />
+          </Component>
+          <Component Id="cmpD2AAB9D47D0AC6E7636A26F114107F8B" Guid="1B7B40E1-CDBE-4E4D-A8A2-671BFBCB9535">
+            <File Id="filC8033CF87C00C11C16EF5E4C50C7163D" KeyPath="yes" Source="$(var.FilesPath)\Files\Tables\Steel.bend.deduction.csv" />
+          </Component>
+        </Directory>
+        <Directory Id="dir5135E2B2675ADA8F068DDD9596635DAD" Name="Templates">
+          <Component Id="cmpB2791AC1D1882D354B13468E41F53B01" Guid="EA0FFD98-2767-4C57-9A72-78354A9F22A5">
+            <File Id="fil0D57673681BC084B32C6931C44034C66" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\all.dwg" />
+          </Component>
+            <Component Id="cmp32becc58938641a585f5ec0cad4c7c13" Guid="D0EE3FB2-CFFB-478F-B71F-7621E04717EA">
+            <File Id="fildf730ecf71234db3889d05fdbc1fb465" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\KOJTO_3D.cuix" />
+          </Component>
+          <Component Id="cmpE56851B9F44DDA3020EC8559FF0428C0" Guid="7C4D5636-AD40-4FA4-94D0-CE67AE949081">
+            <File Id="fil83A7EAAF6FB39D7B373CC9016182C5D5" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\KojtoCAD.dwt" />
+          </Component>
+          <Component Id="cmp51791D6ADA13ACBC32B2AF4B5E6015B4" Guid="F006ADE7-1A77-46EE-B7F8-36A911BD097B">
+            <File Id="fil99BA43DB08048A97727FB7FC986BAC75" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\KojtoCAD.xml" />
+          </Component>
+          <Component Id="cmp0EC7808DA2364BE4B044D3B8DE24D648" Guid="3A65415C-378E-4030-AD9E-BE03D37BDE8F">
+            <File Id="filE8B472BFB31742D5897FFEED63362277" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\kojto.cui" />
+          </Component>
+          <Component Id="cmp5E35C43592954FFB9186BD1A69AF595F" Guid="302F3D11-4E98-44EF-B277-83E1AC118627">
+            <File Id="fil8E3E570DE703414C900FC2E1A8A415F5" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\kojto_3D.cui" />
+          </Component>
+          <Component Id="cmpC7F272BC845D4DDAAD503CB020300A10" Guid="66156104-C98C-47FD-B0C5-B54A05F58F83">
+            <File Id="fil7CFF41453AC74A34863D489F4958DC26" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\KojtoCAD_3D.xml" />
+          </Component>
+        </Directory>
+      </Directory>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <ComponentGroup Id="KojtoCADComponents">
+      <ComponentRef Id="cmp7CC2A6AC4220DAC7231BB5E9C94B83A4" />
+      <ComponentRef Id="cmpFE3F39E6F2A35B078BC0BAFD19511DAF" />
+      <ComponentRef Id="cmp6ABA3CC4BA8F6176592DAB087CDF3F4A" />
+      <ComponentRef Id="cmp8E0BA9345D6467C6CE87127468E2DA60" />
+      <ComponentRef Id="cmpC40811F029F043A254FEF20F838DAE62" />
+      <!--<ComponentRef Id="cmp5E2573832CA5C768461ABA641FD92A6D" /> geometry extensions -->
+      <!-- KojtoCAD 2012 dlls -->
+      <ComponentRef Id="cmp86CEC0777768B8A4DA11D04BE64FF20B" />
+      <ComponentRef Id="cmp92AB8B13BA8D7AAF4D75DFB66B6DE0D5" />
+      <ComponentRef Id="cmp9D906BC9D2C0D23A7D4160D8C9D66E28" />
+      <!-- KojtoCAD 2012 dlls END-->
+      <!-- KojtoCAD 2013 dlls -->
+      <ComponentRef Id="cmp4136bdfe328d4c46aba461a52be96e9b" />
+      <ComponentRef Id="cmp38f63aa7b2d8472fbe3fd98d1f21f4d6" />
+      <ComponentRef Id="cmpee7f1b01df9e4229a30e8113865dce85" />
+      <!-- KojtoCAD 2013 dlls END -->
+      <!-- KojtoCAD Bcad dlls -->
+      <ComponentRef Id="cmp3ABA2CE33B6243CD8F79FCCAE07FCC46" />
+      <ComponentRef Id="cmpD25D0F7C476E47BBAB41452210E1006C" />
+      <ComponentRef Id="cmp7CF547CED95847B590A4BD697D236975" />
+      <!-- KojtoCAD Bcad dlls END -->
+      <ComponentRef Id="cmp9DD47D0347AE254D923E22047764B092" />
+      <ComponentRef Id="cmp44D034D09C8D4DBDB49B7048F63EE2C0" />
+      <ComponentRef Id="cmp3F5B7F848CC742B18B52EEFE8BCCDE7D" />
+      <ComponentRef Id="cmpA7436ECA0A314017A4D937F680EE2102" />
+      <ComponentRef Id="cmp99B65B1A734A48A1B0BB084409A13281" />
+      <ComponentRef Id="cmpFF0C1DDF4C174E8BADA600FF1A62A2C5" />
+      <ComponentRef Id="cmp65CB115975CB40D9B50E5ED16C13F70D" />
+      <ComponentRef Id="cmp17F317F3B29DC444A1747D8270D1742C" />
+      <ComponentRef Id="cmp9DE2DDF45E74643DD83FF98E1D7C58ED" />
+      <ComponentRef Id="cmpAAC79E9BC3A027B24DFCC360CD900D47" />
+      <ComponentRef Id="cmp0B2B5F62E1514C2FB76567F154156746" />
+      <ComponentRef Id="cmp0AA90C603ECF46709B6D57186FCA025E" />
+      <ComponentRef Id="cmp4079DCD8EF3C4D8CB0AE969B05632165" />
+      <ComponentRef Id="cmpBB1AAEFD5775EAB32FE9CA7D2D2A77FA" />
+      <ComponentRef Id="cmpD29BFE5A5ACB89375D57D96CDECAE9E3" />
+      <ComponentRef Id="cmpEEC9B0100E4F04682E7EED90B9B0EEE1" />
+      <ComponentRef Id="cmpA45D61D039E1DB2F3561895928B4504F" />
+      <ComponentRef Id="cmp6C4E3CD38FE93E6C5E5B4611008982D2" />
+      <ComponentRef Id="cmp12EDCBB84BF5B8C02B77B16278CC7762" />
+      <ComponentRef Id="cmpB3547BBB0D31B101A95A33D460E30111" />
+      <ComponentRef Id="cmp84AEAF7BA8D312CCC297E37D202F613C" />
+      <ComponentRef Id="cmp73AD574E7A455CA81B8C33B3FE56B3CD" />
+      <ComponentRef Id="cmp23545827BA395E28297746417CB1DF73" />
+      <ComponentRef Id="cmp201F36A3BAFA343CFA6756D3725DE0AE" />
+      <ComponentRef Id="cmp33AE1E07DE6547CF62B3F92EA4259CFC" />
+      <ComponentRef Id="cmpB2799D6F675020EF02413C268D299BBA" />
+      <ComponentRef Id="cmp17D17D97F854B98A68332A2B6186724C" />
+      <ComponentRef Id="cmp49BC3A60BA0A3CF092F10F987BA3B76B" />
+      <ComponentRef Id="cmpD0DAE75C533BE0EEEF02BA02D2B55737" />
+      <ComponentRef Id="cmpA6AF432D7F2A305C328C97FB44D5728C" />
+      <ComponentRef Id="cmp8465A3F675B0CAB2CFA0C501A1F5BA58" />
+      <ComponentRef Id="cmpCC9E2DB0D28F9450B8BF476E70E7A7DB" />
+      <ComponentRef Id="cmp9509C082B6488E3F9E8BEF651E9EFAFC" />
+      <ComponentRef Id="cmp7E50D6E0679681A890BF61B68B2DC57F" />
+      <ComponentRef Id="cmp82D87B5FDF04CCE8908A03B9F208801A" />
+      <ComponentRef Id="cmp8B2BA9A95E2692BD3EE20C74EAAC31DE" />
+      <ComponentRef Id="cmp12485C5BBA8D0067AF9D2D1CD7789AD1" />
+      <ComponentRef Id="cmpB3AA51D89BD4F46DBC16680AC5782F9D" />
+      <ComponentRef Id="cmpC5DB155C067B915DDEFA5C5DA8EA4F0F" />
+      <ComponentRef Id="cmp9A6172CFDF1B49A8D926130B05D6E7C9" />
+      <ComponentRef Id="cmpE2C06B96C0910F2B940709992D484851" />
+      <ComponentRef Id="cmpE8E21E639A994A5621C2E89C09B38265" />
+      <ComponentRef Id="cmp59E319E752D38E129DA673A47A8B01E4" />
+      <ComponentRef Id="cmp9F369989A55E68E9DB98490C9734F43C" />
+      <ComponentRef Id="cmpB60CA706958EB684EB91DD9174EEE466" />
+      <ComponentRef Id="cmp696689FDA04DC6CF374FE0A816A3687C" />
+      <ComponentRef Id="cmp56C3B37B97CADD05F2FB140D0A8FF78B" />
+      <ComponentRef Id="cmp3C649124A3FFB1E8E3CE07330B02659C" />
+      <ComponentRef Id="cmpBB5F30B713FE18CCA6D21C5DF89057B1" />
+      <ComponentRef Id="cmpF1E825811A0F6C01A382EDA94FE59BE5" />
+      <ComponentRef Id="cmpE6C32A260EE113B1FDC0FDC73E5B2452" />
+      <ComponentRef Id="cmp4F539460095157E955B72355C172821F" />
+      <ComponentRef Id="cmp729F5523274B22B1F0FE7BC976C7967F" />
+      <ComponentRef Id="cmpC9105EBC37438F91598780BB725BA44C" />
+      <ComponentRef Id="cmp52A0D00DEF1A1B8B9A98F76E6A7B5637" />
+      <ComponentRef Id="cmpB482FC4F5E8F8E2B7C4D0217339EEED5" />
+      <ComponentRef Id="cmp133B2D207C4C823D48651C3FF1156C5E" />
+      <ComponentRef Id="cmp8799753BF5CA97F04DD7C5E0475FE323" />
+      <ComponentRef Id="cmp1C88A073C3F8956FB1D0906A78067242" />
+      <ComponentRef Id="cmp571E1E62F406DB6BED10A24E727FAEEF" />
+      <ComponentRef Id="cmpF2BD6C89555082808DA61DE2AC9E49F6" />
+      <ComponentRef Id="cmp8E7434F92CCC0A36F28069C6E20EEC05" />
+      <ComponentRef Id="cmpD7F0C4218015914901A78FD340A49B0B" />
+      <ComponentRef Id="cmpAFC6C7BC93EDAC636C60A6941B719301" />
+      <ComponentRef Id="cmp40518939349EA360B048B84D3E0FAEE5" />
+      <ComponentRef Id="cmp6E4887704A0D0791A08451DE2A3084E9" />
+      <ComponentRef Id="cmp962152146F62D5C9031A2D125C3DF663" />
+      <ComponentRef Id="cmpD74578088F91DE6E72E17D85AC042144" />
+      <ComponentRef Id="cmpD039D5445A975F159C3E089DC50E7479" />
+      <ComponentRef Id="cmpBB2C3F5428812C13BABF7135E4A92F7D" />
+      <ComponentRef Id="cmpD23BA1B6CD20D71C6E7D4EBD0879E862" />
+      <ComponentRef Id="cmp51E215F79A256AD9E5E162BA78F2D85B" />
+      <ComponentRef Id="cmp386A5F8775BAC80B8F85BE44A5150A10" />
+      <ComponentRef Id="cmpEA3B0D5622D0263F1A90619B2180F5E2" />
+      <ComponentRef Id="cmp2F4D3ED25283AFB28CA9F3E6908156FB" />
+      <ComponentRef Id="cmpC9504620B0CA25A4C56934581E69502F" />
+      <ComponentRef Id="cmp59A4599AD55E55B563E7244C538488D0" />
+      <ComponentRef Id="cmp282E45650F234750305C30024CFE621A" />
+      <ComponentRef Id="cmpFEDD1B3BC4AC736786CD50D21326FFCE" />
+      <ComponentRef Id="cmp1B31C9248D53C3EB20246992CF7FB444" />
+      <ComponentRef Id="cmp29C554353C2BF92A1B8869E00AF4F67C" />
+      <ComponentRef Id="cmpD2AD2A800944341ECCC043BE71AF6178" />
+      <ComponentRef Id="cmpB4380381D275309C78C3B664F7B9BF5F" />
+      <ComponentRef Id="cmp22E4EB1C460075D3D7B5CD4E8B3B1486" />
+      <ComponentRef Id="cmp98C4F91CCE94BF96C3457B88DA592193" />
+      <ComponentRef Id="cmp87A6E755FE91641B84B880204A433E0C" />
+      <ComponentRef Id="cmpFF1893F7298607724833C810F513F165" />
+      <ComponentRef Id="cmp2F340608463E11FF30BF2E2E71C8D481" />
+      <ComponentRef Id="cmpCE119C2F6B8EA79A4ECD574AE3290D15" />
+      <ComponentRef Id="cmpA0A96689C77C54B62A5A968A0D3CF734" />
+      <ComponentRef Id="cmpDCF240053BB3632A91FA5D069FC354E2" />
+      <ComponentRef Id="cmp72E15074977DFCE2D7AF22C160B260B8" />
+      <ComponentRef Id="cmp24E291D5C8CE6966E69E3BD1017AD902" />
+      <ComponentRef Id="cmp310301E307A55135DD53FE9D0E89D0F6" />
+      <ComponentRef Id="cmp6EB297277B039191FEBE03DEFF719AA8" />
+      <ComponentRef Id="cmp599E30539AC1D000E09894E90DDBAF52" />
+      <ComponentRef Id="cmp0368CD96F076FC2049F22256C140C360" />
+      <ComponentRef Id="cmp511F26705DD8059110845D8BBFA57E9A" />
+      <ComponentRef Id="cmpC689C7450CA2FC0F164C2B88F02313BD" />
+      <ComponentRef Id="cmp4AE191460F0AE15A8B449BBDAC93BF6E" />
+      <ComponentRef Id="cmp3E41F6C19C5A263690D1C39416FD4AD8" />
+      <ComponentRef Id="cmp87938EF8198D2C85359E13EE99AA524E" />
+      <ComponentRef Id="cmp4A1E3672558F46B8D40F245B8A7E5964" />
+      <ComponentRef Id="cmp51B006623AD3084E2BC124AA657D6F6E" />
+      <ComponentRef Id="cmp473519AD65934523664BFA03ED334C8B" />
+      <ComponentRef Id="cmpDF4C6748D7D46AEECC42C10C439FD568" />
+      <ComponentRef Id="cmp6FD58C393671CC6E0B1978A27F45F392" />
+      <ComponentRef Id="cmp5D771553BFD968F4E31818CEEBEA2C77" />
+      <ComponentRef Id="cmp2E92EEA040ED86D9103D03A526F4583D" />
+      <ComponentRef Id="cmp7A9B9D0D35EE88C0E60B1C14A5C35E4D" />
+      <ComponentRef Id="cmp3EDC2F072D3CD1F7043C8CA7E54C133F" />
+      <ComponentRef Id="cmp38032A70A9784C9D28734BA5296DC5A0" />
+      <ComponentRef Id="cmpAA9BBC0727FEF4D770CE3421B6994256" />
+      <ComponentRef Id="cmp96755F03E1EBA82CAEB7E2E0A1E5610B" />
+      <ComponentRef Id="cmp845E179DC114208C3FB008EEC752CCB9" />
+      <ComponentRef Id="cmp54B010997DC87369A3146BB678EEEB72" />
+      <ComponentRef Id="cmp242B780619BE1A080537B1B8CE0C8E7C" />
+      <ComponentRef Id="cmp90F6660279F6197FCFFE78CF71799891" />
+      <ComponentRef Id="cmpF0E871BFC753933E97A2ABA97E23AB20" />
+      <ComponentRef Id="cmp32B1659EFF7C288535FEC2F64FD9A237" />
+      <ComponentRef Id="cmpCC5FA9F99C5585E188BAF368F3C149BB" />
+      <ComponentRef Id="cmp4D728408ABE9FC61F4B0399ECFF0D8E9" />
+      <ComponentRef Id="cmp8B4DB6A0157A30E7CAC65B4D27AC3A7D" />
+      <ComponentRef Id="cmp9177F954FFB4497CA051E8F3EB78CBDE" />
+      <ComponentRef Id="cmp40C28B9763991F0F6F1354BA5D97DC77" />
+      <ComponentRef Id="cmpB97A4764B6802FC610B35D8A15A31592" />
+      <ComponentRef Id="cmpA45145FE282E18453083998DA01B7AA8" />
+      <ComponentRef Id="cmp6AF27152B836185F972DE1D6815042F2" />
+      <ComponentRef Id="cmp26E22D980CD3CF7EE946CD1E4B8DD860" />
+      <ComponentRef Id="cmp387676319F31A8707F6E680966B13A7F" />
+      <ComponentRef Id="cmpAEA06A9B67A0B3AD168EBDDB8A34225E" />
+      <ComponentRef Id="cmp8A8251ABC6AC4A5615F40628E5D80D5F" />
+      <ComponentRef Id="cmpBA9D87723BD20046986F04E62C9DEE5E" />
+      <ComponentRef Id="cmpA42631671F0DFBE4B759C63F06BF3BE7" />
+      <ComponentRef Id="cmp1E19821595ABDEC9A597AB8A14250640" />
+      <ComponentRef Id="cmp6BB73033FC82C6B1DC842C6E85CE75AD" />
+      <ComponentRef Id="cmp3D9FCAD1CCC443FAC93A9CB9455847DC" />
+      <ComponentRef Id="cmpD81DCA45044ABF43E5C0815E3918B010" />
+      <ComponentRef Id="cmp56DFCDAAD7D9CFDD9EC709A7FC903F02" />
+      <ComponentRef Id="cmp0FA53024B746EBC67767C71C8833DC2B" />
+      <ComponentRef Id="cmpB4FB03F7BEC3F5D52D1461E1B5F7829B" />
+      <ComponentRef Id="cmp440AC5CE95CF8E04EC711C35A713E003" />
+      <ComponentRef Id="cmpA4B99BB9ADF5B1CF3F7FB4FB03C8244F" />
+      <ComponentRef Id="cmp1655DCEEF48AA58003DF49CA6EAD1D50" />
+      <ComponentRef Id="cmp45B82790F2DAE83DC8FA4FF85D8219DF" />
+      <ComponentRef Id="cmp91F38E07147BE7B6D177ACC304BB50A9" />
+      <ComponentRef Id="cmp996A819FE29B5DC8AD8CEFB71CBB9FE3" />
+      <ComponentRef Id="cmpB2A4D2673D0565CBC04144318373D258" />
+      <ComponentRef Id="cmp2B89BB6E0FA3D0359AF86AC1254CFB47" />
+      <ComponentRef Id="cmp59ED6C059EC758902E5B9D1C8A8C5837" />
+      <ComponentRef Id="cmp3592F20223622C447605FF0401068567" />
+      <ComponentRef Id="cmpC7B9ACE19E694F4519B75EE5637CA739" />
+      <ComponentRef Id="cmp90008EB48E2450B595A9A877885CF54F" />
+      <ComponentRef Id="cmpFF7505765F18F0E9D1EB6A1DFB140DDB" />
+      <ComponentRef Id="cmp28655EE4545B3331D5CD056DCAC91394" />
+      <ComponentRef Id="cmp637770D094BBBC383101C4E98FBDBA19" />
+      <ComponentRef Id="cmpDDFAD6EAD1B5F7708FC28BA6D412B84B" />
+      <ComponentRef Id="cmp5832AE71E3E3B653DFC2D3DE8D86DA1D" />
+      <ComponentRef Id="cmp5DAA51902ED6005DB15CA07FBB45E813" />
+      <ComponentRef Id="cmp169A114AA0AB1C1D1C245F0708DB11DF" />
+      <ComponentRef Id="cmp8B733CB76A8E4FC8CA37FBD006287D16" />
+      <ComponentRef Id="cmpC166DFFE4A4186ECD3269B34E69772C9" />
+      <ComponentRef Id="cmp1D70AE60AEBE9D6F1D9A5E372A4728E4" />
+      <ComponentRef Id="cmp48CAACD083A718E59E1A1943E39D8455" />
+      <ComponentRef Id="cmp81915CBF0E6CED0C4F76B6DBD26AA5F7" />
+      <ComponentRef Id="cmp9EA4A4CE3B70E098BD1BE5C4F25C6955" />
+      <ComponentRef Id="cmpDC03DFB4758C1115B92BD8A8CA38BABA" />
+      <ComponentRef Id="cmp20BF1B636A32FB99E53C1A930C366E94" />
+      <ComponentRef Id="cmp53B29D05DFDAC0DFEBAC37FAC5C792FD" />
+      <ComponentRef Id="cmp635E5725C874DB810B4F012417A9D306" />
+      <ComponentRef Id="cmp94A1377D7E10ACED248A9DBDC5723854" />
+      <ComponentRef Id="cmp0D7D55612727AFC78D0431A74A518A62" />
+      <ComponentRef Id="cmpA1E173BB645B68AAD61F3C7EE68D9BC4" />
+      <ComponentRef Id="cmpE9E61D3D3B935F70809F3F6075D0ECB5" />
+      <ComponentRef Id="cmpF38F2BCE4CB6C241FE8026724EA97136" />
+      <ComponentRef Id="cmp4872B7B949BF8B2D01F8E9C3EF846112" />
+      <ComponentRef Id="cmp3A4CF300337830E6E7BE5A9B9109A432" />
+      <ComponentRef Id="cmpD8E86C2B5AA8FB97B9E94829D540CA65" />
+      <ComponentRef Id="cmp6EE252628B05F788764F8ECB6FEA7A0D" />
+      <ComponentRef Id="cmpE35672C6F590B3758809137A9D6BD121" />
+      <ComponentRef Id="cmpE918E82681FBB29B1545A2CBDC772B7B" />
+      <ComponentRef Id="cmpB1E366A273C31CB7F67F65132F53B057" />
+      <ComponentRef Id="cmpBBFF3DF1A5A5EC50CA8783FF0D595B91" />
+      <ComponentRef Id="cmp70F7D06432E3383884AF7685CC8E1523" />
+      <ComponentRef Id="cmp20080748A9E07E76B3790A60ACF438FE" />
+      <ComponentRef Id="cmpB8D6CCFBA008BEF39EE112BF53833E1C" />
+      <ComponentRef Id="cmpFD7BA2E051C29EB789ED193384F9C30E" />
+      <ComponentRef Id="cmpC690A6C5606C2FB8DE3BEE3A83ADA4B1" />
+      <ComponentRef Id="cmpD13585D36E2E2092951B4767000F3D3E" />
+      <ComponentRef Id="cmp34CB3116FDB5D19F9A0A9527F7C238C1" />
+      <ComponentRef Id="cmp1EAFBAF82A257DB403E850DDDD41950D" />
+      <ComponentRef Id="cmp712CEFD055C2FE8F8AC43B51082E3518" />
+      <ComponentRef Id="cmp5EDBDDE67C9816C28D83D4FCD0268B78" />
+      <ComponentRef Id="cmp1126A0AA50C2DB3A17A4C215E039F7A5" />
+      <ComponentRef Id="cmpC6EA1A997DEC70C6DA55D2F512EC979B" />
+      <ComponentRef Id="cmp8F876FBAD7D1F548F29A25FF9F8E4902" />
+      <ComponentRef Id="cmp8EEEB03746BBBDE65ED3F2BF757C1D3D" />
+      <ComponentRef Id="cmpCE50111DB524898A7717D58EDF79A965" />
+      <ComponentRef Id="cmpEE68D383F670AB6D7FF044A012D92496" />
+      <ComponentRef Id="cmp566EDF7A939B5AB4A0CC4F4FF2D799E9" />
+      <ComponentRef Id="cmpF6C0D310A375E532F4FAD1B14CC06D35" />
+      <ComponentRef Id="cmp4B1322FD2B971B43DAB98905C341E531" />
+      <ComponentRef Id="cmpE692170AA03CDDB93AF2BBAA476D9059" />
+      <ComponentRef Id="cmp9612D75223188A394C8AFF711EE03572" />
+      <ComponentRef Id="cmp0D1CA653190540EF8D9F7B18333F30AD" />
+      <ComponentRef Id="cmpB0E037709203400E46D39E1057D248DF" />
+      <ComponentRef Id="cmpAD132200A6CE5F872E478EA69271F49C" />
+      <ComponentRef Id="cmpB6A30F5A05B259FF0DC207F1BA46E0EA" />
+      <ComponentRef Id="cmpD6CD276D570624CD2B862DBF0458CB11" />
+      <ComponentRef Id="cmpA38C1852DCF0A7B478559823CC63DB14" />
+      <ComponentRef Id="cmp6F5C852C175D91CDCE80B53D7DFFECF1" />
+      <ComponentRef Id="cmpFC39612134DBF4273606809ACD9E86F9" />
+      <ComponentRef Id="cmpDCF552513EBCAB3B9793F631A891BEAF" />
+      <ComponentRef Id="cmpBCEE5CEAF2C3473EA5833DC809D6A558" />
+      <ComponentRef Id="cmp0511555F52F990435211FCAA948033ED" />
+      <ComponentRef Id="cmpDD37952FFAF53455A8438A96D5C5D3DC" />
+      <ComponentRef Id="cmp58A1D272BD55998DA48526706892773D" />
+      <ComponentRef Id="cmp625AA7420AAC5165E002832E7C77DBCD" />
+      <ComponentRef Id="cmp0EEC15E3B0870A5401132F4DC98E40BC" />
+      <ComponentRef Id="cmpD4B67967B6E27E64DAEFC8F08F28712E" />
+      <ComponentRef Id="cmpA9F35E49B35047EA9672DCB0455AC31B"/>
+      <ComponentRef Id="cmp2962CDFFB2F7FF4798DFF512EB15271B" />
+      <ComponentRef Id="cmpC1386CCC30E7D2F39488E6D4073511C6" />
+      <ComponentRef Id="cmp97BC66BFC5E296D75001DF3486259907" />
+      <ComponentRef Id="cmpD76A6A4FA1B798766EE815A3C3E85223" />
+      <ComponentRef Id="cmpCD6AB4F0FABF08AAE5ED4C4FF3D2CBAC" />
+      <ComponentRef Id="cmp38DF571DC6CD29A0B81DD57D9EAF074E" />
+      <ComponentRef Id="cmp4C7B07F00FB61EAE245744F38BEAB7EB" />
+      <ComponentRef Id="cmp9BBB56818E62D2C91CC67CF6BFD1F290" />
+      <ComponentRef Id="cmpD2AAB9D47D0AC6E7636A26F114107F8B" />
+      <ComponentRef Id="cmpB2791AC1D1882D354B13468E41F53B01" />
+      <ComponentRef Id="cmp32becc58938641a585f5ec0cad4c7c13" />
+      <ComponentRef Id="cmpE56851B9F44DDA3020EC8559FF0428C0" />
+      <ComponentRef Id="cmp51791D6ADA13ACBC32B2AF4B5E6015B4" />
+      <ComponentRef Id="cmp0EC7808DA2364BE4B044D3B8DE24D648" />
+      <ComponentRef Id="cmp5E35C43592954FFB9186BD1A69AF595F" />
+      <ComponentRef Id="cmpC7F272BC845D4DDAAD503CB020300A10" />
+    </ComponentGroup>
+  </Fragment>
+</Wix>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" >
+  <Product  Id="28C79524-6877-4186-AA27-D378ECDE106B"
+            Name="KojtoCAD 1.0.0"
+            Language="1033"
+            Version="1.0.0"
+            Manufacturer="3d Soft Solutions"
+            UpgradeCode="E3F6E81B-BD71-448D-93E1-684F7C0BB80C"
+            Codepage="1252" >
+
+    <Package  Id="*"
+              InstallerVersion="200"
+              Compressed="yes"
+              InstallScope="perMachine"
+              Manufacturer="3d Soft Solutions"
+              Description="Installs KojtoCAD plugin for AutoCAD 2012+"
+              Keywords="Kojto,CAD,AutoCAD plug-in"
+              Comments="(c) 2013 3d Soft Solutions"
+               />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    <MediaTemplate EmbedCab="yes"
+                   CompressionLevel="high" />
+
+    <Feature Id="MainProduct"
+             Title="Main Product"
+             Level="1">
+      <ComponentGroupRef Id="KojtoCADComponents" />
+    </Feature>
+
+    <!--<Icon Id="myIcon" SourceFile="..\myIcon.ico" /> 
+<Property Id="ARPPRODUCTICON" Value="myIcon" />-->
+    <Property Id="ARPINSTALLLOCATION" Value="1" />
+    <Property Id="ARPCOMMENTS" Value="(c) 3d Soft Solutions" />
+    <Property Id="ARPNOREPAIR" Value="1" />
+    <Property Id="ARPNOMODIFY" Value="1" />
+    <Property Id="ARPCONTACT" Value="support@3dsoft.bg" />
+    <Property Id="ARPHELPLINK" Value="http://www.3dsoft.bg/KojtoCAD/support.html"/>
+    <Property Id="ARPREADME" Value="http://www.3dsoft.bg/KojtoCAD/readme.html" />
+
+    <CustomAction Id="AssignTargetDir" Property="TARGETDIR" Value="C:\" Execute="firstSequence" />
+    <InstallUISequence>
+      <Custom Action="AssignTargetDir" Before="CostInitialize">TARGETDIR="AssignTargetDir"</Custom>
+    </InstallUISequence>
+    <InstallExecuteSequence>
+      <Custom Action="AssignTargetDir" Before="CostInitialize">TARGETDIR="AssignTargetDir"</Custom>
+    </InstallExecuteSequence>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir" >
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="AutodeskFolder" Name="Autodesk">
+          <Directory Id="AutodeskApplicationPluginsFolder" Name="ApplicationPlugins" >
+            <Directory Id="INSTALLFOLDER" Name="KojtoCAD.bundle" />
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+  </Fragment>
+</Wix>

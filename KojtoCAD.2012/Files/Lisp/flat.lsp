@@ -1,0 +1,5 @@
+(defun C:FLATCMD()
+(command "MOVE" (ssget "x") "" "0,0,0" "0,0,1e99")
+(command "MOVE" (ssget "p") "" "0,0,0" "0,0,-1e99")
+(princ)
+)
