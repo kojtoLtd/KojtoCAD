@@ -14,14 +14,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KojtoCAD.UnitTests", "Kojto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KojtoCAD.BricsCAD", "KojtoCAD.BricsCAD\KojtoCAD.BricsCAD.csproj", "{F2C9C28C-BB15-4692-ACC4-B89DA44CBB5C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9BC33BC7-704B-421B-9A76-B1FC4382A4C4}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-		.nuget\NuGet.v12.suo = .nuget\NuGet.v12.suo
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{604E1197-10CE-4166-BFDA-6B32E8FA0E8E}"
 	ProjectSection(SolutionItems) = preProject
 		libs\colorComboboxControl.dll = libs\colorComboboxControl.dll

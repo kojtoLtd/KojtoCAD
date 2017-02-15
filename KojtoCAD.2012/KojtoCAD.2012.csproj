@@ -1292,5 +1292,4 @@
   <Target Name="CopyFilesIfDebuging">
     <Copy SourceFiles="@(SourceFiles)" DestinationFiles="@(SourceFiles->'$(Dest)%(RecursiveDir)%(FileName)%(Extension)')" />
   </Target>
-  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
 </Project>
