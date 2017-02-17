@@ -432,7 +432,7 @@
       <Value Profile="(Default)">kojtocad</Value>
     </Setting>
     <Setting Name="BlobConnectionString" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">DefaultEndpointsProtocol=https;AccountName=3dsoft;AccountKey=hzHT/Lb9lrCvFBkdVxVi9in1ZVePQnRCNltTbBDq34Wocle8+S//doo5nY1Kkr5zdg+XxX42OHgTImcCyrFtig==</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="NewVersionsVirtualDirectory" Type="System.String" Scope="Application">
       <Value Profile="(Default)">InstallVersions</Value>

@@ -1738,8 +1738,7 @@ namespace KojtoCAD.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DefaultEndpointsProtocol=https;AccountName=3dsoft;AccountKey=hzHT/Lb9lrCvFBkdVxVi" +
-            "9in1ZVePQnRCNltTbBDq34Wocle8+S//doo5nY1Kkr5zdg+XxX42OHgTImcCyrFtig==")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string BlobConnectionString {
             get {
                 return ((string)(this["BlobConnectionString"]));

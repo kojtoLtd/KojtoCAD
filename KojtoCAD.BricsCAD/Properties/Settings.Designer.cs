@@ -1738,20 +1738,19 @@ namespace KojtoCAD.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DefaultEndpointsProtocol=https;AccountName=3dsoft;AccountKey=hzHT/Lb9lrCvFBkdVxVi" +
-            "9in1ZVePQnRCNltTbBDq34Wocle8+S//doo5nY1Kkr5zdg+XxX42OHgTImcCyrFtig==")]
-        public string BlobConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("InstallVersions")]
+        public string NewVersionsVirtualDirectory {
             get {
-                return ((string)(this["BlobConnectionString"]));
+                return ((string)(this["NewVersionsVirtualDirectory"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("InstallVersions")]
-        public string NewVersionsVirtualDirectory {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string BlobConnectionString {
             get {
-                return ((string)(this["NewVersionsVirtualDirectory"]));
+                return ((string)(this["BlobConnectionString"]));
             }
         }
     }

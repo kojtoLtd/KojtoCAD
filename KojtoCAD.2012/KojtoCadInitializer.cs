@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Configuration;
 using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.ExceptionServices;
 using System.Windows.Forms;
 using KojtoCAD.IoC;
@@ -25,7 +27,17 @@ namespace KojtoCAD
             ContainerRegistrar.SetupContainer();
 
             var uiGenerator = ContainerRegistrar.Container.Resolve<IUiGenerator>();
-            uiGenerator.GenerateUi(false);
+
+            try
+            {
+                uiGenerator.GenerateUi(false);
+            }
+            catch (Exception e)
+            {
+                // TODO : Application insights
+                //MessageBox.Show(e.Message);
+            }
+
             ContainerRegistrar.Container.Release(uiGenerator);
 
             IKojtoCadUpdater updater;
@@ -52,11 +64,13 @@ namespace KojtoCAD
         private void CurrentDomainOnFirstChanceException(object sender,
             FirstChanceExceptionEventArgs firstChanceExceptionEventArgs)
         {
-           // var exception = firstChanceExceptionEventArgs.Exception;
-           //var s = new StackTrace(exception);
-           // var methodname2 = new StackTrace(exception).GetFrame(0).GetMethod().Name;
-           //var thisasm = Assembly.GetExecutingAssembly();
-           // var a = 5;
+            //var exception = firstChanceExceptionEventArgs.Exception;
+            //var methodname = new StackTrace(exception).GetFrame(0).GetMethod().Name;
+            var thisasm = Assembly.GetExecutingAssembly();
+            if (thisasm.GetName().Name.ToLower().Contains("kojto"))
+            {
+                var exception = firstChanceExceptionEventArgs.Exception;
+            }
         }
 
 
