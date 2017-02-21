@@ -1,17 +1,19 @@
 ﻿using System;
-using System.Configuration;
-using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
-using System.Windows.Forms;
+
 using KojtoCAD.IoC;
 using KojtoCAD.Ui.Interfaces;
 using KojtoCAD.Updater.Interfaces;
+using KojtoCAD.Utilities.Interfaces;
+
 using Exception = System.Exception;
 #if !bcad
+using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.Runtime;
 #else
 using Teigha.Runtime;
+using Bricscad.ApplicationServices;
 #endif
 
 [assembly: ExtensionApplication(typeof(KojtoCAD.KojtoCadInitializer))]
@@ -20,11 +22,15 @@ namespace KojtoCAD
 {
     public class KojtoCadInitializer : IExtensionApplication
     {
+        private IWebTracker logger = null;
         void IExtensionApplication.Initialize()
         {
+            ContainerRegistrar.SetupContainer();
+
+            this.logger = ContainerRegistrar.Container.Resolve<IWebTracker>();
             AppDomain.CurrentDomain.FirstChanceException += CurrentDomainOnFirstChanceException;
 
-            ContainerRegistrar.SetupContainer();
+            Application.DocumentManager.MdiActiveDocument.CommandWillStart += logger.TrackCommandUsage;
 
             var uiGenerator = ContainerRegistrar.Container.Resolve<IUiGenerator>();
 
@@ -32,10 +38,9 @@ namespace KojtoCAD
             {
                 uiGenerator.GenerateUi(false);
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                // TODO : Application insights
-                //MessageBox.Show(e.Message);
+                logger.TrackException(exception);
             }
 
             ContainerRegistrar.Container.Release(uiGenerator);
@@ -44,35 +49,27 @@ namespace KojtoCAD
             try
             {
                 updater = ContainerRegistrar.Container.Resolve<IKojtoCadUpdater>();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-                return;
-            }
-
-            try
-            {
                 updater.UpdateKojtoCad();
             }
-            catch (Exception e)
+            catch (Exception exception)
             {
-                MessageBox.Show(e.Message);
+                this.logger.TrackException(exception);
             }
         }
 
         private void CurrentDomainOnFirstChanceException(object sender,
             FirstChanceExceptionEventArgs firstChanceExceptionEventArgs)
         {
-            //var exception = firstChanceExceptionEventArgs.Exception;
-            //var methodname = new StackTrace(exception).GetFrame(0).GetMethod().Name;
             var thisasm = Assembly.GetExecutingAssembly();
             if (thisasm.GetName().Name.ToLower().Contains("kojto"))
             {
-                var exception = firstChanceExceptionEventArgs.Exception;
+                if (this.logger != null)
+                {
+                    logger.TrackException(firstChanceExceptionEventArgs.Exception);    
+                }
+                
             }
         }
-
 
         void IExtensionApplication.Terminate()
         {

@@ -13,7 +13,7 @@ namespace KojtoCAD.IoC
         {
             container.Register(Component.For<IFileService>().ImplementedBy<FileService>());
             container.Register(Component.For<ILogger>().ImplementedBy<SmartLogger>().IsDefault(c => true));
-
+            container.Register(Component.For<IWebTracker>().ImplementedBy<AiUsageTracker>());
             container.Register(Component.For<IUtilityClass>().ImplementedBy<UtilityClass>());
             //container.Register(Component.For<IUtilityClass>().ImplementedBy<UtilityClassDebug>());
         }

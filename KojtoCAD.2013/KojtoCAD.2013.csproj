@@ -112,6 +112,10 @@
       <HintPath>..\packages\LumenWorks.Framework.IO.3.8.0\lib\net20\LumenWorks.Framework.IO.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
       <Private>True</Private>
@@ -728,6 +732,9 @@
     <Compile Include="..\KojtoCAD.2012\Utilities\acThumbnailReader.cs">
       <Link>Utilities\acThumbnailReader.cs</Link>
     </Compile>
+    <Compile Include="..\KojtoCAD.2012\Utilities\AiUsageTracker.cs">
+      <Link>Utilities\AiUsageTracker.cs</Link>
+    </Compile>
     <Compile Include="..\KojtoCAD.2012\Utilities\BcadExtensionMethods.cs">
       <Link>Utilities\BcadExtensionMethods.cs</Link>
     </Compile>
@@ -778,6 +785,9 @@
     </Compile>
     <Compile Include="..\KojtoCAD.2012\Utilities\Interfaces\IPaperSizeFactory.cs">
       <Link>Utilities\Interfaces\IPaperSizeFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\KojtoCAD.2012\Utilities\Interfaces\ITracker.cs">
+      <Link>Utilities\Interfaces\ITracker.cs</Link>
     </Compile>
     <Compile Include="..\KojtoCAD.2012\Utilities\Interfaces\IUtilityClass.cs">
       <Link>Utilities\Interfaces\IUtilityClass.cs</Link>

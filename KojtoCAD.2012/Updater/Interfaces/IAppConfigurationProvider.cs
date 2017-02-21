@@ -11,5 +11,7 @@
         string GetProgramFilesDir();
 
         string GetKojtoCadPluginDir();
+
+        bool WebTrackerIsEnabled();
     }
 }

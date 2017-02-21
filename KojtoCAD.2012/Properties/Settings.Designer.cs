@@ -1727,30 +1727,51 @@ namespace KojtoCAD.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("kojtocad")]
         public string BlobContainerName {
             get {
                 return ((string)(this["BlobContainerName"]));
             }
+            set {
+                this["BlobContainerName"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string BlobConnectionString {
             get {
                 return ((string)(this["BlobConnectionString"]));
             }
+            set {
+                this["BlobConnectionString"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("InstallVersions")]
         public string NewVersionsVirtualDirectory {
             get {
                 return ((string)(this["NewVersionsVirtualDirectory"]));
+            }
+            set {
+                this["NewVersionsVirtualDirectory"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool WebTrackerIsEnabled {
+            get {
+                return ((bool)(this["WebTrackerIsEnabled"]));
+            }
+            set {
+                this["WebTrackerIsEnabled"] = value;
             }
         }
     }

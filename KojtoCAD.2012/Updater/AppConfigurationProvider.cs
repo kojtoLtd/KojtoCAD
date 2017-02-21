@@ -30,5 +30,10 @@ namespace KojtoCAD.Updater
         {
             return Path.Combine(GetProgramFilesDir(), @"Autodesk\ApplicationPlugins\KojtoCad.bundle");
         }
+
+        public bool WebTrackerIsEnabled()
+        {
+            return Properties.Settings.Default.WebTrackerIsEnabled;
+        }
     }
 }
