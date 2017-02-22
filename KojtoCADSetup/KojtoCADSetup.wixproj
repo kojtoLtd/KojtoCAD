@@ -93,10 +93,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MITLicense.rtf" />
     <Content Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(WixTargetsPath)" Condition="Exists($(WixTargetsPath))"/>
+  <Import Project="$(WixTargetsPath)" Condition="Exists($(WixTargetsPath))" />
   <PropertyGroup>
     <PreBuildEvent />
   </PropertyGroup>

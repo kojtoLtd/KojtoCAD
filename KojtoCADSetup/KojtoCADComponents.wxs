@@ -17,9 +17,6 @@
       <Component Id="cmpC40811F029F043A254FEF20F838DAE62" Guid="C916B708-5039-4C3F-AF19-4DF12CFD1450">
         <File Id="fil9E3C0D1DDD0D7552CD5F807442BEE6F9" KeyPath="yes" Source="$(var.FilesPath)\ExcelWriter.dll" />
       </Component>
-      <!--<Component Id="cmp5E2573832CA5C768461ABA641FD92A6D" Guid="A3826A4C-F3FE-4AE6-A76F-2B63994267F5">
-        <File Id="filF41BCEE5AFD90CDDB359D5F590EB5C53" KeyPath="yes" Source="$(var.FilesPath)\GeometryExtensions.dll" />
-      </Component>-->
       <Component Id="cmp86CEC0777768B8A4DA11D04BE64FF20B" Guid="747DFCFC-6048-4766-8CB0-D2B9B3D16D6A">
         <File Id="filDCF866545E81006326F1A269D8F0B743" KeyPath="yes" Source="$(var.FilesPath)\KojtoCAD2012.dll" />
       </Component>
@@ -791,7 +788,6 @@
       <ComponentRef Id="cmp6ABA3CC4BA8F6176592DAB087CDF3F4A" />
       <ComponentRef Id="cmp8E0BA9345D6467C6CE87127468E2DA60" />
       <ComponentRef Id="cmpC40811F029F043A254FEF20F838DAE62" />
-      <!--<ComponentRef Id="cmp5E2573832CA5C768461ABA641FD92A6D" /> geometry extensions -->
       <!-- KojtoCAD 2012 dlls -->
       <ComponentRef Id="cmp86CEC0777768B8A4DA11D04BE64FF20B" />
       <ComponentRef Id="cmp92AB8B13BA8D7AAF4D75DFB66B6DE0D5" />
