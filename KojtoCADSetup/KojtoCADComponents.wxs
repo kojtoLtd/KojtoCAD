@@ -161,547 +161,547 @@
         </Directory>
         <Directory Id="dir0C37EB6C4D95433A28C9A0EECECA58A8" Name="Icons">
           <Component Id="cmp82D87B5FDF04CCE8908A03B9F208801A" Guid="278BF85F-3E4A-4FF4-9CFF-CCA846363B79">
-            <File Id="fil57CBFE5C2EC2EF87FABCF14C9D6228D7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsHorizontalyLarge.bmp" />
+            <File Id="fil57CBFE5C2EC2EF87FABCF14C9D6228D7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsHorizontalyLarge.png" />
           </Component>
           <Component Id="cmp8B2BA9A95E2692BD3EE20C74EAAC31DE" Guid="5489013C-C3A5-4C53-A4F9-EB2D893D225E">
-            <File Id="fil01700DD06E2257397F3C3BA316CCDE9C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsHorizontalyMedium.bmp" />
+            <File Id="fil01700DD06E2257397F3C3BA316CCDE9C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsHorizontalyMedium.png" />
           </Component>
           <Component Id="cmp12485C5BBA8D0067AF9D2D1CD7789AD1" Guid="28F57977-038A-4440-80C7-90EC8F4C2CC9">
-            <File Id="fil2E47AFF2D9AF43D488E160E57E9967AA" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsHorizontalySmall.bmp" />
+            <File Id="fil2E47AFF2D9AF43D488E160E57E9967AA" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsHorizontalySmall.png" />
           </Component>
           <Component Id="cmpB3AA51D89BD4F46DBC16680AC5782F9D" Guid="4765AD06-B15D-49A6-A0AD-9F806CC444E0">
-            <File Id="fil61E8E73193E590AFC127E3644220D775" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsVerticalyLarge.bmp" />
+            <File Id="fil61E8E73193E590AFC127E3644220D775" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsVerticalyLarge.png" />
           </Component>
           <Component Id="cmpC5DB155C067B915DDEFA5C5DA8EA4F0F" Guid="17220315-839F-4DA3-89EC-3BEBC51B4E68">
-            <File Id="fil1ACD8CD7546D99BDEFB870DBCD851410" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsVerticalyMedium.bmp" />
+            <File Id="fil1ACD8CD7546D99BDEFB870DBCD851410" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsVerticalyMedium.png" />
           </Component>
           <Component Id="cmp9A6172CFDF1B49A8D926130B05D6E7C9" Guid="1CC95754-1451-40D0-AA2B-CB10F34586FE">
-            <File Id="filD75E01D6BC99D312E77A46BCDA749701" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsVerticalySmall.bmp" />
+            <File Id="filD75E01D6BC99D312E77A46BCDA749701" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\AlignViewportsVerticalySmall.png" />
           </Component>
           <Component Id="cmpE2C06B96C0910F2B940709992D484851" Guid="53F2956D-98AA-432C-B274-408199AD387D">
-            <File Id="filF06845D511B6EEF42E80901C40FADEC9" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ArrowMarkLarge.bmp" />
+            <File Id="filF06845D511B6EEF42E80901C40FADEC9" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ArrowMarkLarge.png" />
           </Component>
           <Component Id="cmpE8E21E639A994A5621C2E89C09B38265" Guid="525D2711-32A1-4F0C-A19F-0C04DDC3F216">
-            <File Id="filF44067F1C21078C55CC34C9ED51BA86F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ArrowMarkMedium.bmp" />
+            <File Id="filF44067F1C21078C55CC34C9ED51BA86F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ArrowMarkMedium.png" />
           </Component>
           <Component Id="cmp59E319E752D38E129DA673A47A8B01E4" Guid="A027E88F-2384-42F3-A5CB-9206AA923DBC">
-            <File Id="filF1C045BEC8772020A60F01E12BCD9056" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ArrowMarkSmall.bmp" />
+            <File Id="filF1C045BEC8772020A60F01E12BCD9056" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ArrowMarkSmall.png" />
           </Component>
           <Component Id="cmp9F369989A55E68E9DB98490C9734F43C" Guid="7CA8E13B-131B-4C5B-99BC-B01AB8703DA4">
-            <File Id="fil7DB52DECF3EED1E3F7F835992EF6CDCF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ChkAttrIsInExcelLarge.bmp" />
+            <File Id="fil7DB52DECF3EED1E3F7F835992EF6CDCF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CheckAttributesLarge.png" />
           </Component>
           <Component Id="cmpB60CA706958EB684EB91DD9174EEE466" Guid="65AB7248-8463-4501-BD5B-B33977C98AF9">
-            <File Id="filC894B71782C8BEECA396BCD00521C7A3" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ChkAttrIsInExcelMedium.bmp" />
+            <File Id="filC894B71782C8BEECA396BCD00521C7A3" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CheckAttributesMedium.png" />
           </Component>
           <Component Id="cmp696689FDA04DC6CF374FE0A816A3687C" Guid="CBDB2F6F-9974-46FC-BA3C-0EF2A65C8FFF">
-            <File Id="fil94179E31150733E0F9BC0847290171A5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ChkAttrIsInExcelSmall.bmp" />
+            <File Id="fil94179E31150733E0F9BC0847290171A5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CheckAttributesSmall.png" />
           </Component>
           <Component Id="cmp56C3B37B97CADD05F2FB140D0A8FF78B" Guid="1F323637-B9E0-4991-B136-06406255351D">
-            <File Id="filA4E7CBEC855EDC744A2B3B0091C646B7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CloseDwgProperlyLarge.bmp" />
+            <File Id="filA4E7CBEC855EDC744A2B3B0091C646B7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CloseDwgProperlyLarge.png" />
           </Component>
           <Component Id="cmp3C649124A3FFB1E8E3CE07330B02659C" Guid="02B3AF25-A37A-4471-A81B-703D930BDE4E">
-            <File Id="filA1B2DB7A3D6B76F469D2BE92C64A299F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CloseDwgProperlyMedium.bmp" />
+            <File Id="filA1B2DB7A3D6B76F469D2BE92C64A299F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CloseDwgProperlyMedium.png" />
           </Component>
           <Component Id="cmpBB5F30B713FE18CCA6D21C5DF89057B1" Guid="10D9FE98-FEBC-4B43-8CD7-191A44083739">
-            <File Id="fil05D9D293E7EB533994ED19288D383BA6" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CloseDwgProperlySmall.bmp" />
+            <File Id="fil05D9D293E7EB533994ED19288D383BA6" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CloseDwgProperlySmall.png" />
           </Component>
           <Component Id="cmpF1E825811A0F6C01A382EDA94FE59BE5" Guid="54099AB5-3E3B-472E-BE38-E9C21846AB4E">
-            <File Id="filD5398CC29F1E034F8DE8AB188AFDB7A6" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CopyBlockDefInNewDefLarge.bmp" />
+            <File Id="filD5398CC29F1E034F8DE8AB188AFDB7A6" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CopyBlockDefInNewDefLarge.png" />
           </Component>
           <Component Id="cmpE6C32A260EE113B1FDC0FDC73E5B2452" Guid="A52224D2-2E61-4047-A1E8-72CB22B84001">
-            <File Id="filE103FDF3C7D2F21C6351384E5BDDDA1D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CopyBlockDefInNewDefMedium.bmp" />
+            <File Id="filE103FDF3C7D2F21C6351384E5BDDDA1D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CopyBlockDefInNewDefMedium.png" />
           </Component>
           <Component Id="cmp4F539460095157E955B72355C172821F" Guid="95075ADB-CEAB-4D92-9690-8D1FE9D8641C">
-            <File Id="fil053B379074BE63817BCB8C7D7686F026" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CopyBlockDefInNewDefSmall.bmp" />
+            <File Id="fil053B379074BE63817BCB8C7D7686F026" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CopyBlockDefInNewDefSmall.png" />
           </Component>
           <Component Id="cmp729F5523274B22B1F0FE7BC976C7967F" Guid="D3322F89-2169-4C11-8AFD-1E79556BB745">
-            <File Id="fil36D3400B3B18D8F79F9AD7E1B5D2BABB" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CreateViewportFromModelLarge.bmp" />
+            <File Id="fil36D3400B3B18D8F79F9AD7E1B5D2BABB" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CreateViewportFromModelLarge.png" />
           </Component>
           <Component Id="cmpC9105EBC37438F91598780BB725BA44C" Guid="92C2D0E7-F62D-4CB4-B114-8AF3A39AE49A">
-            <File Id="filDDAB2E0CA291B7663B75A4E5B9D56628" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CreateViewportFromModelMedium.bmp" />
+            <File Id="filDDAB2E0CA291B7663B75A4E5B9D56628" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CreateViewportFromModelMedium.png" />
           </Component>
           <Component Id="cmp52A0D00DEF1A1B8B9A98F76E6A7B5637" Guid="C9ADFA05-2025-4C4E-9B28-9A076EDAD2B0">
-            <File Id="fil43F17DA7038F89E34BCF288442460697" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CreateViewportFromModelSmall.bmp" />
+            <File Id="fil43F17DA7038F89E34BCF288442460697" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\CreateViewportFromModelSmall.png" />
           </Component>
           <Component Id="cmpB482FC4F5E8F8E2B7C4D0217339EEED5" Guid="65194E0E-6BE3-4837-98D4-B1ADCB6F9820">
-            <File Id="fil56D3C9BF3E773A4702844B6D34C3F045" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DeleteHelpLinesLarge.bmp" />
+            <File Id="fil56D3C9BF3E773A4702844B6D34C3F045" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DeleteHelpLinesLarge.png" />
           </Component>
           <Component Id="cmp133B2D207C4C823D48651C3FF1156C5E" Guid="7085B52E-52DB-4CD3-978D-329BB239CD60">
-            <File Id="fil8D29F71FC4F8EA8612B797AFA4B5CE3E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DeleteHelpLinesMedium.bmp" />
+            <File Id="fil8D29F71FC4F8EA8612B797AFA4B5CE3E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DeleteHelpLinesMedium.png" />
           </Component>
           <Component Id="cmp8799753BF5CA97F04DD7C5E0475FE323" Guid="51EA9C2F-B526-401D-AE20-FA770541ADAB">
-            <File Id="filC071F32953BF825BEEAB57787305D312" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DeleteHelpLinesSmall.bmp" />
+            <File Id="filC071F32953BF825BEEAB57787305D312" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DeleteHelpLinesSmall.png" />
           </Component>
           <Component Id="cmp1C88A073C3F8956FB1D0906A78067242" Guid="F8E9BF55-6009-4A82-8C45-891C5439B453">
-            <File Id="fil75E2D22BF4985BA5DE040131AA72C3D8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DoubleGlassUnitLarge.bmp" />
+            <File Id="fil75E2D22BF4985BA5DE040131AA72C3D8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DoubleGlassUnitLarge.png" />
           </Component>
           <Component Id="cmp571E1E62F406DB6BED10A24E727FAEEF" Guid="F49C2805-EADF-494F-B7F5-CB11633FFB59">
-            <File Id="fil934ACB3D1E0C14474368CB84B2F29942" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DoubleGlassUnitMedium.bmp" />
+            <File Id="fil934ACB3D1E0C14474368CB84B2F29942" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DoubleGlassUnitMedium.png" />
           </Component>
           <Component Id="cmpF2BD6C89555082808DA61DE2AC9E49F6" Guid="4806E7BC-6134-40B9-88DA-71FC953888DA">
-            <File Id="fil9B2E1CBBCCA5B37C28FA2CA11A8E8FE4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DoubleGlassUnitSmall.bmp" />
+            <File Id="fil9B2E1CBBCCA5B37C28FA2CA11A8E8FE4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DoubleGlassUnitSmall.png" />
           </Component>
           <Component Id="cmp8E7434F92CCC0A36F28069C6E20EEC05" Guid="A670CE08-D480-4CF7-864E-48F957617A7E">
-            <File Id="fil79156CB71C685921EDFD106C621E41FE" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DrawingFrameLarge.bmp" />
+            <File Id="fil79156CB71C685921EDFD106C621E41FE" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\FrameMarkLarge.png" />
           </Component>
           <Component Id="cmpD7F0C4218015914901A78FD340A49B0B" Guid="A203B9C4-5E11-4AB5-90F2-0D8AD2E8DED9">
-            <File Id="fil23316638F0696430BF2F5A4A9B18B372" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DrawingFrameMedium.bmp" />
+            <File Id="fil23316638F0696430BF2F5A4A9B18B372" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\FrameMarkMedium.png" />
           </Component>
           <Component Id="cmpAFC6C7BC93EDAC636C60A6941B719301" Guid="7061A779-741F-4C06-AD7F-947D9BE9782B">
-            <File Id="fil0EE5585F9CD4A929223395759FC0A7A7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\DrawingFrameSmall.bmp" />
+            <File Id="fil0EE5585F9CD4A929223395759FC0A7A7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\FrameMarkSmall.png" />
           </Component>
           <Component Id="cmp40518939349EA360B048B84D3E0FAEE5" Guid="AA79421A-E64A-4900-824C-9B54ABB51FE5">
-            <File Id="fil0EBBEBFCA3704A39396F82B4717B96D7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ElevationMarkLarge.bmp" />
+            <File Id="fil0EBBEBFCA3704A39396F82B4717B96D7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ElevationMarkLarge.png" />
           </Component>
           <Component Id="cmp6E4887704A0D0791A08451DE2A3084E9" Guid="FDB69EF8-75C9-41DE-9F75-A79793732373">
-            <File Id="fil00D11A00B46AE0DE97D2DAE5810D258F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ElevationMarkMedium.bmp" />
+            <File Id="fil00D11A00B46AE0DE97D2DAE5810D258F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ElevationMarkMedium.png" />
           </Component>
           <Component Id="cmp962152146F62D5C9031A2D125C3DF663" Guid="EDEA4167-BB94-4B7D-84A1-3C36CA3C8D78">
-            <File Id="filD1A6C8B8BC7D01723B4B6A273B4C221D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ElevationMarkSmall.bmp" />
+            <File Id="filD1A6C8B8BC7D01723B4B6A273B4C221D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ElevationMarkSmall.png" />
           </Component>
           <Component Id="cmpD74578088F91DE6E72E17D85AC042144" Guid="3824A27B-68D5-410A-B0CC-841343442261">
-            <File Id="fil8DB025C1BF52D26E61C1044287D97141" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ExtractAttributesLarge.bmp" />
+            <File Id="fil8DB025C1BF52D26E61C1044287D97141" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ExtractAttributesLarge.png" />
           </Component>
           <Component Id="cmpD039D5445A975F159C3E089DC50E7479" Guid="5D41F9D6-1C0C-4892-9DA8-C62E99F9C4C7">
-            <File Id="fil1B1FEBB3697A7747FBCC5C7AD86073F4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ExtractAttributesMedium.bmp" />
+            <File Id="fil1B1FEBB3697A7747FBCC5C7AD86073F4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ExtractAttributesMedium.png" />
           </Component>
           <Component Id="cmpBB2C3F5428812C13BABF7135E4A92F7D" Guid="68022940-670C-4588-AC10-E89DA1D81849">
-            <File Id="fil48343648FA10A9471124197877B7086C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ExtractAttributesSmall.bmp" />
+            <File Id="fil48343648FA10A9471124197877B7086C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ExtractAttributesSmall.png" />
           </Component>
           <Component Id="cmpD23BA1B6CD20D71C6E7D4EBD0879E862" Guid="F529998B-DEC6-4AFC-A2A8-7FF369640392">
-            <File Id="filC90514CC21483FEE75D40BBDF486225B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\GearsLarge.bmp" />
+            <File Id="filC90514CC21483FEE75D40BBDF486225B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\GearsLarge.png" />
           </Component>
           <Component Id="cmp51E215F79A256AD9E5E162BA78F2D85B" Guid="F997DE48-AB1B-4AE1-A5D4-D1705C46E97E">
-            <File Id="fil4389A8D88F32F345722B8F726585BE42" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\GearsMedium.bmp" />
+            <File Id="fil4389A8D88F32F345722B8F726585BE42" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\GearsMedium.png" />
           </Component>
           <Component Id="cmp386A5F8775BAC80B8F85BE44A5150A10" Guid="76DC08B8-6A73-4646-869C-2BC0527E71B8">
-            <File Id="fil9E0BE49471BD514A45F7FBF748185025" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\GearsSmall.bmp" />
+            <File Id="fil9E0BE49471BD514A45F7FBF748185025" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\GearsSmall.png" />
           </Component>
           <Component Id="cmpEA3B0D5622D0263F1A90619B2180F5E2" Guid="7468F345-E71C-4F32-B1AC-C3D37A514922">
-            <File Id="fil5E27B79195CC627F625A8E23E15978BD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLine45Large.bmp" />
+            <File Id="fil5E27B79195CC627F625A8E23E15978BD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLine45Large.png" />
           </Component>
           <Component Id="cmp2F4D3ED25283AFB28CA9F3E6908156FB" Guid="5EE488D3-BE6B-4734-B90C-6E8034CF8295">
-            <File Id="filA4DA3777531200B0618C54D071C5B81B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLine45Medium.bmp" />
+            <File Id="filA4DA3777531200B0618C54D071C5B81B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLine45Medium.png" />
           </Component>
           <Component Id="cmpC9504620B0CA25A4C56934581E69502F" Guid="49CDBB95-8019-4888-AEBF-6A59902BE04D">
-            <File Id="fil51ED26ABD6FF9C4C7771035F75D0725C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLine45Small.bmp" />
+            <File Id="fil51ED26ABD6FF9C4C7771035F75D0725C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLine45Small.png" />
           </Component>
           <Component Id="cmp59A4599AD55E55B563E7244C538488D0" Guid="2F1AD988-EE92-4743-B68D-BE6E2DD424DC">
-            <File Id="fil9E50B7744749044B7377C6A2E371C370" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineAngular.largr.bmp" />
+            <File Id="fil9E50B7744749044B7377C6A2E371C370" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineAngularLarge.png" />
           </Component>
           <Component Id="cmp282E45650F234750305C30024CFE621A" Guid="02BE8F97-F65B-4862-8BB6-3EEDEDB579B0">
-            <File Id="filD87BB9FCA3A742A7B7C91B5B2CCA08CF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineAngularLarge.bmp" />
+            <File Id="filD87BB9FCA3A742A7B7C91B5B2CCA08CF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineAngularLarge.png" />
           </Component>
           <Component Id="cmpFEDD1B3BC4AC736786CD50D21326FFCE" Guid="CD321FF2-1CEE-4EC1-A66B-9359677CF7AF">
-            <File Id="fil821D2DDBC373C4AD75B3CF3CD387CABD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineAngularMedium.bmp" />
+            <File Id="fil821D2DDBC373C4AD75B3CF3CD387CABD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineAngularMedium.png" />
           </Component>
           <Component Id="cmp1B31C9248D53C3EB20246992CF7FB444" Guid="760FB31A-393C-4DEE-8B03-42F3788CCC0D">
-            <File Id="fil62C501AA0E4E5F890ED2C53BD8A8E526" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineAngularSmall.bmp" />
+            <File Id="fil62C501AA0E4E5F890ED2C53BD8A8E526" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineAngularSmall.png" />
           </Component>
           <Component Id="cmp29C554353C2BF92A1B8869E00AF4F67C" Guid="FDC5B8AF-C78D-4451-992B-BDB4C676FA92">
-            <File Id="fil9A6BFA07C69BBF15E5EBBFF153E84512" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineCrossedLarge.bmp" />
+            <File Id="fil9A6BFA07C69BBF15E5EBBFF153E84512" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineCrossedLarge.png" />
           </Component>
           <Component Id="cmpD2AD2A800944341ECCC043BE71AF6178" Guid="45999898-F324-4B67-8B44-F0A7276B4EF3">
-            <File Id="fil5B0F8CB893F92D36B57B34EB1BEA8DC1" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineCrossedMedium.bmp" />
+            <File Id="fil5B0F8CB893F92D36B57B34EB1BEA8DC1" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineCrossedMedium.png" />
           </Component>
           <Component Id="cmpB4380381D275309C78C3B664F7B9BF5F" Guid="6E47B0EB-7D05-4A65-A850-FEC79161E8D6">
-            <File Id="fil21DE27EAC3EC7AEFCE70B8F8AC5C22F3" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineCrossedSmall.bmp" />
+            <File Id="fil21DE27EAC3EC7AEFCE70B8F8AC5C22F3" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineCrossedSmall.png" />
           </Component>
           <Component Id="cmp22E4EB1C460075D3D7B5CD4E8B3B1486" Guid="D3826CA1-1002-489D-9566-2AAC2CD1DE2E">
-            <File Id="fil70C6C6DE30DB0379C19A34241C482465" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineHorizontalLarge.bmp" />
+            <File Id="fil70C6C6DE30DB0379C19A34241C482465" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineHorizontalLarge.png" />
           </Component>
           <Component Id="cmp98C4F91CCE94BF96C3457B88DA592193" Guid="1227484F-FAA1-4EDB-8AD3-65840D9CF655">
-            <File Id="fil8353469F0D1A80891082CF93E04424BE" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineHorizontalMedium.bmp" />
+            <File Id="fil8353469F0D1A80891082CF93E04424BE" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineHorizontalMedium.png" />
           </Component>
           <Component Id="cmp87A6E755FE91641B84B880204A433E0C" Guid="167C954A-6D64-440F-A3CA-7338D18764BB">
-            <File Id="filE39627BC2BA6E6CC7D1FF7A076587247" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineHorizontalSmall.bmp" />
+            <File Id="filE39627BC2BA6E6CC7D1FF7A076587247" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineHorizontalSmall.png" />
           </Component>
           <Component Id="cmpFF1893F7298607724833C810F513F165" Guid="1A8D0DD7-578F-4E18-BCDE-26006D537359">
-            <File Id="fil48656CF362A18CAAC1B6AF4D1C3B8FF1" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineOffsetLarge.bmp" />
+            <File Id="fil48656CF362A18CAAC1B6AF4D1C3B8FF1" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineOffsetLarge.png" />
           </Component>
           <Component Id="cmp2F340608463E11FF30BF2E2E71C8D481" Guid="574240F7-20F4-4E83-B966-ED4DADDC8C35">
-            <File Id="fil60F9BFA238574ADF6E18F0B61DD39C66" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineOffsetMedium.bmp" />
+            <File Id="fil60F9BFA238574ADF6E18F0B61DD39C66" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineOffsetMedium.png" />
           </Component>
           <Component Id="cmpCE119C2F6B8EA79A4ECD574AE3290D15" Guid="B34868DE-8A50-4450-8044-FBD08A8FFBE1">
-            <File Id="fil880BD2D1F8FC2BDBC009CC0A60C3E07E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineOffsetSmall.bmp" />
+            <File Id="fil880BD2D1F8FC2BDBC009CC0A60C3E07E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineOffsetSmall.png" />
           </Component>
           <Component Id="cmpA0A96689C77C54B62A5A968A0D3CF734" Guid="79CB229B-5088-4DCE-91F5-F0FC50A3E184">
-            <File Id="filF3F4D26DBEC9EBF0509148B533E9AD35" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLinesDeleteLarge.bmp" />
+            <File Id="filF3F4D26DBEC9EBF0509148B533E9AD35" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLinesDeleteLarge.png" />
           </Component>
           <Component Id="cmpDCF240053BB3632A91FA5D069FC354E2" Guid="ADED1360-D382-47EE-8563-C909926A2486">
-            <File Id="filDEA781A9D4D264F0EC17B49266C69C64" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLinesDeleteMedium.bmp" />
+            <File Id="filDEA781A9D4D264F0EC17B49266C69C64" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLinesDeleteMedium.png" />
           </Component>
           <Component Id="cmp72E15074977DFCE2D7AF22C160B260B8" Guid="49906CB0-FC9B-4F44-AC70-AA0CA1A7859D">
-            <File Id="fil57069191A99C1D754DC5776F29A588DF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLinesDeleteSmall.bmp" />
+            <File Id="fil57069191A99C1D754DC5776F29A588DF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLinesDeleteSmall.png" />
           </Component>
           <Component Id="cmp24E291D5C8CE6966E69E3BD1017AD902" Guid="C4B4D8D2-CA70-4D02-A74F-1F9C92441959">
-            <File Id="filA9B1E7EFB99B836E4A7ACBAA2920033F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineVerticalLarge.bmp" />
+            <File Id="filA9B1E7EFB99B836E4A7ACBAA2920033F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineVerticalLarge.png" />
           </Component>
           <Component Id="cmp310301E307A55135DD53FE9D0E89D0F6" Guid="40B84774-EBE7-4901-A984-8E0EFADDD776">
-            <File Id="fil9422C623F529FDB3F957E850DAE7770B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineVerticalMedium.bmp" />
+            <File Id="fil9422C623F529FDB3F957E850DAE7770B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineVerticalMedium.png" />
           </Component>
           <Component Id="cmp6EB297277B039191FEBE03DEFF719AA8" Guid="338B546B-9367-4CF5-A63D-F82A5227F97A">
-            <File Id="fil857A54C65D567209CA7F7A9986A72001" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineVerticalSmall.bmp" />
+            <File Id="fil857A54C65D567209CA7F7A9986A72001" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HelpLineVerticalSmall.png" />
           </Component>
           <Component Id="cmp599E30539AC1D000E09894E90DDBAF52" Guid="8BFF3AD5-6E67-402E-8802-9D3F0872F520">
-            <File Id="fil5A4C55D351A701DD9BE061604FFDE03B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HydroInsulationLarge.bmp" />
+            <File Id="fil5A4C55D351A701DD9BE061604FFDE03B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HydroInsulationLarge.png" />
           </Component>
           <Component Id="cmp0368CD96F076FC2049F22256C140C360" Guid="59DF85E1-480E-4861-AAC0-87D71AE3DA62">
-            <File Id="fil03EE64384F218915AFAE5F73B65BA78C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HydroInsulationMedium.bmp" />
+            <File Id="fil03EE64384F218915AFAE5F73B65BA78C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HydroInsulationMedium.png" />
           </Component>
           <Component Id="cmp511F26705DD8059110845D8BBFA57E9A" Guid="82EDF4C5-B792-4D1C-8CE0-DFF2D07FC767">
-            <File Id="filE9B0AF00E6FA57F824654512B20E4A37" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HydroInsulationSmall.bmp" />
+            <File Id="filE9B0AF00E6FA57F824654512B20E4A37" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\HydroInsulationSmall.png" />
           </Component>
           <Component Id="cmpC689C7450CA2FC0F164C2B88F02313BD" Guid="918D76B8-7257-45FC-8956-BC86221ED100">
-            <File Id="filF8EE9324DDC3A66AF34821E5380F5EB4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Join3DLinesToPolyLarge.bmp" />
+            <File Id="filF8EE9324DDC3A66AF34821E5380F5EB4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Join3DLinesToPolyLarge.png" />
           </Component>
           <Component Id="cmp4AE191460F0AE15A8B449BBDAC93BF6E" Guid="F79F6240-8900-465E-9D44-7700C64CDF0E">
-            <File Id="filD00B0893BA8624DFE8DB75E8E29F26F8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Join3DLinesToPolyMedium.bmp" />
+            <File Id="filD00B0893BA8624DFE8DB75E8E29F26F8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Join3DLinesToPolyMedium.png" />
           </Component>
           <Component Id="cmp3E41F6C19C5A263690D1C39416FD4AD8" Guid="B95FEDC3-F169-4A55-BCC3-812E5AAFCDA8">
-            <File Id="filDE16A85D861AB2FB0F4BBDD708042727" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Join3DLinesToPolySmall.bmp" />
+            <File Id="filDE16A85D861AB2FB0F4BBDD708042727" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Join3DLinesToPolySmall.png" />
           </Component>
           <Component Id="cmp87938EF8198D2C85359E13EE99AA524E" Guid="2F07DCEC-4332-419F-8993-256DB4D592D7">
-            <File Id="fil27AE8A4513D7107686CC3FFEDAE3AF1E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LevelHeightSignLarge.bmp" />
+            <File Id="fil27AE8A4513D7107686CC3FFEDAE3AF1E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LevelHeightSignLarge.png" />
           </Component>
           <Component Id="cmp4A1E3672558F46B8D40F245B8A7E5964" Guid="37D7F8BE-73DD-471D-A11F-1968E05B2259">
-            <File Id="fil2B6A7FC45552934EB5F8A50661907958" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LevelHeightSignMedium.bmp" />
+            <File Id="fil2B6A7FC45552934EB5F8A50661907958" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LevelHeightSignMedium.png" />
           </Component>
           <Component Id="cmp51B006623AD3084E2BC124AA657D6F6E" Guid="A0CB1FB4-4FEC-4CE5-9434-8984EF8B9C08">
-            <File Id="filB594A2A6D2BFB9A2DDE7E019C1922129" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LevelHeightSignSmall.bmp" />
+            <File Id="filB594A2A6D2BFB9A2DDE7E019C1922129" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LevelHeightSignSmall.png" />
           </Component>
           <Component Id="cmp473519AD65934523664BFA03ED334C8B" Guid="E2243EF4-334C-41F4-9928-C205134B69EE">
-            <File Id="fil21565D8FF281DEB028CBC43021ACC17C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LoadSettingsLarge.bmp" />
+            <File Id="fil21565D8FF281DEB028CBC43021ACC17C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LoadSettingsLarge.png" />
           </Component>
           <Component Id="cmpDF4C6748D7D46AEECC42C10C439FD568" Guid="DA004AB7-882D-4531-93F9-2F5CA75D2CA1">
-            <File Id="fil046F80EFC76C2321E203B3823F98616E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LoadSettingsMedium.bmp" />
+            <File Id="fil046F80EFC76C2321E203B3823F98616E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LoadSettingsMedium.png" />
           </Component>
           <Component Id="cmp6FD58C393671CC6E0B1978A27F45F392" Guid="16564930-03A0-4C8A-9823-5ED8660DD78B">
-            <File Id="fil20649727BBE82B77E23078D4CF8EEFDA" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LoadSettingsSmall.bmp" />
+            <File Id="fil20649727BBE82B77E23078D4CF8EEFDA" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LoadSettingsSmall.png" />
           </Component>
           <Component Id="cmp5D771553BFD968F4E31818CEEBEA2C77" Guid="425AF38E-6D8B-4866-B51B-D4FE9A188F3E">
-            <File Id="filD3BE508D1E634C7D42958D0109268DE3" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LockViewPortLarge.bmp" />
+            <File Id="filD3BE508D1E634C7D42958D0109268DE3" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LockViewPortLarge.png" />
           </Component>
           <Component Id="cmp2E92EEA040ED86D9103D03A526F4583D" Guid="A4DDD603-1BEA-4C27-98FA-271C34BFD3D9">
-            <File Id="fil09431CBCA06E1B851247C6A445ED8519" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LockViewPortMedium.bmp" />
+            <File Id="fil09431CBCA06E1B851247C6A445ED8519" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LockViewPortMedium.png" />
           </Component>
           <Component Id="cmp7A9B9D0D35EE88C0E60B1C14A5C35E4D" Guid="9D833C69-A5FB-4878-AD41-EF5BCB3E3E0F">
-            <File Id="fil86D4CFF4791D1FB23924940374C0B136" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LockViewPortSmall.bmp" />
+            <File Id="fil86D4CFF4791D1FB23924940374C0B136" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\LockViewPortSmall.png" />
           </Component>
           <Component Id="cmp3EDC2F072D3CD1F7043C8CA7E54C133F" Guid="F1DA2CC8-CD89-4018-B38A-BEA5D56E5529">
-            <File Id="fil8477C1A1ECC32BCC4935A623A2854888" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PcadSettingsLarge.bmp" />
+            <File Id="fil8477C1A1ECC32BCC4935A623A2854888" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PcadSettingsLarge.png" />
           </Component>
           <Component Id="cmp38032A70A9784C9D28734BA5296DC5A0" Guid="FC53DDF2-EE03-48E9-825B-63C59F55F447">
-            <File Id="filAE95A646B8AD34A6A54724FAD9D6D264" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PcadSettingsMedium.bmp" />
+            <File Id="filAE95A646B8AD34A6A54724FAD9D6D264" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PcadSettingsMedium.png" />
           </Component>
           <Component Id="cmpAA9BBC0727FEF4D770CE3421B6994256" Guid="3201D02D-B553-4B3D-8F9C-136F30C221ED">
-            <File Id="fil686BA782A10B0B0F6DC6A406EC4DC067" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PcadSettingsSmall.bmp" />
+            <File Id="fil686BA782A10B0B0F6DC6A406EC4DC067" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PcadSettingsSmall.png" />
           </Component>
           <Component Id="cmp96755F03E1EBA82CAEB7E2E0A1E5610B" Guid="806A24ED-7ACF-4F15-A8CD-688EFACB6E28">
-            <File Id="filECAFA1F5E351322933B5AF20F97B64F7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PlotterLarge.bmp" />
+            <File Id="filECAFA1F5E351322933B5AF20F97B64F7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PlotterLarge.png" />
           </Component>
           <Component Id="cmp845E179DC114208C3FB008EEC752CCB9" Guid="0C739190-BDE0-4999-85CD-A57E0376684C">
-            <File Id="filF4FB7405E6FD04246499D8AF8A931416" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PlotterMedium.bmp" />
+            <File Id="filF4FB7405E6FD04246499D8AF8A931416" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PlotterMedium.png" />
           </Component>
           <Component Id="cmp54B010997DC87369A3146BB678EEEB72" Guid="98F6F9C8-B12C-4470-A445-A94C3B9CF07C">
-            <File Id="filDA9B60156CBF515DE7BEA1FCC2DE35E1" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PlotterSmall.bmp" />
+            <File Id="filDA9B60156CBF515DE7BEA1FCC2DE35E1" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PlotterSmall.png" />
           </Component>
           <Component Id="cmp242B780619BE1A080537B1B8CE0C8E7C" Guid="BC0DBD48-B581-4D41-9317-E0829FC47779">
-            <File Id="filB8CE8F5D555C3082C37DEEE3D4888E35" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PointCloudLarge.bmp" />
+            <File Id="filB8CE8F5D555C3082C37DEEE3D4888E35" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PointCloudLarge.png" />
           </Component>
           <Component Id="cmp90F6660279F6197FCFFE78CF71799891" Guid="32459617-605C-4167-9715-581A8A9A9498">
-            <File Id="filE82D8B5B56C989C94D728B367674EAB2" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PointCloudMedium.bmp" />
+            <File Id="filE82D8B5B56C989C94D728B367674EAB2" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PointCloudMedium.png" />
           </Component>
           <Component Id="cmpF0E871BFC753933E97A2ABA97E23AB20" Guid="1069B3EC-2950-4B20-9FE5-7208CA057565">
-            <File Id="filCED78ED1B821BB839AA9F4056A8CB7F0" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PointCloudSmall.bmp" />
+            <File Id="filCED78ED1B821BB839AA9F4056A8CB7F0" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PointCloudSmall.png" />
           </Component>
           <Component Id="cmp32B1659EFF7C288535FEC2F64FD9A237" Guid="3DE1C277-D65A-4F9E-9A60-43795479B09F">
-            <File Id="fil1ADB527002672D1F3B69116F9DE16F4D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PolyToProfileLarge.bmp" />
+            <File Id="fil1ADB527002672D1F3B69116F9DE16F4D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PolyToProfileLarge.png" />
           </Component>
           <Component Id="cmpCC5FA9F99C5585E188BAF368F3C149BB" Guid="E5181544-A9E5-4B62-9DFF-8198158E7E0A">
-            <File Id="fil99FC418E99518E15230CBBE8B9F187E9" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PolyToProfileMedium.bmp" />
+            <File Id="fil99FC418E99518E15230CBBE8B9F187E9" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PolyToProfileMedium.png" />
           </Component>
           <Component Id="cmp4D728408ABE9FC61F4B0399ECFF0D8E9" Guid="ACB9E1F5-476B-4AFC-9460-BA22A051E488">
-            <File Id="filEF8D2EFEF07D2332AF2A136F23E57067" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PolyToProfileSmall.bmp" />
+            <File Id="filEF8D2EFEF07D2332AF2A136F23E57067" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PolyToProfileSmall.png" />
           </Component>
           <Component Id="cmp8B4DB6A0157A30E7CAC65B4D27AC3A7D" Guid="12080273-FAF9-44A7-9429-AA7170980113">
-            <File Id="filC646E8AD873F11E64D995C6D54F53C84" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PositionMarkLarge.bmp" />
+            <File Id="filC646E8AD873F11E64D995C6D54F53C84" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PositionMarkLarge.png" />
           </Component>
           <Component Id="cmp9177F954FFB4497CA051E8F3EB78CBDE" Guid="833BFB1A-951B-4B4D-B3A8-B55E010BFD92">
-            <File Id="filC93B953242DA34FCA7ED845B70D525A2" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PositionMarkMedium.bmp" />
+            <File Id="filC93B953242DA34FCA7ED845B70D525A2" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PositionMarkMedium.png" />
           </Component>
           <Component Id="cmp40C28B9763991F0F6F1354BA5D97DC77" Guid="D7424131-198B-42B6-9E9D-F55964C8E241">
-            <File Id="filB5A6A65CAE5B5A29BA19AE91A2DC3EA7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PositionMarkSmall.bmp" />
+            <File Id="filB5A6A65CAE5B5A29BA19AE91A2DC3EA7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PositionMarkSmall.png" />
           </Component>
           <Component Id="cmpB97A4764B6802FC610B35D8A15A31592" Guid="A3F69446-AF08-4756-BD74-235C1CDF9A4E">
-            <File Id="fil98D753DEF60E871B74B268078448EB8D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileSearchEngineLarge.bmp" />
+            <File Id="fil98D753DEF60E871B74B268078448EB8D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileSearchEngineLarge.png" />
           </Component>
           <Component Id="cmpA45145FE282E18453083998DA01B7AA8" Guid="D64DF3E1-C522-41CF-B7E6-EA02B552B1CF">
-            <File Id="fil3FDE773E5FCB8087071AD190EEB32732" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileSearchEngineMedium.bmp" />
+            <File Id="fil3FDE773E5FCB8087071AD190EEB32732" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileSearchEngineMedium.png" />
           </Component>
           <Component Id="cmp6AF27152B836185F972DE1D6815042F2" Guid="C3F313F4-A9C8-43E5-9E35-62AA5ECACE1F">
-            <File Id="filDBC59A3DBFD33C610B24370F913F656B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileSearchEngineSmall.bmp" />
+            <File Id="filDBC59A3DBFD33C610B24370F913F656B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileSearchEngineSmall.png" />
           </Component>
           <Component Id="cmp26E22D980CD3CF7EE946CD1E4B8DD860" Guid="F8763DDA-74FB-4C1C-A774-4C694912787A">
-            <File Id="fil1341421519AFB8F50ED860EFF0DB1C02" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileToPolyLarge.bmp" />
+            <File Id="fil1341421519AFB8F50ED860EFF0DB1C02" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileToPolyLarge.png" />
           </Component>
           <Component Id="cmp387676319F31A8707F6E680966B13A7F" Guid="AA6BABBC-958C-493B-9AA0-76D77DE0DE50">
-            <File Id="filB8D45806CE44286A2FFE41B19984BCAA" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileToPolyMedium.bmp" />
+            <File Id="filB8D45806CE44286A2FFE41B19984BCAA" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileToPolyMedium.png" />
           </Component>
           <Component Id="cmpAEA06A9B67A0B3AD168EBDDB8A34225E" Guid="6FA2D891-189A-4FA8-9717-D1C357B7D882">
-            <File Id="filB707262741697E08DCFC4F877496D9A9" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileToPolySmall.bmp" />
+            <File Id="filB707262741697E08DCFC4F877496D9A9" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ProfileToPolySmall.png" />
           </Component>
           <Component Id="cmp8A8251ABC6AC4A5615F40628E5D80D5F" Guid="CC8CC457-6B10-4129-A9CB-033B592C7E5E">
-            <File Id="filB5A0C182306B75306E33EFA3E27DB7E2" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PrototypLogoLarge.bmp" />
+            <File Id="filB5A0C182306B75306E33EFA3E27DB7E2" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PrototypLogoLarge.png" />
           </Component>
           <Component Id="cmpBA9D87723BD20046986F04E62C9DEE5E" Guid="D3DC247F-1239-42F1-A8BE-ED17D7B9A53C">
-            <File Id="filD198EEEB9A37AF067BCA584B6E861E38" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PrototypLogoMedium.bmp" />
+            <File Id="filD198EEEB9A37AF067BCA584B6E861E38" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PrototypLogoMedium.png" />
           </Component>
           <Component Id="cmpA42631671F0DFBE4B759C63F06BF3BE7" Guid="0F2A85C4-DB5A-4317-8AD6-D328AB4224D9">
-            <File Id="fil0067A79E8222971221343447236F66AF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PrototypLogoSmall.bmp" />
+            <File Id="fil0067A79E8222971221343447236F66AF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\PrototypLogoSmall.png" />
           </Component>
           <Component Id="cmp1E19821595ABDEC9A597AB8A14250640" Guid="810C6B5E-046B-4860-8CE8-8E99F2F33C1F">
-            <File Id="filA8FC26DF1CDD5F3892B9539B02659CD7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RecalcLevelHeightSignLarge.bmp" />
+            <File Id="filA8FC26DF1CDD5F3892B9539B02659CD7" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RecalcLevelHeightSignLarge.png" />
           </Component>
           <Component Id="cmp6BB73033FC82C6B1DC842C6E85CE75AD" Guid="7649AA5D-66E7-40C3-9E9A-CF40384E3A2F">
-            <File Id="filBAF172EB02D4B2BC2591709354867ECD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RecalcLevelHeightSignMedium.bmp" />
+            <File Id="filBAF172EB02D4B2BC2591709354867ECD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RecalcLevelHeightSignMedium.png" />
           </Component>
           <Component Id="cmp3D9FCAD1CCC443FAC93A9CB9455847DC" Guid="2DD4A026-EB59-4D42-887B-CD2C8C522B0B">
-            <File Id="filBB92E30968EBA4EB743411F9F9D47612" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RecalcLevelHeightSignSmall.bmp" />
+            <File Id="filBB92E30968EBA4EB743411F9F9D47612" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RecalcLevelHeightSignSmall.png" />
           </Component>
           <Component Id="cmpD81DCA45044ABF43E5C0815E3918B010" Guid="9E9D606C-77A8-44DA-A944-EB28AFD89AC3">
-            <File Id="fil0B21806505A2BA2430E3036EC02E9B3D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RegionDescriptionLarge.bmp" />
+            <File Id="fil0B21806505A2BA2430E3036EC02E9B3D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RegionDescriptionLarge.png" />
           </Component>
           <Component Id="cmp56DFCDAAD7D9CFDD9EC709A7FC903F02" Guid="BDF21113-03D2-4185-8DBA-8E66EF4DBB5A">
-            <File Id="fil0D73412183C85775478016714851AD92" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RegionDescriptionMedium.bmp" />
+            <File Id="fil0D73412183C85775478016714851AD92" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RegionDescriptionMedium.png" />
           </Component>
           <Component Id="cmp0FA53024B746EBC67767C71C8833DC2B" Guid="13B8DEF8-6FF5-4F0B-9923-59719266B991">
-            <File Id="fil067E743CB3443F58C69A1BB520427FDD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RegionDescriptionSmall.bmp" />
+            <File Id="fil067E743CB3443F58C69A1BB520427FDD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RegionDescriptionSmall.png" />
           </Component>
           <Component Id="cmpB4FB03F7BEC3F5D52D1461E1B5F7829B" Guid="C271FC63-0992-4708-BCB3-09B8EDCE2B10">
-            <File Id="fil944B4CA2C0C23136C196457383B1DCD4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RenameBlockDefInNewDefLarge.bmp" />
+            <File Id="fil944B4CA2C0C23136C196457383B1DCD4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RenameBlockDefInNewDefLarge.png" />
           </Component>
           <Component Id="cmp440AC5CE95CF8E04EC711C35A713E003" Guid="C261E08D-07EB-4316-8AD9-77EB1A94D9EE">
-            <File Id="filAD290728B5D5B4A6B209561E77632E37" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RenameBlockDefInNewDefMedium.bmp" />
+            <File Id="filAD290728B5D5B4A6B209561E77632E37" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RenameBlockDefInNewDefMedium.png" />
           </Component>
           <Component Id="cmpA4B99BB9ADF5B1CF3F7FB4FB03C8244F" Guid="F90C691B-BECF-49A6-9C84-A1853B74DD6C">
-            <File Id="filC80F9F371F4BC7D243BB2E9DFD033434" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RenameBlockDefInNewDefSmall.bmp" />
+            <File Id="filC80F9F371F4BC7D243BB2E9DFD033434" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RenameBlockDefInNewDefSmall.png" />
           </Component>
           <Component Id="cmp1655DCEEF48AA58003DF49CA6EAD1D50" Guid="67A23ED2-7BE0-46C1-89C1-27CAF50E9414">
-            <File Id="filFD9BFCADA0089A019124B0F06E4C241D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ReplaceBlockWithFileLarge.bmp" />
+            <File Id="filFD9BFCADA0089A019124B0F06E4C241D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ReplaceBlockWithFileLarge.png" />
           </Component>
           <Component Id="cmp45B82790F2DAE83DC8FA4FF85D8219DF" Guid="A7E9A301-5456-4495-A4B3-EAD3695BDB33">
-            <File Id="filC9FA32F424AF26164CA7F81A8A899334" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ReplaceBlockWithFileMedium.bmp" />
+            <File Id="filC9FA32F424AF26164CA7F81A8A899334" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ReplaceBlockWithFileMedium.png" />
           </Component>
           <Component Id="cmp91F38E07147BE7B6D177ACC304BB50A9" Guid="EC5525F5-4A0C-4122-AF3B-191E14D8E3BB">
-            <File Id="fil0B68F95FD0FB25280E9E65C44E472CA0" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ReplaceBlockWithFileSmall.bmp" />
+            <File Id="fil0B68F95FD0FB25280E9E65C44E472CA0" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ReplaceBlockWithFileSmall.png" />
           </Component>
           <Component Id="cmp996A819FE29B5DC8AD8CEFB71CBB9FE3" Guid="AB6B8698-C683-42A3-BF5A-A4B13E184B7B">
-            <File Id="fil00CB29A6FE79AC0C1D8043FB4663B231" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RigidInsulationLarge.bmp" />
+            <File Id="fil00CB29A6FE79AC0C1D8043FB4663B231" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RigidInsulationLarge.png" />
           </Component>
           <Component Id="cmpB2A4D2673D0565CBC04144318373D258" Guid="0188DE14-34BA-421D-808D-7716B5B9418D">
-            <File Id="fil0CD382561AAB359E2CF9197B2B34D091" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RigidInsulationMedium.bmp" />
+            <File Id="fil0CD382561AAB359E2CF9197B2B34D091" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RigidInsulationMedium.png" />
           </Component>
           <Component Id="cmp2B89BB6E0FA3D0359AF86AC1254CFB47" Guid="F00F47CB-9C2D-4BF8-A88B-234AA70E4FD5">
-            <File Id="fil730A4CB1B9572E821EEFCDEAA73280FC" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RigidInsulationSmall.bmp" />
+            <File Id="fil730A4CB1B9572E821EEFCDEAA73280FC" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\RigidInsulationSmall.png" />
           </Component>
           <Component Id="cmp59ED6C059EC758902E5B9D1C8A8C5837" Guid="22B10AEF-0858-41F7-A33D-7E5340BDAF18">
-            <File Id="fil56340F131AB297C85C767196669485D8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowMarkLarge.bmp" />
+            <File Id="fil56340F131AB297C85C767196669485D8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowMarkLarge.png" />
           </Component>
           <Component Id="cmp3592F20223622C447605FF0401068567" Guid="6237F796-E52E-4860-95B9-DD44FC97E139">
-            <File Id="filCA33321CB5C6876B875F20A28002512E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowMarkMedium.bmp" />
+            <File Id="filCA33321CB5C6876B875F20A28002512E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowMarkMedium.png" />
           </Component>
           <Component Id="cmpC7B9ACE19E694F4519B75EE5637CA739" Guid="B7F8D4D9-9292-4AD5-B957-5CE7750430E0">
-            <File Id="filDC400000853B39544FE2DE7E2FC1235A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowMarkSmall.bmp" />
+            <File Id="filDC400000853B39544FE2DE7E2FC1235A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowMarkSmall.png" />
           </Component>
           <Component Id="cmp90008EB48E2450B595A9A877885CF54F" Guid="8846ABB4-F103-4FF3-A873-73DF0E1EFBBD">
-            <File Id="filAA04D0740EF0AC27159B1AFAE48EE7E6" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowPairMarkLarge.bmp" />
+            <File Id="filAA04D0740EF0AC27159B1AFAE48EE7E6" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowPairMarkLarge.png" />
           </Component>
           <Component Id="cmpFF7505765F18F0E9D1EB6A1DFB140DDB" Guid="7A1E1B2B-08E9-4F97-BF1A-4D91004624B3">
-            <File Id="fil9B24FBDCA51BD242BDCA028CCAD19174" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowPairMarkMedium.bmp" />
+            <File Id="fil9B24FBDCA51BD242BDCA028CCAD19174" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowPairMarkMedium.png" />
           </Component>
           <Component Id="cmp28655EE4545B3331D5CD056DCAC91394" Guid="29E64327-F999-4D2D-A018-58A782EDD2EB">
-            <File Id="fil2E2C178A2F40B9814D9F95C320C6259F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowPairMarkSmall.bmp" />
+            <File Id="fil2E2C178A2F40B9814D9F95C320C6259F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionArrowPairMarkSmall.png" />
           </Component>
           <Component Id="cmp637770D094BBBC383101C4E98FBDBA19" Guid="9D989D39-8516-41A9-8FDB-3975A85EE78C">
-            <File Id="fil4FA9A78F87FF5A6F5682C39C6C3416B4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionPairMarkLarge.bmp" />
+            <File Id="fil4FA9A78F87FF5A6F5682C39C6C3416B4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionPairMarkLarge.png" />
           </Component>
           <Component Id="cmpDDFAD6EAD1B5F7708FC28BA6D412B84B" Guid="0C387FCF-C7CA-4F63-9BA1-E79E1A4C86D2">
-            <File Id="fil17921F06EF803D0D673D0ECDBAE4CA6A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionPairMarkMedium.bmp" />
+            <File Id="fil17921F06EF803D0D673D0ECDBAE4CA6A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionPairMarkMedium.png" />
           </Component>
           <Component Id="cmp5832AE71E3E3B653DFC2D3DE8D86DA1D" Guid="1E54445A-7E0C-4CF0-87CB-E7692E064B14">
-            <File Id="fil330531D55D0A1F4D13CE28B0DF4EB07A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionPairMarkSmall.bmp" />
+            <File Id="fil330531D55D0A1F4D13CE28B0DF4EB07A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SectionPairMarkSmall.png" />
           </Component>
           <Component Id="cmp5DAA51902ED6005DB15CA07FBB45E813" Guid="D5849C61-7A0A-4841-BA51-D16123794444">
-            <File Id="fil158F677A01B6EF414F2CD3C4EBC0EA71" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SheetDescriptionLarge.bmp" />
+            <File Id="fil158F677A01B6EF414F2CD3C4EBC0EA71" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SheetDescriptionLarge.png" />
           </Component>
           <Component Id="cmp169A114AA0AB1C1D1C245F0708DB11DF" Guid="B26A9017-2D69-4654-9220-DE8F4EFC0690">
-            <File Id="fil64C17EEFE46BE9B8E804A1E83D67F448" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SheetDescriptionMedium.bmp" />
+            <File Id="fil64C17EEFE46BE9B8E804A1E83D67F448" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SheetDescriptionMedium.png" />
           </Component>
           <Component Id="cmp8B733CB76A8E4FC8CA37FBD006287D16" Guid="255D23F9-F69F-4DBE-8091-7F1F3C15D562">
-            <File Id="filBFAF640488610500AD51A784A3A4A16E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SheetDescriptionSmall.bmp" />
+            <File Id="filBFAF640488610500AD51A784A3A4A16E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SheetDescriptionSmall.png" />
           </Component>
           <Component Id="cmpC166DFFE4A4186ECD3269B34E69772C9" Guid="ED6BB810-CF7D-4E7A-A436-2168A5D0FB50">
-            <File Id="fil321FCCE510FE6BEEB04DE48B095C04AB" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ShowCommandsListLarge.bmp" />
+            <File Id="fil321FCCE510FE6BEEB04DE48B095C04AB" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ShowCommandsListLarge.png" />
           </Component>
           <Component Id="cmp1D70AE60AEBE9D6F1D9A5E372A4728E4" Guid="AA7E09E9-1DDB-4AC7-89E9-F7517B52493C">
-            <File Id="filD4A272CA00D6FAC82EE2D14DEF1B48A5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ShowCommandsListMedium.bmp" />
+            <File Id="filD4A272CA00D6FAC82EE2D14DEF1B48A5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ShowCommandsListMedium.png" />
           </Component>
           <Component Id="cmp48CAACD083A718E59E1A1943E39D8455" Guid="5FAF5EEE-D20A-457A-9726-10D7E1C3C0A2">
-            <File Id="fil4A435313A65B03989FF6ED6121A1B5E1" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ShowCommandsListSmall.bmp" />
+            <File Id="fil4A435313A65B03989FF6ED6121A1B5E1" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\ShowCommandsListSmall.png" />
           </Component>
           <Component Id="cmp81915CBF0E6CED0C4F76B6DBD26AA5F7" Guid="4D3EFDD5-60E3-4D6B-9D74-139708BBA976">
-            <File Id="fil81880C23AE1E1591DCE180A31D596713" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointSimpleLarge.bmp" />
+            <File Id="fil81880C23AE1E1591DCE180A31D596713" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointSimpleLarge.png" />
           </Component>
           <Component Id="cmp9EA4A4CE3B70E098BD1BE5C4F25C6955" Guid="749253DD-0B7E-4706-BB8A-8DC5DA84EC5E">
-            <File Id="fil30B66DFAB795010572D691F8A6F3EE7C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointSimpleMedium.bmp" />
+            <File Id="fil30B66DFAB795010572D691F8A6F3EE7C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointSimpleMedium.png" />
           </Component>
           <Component Id="cmpDC03DFB4758C1115B92BD8A8CA38BABA" Guid="0270175A-CBFB-4F94-9676-C18992F57060">
-            <File Id="filD61AFB029790B40CC46370D1DA628FCF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointSimpleSmall.bmp" />
+            <File Id="filD61AFB029790B40CC46370D1DA628FCF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointSimpleSmall.png" />
           </Component>
           <Component Id="cmp20BF1B636A32FB99E53C1A930C366E94" Guid="E978F2EC-76F7-45F0-9D63-CF1B34B12529">
-            <File Id="filD9E14AC99A8335564630F20082E58945" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointWithSilicaLarge.bmp" />
+            <File Id="filD9E14AC99A8335564630F20082E58945" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointWithSilicaLarge.png" />
           </Component>
           <Component Id="cmp53B29D05DFDAC0DFEBAC37FAC5C792FD" Guid="87264C47-D361-423C-9D6A-5B24DD85D3CF">
-            <File Id="filEE5E50AEAEE8B2C21A6D52E307B22B3D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointWithSilicaMedium.bmp" />
+            <File Id="filEE5E50AEAEE8B2C21A6D52E307B22B3D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointWithSilicaMedium.png" />
           </Component>
           <Component Id="cmp635E5725C874DB810B4F012417A9D306" Guid="610F7819-78FB-40DA-9CA6-DE48C276546D">
-            <File Id="filCC5E66DA5A674F1889B1D632B38A9160" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointWithSilicaSmall.bmp" />
+            <File Id="filCC5E66DA5A674F1889B1D632B38A9160" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SiliconJointWithSilicaSmall.png" />
           </Component>
           <Component Id="cmp94A1377D7E10ACED248A9DBDC5723854" Guid="01156386-E2C4-4CD7-8F8E-AC7D21160F1F">
-            <File Id="filDFC025E7359D985684C170F1CC510B03" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SingleGlassUnitLarge.bmp" />
+            <File Id="filDFC025E7359D985684C170F1CC510B03" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SingleGlassUnitLarge.png" />
           </Component>
           <Component Id="cmp0D7D55612727AFC78D0431A74A518A62" Guid="5DB7B3D0-4D68-4014-8EFD-5A58C78AAB94">
-            <File Id="fil88E70D67D986FD7711ACE55DCEFF6AA2" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SingleGlassUnitMedium.bmp" />
+            <File Id="fil88E70D67D986FD7711ACE55DCEFF6AA2" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SingleGlassUnitMedium.png" />
           </Component>
           <Component Id="cmpA1E173BB645B68AAD61F3C7EE68D9BC4" Guid="A6CEAEE6-B3FF-4178-9CFE-2B7F28EEE525">
-            <File Id="fil878A85C6901FCA8C9D882215EE1BC82C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SingleGlassUnitSmall.bmp" />
+            <File Id="fil878A85C6901FCA8C9D882215EE1BC82C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SingleGlassUnitSmall.png" />
           </Component>
           <Component Id="cmpE9E61D3D3B935F70809F3F6075D0ECB5" Guid="D3178196-DA9B-4F96-9FB9-AE3028203EE2">
-            <File Id="fil977989732FAD81AE930DE60BACB36378" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRectLarge.bmp" />
+            <File Id="fil977989732FAD81AE930DE60BACB36378" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRectLarge.png" />
           </Component>
           <Component Id="cmpF38F2BCE4CB6C241FE8026724EA97136" Guid="E2CF928F-9E19-4371-8E19-1650107F8150">
-            <File Id="fil0826632F74B2FB83CE39985CA1164ABC" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRectMedium.bmp" />
+            <File Id="fil0826632F74B2FB83CE39985CA1164ABC" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRectMedium.png" />
           </Component>
           <Component Id="cmp4872B7B949BF8B2D01F8E9C3EF846112" Guid="A20A37CB-3EE3-4CF8-8809-471872DD7D49">
-            <File Id="filD5C572F8221945E2C2BEA8EC369A0B0E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRectSmall.bmp" />
+            <File Id="filD5C572F8221945E2C2BEA8EC369A0B0E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRectSmall.png" />
           </Component>
           <Component Id="cmp3A4CF300337830E6E7BE5A9B9109A432" Guid="455134E9-8FDC-4F1D-BA19-9C98305F0938">
-            <File Id="fil0177AF153CD3808A3777934518D4CCFC" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRoundLarge.bmp" />
+            <File Id="fil0177AF153CD3808A3777934518D4CCFC" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleLarge.png" />
           </Component>
           <Component Id="cmpD8E86C2B5AA8FB97B9E94829D540CA65" Guid="C90FEA7C-A3F2-46FD-ABF6-A6A93B53C9A5">
-            <File Id="fil3362E9E53E2EF48A00472D13362168CF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRoundMedium.bmp" />
+            <File Id="fil3362E9E53E2EF48A00472D13362168CF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleMedium.png" />
           </Component>
           <Component Id="cmp6EE252628B05F788764F8ECB6FEA7A0D" Guid="C10026F0-0D80-4F8C-BAB4-8E16BD880E0E">
-            <File Id="filA25AC1B651C3FF905D5D471C84EA920D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleRoundSmall.bmp" />
+            <File Id="filA25AC1B651C3FF905D5D471C84EA920D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SlottedHoleSmall.png" />
           </Component>
           <Component Id="cmpE35672C6F590B3758809137A9D6BD121" Guid="961762E5-ED38-48DA-B459-7AD5B4E7D6BE">
-            <File Id="fil4B04BC1019D23417326C5ADC48EB451F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SoftInsulationLarge.bmp" />
+            <File Id="fil4B04BC1019D23417326C5ADC48EB451F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SoftInsulationLarge.png" />
           </Component>
           <Component Id="cmpE918E82681FBB29B1545A2CBDC772B7B" Guid="B276FCD0-7A55-42F5-B425-5FD2B14B0DE1">
-            <File Id="filE1336DEFF61CB1C900E6AB775E17D0D8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SoftInsulationMedium.bmp" />
+            <File Id="filE1336DEFF61CB1C900E6AB775E17D0D8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SoftInsulationMedium.png" />
           </Component>
           <Component Id="cmpB1E366A273C31CB7F67F65132F53B057" Guid="80B0200D-C974-4E17-ABE7-7544D4D46627">
-            <File Id="fil5BA2CCB30153E198F650745E81BE14B5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SoftInsulationSmall.bmp" />
+            <File Id="fil5BA2CCB30153E198F650745E81BE14B5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SoftInsulationSmall.png" />
           </Component>
           <Component Id="cmpBBFF3DF1A5A5EC50CA8783FF0D595B91" Guid="797A0D55-C78C-4DE5-BC41-7DB68B419E2B">
-            <File Id="fil2015AFDD32DE7389C553F6C79185D10C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SolidProjectionLarge.bmp" />
+            <File Id="fil2015AFDD32DE7389C553F6C79185D10C" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SolidProjectionLarge.png" />
           </Component>
           <Component Id="cmp70F7D06432E3383884AF7685CC8E1523" Guid="7628A944-DB69-46B6-AB72-888FE42D3929">
-            <File Id="fil8E7D6C11AA35DB7E7AE11E533E40C6F4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SolidProjectionMedium.bmp" />
+            <File Id="fil8E7D6C11AA35DB7E7AE11E533E40C6F4" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SolidProjectionMedium.png" />
           </Component>
           <Component Id="cmp20080748A9E07E76B3790A60ACF438FE" Guid="BE7C062B-7BEA-4A92-98EF-7749CB081E09">
-            <File Id="filCE1BCB46F58638164C7C8CB2E2628563" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SolidProjectionSmall.bmp" />
+            <File Id="filCE1BCB46F58638164C7C8CB2E2628563" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SolidProjectionSmall.png" />
           </Component>
           <Component Id="cmpB8D6CCFBA008BEF39EE112BF53833E1C" Guid="D8DF6E9E-23B2-4DED-A676-C2F0092CB222">
-            <File Id="filFD2792FE817AAD19E0F3FEEB63605EFF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffAllLayersButOneLarge.bmp" />
+            <File Id="filFD2792FE817AAD19E0F3FEEB63605EFF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffAllLayersButOneLarge.png" />
           </Component>
           <Component Id="cmpFD7BA2E051C29EB789ED193384F9C30E" Guid="D971B99B-1108-490A-BCEA-0DD85DB6F6C2">
-            <File Id="filD81D0BE1D4FE85731F636BAEF04BD397" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffAllLayersButOneMedium.bmp" />
+            <File Id="filD81D0BE1D4FE85731F636BAEF04BD397" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffAllLayersButOneMedium.png" />
           </Component>
           <Component Id="cmpC690A6C5606C2FB8DE3BEE3A83ADA4B1" Guid="552889F6-436B-4FED-ABDA-10A909D1335C">
-            <File Id="fil1EDEEAD066A331CCE592F33B2523523E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffAllLayersButOneSmall.bmp" />
+            <File Id="fil1EDEEAD066A331CCE592F33B2523523E" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffAllLayersButOneSmall.png" />
           </Component>
           <Component Id="cmpD13585D36E2E2092951B4767000F3D3E" Guid="C187D576-0711-4372-B06E-647511B50E52">
-            <File Id="fil34AE85168E740997AA0E5E2DAFB837AD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffLayerLarge.bmp" />
+            <File Id="fil34AE85168E740997AA0E5E2DAFB837AD" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffLayerLarge.png" />
           </Component>
           <Component Id="cmp34CB3116FDB5D19F9A0A9527F7C238C1" Guid="1C51B06D-2C87-4C3B-98A4-87E5A0BE3FE5">
-            <File Id="fil77601E88093F74CC8AAA82B3A5E30AA6" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffLayerMedium.bmp" />
+            <File Id="fil77601E88093F74CC8AAA82B3A5E30AA6" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffLayerMedium.png" />
           </Component>
           <Component Id="cmp1EAFBAF82A257DB403E850DDDD41950D" Guid="E2AE6673-F297-4897-B3C3-A0DED153B36B">
-            <File Id="fil47A642C8CFE30D7556B10B603C2F275A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffLayerSmall.bmp" />
+            <File Id="fil47A642C8CFE30D7556B10B603C2F275A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOffLayerSmall.png" />
           </Component>
           <Component Id="cmp712CEFD055C2FE8F8AC43B51082E3518" Guid="3A3834D6-F60D-47BA-A771-4803568262F7">
-            <File Id="fil5D05F3531BD0A2ACB952B1A5A98ACFB8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOnAllLayersLarge.bmp" />
+            <File Id="fil5D05F3531BD0A2ACB952B1A5A98ACFB8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOnAllLayersLarge.png" />
           </Component>
           <Component Id="cmp5EDBDDE67C9816C28D83D4FCD0268B78" Guid="9D9B2268-D3D1-4B8E-889B-62318B0FB159">
-            <File Id="filE0485B3C092638394FB7BEF1AEE0A03A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOnAllLayersMedium.bmp" />
+            <File Id="filE0485B3C092638394FB7BEF1AEE0A03A" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOnAllLayersMedium.png" />
           </Component>
           <Component Id="cmp1126A0AA50C2DB3A17A4C215E039F7A5" Guid="926B23AF-95D5-4D11-BD6A-5C402E005C66">
-            <File Id="fil63AB389BCA574AF949A1EDABEF6C6A88" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOnAllLayersSmall.bmp" />
+            <File Id="fil63AB389BCA574AF949A1EDABEF6C6A88" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\SwitchOnAllLayersSmall.png" />
           </Component>
           <Component Id="cmpC6EA1A997DEC70C6DA55D2F512EC979B" Guid="7E41E007-3B7D-4F89-B478-9600AFE55477">
-            <File Id="filE11DB9C8D8957BF88B9390F6D3DD8966" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TitleMarkLarge.bmp" />
+            <File Id="filE11DB9C8D8957BF88B9390F6D3DD8966" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TitleMarkLarge.png" />
           </Component>
           <Component Id="cmp8F876FBAD7D1F548F29A25FF9F8E4902" Guid="D5A8D0EA-1927-4D99-A2B1-19D706D7354C">
-            <File Id="filA82CB85B30591A122F462EBC6270DDE3" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TitleMarkMedium.bmp" />
+            <File Id="filA82CB85B30591A122F462EBC6270DDE3" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TitleMarkMedium.png" />
           </Component>
           <Component Id="cmp8EEEB03746BBBDE65ED3F2BF757C1D3D" Guid="E6501A54-7C24-4A8A-A9C8-252DD7445B8B">
-            <File Id="filB55309DB8E809089B0356A0CFC8E6102" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TitleMarkSmall.bmp" />
+            <File Id="filB55309DB8E809089B0356A0CFC8E6102" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TitleMarkSmall.png" />
           </Component>
           <Component Id="cmpCE50111DB524898A7717D58EDF79A965" Guid="CA3E18D5-5B8F-4E8C-B3DB-E3687171D9CF">
-            <File Id="fil93C9BB97B3EC996A6A82FD512536A39F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TripleGlassUnitLarge.bmp" />
+            <File Id="fil93C9BB97B3EC996A6A82FD512536A39F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TripleGlassUnitLarge.png" />
           </Component>
           <Component Id="cmpEE68D383F670AB6D7FF044A012D92496" Guid="43AE664E-0834-4BCA-8969-13008BE5BBBF">
-            <File Id="fil9AA741814FB3A34AA0D345FF708CFA9B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TripleGlassUnitMedium.bmp" />
+            <File Id="fil9AA741814FB3A34AA0D345FF708CFA9B" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TripleGlassUnitMedium.png" />
           </Component>
           <Component Id="cmp566EDF7A939B5AB4A0CC4F4FF2D799E9" Guid="133D5EAB-8FA5-4FD2-A198-6584386E05C3">
-            <File Id="filDE89427962AB9E505972B14BE530C04F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TripleGlassUnitSmall.bmp" />
+            <File Id="filDE89427962AB9E505972B14BE530C04F" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\TripleGlassUnitSmall.png" />
           </Component>
           <Component Id="cmpF6C0D310A375E532F4FAD1B14CC06D35" Guid="730BA5C3-B3F2-4F22-BC46-A674C0C0F250">
-            <File Id="fil7DBA7BDD0A684E0753989DFA153B8E89" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold2dSheetProfileLarge.bmp" />
+            <File Id="fil7DBA7BDD0A684E0753989DFA153B8E89" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold2dSheetProfileLarge.png" />
           </Component>
           <Component Id="cmp4B1322FD2B971B43DAB98905C341E531" Guid="B9648BA1-20E6-4168-8301-66A342C11A79">
-            <File Id="filD9D4A58697FD0F53AE3654F02FD393ED" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold2dSheetProfileMedium.bmp" />
+            <File Id="filD9D4A58697FD0F53AE3654F02FD393ED" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold2dSheetProfileMedium.png" />
           </Component>
           <Component Id="cmpE692170AA03CDDB93AF2BBAA476D9059" Guid="274FEFFC-F65C-477F-8A89-7DE0C9DBE9B0">
-            <File Id="fil85EBFD24112C3D8B551F54640A5614A5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold2dSheetProfileSmall.bmp" />
+            <File Id="fil85EBFD24112C3D8B551F54640A5614A5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold2dSheetProfileSmall.png" />
           </Component>
           <Component Id="cmp9612D75223188A394C8AFF711EE03572" Guid="BB129A08-9713-40CA-81B6-D2C2A79BA174">
-            <File Id="fil873D0FE1873C9AD38A3A126FF9E235B8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold3dSheetProfileLarge.bmp" />
+            <File Id="fil873D0FE1873C9AD38A3A126FF9E235B8" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold3dSheetProfileLarge.png" />
           </Component>
           <Component Id="cmp0D1CA653190540EF8D9F7B18333F30AD" Guid="A621D9D1-6ADC-4088-ADB8-C61034C2BE85">
-            <File Id="fil314B9E2897BEC9EE3815E1DE698F5C2D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold3dSheetProfileMedium.bmp" />
+            <File Id="fil314B9E2897BEC9EE3815E1DE698F5C2D" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold3dSheetProfileMedium.png" />
           </Component>
           <Component Id="cmpB0E037709203400E46D39E1057D248DF" Guid="2840B2DB-C0B4-4730-A841-FDEF962A2B9E">
-            <File Id="fil3AE0375E8D3E6E4C8FDFD6DDBD16D0B9" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold3dSheetProfileSmall.bmp" />
+            <File Id="fil3AE0375E8D3E6E4C8FDFD6DDBD16D0B9" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\Unfold3dSheetProfileSmall.png" />
           </Component>
           <Component Id="cmpAD132200A6CE5F872E478EA69271F49C" Guid="D3E66EAA-7228-495B-BA6D-6990F98983F7">
-            <File Id="filFDFF6D611452BBD9AF9854BE421925EF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\UnlockViewPortLarge.bmp" />
+            <File Id="filFDFF6D611452BBD9AF9854BE421925EF" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\UnlockViewPortLarge.png" />
           </Component>
           <Component Id="cmpB6A30F5A05B259FF0DC207F1BA46E0EA" Guid="DDCAEFED-A5D5-4237-983D-BE915BD495BB">
-            <File Id="fil1F26B46596029130B1640915D3DFAA32" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\UnlockViewPortMedium.bmp" />
+            <File Id="fil1F26B46596029130B1640915D3DFAA32" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\UnlockViewPortMedium.png" />
           </Component>
           <Component Id="cmpD6CD276D570624CD2B862DBF0458CB11" Guid="8FAB8EA6-AC06-4715-8678-0AA431D390BE">
-            <File Id="fil6BFE43A85737CD624CDBF673422611CE" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\UnlockViewPortSmall.bmp" />
+            <File Id="fil6BFE43A85737CD624CDBF673422611CE" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\UnlockViewPortSmall.png" />
           </Component>
           <Component Id="cmpA38C1852DCF0A7B478559823CC63DB14" Guid="3EDCEA7D-A25E-4A14-9E5A-071B207298E6">
-            <File Id="fil2B4AE29BCE215710E8B3E2B46F6EB813" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingLineLarge.bmp" />
+            <File Id="fil2B4AE29BCE215710E8B3E2B46F6EB813" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingLineLarge.png" />
           </Component>
           <Component Id="cmp6F5C852C175D91CDCE80B53D7DFFECF1" Guid="D228B8FB-0012-4A3B-947D-46D55A867689">
-            <File Id="fil14039D41AA0E7BCB60FDFF4A99A3D0FE" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingLineMedium.bmp" />
+            <File Id="fil14039D41AA0E7BCB60FDFF4A99A3D0FE" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingLineMedium.png" />
           </Component>
           <Component Id="cmpFC39612134DBF4273606809ACD9E86F9" Guid="F6F1DDFC-6561-4201-9C64-9EF32B7A4C6E">
-            <File Id="fil38924D7BFF7DC7D20936563FF20E7195" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingLineSmall.bmp" />
+            <File Id="fil38924D7BFF7DC7D20936563FF20E7195" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingLineSmall.png" />
           </Component>
           <Component Id="cmpDCF552513EBCAB3B9793F631A891BEAF" Guid="4216581B-299A-459F-8DCE-F4FDCC48C329">
-            <File Id="fil114F6F433D4126A10EF97390440C95C5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingMarkLarge.bmp" />
+            <File Id="fil114F6F433D4126A10EF97390440C95C5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingMarkLarge.png" />
           </Component>
           <Component Id="cmpBCEE5CEAF2C3473EA5833DC809D6A558" Guid="274DC4CC-90EC-49F2-A0A7-AA984FA83F82">
-            <File Id="fil03B981C2889D50230F45E6B606631712" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingMarkMedium.bmp" />
+            <File Id="fil03B981C2889D50230F45E6B606631712" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingMarkMedium.png" />
           </Component>
           <Component Id="cmp0511555F52F990435211FCAA948033ED" Guid="2B46DCDF-0A10-47F8-825D-3806D9B18C25">
-            <File Id="fil57C7C7BB113CD60B324B1CF35665ECF5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingMarkSmall.bmp" />
+            <File Id="fil57C7C7BB113CD60B324B1CF35665ECF5" KeyPath="yes" Source="$(var.FilesPath)\Files\Icons\WeldingMarkSmall.png" />
           </Component>
         </Directory>
         <Directory Id="dirD2D6B0ACE50556209D99D089DBB2F737" Name="Lisp">
@@ -769,7 +769,7 @@
             <File Id="fil99BA43DB08048A97727FB7FC986BAC75" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\KojtoCAD.xml" />
           </Component>
           <Component Id="cmp0EC7808DA2364BE4B044D3B8DE24D648" Guid="3A65415C-378E-4030-AD9E-BE03D37BDE8F">
-            <File Id="filE8B472BFB31742D5897FFEED63362277" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\kojto.cui" />
+            <File Id="filE8B472BFB31742D5897FFEED63362277" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\kojto_2D.cui" />
           </Component>
           <Component Id="cmp5E35C43592954FFB9186BD1A69AF595F" Guid="302F3D11-4E98-44EF-B277-83E1AC118627">
             <File Id="fil8E3E570DE703414C900FC2E1A8A415F5" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\kojto_3D.cui" />
