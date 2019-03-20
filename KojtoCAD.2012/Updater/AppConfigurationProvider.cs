@@ -1,24 +1,32 @@
 ﻿using System;
 using System.IO;
 using KojtoCAD.Updater.Interfaces;
+using System.Configuration;
+using System.Reflection;
 
 namespace KojtoCAD.Updater
 {
     public class AppConfigurationProvider : IAppConfigurationProvider
     {
+        private readonly Configuration _config;
+
+        public AppConfigurationProvider()
+        {
+            _config = ConfigurationManager.OpenExeConfiguration(Assembly.GetExecutingAssembly().Location);
+        }
         public string GetBlobConnectionString()
         {
-            return Properties.Settings.Default.BlobConnectionString;
+            return _config.AppSettings.Settings["BlobConnectionString"].Value;
         }
 
         public string GetBlobContainerName()
         {
-            return Properties.Settings.Default.BlobContainerName;
+            return _config.AppSettings.Settings["BlobContainerName"].Value;
         }
 
         public string GetKojtoCadVirtualDirectoryName()
         {
-            return Properties.Settings.Default.NewVersionsVirtualDirectory;
+            return _config.AppSettings.Settings["NewVersionsVirtualDirectory"].Value;
         }
 
         public string GetProgramFilesDir()

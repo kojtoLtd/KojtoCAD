@@ -12,7 +12,7 @@ namespace KojtoCAD.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -1724,34 +1724,6 @@ namespace KojtoCAD.Properties {
             }
             set {
                 this["plotTransparency"] = value;
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("kojtocad")]
-        public string BlobContainerName {
-            get {
-                return ((string)(this["BlobContainerName"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DefaultEndpointsProtocol=https;AccountName=3dsoft;AccountKey=hzHT/Lb9lrCvFBkdVxVi" +
-            "9in1ZVePQnRCNltTbBDq34Wocle8+S//doo5nY1Kkr5zdg+XxX42OHgTImcCyrFtig==")]
-        public string BlobConnectionString {
-            get {
-                return ((string)(this["BlobConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("InstallVersions")]
-        public string NewVersionsVirtualDirectory {
-            get {
-                return ((string)(this["NewVersionsVirtualDirectory"]));
             }
         }
     }

@@ -29,6 +29,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,6 +39,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BricscadApp, Version=17.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -66,8 +68,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\libs\colorComboboxControl.dll</HintPath>
     </Reference>
-    <Reference Include="DocumentFormat.OpenXml">
-      <HintPath>..\..\..\libs\openXML\DocumentFormat.OpenXml.dll</HintPath>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
     <Reference Include="ExcelWriter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -102,6 +104,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
@@ -788,7 +791,9 @@
     <None Include="..\KojtoCAD.2012\Files\Templates\kojto_3D.cui">
       <Link>Files\Templates\kojto_3D.cui</Link>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Resources\Prototyp.png" />
     <None Include="Resources\kf.PNG" />
     <None Include="Resources\bd.PNG" />
@@ -923,7 +928,9 @@
     <None Include="..\KojtoCAD.2012\Files\Templates\KOJTO_3D.cuix">
       <Link>Files\Templates\KOJTO_3D.cuix</Link>
     </None>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="..\KojtoCAD.2012\Files\Icons\AlignViewportsHorizontalyLarge.bmp">
       <Link>Files\Icons\AlignViewportsHorizontalyLarge.bmp</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -1790,7 +1797,7 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-   <ItemGroup>
+  <ItemGroup>
     <SourceFiles Include="bin\Debug\**\*" />
   </ItemGroup>
   <PropertyGroup>
