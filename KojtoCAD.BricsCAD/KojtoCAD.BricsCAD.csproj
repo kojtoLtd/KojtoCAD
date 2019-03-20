@@ -79,6 +79,10 @@
       <HintPath>..\packages\LumenWorks.Framework.IO.3.8.0\lib\net20\LumenWorks.Framework.IO.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
       <Private>True</Private>
@@ -700,6 +704,9 @@
     <Compile Include="..\KojtoCAD.2012\Utilities\acThumbnailReader.cs">
       <Link>Utilities\acThumbnailReader.cs</Link>
     </Compile>
+    <Compile Include="..\KojtoCAD.2012\Utilities\AiUsageTracker.cs">
+      <Link>Utilities\AiUsageTracker.cs</Link>
+    </Compile>
     <Compile Include="..\KojtoCAD.2012\Utilities\BcadExtensionMethods.cs">
       <Link>Utilities\BcadExtensionMethods.cs</Link>
     </Compile>
@@ -751,6 +758,9 @@
     <Compile Include="..\KojtoCAD.2012\Utilities\Interfaces\IPaperSizeFactory.cs">
       <Link>Utilities\Interfaces\IPaperSizeFactory.cs</Link>
     </Compile>
+    <Compile Include="..\KojtoCAD.2012\Utilities\Interfaces\ITracker.cs">
+      <Link>Utilities\Interfaces\ITracker.cs</Link>
+    </Compile>
     <Compile Include="..\KojtoCAD.2012\Utilities\Interfaces\IUtilityClass.cs">
       <Link>Utilities\Interfaces\IUtilityClass.cs</Link>
     </Compile>
@@ -785,11 +795,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\KojtoCAD.2012\Files\Templates\kojto.cui">
-      <Link>Files\Templates\kojto.cui</Link>
+    <None Include="..\KojtoCAD.2012\Files\Templates\kojto_2D.cui">
+      <Link>Files\Templates\kojto_2D.cui</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Templates\kojto_3D.cui">
       <Link>Files\Templates\kojto_3D.cui</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -801,863 +813,911 @@
     <None Include="Resources\ba.PNG" />
     <None Include="..\KojtoCAD.2012\Files\Documentation\KojtoCAD.chm">
       <Link>Files\Documentation\KojtoCAD.chm</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\DGU\PSYMB_DGU_Inner_Laminated.dwg">
       <Link>Files\Dynamic_blocks\DGU\PSYMB_DGU_Inner_Laminated.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\DGU\PSYMB_DGU_Laminated.dwg">
       <Link>Files\Dynamic_blocks\DGU\PSYMB_DGU_Laminated.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\DGU\PSYMB_DGU_Monolitic.dwg">
       <Link>Files\Dynamic_blocks\DGU\PSYMB_DGU_Monolitic.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\DGU\PSYMB_DGU_Outer_Laminated.dwg">
       <Link>Files\Dynamic_blocks\DGU\PSYMB_DGU_Outer_Laminated.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\DrawingFrame.dwg">
       <Link>Files\Dynamic_blocks\DrawingFrame.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\Level.dwg">
       <Link>Files\Dynamic_blocks\Level.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\Marks\ArrowMark.dwg">
       <Link>Files\Dynamic_blocks\Marks\ArrowMark.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\Marks\ElevationMark.dwg">
       <Link>Files\Dynamic_blocks\Marks\ElevationMark.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\Marks\PositionMark.dwg">
       <Link>Files\Dynamic_blocks\Marks\PositionMark.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\Marks\SectionArrowMark.dwg">
       <Link>Files\Dynamic_blocks\Marks\SectionArrowMark.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\Marks\SectionArrowPairMark.dwg">
       <Link>Files\Dynamic_blocks\Marks\SectionArrowPairMark.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\Marks\TitleMark.dwg">
       <Link>Files\Dynamic_blocks\Marks\TitleMark.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\Marks\WeldingMark.dwg">
       <Link>Files\Dynamic_blocks\Marks\WeldingMark.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\SGU\PSYMB_SGU.dwg">
       <Link>Files\Dynamic_blocks\SGU\PSYMB_SGU.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\SGU\PSYM_SGU_Laminated.dwg">
       <Link>Files\Dynamic_blocks\SGU\PSYM_SGU_Laminated.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\SiliconJointSimple.dwg">
       <Link>Files\Dynamic_blocks\SiliconJointSimple.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\SiliconJointWithSilica.dwg">
       <Link>Files\Dynamic_blocks\SiliconJointWithSilica.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\SlottedHoleRectangular.dwg">
       <Link>Files\Dynamic_blocks\SlottedHoleRectangular.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\SlottedHoleRoundDoubleAxis.dwg">
       <Link>Files\Dynamic_blocks\SlottedHoleRoundDoubleAxis.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\SlottedHoleRoundSingleAxis.dwg">
       <Link>Files\Dynamic_blocks\SlottedHoleRoundSingleAxis.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\TGU\PSYMB_TGU_Inner_Laminated.dwg">
       <Link>Files\Dynamic_blocks\TGU\PSYMB_TGU_Inner_Laminated.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\TGU\PSYMB_TGU_Laminated.dwg">
       <Link>Files\Dynamic_blocks\TGU\PSYMB_TGU_Laminated.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\TGU\PSYMB_TGU_Monolitic.dwg">
       <Link>Files\Dynamic_blocks\TGU\PSYMB_TGU_Monolitic.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\TGU\PSYMB_TGU_Outer_Laminated.dwg">
       <Link>Files\Dynamic_blocks\TGU\PSYMB_TGU_Outer_Laminated.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Lisp\blockReplacer.lsp">
       <Link>Files\Lisp\blockReplacer.lsp</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Lisp\CopyRenameBlockV1-2.lsp">
       <Link>Files\Lisp\CopyRenameBlockV1-2.lsp</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Lisp\flat.lsp">
       <Link>Files\Lisp\flat.lsp</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Lisp\pedit3d.lsp">
       <Link>Files\Lisp\pedit3d.lsp</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Lisp\smash.lsp">
       <Link>Files\Lisp\smash.lsp</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Lisp\vpts.lsp">
       <Link>Files\Lisp\vpts.lsp</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\PlotStyles\mono.ctb">
       <Link>Files\PlotStyles\mono.ctb</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\PlotStyles\Prototyp_a0.ctb">
       <Link>Files\PlotStyles\Prototyp_a0.ctb</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\PlotStyles\prototyp_a3.ctb">
       <Link>Files\PlotStyles\prototyp_a3.ctb</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\PlotStyles\waagner_biro.ctb">
       <Link>Files\PlotStyles\waagner_biro.ctb</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\PlotStyles\waagner_biro_duen.ctb">
       <Link>Files\PlotStyles\waagner_biro_duen.ctb</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Tables\Aluminum.bend.deduction.csv">
       <Link>Files\Tables\Aluminum.bend.deduction.csv</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Tables\materials.csv">
       <Link>Files\Tables\materials.csv</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Tables\Stainless.Steel.bend.deduction.csv">
       <Link>Files\Tables\Stainless.Steel.bend.deduction.csv</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Tables\Steel.bend.deduction.csv">
       <Link>Files\Tables\Steel.bend.deduction.csv</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Templates\all.dwg">
       <Link>Files\Templates\all.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Templates\KojtoCAD.dwt">
       <Link>Files\Templates\KojtoCAD.dwt</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="..\KojtoCAD.2012\Files\Templates\KOJTO_3D.cuix">
       <Link>Files\Templates\KOJTO_3D.cuix</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="app.config">
-      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\AlignViewportsHorizontalyLarge.bmp">
-      <Link>Files\Icons\AlignViewportsHorizontalyLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\AlignViewportsHorizontalyMedium.bmp">
-      <Link>Files\Icons\AlignViewportsHorizontalyMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\AlignViewportsHorizontalySmall.bmp">
-      <Link>Files\Icons\AlignViewportsHorizontalySmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\AlignViewportsVerticalyLarge.bmp">
-      <Link>Files\Icons\AlignViewportsVerticalyLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\AlignViewportsVerticalyMedium.bmp">
-      <Link>Files\Icons\AlignViewportsVerticalyMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\AlignViewportsVerticalySmall.bmp">
-      <Link>Files\Icons\AlignViewportsVerticalySmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ArrowMarkLarge.bmp">
-      <Link>Files\Icons\ArrowMarkLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ArrowMarkMedium.bmp">
-      <Link>Files\Icons\ArrowMarkMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ArrowMarkSmall.bmp">
-      <Link>Files\Icons\ArrowMarkSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ChkAttrIsInExcelLarge.bmp">
-      <Link>Files\Icons\ChkAttrIsInExcelLarge.bmp</Link>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ChkAttrIsInExcelMedium.bmp">
-      <Link>Files\Icons\ChkAttrIsInExcelMedium.bmp</Link>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ChkAttrIsInExcelSmall.bmp">
-      <Link>Files\Icons\ChkAttrIsInExcelSmall.bmp</Link>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\CloseDwgProperlyLarge.bmp">
-      <Link>Files\Icons\CloseDwgProperlyLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\CloseDwgProperlyMedium.bmp">
-      <Link>Files\Icons\CloseDwgProperlyMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\CloseDwgProperlySmall.bmp">
-      <Link>Files\Icons\CloseDwgProperlySmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\CopyBlockDefInNewDefLarge.bmp">
-      <Link>Files\Icons\CopyBlockDefInNewDefLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\CopyBlockDefInNewDefMedium.bmp">
-      <Link>Files\Icons\CopyBlockDefInNewDefMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\CopyBlockDefInNewDefSmall.bmp">
-      <Link>Files\Icons\CopyBlockDefInNewDefSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\CreateViewportFromModelLarge.bmp">
-      <Link>Files\Icons\CreateViewportFromModelLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\CreateViewportFromModelMedium.bmp">
-      <Link>Files\Icons\CreateViewportFromModelMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\CreateViewportFromModelSmall.bmp">
-      <Link>Files\Icons\CreateViewportFromModelSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\DeleteHelpLinesLarge.bmp">
-      <Link>Files\Icons\DeleteHelpLinesLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\DeleteHelpLinesMedium.bmp">
-      <Link>Files\Icons\DeleteHelpLinesMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\DeleteHelpLinesSmall.bmp">
-      <Link>Files\Icons\DeleteHelpLinesSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\DoubleGlassUnitLarge.bmp">
-      <Link>Files\Icons\DoubleGlassUnitLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\DoubleGlassUnitMedium.bmp">
-      <Link>Files\Icons\DoubleGlassUnitMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\DoubleGlassUnitSmall.bmp">
-      <Link>Files\Icons\DoubleGlassUnitSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\DrawingFrameLarge.bmp">
-      <Link>Files\Icons\DrawingFrameLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\DrawingFrameMedium.bmp">
-      <Link>Files\Icons\DrawingFrameMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\DrawingFrameSmall.bmp">
-      <Link>Files\Icons\DrawingFrameSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ElevationMarkLarge.bmp">
-      <Link>Files\Icons\ElevationMarkLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ElevationMarkMedium.bmp">
-      <Link>Files\Icons\ElevationMarkMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ElevationMarkSmall.bmp">
-      <Link>Files\Icons\ElevationMarkSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ExtractAttributesLarge.bmp">
-      <Link>Files\Icons\ExtractAttributesLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ExtractAttributesMedium.bmp">
-      <Link>Files\Icons\ExtractAttributesMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ExtractAttributesSmall.bmp">
-      <Link>Files\Icons\ExtractAttributesSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\GearsLarge.bmp">
-      <Link>Files\Icons\GearsLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\GearsMedium.bmp">
-      <Link>Files\Icons\GearsMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\GearsSmall.bmp">
-      <Link>Files\Icons\GearsSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLine45Large.bmp">
-      <Link>Files\Icons\HelpLine45Large.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLine45Medium.bmp">
-      <Link>Files\Icons\HelpLine45Medium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLine45Small.bmp">
-      <Link>Files\Icons\HelpLine45Small.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineAngular.largr.bmp">
-      <Link>Files\Icons\HelpLineAngular.largr.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineAngularLarge.bmp">
-      <Link>Files\Icons\HelpLineAngularLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineAngularMedium.bmp">
-      <Link>Files\Icons\HelpLineAngularMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineAngularSmall.bmp">
-      <Link>Files\Icons\HelpLineAngularSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineCrossedLarge.bmp">
-      <Link>Files\Icons\HelpLineCrossedLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineCrossedMedium.bmp">
-      <Link>Files\Icons\HelpLineCrossedMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineCrossedSmall.bmp">
-      <Link>Files\Icons\HelpLineCrossedSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineHorizontalLarge.bmp">
-      <Link>Files\Icons\HelpLineHorizontalLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineHorizontalMedium.bmp">
-      <Link>Files\Icons\HelpLineHorizontalMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineHorizontalSmall.bmp">
-      <Link>Files\Icons\HelpLineHorizontalSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineOffsetLarge.bmp">
-      <Link>Files\Icons\HelpLineOffsetLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineOffsetMedium.bmp">
-      <Link>Files\Icons\HelpLineOffsetMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineOffsetSmall.bmp">
-      <Link>Files\Icons\HelpLineOffsetSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLinesDeleteLarge.bmp">
-      <Link>Files\Icons\HelpLinesDeleteLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLinesDeleteMedium.bmp">
-      <Link>Files\Icons\HelpLinesDeleteMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLinesDeleteSmall.bmp">
-      <Link>Files\Icons\HelpLinesDeleteSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineVerticalLarge.bmp">
-      <Link>Files\Icons\HelpLineVerticalLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineVerticalMedium.bmp">
-      <Link>Files\Icons\HelpLineVerticalMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineVerticalSmall.bmp">
-      <Link>Files\Icons\HelpLineVerticalSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HydroInsulationLarge.bmp">
-      <Link>Files\Icons\HydroInsulationLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HydroInsulationMedium.bmp">
-      <Link>Files\Icons\HydroInsulationMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\HydroInsulationSmall.bmp">
-      <Link>Files\Icons\HydroInsulationSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\Join3DLinesToPolyLarge.bmp">
-      <Link>Files\Icons\Join3DLinesToPolyLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\Join3DLinesToPolyMedium.bmp">
-      <Link>Files\Icons\Join3DLinesToPolyMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\Join3DLinesToPolySmall.bmp">
-      <Link>Files\Icons\Join3DLinesToPolySmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\LevelHeightSignLarge.bmp">
-      <Link>Files\Icons\LevelHeightSignLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\LevelHeightSignMedium.bmp">
-      <Link>Files\Icons\LevelHeightSignMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\LevelHeightSignSmall.bmp">
-      <Link>Files\Icons\LevelHeightSignSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\LoadSettingsLarge.bmp">
-      <Link>Files\Icons\LoadSettingsLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\LoadSettingsMedium.bmp">
-      <Link>Files\Icons\LoadSettingsMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\LoadSettingsSmall.bmp">
-      <Link>Files\Icons\LoadSettingsSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\LockViewPortLarge.bmp">
-      <Link>Files\Icons\LockViewPortLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\LockViewPortMedium.bmp">
-      <Link>Files\Icons\LockViewPortMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\LockViewPortSmall.bmp">
-      <Link>Files\Icons\LockViewPortSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PcadSettingsLarge.bmp">
-      <Link>Files\Icons\PcadSettingsLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PcadSettingsMedium.bmp">
-      <Link>Files\Icons\PcadSettingsMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PcadSettingsSmall.bmp">
-      <Link>Files\Icons\PcadSettingsSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PlotterLarge.bmp">
-      <Link>Files\Icons\PlotterLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PlotterMedium.bmp">
-      <Link>Files\Icons\PlotterMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PlotterSmall.bmp">
-      <Link>Files\Icons\PlotterSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PointCloudLarge.bmp">
-      <Link>Files\Icons\PointCloudLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PointCloudMedium.bmp">
-      <Link>Files\Icons\PointCloudMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PointCloudSmall.bmp">
-      <Link>Files\Icons\PointCloudSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PolyToProfileLarge.bmp">
-      <Link>Files\Icons\PolyToProfileLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PolyToProfileMedium.bmp">
-      <Link>Files\Icons\PolyToProfileMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PolyToProfileSmall.bmp">
-      <Link>Files\Icons\PolyToProfileSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PositionMarkLarge.bmp">
-      <Link>Files\Icons\PositionMarkLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PositionMarkMedium.bmp">
-      <Link>Files\Icons\PositionMarkMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PositionMarkSmall.bmp">
-      <Link>Files\Icons\PositionMarkSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ProfileSearchEngineLarge.bmp">
-      <Link>Files\Icons\ProfileSearchEngineLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ProfileSearchEngineMedium.bmp">
-      <Link>Files\Icons\ProfileSearchEngineMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ProfileSearchEngineSmall.bmp">
-      <Link>Files\Icons\ProfileSearchEngineSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ProfileToPolyLarge.bmp">
-      <Link>Files\Icons\ProfileToPolyLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ProfileToPolyMedium.bmp">
-      <Link>Files\Icons\ProfileToPolyMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ProfileToPolySmall.bmp">
-      <Link>Files\Icons\ProfileToPolySmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PrototypLogoLarge.bmp">
-      <Link>Files\Icons\PrototypLogoLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PrototypLogoMedium.bmp">
-      <Link>Files\Icons\PrototypLogoMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\PrototypLogoSmall.bmp">
-      <Link>Files\Icons\PrototypLogoSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\RecalcLevelHeightSignLarge.bmp">
-      <Link>Files\Icons\RecalcLevelHeightSignLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\RecalcLevelHeightSignMedium.bmp">
-      <Link>Files\Icons\RecalcLevelHeightSignMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\RecalcLevelHeightSignSmall.bmp">
-      <Link>Files\Icons\RecalcLevelHeightSignSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\RegionDescriptionLarge.bmp">
-      <Link>Files\Icons\RegionDescriptionLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\RegionDescriptionMedium.bmp">
-      <Link>Files\Icons\RegionDescriptionMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\RegionDescriptionSmall.bmp">
-      <Link>Files\Icons\RegionDescriptionSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\RenameBlockDefInNewDefLarge.bmp">
-      <Link>Files\Icons\RenameBlockDefInNewDefLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\RenameBlockDefInNewDefMedium.bmp">
-      <Link>Files\Icons\RenameBlockDefInNewDefMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\RenameBlockDefInNewDefSmall.bmp">
-      <Link>Files\Icons\RenameBlockDefInNewDefSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ReplaceBlockWithFileLarge.bmp">
-      <Link>Files\Icons\ReplaceBlockWithFileLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ReplaceBlockWithFileMedium.bmp">
-      <Link>Files\Icons\ReplaceBlockWithFileMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ReplaceBlockWithFileSmall.bmp">
-      <Link>Files\Icons\ReplaceBlockWithFileSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\RigidInsulationLarge.bmp">
-      <Link>Files\Icons\RigidInsulationLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\RigidInsulationMedium.bmp">
-      <Link>Files\Icons\RigidInsulationMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\RigidInsulationSmall.bmp">
-      <Link>Files\Icons\RigidInsulationSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionArrowMarkLarge.bmp">
-      <Link>Files\Icons\SectionArrowMarkLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionArrowMarkMedium.bmp">
-      <Link>Files\Icons\SectionArrowMarkMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionArrowMarkSmall.bmp">
-      <Link>Files\Icons\SectionArrowMarkSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionArrowPairMarkLarge.bmp">
-      <Link>Files\Icons\SectionArrowPairMarkLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionArrowPairMarkMedium.bmp">
-      <Link>Files\Icons\SectionArrowPairMarkMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionArrowPairMarkSmall.bmp">
-      <Link>Files\Icons\SectionArrowPairMarkSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionPairMarkLarge.bmp">
-      <Link>Files\Icons\SectionPairMarkLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionPairMarkMedium.bmp">
-      <Link>Files\Icons\SectionPairMarkMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionPairMarkSmall.bmp">
-      <Link>Files\Icons\SectionPairMarkSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SheetDescriptionLarge.bmp">
-      <Link>Files\Icons\SheetDescriptionLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SheetDescriptionMedium.bmp">
-      <Link>Files\Icons\SheetDescriptionMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SheetDescriptionSmall.bmp">
-      <Link>Files\Icons\SheetDescriptionSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ShowCommandsListLarge.bmp">
-      <Link>Files\Icons\ShowCommandsListLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ShowCommandsListMedium.bmp">
-      <Link>Files\Icons\ShowCommandsListMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\ShowCommandsListSmall.bmp">
-      <Link>Files\Icons\ShowCommandsListSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SiliconJointSimpleLarge.bmp">
-      <Link>Files\Icons\SiliconJointSimpleLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SiliconJointSimpleMedium.bmp">
-      <Link>Files\Icons\SiliconJointSimpleMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SiliconJointSimpleSmall.bmp">
-      <Link>Files\Icons\SiliconJointSimpleSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SiliconJointWithSilicaLarge.bmp">
-      <Link>Files\Icons\SiliconJointWithSilicaLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SiliconJointWithSilicaMedium.bmp">
-      <Link>Files\Icons\SiliconJointWithSilicaMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SiliconJointWithSilicaSmall.bmp">
-      <Link>Files\Icons\SiliconJointWithSilicaSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SingleGlassUnitLarge.bmp">
-      <Link>Files\Icons\SingleGlassUnitLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SingleGlassUnitMedium.bmp">
-      <Link>Files\Icons\SingleGlassUnitMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SingleGlassUnitSmall.bmp">
-      <Link>Files\Icons\SingleGlassUnitSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SlottedHoleRectLarge.bmp">
-      <Link>Files\Icons\SlottedHoleRectLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SlottedHoleRectMedium.bmp">
-      <Link>Files\Icons\SlottedHoleRectMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SlottedHoleRectSmall.bmp">
-      <Link>Files\Icons\SlottedHoleRectSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SlottedHoleRoundLarge.bmp">
-      <Link>Files\Icons\SlottedHoleRoundLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SlottedHoleRoundMedium.bmp">
-      <Link>Files\Icons\SlottedHoleRoundMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SlottedHoleRoundSmall.bmp">
-      <Link>Files\Icons\SlottedHoleRoundSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SoftInsulationLarge.bmp">
-      <Link>Files\Icons\SoftInsulationLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SoftInsulationMedium.bmp">
-      <Link>Files\Icons\SoftInsulationMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SoftInsulationSmall.bmp">
-      <Link>Files\Icons\SoftInsulationSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SolidProjectionLarge.bmp">
-      <Link>Files\Icons\SolidProjectionLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SolidProjectionMedium.bmp">
-      <Link>Files\Icons\SolidProjectionMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SolidProjectionSmall.bmp">
-      <Link>Files\Icons\SolidProjectionSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOffAllLayersButOneLarge.bmp">
-      <Link>Files\Icons\SwitchOffAllLayersButOneLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOffAllLayersButOneMedium.bmp">
-      <Link>Files\Icons\SwitchOffAllLayersButOneMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOffAllLayersButOneSmall.bmp">
-      <Link>Files\Icons\SwitchOffAllLayersButOneSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOffLayerLarge.bmp">
-      <Link>Files\Icons\SwitchOffLayerLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOffLayerMedium.bmp">
-      <Link>Files\Icons\SwitchOffLayerMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOffLayerSmall.bmp">
-      <Link>Files\Icons\SwitchOffLayerSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOnAllLayersLarge.bmp">
-      <Link>Files\Icons\SwitchOnAllLayersLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOnAllLayersMedium.bmp">
-      <Link>Files\Icons\SwitchOnAllLayersMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOnAllLayersSmall.bmp">
-      <Link>Files\Icons\SwitchOnAllLayersSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\TitleMarkLarge.bmp">
-      <Link>Files\Icons\TitleMarkLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\TitleMarkMedium.bmp">
-      <Link>Files\Icons\TitleMarkMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\TitleMarkSmall.bmp">
-      <Link>Files\Icons\TitleMarkSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\TripleGlassUnitLarge.bmp">
-      <Link>Files\Icons\TripleGlassUnitLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\TripleGlassUnitMedium.bmp">
-      <Link>Files\Icons\TripleGlassUnitMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\TripleGlassUnitSmall.bmp">
-      <Link>Files\Icons\TripleGlassUnitSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\Unfold2dSheetProfileLarge.bmp">
-      <Link>Files\Icons\Unfold2dSheetProfileLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\Unfold2dSheetProfileMedium.bmp">
-      <Link>Files\Icons\Unfold2dSheetProfileMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\Unfold2dSheetProfileSmall.bmp">
-      <Link>Files\Icons\Unfold2dSheetProfileSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\Unfold3dSheetProfileLarge.bmp">
-      <Link>Files\Icons\Unfold3dSheetProfileLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\Unfold3dSheetProfileMedium.bmp">
-      <Link>Files\Icons\Unfold3dSheetProfileMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\Unfold3dSheetProfileSmall.bmp">
-      <Link>Files\Icons\Unfold3dSheetProfileSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\UnlockViewPortLarge.bmp">
-      <Link>Files\Icons\UnlockViewPortLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\UnlockViewPortMedium.bmp">
-      <Link>Files\Icons\UnlockViewPortMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\UnlockViewPortSmall.bmp">
-      <Link>Files\Icons\UnlockViewPortSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\WeldingLineLarge.bmp">
-      <Link>Files\Icons\WeldingLineLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\WeldingLineMedium.bmp">
-      <Link>Files\Icons\WeldingLineMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\WeldingLineSmall.bmp">
-      <Link>Files\Icons\WeldingLineSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\WeldingMarkLarge.bmp">
-      <Link>Files\Icons\WeldingMarkLarge.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\WeldingMarkMedium.bmp">
-      <Link>Files\Icons\WeldingMarkMedium.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\KojtoCAD.2012\Files\Icons\WeldingMarkSmall.bmp">
-      <Link>Files\Icons\WeldingMarkSmall.bmp</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\AlignViewportsHorizontalyLarge.png">
+      <Link>Files\Icons\AlignViewportsHorizontalyLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\AlignViewportsHorizontalyMedium.png">
+      <Link>Files\Icons\AlignViewportsHorizontalyMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\AlignViewportsHorizontalySmall.png">
+      <Link>Files\Icons\AlignViewportsHorizontalySmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\AlignViewportsVerticalyLarge.png">
+      <Link>Files\Icons\AlignViewportsVerticalyLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\AlignViewportsVerticalyMedium.png">
+      <Link>Files\Icons\AlignViewportsVerticalyMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\AlignViewportsVerticalySmall.png">
+      <Link>Files\Icons\AlignViewportsVerticalySmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ArrowMarkLarge.png">
+      <Link>Files\Icons\ArrowMarkLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ArrowMarkMedium.png">
+      <Link>Files\Icons\ArrowMarkMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ArrowMarkSmall.png">
+      <Link>Files\Icons\ArrowMarkSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\CheckAttributesLarge.png">
+      <Link>Files\Icons\CheckAttributesLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\CheckAttributesMedium.png">
+      <Link>Files\Icons\CheckAttributesMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\CheckAttributesSmall.png">
+      <Link>Files\Icons\CheckAttributesSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\CloseDWGProperlyLarge.png">
+      <Link>Files\Icons\CloseDWGProperlyLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\CloseDWGProperlyMedium.png">
+      <Link>Files\Icons\CloseDWGProperlyMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\CloseDWGProperlySmall.png">
+      <Link>Files\Icons\CloseDWGProperlySmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\CopyBlockDefInNewDefLarge.png">
+      <Link>Files\Icons\CopyBlockDefInNewDefLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\CopyBlockDefInNewDefMedium.png">
+      <Link>Files\Icons\CopyBlockDefInNewDefMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\CopyBlockDefInNewDefSmall.png">
+      <Link>Files\Icons\CopyBlockDefInNewDefSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\CreateViewportFromModelLarge.png">
+      <Link>Files\Icons\CreateViewportFromModelLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\CreateViewportFromModelMedium.png">
+      <Link>Files\Icons\CreateViewportFromModelMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\CreateViewportFromModelSmall.png">
+      <Link>Files\Icons\CreateViewportFromModelSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\DeleteHelpLinesLarge.png">
+      <Link>Files\Icons\DeleteHelpLinesLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\DeleteHelpLinesMedium.png">
+      <Link>Files\Icons\DeleteHelpLinesMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\DeleteHelpLinesSmall.png">
+      <Link>Files\Icons\DeleteHelpLinesSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\DoubleGlassUnitLarge.png">
+      <Link>Files\Icons\DoubleGlassUnitLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\DoubleGlassUnitMedium.png">
+      <Link>Files\Icons\DoubleGlassUnitMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\DoubleGlassUnitSmall.png">
+      <Link>Files\Icons\DoubleGlassUnitSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ElevationMarkLarge.png">
+      <Link>Files\Icons\ElevationMarkLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ElevationMarkMedium.png">
+      <Link>Files\Icons\ElevationMarkMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ElevationMarkSmall.png">
+      <Link>Files\Icons\ElevationMarkSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ExtractAttributesLarge.png">
+      <Link>Files\Icons\ExtractAttributesLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ExtractAttributesMedium.png">
+      <Link>Files\Icons\ExtractAttributesMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ExtractAttributesSmall.png">
+      <Link>Files\Icons\ExtractAttributesSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\FrameMarkLarge.png">
+      <Link>Files\Icons\FrameMarkLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\FrameMarkMedium.png">
+      <Link>Files\Icons\FrameMarkMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\FrameMarkSmall.png">
+      <Link>Files\Icons\FrameMarkSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\GearsLarge.png">
+      <Link>Files\Icons\GearsLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\GearsMedium.png">
+      <Link>Files\Icons\GearsMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\GearsSmall.png">
+      <Link>Files\Icons\GearsSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLine45Large.png">
+      <Link>Files\Icons\HelpLine45Large.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLine45Medium.png">
+      <Link>Files\Icons\HelpLine45Medium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLine45Small.png">
+      <Link>Files\Icons\HelpLine45Small.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineAngular.png">
+      <Link>Files\Icons\HelpLineAngular.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineAngularLarge.png">
+      <Link>Files\Icons\HelpLineAngularLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineAngularMedium.png">
+      <Link>Files\Icons\HelpLineAngularMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineAngularSmall.png">
+      <Link>Files\Icons\HelpLineAngularSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineCrossedLarge.png">
+      <Link>Files\Icons\HelpLineCrossedLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineCrossedMedium.png">
+      <Link>Files\Icons\HelpLineCrossedMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineCrossedSmall.png">
+      <Link>Files\Icons\HelpLineCrossedSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineHorizontalLarge.png">
+      <Link>Files\Icons\HelpLineHorizontalLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineHorizontalMedium.png">
+      <Link>Files\Icons\HelpLineHorizontalMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineHorizontalSmall.png">
+      <Link>Files\Icons\HelpLineHorizontalSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineOffsetLarge.png">
+      <Link>Files\Icons\HelpLineOffsetLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineOffsetMedium.png">
+      <Link>Files\Icons\HelpLineOffsetMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineOffsetSmall.png">
+      <Link>Files\Icons\HelpLineOffsetSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLinesDeleteLarge.png">
+      <Link>Files\Icons\HelpLinesDeleteLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLinesDeleteMedium.png">
+      <Link>Files\Icons\HelpLinesDeleteMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLinesDeleteSmall.png">
+      <Link>Files\Icons\HelpLinesDeleteSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineVerticalLarge.png">
+      <Link>Files\Icons\HelpLineVerticalLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineVerticalMedium.png">
+      <Link>Files\Icons\HelpLineVerticalMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HelpLineVerticalSmall.png">
+      <Link>Files\Icons\HelpLineVerticalSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HydroInsulationLarge.png">
+      <Link>Files\Icons\HydroInsulationLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HydroInsulationMedium.png">
+      <Link>Files\Icons\HydroInsulationMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\HydroInsulationSmall.png">
+      <Link>Files\Icons\HydroInsulationSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\Join3DLinesToPolyLarge.png">
+      <Link>Files\Icons\Join3DLinesToPolyLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\Join3DLinesToPolyMedium.png">
+      <Link>Files\Icons\Join3DLinesToPolyMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\Join3DLinesToPolySmall.png">
+      <Link>Files\Icons\Join3DLinesToPolySmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\LevelHeightSignLarge.png">
+      <Link>Files\Icons\LevelHeightSignLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\LevelHeightSignMedium.png">
+      <Link>Files\Icons\LevelHeightSignMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\LevelHeightSignSmall.png">
+      <Link>Files\Icons\LevelHeightSignSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\LoadSettingsLarge.png">
+      <Link>Files\Icons\LoadSettingsLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\LoadSettingsMedium.png">
+      <Link>Files\Icons\LoadSettingsMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\LoadSettingsSmall.png">
+      <Link>Files\Icons\LoadSettingsSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\LockViewPortLarge.png">
+      <Link>Files\Icons\LockViewPortLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\LockViewPortMedium.png">
+      <Link>Files\Icons\LockViewPortMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\LockViewPortSmall.png">
+      <Link>Files\Icons\LockViewPortSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PcadSettingsLarge.png">
+      <Link>Files\Icons\PcadSettingsLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PcadSettingsMedium.png">
+      <Link>Files\Icons\PcadSettingsMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PcadSettingsSmall.png">
+      <Link>Files\Icons\PcadSettingsSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PlotterLarge.png">
+      <Link>Files\Icons\PlotterLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PlotterMedium.png">
+      <Link>Files\Icons\PlotterMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PlotterSmall.png">
+      <Link>Files\Icons\PlotterSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PointCloudLarge.png">
+      <Link>Files\Icons\PointCloudLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PointCloudMedium.png">
+      <Link>Files\Icons\PointCloudMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PointCloudSmall.png">
+      <Link>Files\Icons\PointCloudSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PolyToProfileLarge.png">
+      <Link>Files\Icons\PolyToProfileLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PolyToProfileMedium.png">
+      <Link>Files\Icons\PolyToProfileMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PolyToProfileSmall.png">
+      <Link>Files\Icons\PolyToProfileSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PositionMarkLarge.png">
+      <Link>Files\Icons\PositionMarkLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PositionMarkMedium.png">
+      <Link>Files\Icons\PositionMarkMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PositionMarkSmall.png">
+      <Link>Files\Icons\PositionMarkSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ProfileSearchEngineLarge.png">
+      <Link>Files\Icons\ProfileSearchEngineLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ProfileSearchEngineMedium.png">
+      <Link>Files\Icons\ProfileSearchEngineMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ProfileSearchEngineSmall.png">
+      <Link>Files\Icons\ProfileSearchEngineSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ProfileToPolyLarge.png">
+      <Link>Files\Icons\ProfileToPolyLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ProfileToPolyMedium.png">
+      <Link>Files\Icons\ProfileToPolyMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ProfileToPolySmall.png">
+      <Link>Files\Icons\ProfileToPolySmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PrototypLogoLarge.png">
+      <Link>Files\Icons\PrototypLogoLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PrototypLogoMedium.png">
+      <Link>Files\Icons\PrototypLogoMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\PrototypLogoSmall.png">
+      <Link>Files\Icons\PrototypLogoSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\RecalcLevelHeightSignLarge.png">
+      <Link>Files\Icons\RecalcLevelHeightSignLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\RecalcLevelHeightSignMedium.png">
+      <Link>Files\Icons\RecalcLevelHeightSignMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\RecalcLevelHeightSignSmall.png">
+      <Link>Files\Icons\RecalcLevelHeightSignSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\RegionDescriptionLarge.png">
+      <Link>Files\Icons\RegionDescriptionLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\RegionDescriptionMedium.png">
+      <Link>Files\Icons\RegionDescriptionMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\RegionDescriptionSmall.png">
+      <Link>Files\Icons\RegionDescriptionSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\RenameBlockDefInNewDefLarge.png">
+      <Link>Files\Icons\RenameBlockDefInNewDefLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\RenameBlockDefInNewDefMedium.png">
+      <Link>Files\Icons\RenameBlockDefInNewDefMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\RenameBlockDefInNewDefSmall.png">
+      <Link>Files\Icons\RenameBlockDefInNewDefSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ReplaceBlockWithFileLarge.png">
+      <Link>Files\Icons\ReplaceBlockWithFileLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ReplaceBlockWithFileMedium.png">
+      <Link>Files\Icons\ReplaceBlockWithFileMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ReplaceBlockWithFileSmall.png">
+      <Link>Files\Icons\ReplaceBlockWithFileSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\RigidInsulationLarge.png">
+      <Link>Files\Icons\RigidInsulationLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\RigidInsulationMedium.png">
+      <Link>Files\Icons\RigidInsulationMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\RigidInsulationSmall.png">
+      <Link>Files\Icons\RigidInsulationSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionArrowMarkLarge.png">
+      <Link>Files\Icons\SectionArrowMarkLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionArrowMarkMedium.png">
+      <Link>Files\Icons\SectionArrowMarkMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionArrowMarkSmall.png">
+      <Link>Files\Icons\SectionArrowMarkSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionArrowPairMarkLarge.png">
+      <Link>Files\Icons\SectionArrowPairMarkLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionArrowPairMarkMedium.png">
+      <Link>Files\Icons\SectionArrowPairMarkMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionArrowPairMarkSmall.png">
+      <Link>Files\Icons\SectionArrowPairMarkSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionPairMarkLarge.png">
+      <Link>Files\Icons\SectionPairMarkLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionPairMarkMedium.png">
+      <Link>Files\Icons\SectionPairMarkMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SectionPairMarkSmall.png">
+      <Link>Files\Icons\SectionPairMarkSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SheetDescriptionLarge.png">
+      <Link>Files\Icons\SheetDescriptionLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SheetDescriptionMedium.png">
+      <Link>Files\Icons\SheetDescriptionMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SheetDescriptionSmall.png">
+      <Link>Files\Icons\SheetDescriptionSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ShowCommandsListLarge.png">
+      <Link>Files\Icons\ShowCommandsListLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ShowCommandsListMedium.png">
+      <Link>Files\Icons\ShowCommandsListMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\ShowCommandsListSmall.png">
+      <Link>Files\Icons\ShowCommandsListSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SiliconJointSimpleLarge.png">
+      <Link>Files\Icons\SiliconJointSimpleLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SiliconJointSimpleMedium.png">
+      <Link>Files\Icons\SiliconJointSimpleMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SiliconJointSimpleSmall.png">
+      <Link>Files\Icons\SiliconJointSimpleSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SiliconJointWithSilicaLarge.png">
+      <Link>Files\Icons\SiliconJointWithSilicaLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SiliconJointWithSilicaMedium.png">
+      <Link>Files\Icons\SiliconJointWithSilicaMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SiliconJointWithSilicaSmall.png">
+      <Link>Files\Icons\SiliconJointWithSilicaSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SingleGlassUnitLarge.png">
+      <Link>Files\Icons\SingleGlassUnitLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SingleGlassUnitMedium.png">
+      <Link>Files\Icons\SingleGlassUnitMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SingleGlassUnitSmall.png">
+      <Link>Files\Icons\SingleGlassUnitSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SlottedHoleLarge.png">
+      <Link>Files\Icons\SlottedHoleLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SlottedHoleMedium.png">
+      <Link>Files\Icons\SlottedHoleMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SlottedHoleRectLarge.png">
+      <Link>Files\Icons\SlottedHoleRectLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SlottedHoleRectMedium.png">
+      <Link>Files\Icons\SlottedHoleRectMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SlottedHoleRectSmall.png">
+      <Link>Files\Icons\SlottedHoleRectSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SlottedHoleSmall.png">
+      <Link>Files\Icons\SlottedHoleSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SoftInsulationLarge.png">
+      <Link>Files\Icons\SoftInsulationLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SoftInsulationMedium.png">
+      <Link>Files\Icons\SoftInsulationMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SoftInsulationSmall.png">
+      <Link>Files\Icons\SoftInsulationSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SolidProjectionLarge.png">
+      <Link>Files\Icons\SolidProjectionLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SolidProjectionMedium.png">
+      <Link>Files\Icons\SolidProjectionMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SolidProjectionSmall.png">
+      <Link>Files\Icons\SolidProjectionSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOffAllLayersButOneLarge.png">
+      <Link>Files\Icons\SwitchOffAllLayersButOneLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOffAllLayersButOneMedium.png">
+      <Link>Files\Icons\SwitchOffAllLayersButOneMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOffAllLayersButOneSmall.png">
+      <Link>Files\Icons\SwitchOffAllLayersButOneSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOffLayerLarge.png">
+      <Link>Files\Icons\SwitchOffLayerLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOffLayerMedium.png">
+      <Link>Files\Icons\SwitchOffLayerMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOffLayerSmall.png">
+      <Link>Files\Icons\SwitchOffLayerSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOnAllLayersLarge.png">
+      <Link>Files\Icons\SwitchOnAllLayersLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOnAllLayersMedium.png">
+      <Link>Files\Icons\SwitchOnAllLayersMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\SwitchOnAllLayersSmall.png">
+      <Link>Files\Icons\SwitchOnAllLayersSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\TitleMarkLarge.png">
+      <Link>Files\Icons\TitleMarkLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\TitleMarkMedium.png">
+      <Link>Files\Icons\TitleMarkMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\TitleMarkSmall.png">
+      <Link>Files\Icons\TitleMarkSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\TripleGlassUnitLarge.png">
+      <Link>Files\Icons\TripleGlassUnitLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\TripleGlassUnitMedium.png">
+      <Link>Files\Icons\TripleGlassUnitMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\TripleGlassUnitSmall.png">
+      <Link>Files\Icons\TripleGlassUnitSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\Unfold2dSheetProfileLarge.png">
+      <Link>Files\Icons\Unfold2dSheetProfileLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\Unfold2dSheetProfileMedium.png">
+      <Link>Files\Icons\Unfold2dSheetProfileMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\Unfold2dSheetProfileSmall.png">
+      <Link>Files\Icons\Unfold2dSheetProfileSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\Unfold3dSheetProfileLarge.png">
+      <Link>Files\Icons\Unfold3dSheetProfileLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\Unfold3dSheetProfileMedium.png">
+      <Link>Files\Icons\Unfold3dSheetProfileMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\Unfold3dSheetProfileSmall.png">
+      <Link>Files\Icons\Unfold3dSheetProfileSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\UnlockViewPortLarge.png">
+      <Link>Files\Icons\UnlockViewPortLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\UnlockViewPortMedium.png">
+      <Link>Files\Icons\UnlockViewPortMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\UnlockViewPortSmall.png">
+      <Link>Files\Icons\UnlockViewPortSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\WeldingLineLarge.png">
+      <Link>Files\Icons\WeldingLineLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\WeldingLineMedium.png">
+      <Link>Files\Icons\WeldingLineMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\WeldingLineSmall.png">
+      <Link>Files\Icons\WeldingLineSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\WeldingMarkLarge.png">
+      <Link>Files\Icons\WeldingMarkLarge.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\WeldingMarkMedium.png">
+      <Link>Files\Icons\WeldingMarkMedium.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Icons\WeldingMarkSmall.png">
+      <Link>Files\Icons\WeldingMarkSmall.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\KojtoCAD.2012\Files\Templates\KojtoCAD.xml">
       <Link>Files\Templates\KojtoCAD.xml</Link>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\KojtoCAD.2012\Files\Templates\KojtoCAD_3D.xml">
       <Link>Files\Templates\KojtoCAD_3D.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

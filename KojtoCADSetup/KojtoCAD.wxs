@@ -3,44 +3,111 @@
      xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
   <Product  Id="F43E9A7F-725C-43F5-A3FF-4AC70285583B"
             Name="KojtoCAD 1.0.0"
-            Language="1033"
+            UpgradeCode="6F14D711-9EBE-4198-B3BE-982301F89391"
             Version="1.0.0"
             Manufacturer="Kojto Ltd"
-            UpgradeCode="6F14D711-9EBE-4198-B3BE-982301F89391"
-            Codepage="1252" >
+            Language="1033"
+            Codepage="1252">
 
     <Package  Id="*"
               InstallerVersion="200"
               Compressed="yes"
               InstallScope="perMachine"
-              Manufacturer="3d Soft Solutions"
-              Description="Installs KojtoCAD plugin for AutoCAD 2012+"
-              Keywords="Kojto,CAD,AutoCAD plug-in"
-              Comments="(c) 2013 3d Soft Solutions"
+              Manufacturer="Kojto Ltd"
+              Description="Installs KojtoCAD plugin for AutoCAD 2012+ and BricsCAD 16+"
+              Keywords="Kojto,KojtoCAD,AutoCAD plug-in, BricsCAD plug-in"
+              Comments="(c) 2017 Kojto Ltd"
               Platform="x64" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 
-    <MediaTemplate EmbedCab="yes"
-                   CompressionLevel="high" />
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
+
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\MITLicense.rtf" />
+
     <UI>
-      <Dialog Id="ExitDialog" Width="450" Height="125" Title="Success!">
-        <Control Id="SuccessMessage" Type="Text" X="50" Y="20" Width="350" Height="15" Text="Thank you for installing this product!">
+      <Property Id="DefaultUIFont">DlgFont8</Property>
+      <TextStyle Id="DlgFont8" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="DlgTitleFont" FaceName="Tahoma" Size="8" Bold="yes" />
+
+
+      <Dialog Id="InstallDlg" Width="370" Height="270" Title="[ProductName] Setup" NoMinimize="yes">
+        <Control Id="Title" Type="Text" X="15" Y="6" Width="260" Height="15" Transparent="yes" NoPrefix="yes">
+          <Text>{\DlgTitleFont}You are about to install [ProductName] on your computer.</Text>
         </Control>
-        <Control Id="Exit" Type="PushButton" X="200" Y="95" Width="50" Height="15" Default="yes" Cancel="yes" Text="Done!">
-          <Publish Event="EndDialog" Value="Return">1</Publish>
+        <Control Id="BannerLine" Type="Line" X="0" Y="44" Width="370" Height="0" />
+        <Control Id="Text" Type="Text" X="25" Y="70" Width="320" Height="20">
+          <Text>Click "Next" to begin the installation.</Text>
+        </Control>
+        <Control Id="BottomLine" Type="Line" X="0" Y="234" Width="370" Height="0" />
+        <Control Id="Cancel" Type="PushButton" X="200" Y="243" Width="56" Height="17" Cancel="yes" Text="Cancel">
+          <Publish Event="SpawnDialog" Value="CancelDlg">1</Publish>
+        </Control>
+        <Control Id="Install" Type="PushButton" X="300" Y="243" Width="56" Height="17" Default="yes" Text="Next">
+          <Publish Event="EndDialog" Value="Return" />
         </Control>
       </Dialog>
 
-      <TextStyle Id="DefaultFont" FaceName="Tahoma" Size="8" />
-      <Property Id="DefaultUIFont" Value="DefaultFont" />
+      <Dialog Id="LicenseAgreementDlg" Width="370" Height="270" Title="[ProductName] License Agreement" NoMinimize="yes">
+        <Control Id="Description" Type="Text" X="25" Y="23" Width="360" Height="15"
+          Transparent="yes" NoPrefix="yes">
+          <Text>Please read the following license agreement carefully. By clicling "Next" you accept it.</Text>
+        </Control>
+        <Control Id="Title" Type="Text" X="15" Y="6" Width="200" Height="15"
+          Transparent="yes" NoPrefix="yes">
+          <Text>{\DlgTitleFont}End-User License Agreement</Text>
+        </Control>
+        <Control Id="BannerLine" Type="Line" X="0" Y="44" Width="374" Height="0" />
+        <Control Id="AgreementText" Type="ScrollableText" X="20" Y="60" Width="330" Height="120" Sunken="yes" TabSkip="no">
+          <Text SourceFile="MITLicense.rtf" />
+        </Control>
+
+        <Control Id="BottomLine" Type="Line" X="0" Y="234" Width="370" Height="0" />
+
+        <!--<Control Id="Back" Type="PushButton" X="100" Y="243" Width="56" Height="17" Text="Back">
+          <Publish Event="NewDialog" Value="InstallDlg"></Publish>
+        </Control>-->
+
+        <Control Id="Cancel" Type="PushButton" X="200" Y="243" Width="56" Height="17" Cancel="yes" Text="Cancel">
+          <Publish Event="SpawnDialog" Value="CancelDlg">1</Publish>
+        </Control>
+        <Control Id="Install" Type="PushButton" X="300" Y="243" Width="56" Height="17" Default="yes" Text="Next">
+          <Publish Event="EndDialog" Value="Return" />
+        </Control>
+
+      </Dialog>
+
+      <Dialog Id="ExitDialog" Width="370" Height="270" Title="[ProductName] Setup" NoMinimize="yes">
+        <Control Id="Finish" Type="PushButton" X="300" Y="243" Width="56" Height="17" Default="yes" Cancel="yes" Text="Install">
+          <Publish Event="EndDialog" Value="Return" />
+        </Control>
+      </Dialog>
+
+      <Dialog Id="CancelDlg" Width="260" Height="85" Title="[ProductName] Setup" NoMinimize="yes">
+        <Control Id="No" Type="PushButton" X="132" Y="57" Width="56" Height="17" Default="yes" Cancel="yes" Text="No">
+          <Publish Event="EndDialog" Value="Return">1</Publish>
+        </Control>
+        <Control Id="Yes" Type="PushButton" X="72" Y="57" Width="56" Height="17" Text="Yes">
+          <Publish Event="EndDialog" Value="Exit">1</Publish>
+        </Control>
+        <Control Id="Text" Type="Text" X="48" Y="15" Width="194" Height="30">
+          <Text>Are you sure you want to cancel [ProductName] installation?</Text>
+        </Control>
+
+        <Control Id="Icon" Type="Icon" X="15" Y="15" Width="24" Height="24"
+          ToolTip="Information icon" FixedSize="yes" IconSize="32" Text="[InfoIcon]" />
+      </Dialog>
 
       <InstallUISequence>
-        <Show Dialog="ExitDialog" OnExit="success" />
+        <Show Dialog="InstallDlg"  Sequence="1"/>
+        <Show Dialog="LicenseAgreementDlg"   Sequence="2"  />
+        <Show Dialog="ExitDialog"  Sequence="3"  />
       </InstallUISequence>
 
       <AdminUISequence>
-        <Show Dialog="ExitDialog" OnExit="success" />
+        <Show Dialog="InstallDlg" Sequence="1"/>
+        <Show Dialog="LicenseAgreementDlg"  Sequence="2"  />
+        <Show Dialog="ExitDialog"  Sequence="3"  />
       </AdminUISequence>
     </UI>
 

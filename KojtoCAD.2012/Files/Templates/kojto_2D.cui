@@ -1,0 +1,1404 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<CustSection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FileVersion IncrementalVersion="1" MajorVersion="0" MinorVersion="6" UserVersion="1"/>
+  <Header>
+    <CommonConfiguration>
+      <CommonItems>
+        <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+      </CommonItems>
+    </CommonConfiguration>
+    <LSPFiles xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    <WorkspaceRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <WorkspaceConfigRoot/>
+</WorkspaceRoot>  </Header>
+  <MenuGroup Name="KOJTO_2D" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <MacroGroup Name="KOJTO_2D">
+      <MenuMacro UID="HelpLineHorizontalStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_C1DD5" xlate="true">Horizontal helpline</Name>
+          <Command>hh</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HelpLineHorizontalSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HelpLineHorizontalMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="HelpLineVerticalStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_C1BCE" xlate="true">Vertical helpline</Name>
+          <Command>hv</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HelpLineVerticalSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HelpLineVerticalMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="HelpLineCrossedStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_6356C" xlate="true">Crossed helpline</Name>
+          <Command>hc</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HelpLineCrossedSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HelpLineCrossedMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="HelpLineAngularStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_61FDB" xlate="true">Angular helpline</Name>
+          <Command>ha</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HelpLineAngularSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HelpLineAngularMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="HelpLine45Start">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_696F0" xlate="true">45 degrees helpline</Name>
+          <Command>h45</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HelpLine45Small.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HelpLine45Medium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="HelpLineOffsetStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_A8E34" xlate="true">Offset helpline</Name>
+          <Command>xf</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HelpLineOffsetSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HelpLineOffsetMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="HelpLinesDeleteStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_BD92D" xlate="true">Delete all helplines</Name>
+          <Command>hd</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HelpLinesDeleteSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HelpLinesDeleteMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ProfileSearchEngineStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_CA57F" xlate="true">Prototyp block library</Name>
+          <Command>ib</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\ProfileSearchEngineSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\ProfileSearchEngineMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="DrawingFrameStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_C82FE" xlate="true">Drawing Frame</Name>
+          <Command>df</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\FrameMarkSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\FrameMarkMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ReplaceBlockWithFileStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_5630D" xlate="true">Replace Block with File</Name>
+          <Command>repb</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\ReplaceBlockWithFileSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\ReplaceBlockWithFileMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="CopyBlockDefInNewDefStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_BB107" xlate="true">Copy block definition</Name>
+          <Command>cb</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\CopyBlockDefInNewDefSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\CopyBlockDefInNewDefMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="RenameBlockDefInNewDefStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_C46A8" xlate="true">Rename block definition</Name>
+          <Command>rb</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\RenameBlockDefInNewDefSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\RenameBlockDefInNewDefMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="LockViewPortStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_4FB8D" xlate="true">Lock viewport</Name>
+          <Command>vlock</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\LockViewPortSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\LockViewPortMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="UnlockViewPortStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_26ACE" xlate="true">Unlock viewport</Name>
+          <Command>vunlock</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\UnlockViewPortSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\UnlockViewPortMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="CreateViewportFromModelStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_22C79" xlate="true">Create Viewport from Model</Name>
+          <Command>cv</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\CreateViewportFromModelSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\CreateViewportFromModelMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="AlignViewportsHorizontalyStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_E6C15" xlate="true">Align Viewport Horizontally</Name>
+          <Command>avh</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\AlignViewportsHorizontalySmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\AlignViewportsHorizontalyMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="AlignViewportsVerticalyStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_A5A69" xlate="true">Align Viewport Vertically</Name>
+          <Command>avv</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\AlignViewportsVerticalySmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\AlignViewportsVerticalyMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="SolidProjectionStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_802F9" xlate="true">Solid Projection</Name>
+          <Command>spr</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SolidProjectionSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SolidProjectionMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="Join3DLinesToPolyStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_8E199" xlate="true">Make Joined 3Dpolyline</Name>
+          <Command>pedit3d</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\Join3DLinesToPolySmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\Join3DLinesToPolyMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="RegionDescriptionStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_5FECD" xlate="true">Region description</Name>
+          <Command>regd</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\RegionDescriptionSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\RegionDescriptionMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="LoadSettingsStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_A245A" xlate="true">Import settings</Name>
+          <Command>kojtosettings</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\LoadSettingsSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\LoadSettingsMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ShowCommandsListStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_F7A3C" xlate="true">Show Commands</Name>
+          <Command>kojtocommands</Command>
+          <SmallImage Name="ShowCommandsListSmall.png"/>
+          <LargeImage Name="ShowCommandsListMedium.png"/>
+      </Macro>
+    </MenuMacro>
+      <MenuMacro UID="CloseDwgProperlyStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_2A62C" xlate="true">Close properly</Name>
+          <Command>closedwg</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\CloseDWGProperlySmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\CloseDWGProperlyMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="SingleGlassUnitStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_F5C1F" xlate="true">Single glass</Name>
+          <Command>sgu</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SingleGlassUnitSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SingleGlassUnitMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="DoubleGlassUnitStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_183F5" xlate="true">Double glass</Name>
+          <Command>dgu</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\DoubleGlassUnitSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\DoubleGlassUnitMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="TripleGlassUnitStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_3A8EF" xlate="true">Tripple glass</Name>
+          <Command>tgu</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\TripleGlassUnitSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\TripleGlassUnitMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="SiliconJointSimpleStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_8D892" xlate="true">Silicon joint</Name>
+          <Command>sj</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SiliconJointSimpleSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SiliconJointSimpleMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="SiliconJointWithSilicaStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_DD973" xlate="true">Silicon joint with filling</Name>
+          <Command>sjs</Command>
+          <SmallImage Name="SiliconJointWithSilicaSmall.png"/>
+          <LargeImage Name="SiliconJointWithSilicaMedium.png"/>
+      </Macro>
+    </MenuMacro>
+      <MenuMacro UID="WeldingLineStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_0DD6A" xlate="true">Welding line</Name>
+          <Command>wl</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\WeldingLineSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\WeldingLineMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="WeldingMarkStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_50507" xlate="true">Welding Mark</Name>
+          <Command>wm</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\WeldingMarkSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\WeldingMarkMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="SlottedHoleRectStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_224D6" xlate="true">Rectanglular slotted hole</Name>
+          <Command>shr</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SlottedHoleRectSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SlottedHoleRectMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="SlottedHoleRoundStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_AF270" xlate="true">Round Slotted hole</Name>
+          <Command>sho</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SlottedHoleSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SlottedHoleMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ArrowMarkStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_E9400" xlate="true">Arrow mark</Name>
+          <Command>am</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\ArrowMarkSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\ArrowMarkMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="SectionArrowMarkStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_C4B0C" xlate="true">Section Arrow mark</Name>
+          <Command>sm</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SectionArrowMarkSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SectionArrowMarkMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="SectionArrowPairMarkStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_6CDB8" xlate="true">Section Pair mark</Name>
+          <Command>sp</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SectionArrowPairMarkSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SectionArrowPairMarkMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="TitleMarkStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_C181F" xlate="true">Title Mark</Name>
+          <Command>tm</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\TitleMarkSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\TitleMarkMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ElevationMarkStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_9B0CA" xlate="true">Elevation</Name>
+          <Command>em</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\ElevationMarkSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\ElevationMarkMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="PositionMarkStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_46CAF" xlate="true">Position Mark</Name>
+          <Command>pm</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\PositionMarkSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\PositionMarkMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="LevelHeightSignStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_0224E" xlate="true">Level</Name>
+          <Command>level</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\LevelHeightSignSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\LevelHeightSignMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="RecalcLevelHeightSignStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_704D4" xlate="true">Level Recalculate</Name>
+          <Command>relevel</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\RecalcLevelHeightSignSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\RecalcLevelHeightSignMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="RigidInsulationStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_9EABD" xlate="true">Rigid</Name>
+          <Command>ri</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\RigidInsulationSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\RigidInsulationMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="SoftInsulationStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_E8EB6" xlate="true">Soft</Name>
+          <Command>si</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SoftInsulationSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SoftInsulationMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="HydroInsulationStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_15174" xlate="true">Waterproofing</Name>
+          <Command>hi</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HydroInsulationSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\HydroInsulationMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="SwitchOffAllLayersButOneStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_F3CA4" xlate="true">Switch off all but one</Name>
+          <Command>ofs</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SwitchOffAllLayersButOneSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SwitchOffAllLayersButOneMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="SwitchOffLayerStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_5D76F" xlate="true">Switch off only one</Name>
+          <Command>ofr</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SwitchOffLayerSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SwitchOffLayerMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="SwitchOnAllLayersStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_178A4" xlate="true">Switch on all</Name>
+          <Command>ons</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SwitchOnAllLayersSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SwitchOnAllLayersMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="PolyToProfileStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_E063B" xlate="true">Polyline to profile</Name>
+          <Command>shp</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\PolyToProfileSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\PolyToProfileMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ProfileToPolyStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_63C89" xlate="true">Profile to polyline</Name>
+          <Command>psh</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\ProfileToPolySmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\ProfileToPolyMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="Unfold3DSheetProfileStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_D9B6D" xlate="true">Unfold 3D</Name>
+          <Command>unfold3d</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\Unfold3dSheetProfileSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\Unfold3dSheetProfileMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="Unfold2DSheetProfileStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_D3743" xlate="true">Unfold 2D</Name>
+          <Command>u2d</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\Unfold2dSheetProfileSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\Unfold2dSheetProfileMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="SheetDescriptionStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_BB968" xlate="true">Sheet description</Name>
+          <Command>shd</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SheetDescriptionSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\SheetDescriptionMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="GearsStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_4FA9C" xlate="true">Gear</Name>
+          <Command>drawgear</Command>
+          <SmallImage Name="GearsSmall.png"/>
+          <LargeImage Name="GearsMedium.png"/>
+      </Macro>
+    </MenuMacro>
+      <MenuMacro UID="PointCloudStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_405A6" xlate="true">PointCloud</Name>
+          <Command>pcloud</Command>
+          <SmallImage Name="PointCloudSmall.png"/>
+          <LargeImage Name="PointCloudMedium.png"/>
+      </Macro>
+    </MenuMacro>
+      <MenuMacro UID="PlotterStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_F111D" xlate="true">Plotter</Name>
+          <Command>pplot</Command>
+          <SmallImage Name="PlotterSmall.png"/>
+          <LargeImage Name="PlotterMedium.png"/>
+      </Macro>
+    </MenuMacro>
+      <MenuMacro UID="ExtractAttributesStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_F48B2" xlate="true">Extract attributes</Name>
+          <Command>ea</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\ExtractAttributesSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\ExtractAttributesMedium.png"/>
+        </Macro>
+      </MenuMacro>
+      <MenuMacro UID="ChkAttrIsInExcelStart">
+        <Macro type="Any">
+          <Revision MajorVersion="16" MinorVersion="2" UserVersion="1"/>
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Name UID="XLS_200_1B3D5" xlate="true">Check attributes</Name>
+          <Command>ChkAttrIsInExcel</Command>
+          
+          
+          <SmallImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\CheckAttributesSmall.png"/>
+          <LargeImage Name="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCAD.bundle\Files\Icons\CheckAttributesMedium.png"/>
+        </Macro>
+      </MenuMacro>
+    </MacroGroup>
+    <MenuRoot>
+      <AcceleratorRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <DigitizerButtonRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <DoubleClickRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <ImageMenuRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <MouseButtonRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <OverrideRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <PanelSetRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <PopMenuRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <QuickAccessToolbarRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <QuickPropertiesRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <RibbonRoot>
+        <RibbonTabSourceCollection>
+          <RibbonTabSource Text="KojtoCAD " UID="K1">
+            <Name>KojtoCAD </Name>
+            <RibbonPanelSourceReference PanelId="K2"/>
+            <RibbonPanelSourceReference PanelId="K222"/>
+            <RibbonPanelSourceReference PanelId="K34"/>
+            <RibbonPanelSourceReference PanelId="K55"/>
+            <RibbonPanelSourceReference PanelId="K234"/>
+            <RibbonPanelSourceReference PanelId="K345"/>
+            <RibbonPanelSourceReference PanelId="K435"/>
+            <RibbonPanelSourceReference PanelId="K654"/>
+            <RibbonPanelSourceReference PanelId="K785"/>
+          </RibbonTabSource>
+        </RibbonTabSourceCollection>
+        <RibbonPanelSourceCollection>
+          <RibbonPanelSource Text="Kojto Insulations" UID="K2">
+            <Name>Kojto Insulations</Name>
+            <RibbonRow>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="RigidInsulationStart" Text="Rigid"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="SoftInsulationStart" Text="Soft"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+              <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="HydroInsulationStart" Text="Waterproofing"/></RibbonRow>
+          </RibbonPanelSource>
+          <RibbonPanelSource Text="Layers" UID="K222">
+            <Name>Layers</Name>
+            <RibbonRow>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="SwitchOffAllLayersButOneStart" Text="Switch off all but one"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="SwitchOffLayerStart" Text="Switch off only one"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+              <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="SwitchOnAllLayersStart" Text="Switch on all"/>
+            </RibbonRow>
+          </RibbonPanelSource>
+          <RibbonPanelSource Text="Blocks" UID="K34">
+            <Name>Blocks</Name>
+            <RibbonRow>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="ProfileSearchEngineStart" Text="Prototyp block library"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="DrawingFrameStart" Text="Drawing Frame"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="ReplaceBlockWithFileStart" Text="Replace Block with File"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="CopyBlockDefInNewDefStart" Text="Copy block definition"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="RenameBlockDefInNewDefStart" Text="Rename block definition"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+            </RibbonRow>
+          </RibbonPanelSource>
+          <RibbonPanelSource Text="Viewports" UID="K55">
+            <Name>Viewports</Name>
+            <RibbonRow>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="AlignViewportsHorizontalyStart" Text="Align Viewport Horizontally"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="AlignViewportsVerticalyStart" Text="Align Viewport Vertically"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="LockViewPortStart" Text="Lock viewport"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="UnlockViewPortStart" Text="Unlock viewport"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="CreateViewportFromModelStart" Text="Create Viewport from Model"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+            </RibbonRow>
+          </RibbonPanelSource>
+          <RibbonPanelSource Text="Symbols" UID="K234">
+            <Name>Symbols</Name>
+            <RibbonRow>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="LevelHeightSignStart" Text="Level"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="RecalcLevelHeightSignStart" Text="Level Recalculate"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="ArrowMarkStart" Text="Arrow mark"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="SectionArrowMarkStart" Text="Section Arrow mark"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="SectionArrowPairMarkStart" Text="Section Pair mark"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="TitleMarkStart" Text="Title Mark"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="ElevationMarkStart" Text="Elevation"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="PositionMarkStart" Text="Position Mark"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+            </RibbonRow>
+          </RibbonPanelSource>
+          <RibbonPanelSource Text="Sheets" UID="K345">
+            <Name>Sheets</Name>
+            <RibbonRow>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="Unfold2DSheetProfileStart" Text="Unfold 2D"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="Unfold3DSheetProfileStart" Text="Unfold 3D"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="PolyToProfileStart" Text="Polyline to profile"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="ProfileToPolyStart" Text="Profile to polyline"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="SheetDescriptionStart" Text="Sheet description"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+            </RibbonRow>
+          </RibbonPanelSource>
+          <RibbonPanelSource Text="Kojto Helplines" UID="K435">
+            <Name>Kojto Helplines</Name>
+            <RibbonRow>
+              <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="HelpLinesDeleteStart" Text="Delete all helplines"/>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="HelpLineHorizontalStart" Text="Horizontal helpline"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="HelpLineVerticalStart" Text="Vertical helpline"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="HelpLineCrossedStart" Text="Crossed helpline"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="HelpLineAngularStart" Text="Angular helpline"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="HelpLine45Start" Text="45 degrees helpline"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="HelpLineOffsetStart" Text="Offset helpline"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+            </RibbonRow>
+          </RibbonPanelSource>
+          <RibbonPanelSource Text="Utiliti Tools" UID="K654">
+            <Name>Utiliti Tools</Name>
+            <RibbonRow>
+              <RibbonCommandButton ButtonStyle="LargeWithoutText" MenuMacroID="CloseDwgProperlyStart" Text="Close properly"/>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="RegionDescriptionStart" Text="Region description"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="ExtractAttributesStart" Text="Extract attributes"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="ChkAttrIsInExcelStart" Text="Check attributes"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="LoadSettingsStart" Text="Import settings"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="Join3DLinesToPolyStart" Text="Make Joined 3Dpolyline"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="SolidProjectionStart" Text="Solid Projection"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+            </RibbonRow>
+          </RibbonPanelSource>
+          <RibbonPanelSource Text="Grapics Tools" UID="K785">
+            <Name>Grapics Tools</Name>
+            <RibbonRow>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="SingleGlassUnitStart" Text="Single glass"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="DoubleGlassUnitStart" Text="Double glass"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="TripleGlassUnitStart" Text="Tripple glass"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="SiliconJointSimpleStart" Text="Silicon joint"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="SiliconJointWithSilicaStart" Text="Silicon joint with filling"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="WeldingLineStart" Text="Welding line"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+              <RibbonRowPanel>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="WeldingMarkStart" Text="Welding Mark"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="SlottedHoleRectStart" Text="Rectanglular slotted hole"/>
+                </RibbonRow>
+                <RibbonRow>
+                  <RibbonCommandButton MenuMacroID="SlottedHoleRoundStart" Text="Round Slotted hole"/>
+                </RibbonRow>
+              </RibbonRowPanel>
+            </RibbonRow>
+          </RibbonPanelSource>
+        </RibbonPanelSourceCollection>
+      </RibbonRoot>
+      <RolloverTooltipRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <ScreenMenuRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <TabletMenuRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <ToolPanelRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <ToolbarRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <Toolbar ToolbarOrient="right" ToolbarVisible="show" UID="TBU_200_A6B32" rows="1" xval="200" yval="200">
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Alias>Help Lines</Alias>
+          <Name UID="XLS_200_388B8" xlate="true">Help Lines</Name>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_D0F79">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_E523A" xlate="true">Horizontal helpline</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="HelpLineHorizontalStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_9DEE6">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_D64AD" xlate="true">Vertical helpline</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="HelpLineVerticalStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_9F3ED">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_594B8" xlate="true">Crossed helpline</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="HelpLineCrossedStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_B5246">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_737AA" xlate="true">Angular helpline</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="HelpLineAngularStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_F7078">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_7B3EB" xlate="true">45 degrees helpline</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="HelpLine45Start"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_0BB17">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_36EFD" xlate="true">Offset helpline</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="HelpLineOffsetStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_B0D66">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_B85BA" xlate="true">Delete all helplines</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="HelpLinesDeleteStart"/>
+      </MenuItem>
+    </ToolbarButton>
+  </Toolbar>
+        <Toolbar ToolbarOrient="right" ToolbarVisible="show" UID="TBU_200_60972" rows="1" xval="200" yval="200">
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Alias>Blocks</Alias>
+          <Name UID="XLS_200_0C6EE" xlate="true">Blocks</Name>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_CB275">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_1B177" xlate="true">Prototyp block library</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="ProfileSearchEngineStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_59A15">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_1E570" xlate="true">Drawing Frame</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="DrawingFrameStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_14451">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_CBA05" xlate="true">Replace Block with File</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="ReplaceBlockWithFileStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_2DB97">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_FFFDC" xlate="true">Copy block definition</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="CopyBlockDefInNewDefStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_F2CAA">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_5A35D" xlate="true">Rename block definition</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="RenameBlockDefInNewDefStart"/>
+      </MenuItem>
+    </ToolbarButton>
+  </Toolbar>
+        <Toolbar ToolbarOrient="right" ToolbarVisible="show" UID="TBU_200_375AA" rows="1" xval="200" yval="200">
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Alias>Viewport Commands</Alias>
+          <Name UID="XLS_200_F2C81" xlate="true">Viewport Commands</Name>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_D1BE5">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_8D88F" xlate="true">Lock viewport</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="LockViewPortStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_D9AD4">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_36FDF" xlate="true">Unlock viewport</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="UnlockViewPortStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_B1971">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_69E86" xlate="true">Create Viewport from Model</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="CreateViewportFromModelStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_C8034">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_DCDC6" xlate="true">Align Viewport Horizontally</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="AlignViewportsHorizontalyStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_19701">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_83FF5" xlate="true">Align Viewport Vertically</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="AlignViewportsVerticalyStart"/>
+      </MenuItem>
+    </ToolbarButton>
+  </Toolbar>
+        <Toolbar ToolbarOrient="right" ToolbarVisible="show" UID="TBU_200_5B569" rows="1" xval="200" yval="200">
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Alias>General tools</Alias>
+          <Name UID="XLS_200_8A79A" xlate="true">General tools</Name>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_64F68">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_29056" xlate="true">Solid Projection</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SolidProjectionStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_35F33">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_C5D22" xlate="true">Make Joined 3Dpolyline</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="Join3DLinesToPolyStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_4AC9E">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_9ECC0" xlate="true">Region description</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="RegionDescriptionStart"/>
+      </MenuItem>
+    </ToolbarButton>
+  </Toolbar>
+        <Toolbar ToolbarOrient="right" ToolbarVisible="show" UID="TBU_200_7E7CC" rows="1" xval="200" yval="200">
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Alias>System</Alias>
+          <Name UID="XLS_200_8BA11" xlate="true">System</Name>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_04CC9">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_E07FB" xlate="true">Import settings</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="LoadSettingsStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_BE6C0">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_CA632" xlate="true">Show Commands</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="ShowCommandsListStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_DA26F">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_1BC56" xlate="true">Close properly</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="CloseDwgProperlyStart"/>
+      </MenuItem>
+    </ToolbarButton>
+  </Toolbar>
+        <Toolbar ToolbarOrient="right" ToolbarVisible="show" UID="TBU_200_F63B8" rows="1" xval="200" yval="200">
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Alias>Graphics Tools</Alias>
+          <Name UID="XLS_200_BBBBB" xlate="true">Graphics Tools</Name>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_9D7E2">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_9BA55" xlate="true">Single glass</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SingleGlassUnitStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_DE70A">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_CB303" xlate="true">Double glass</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="DoubleGlassUnitStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_84D81">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_97360" xlate="true">Tripple glass</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="TripleGlassUnitStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_CA66F">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_9F2DC" xlate="true">Silicon joint</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SiliconJointSimpleStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_79883">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_7F8E1" xlate="true">Silicon joint with filling</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SiliconJointWithSilicaStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_1EB7E">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_F3EF7" xlate="true">Welding line</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="WeldingLineStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_792FD">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_F5A60" xlate="true">Welding Mark</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="WeldingMarkStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_B58D7">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_BB91B" xlate="true">Rectanglular slotted hole</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SlottedHoleRectStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_16B2C">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_D1013" xlate="true">Round Slotted hole</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SlottedHoleRoundStart"/>
+      </MenuItem>
+    </ToolbarButton>
+  </Toolbar>
+        <Toolbar ToolbarOrient="right" ToolbarVisible="show" UID="TBU_200_E5DB2" rows="1" xval="200" yval="200">
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Alias>Symbols</Alias>
+          <Name UID="XLS_200_1B3CA" xlate="true">Symbols</Name>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_288B1">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_EF6FE" xlate="true">Arrow mark</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="ArrowMarkStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_017F2">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_92DB0" xlate="true">Section Arrow mark</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SectionArrowMarkStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_7A20F">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_BCF27" xlate="true">Section Pair mark</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SectionArrowPairMarkStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_E338E">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_25921" xlate="true">Title Mark</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="TitleMarkStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_A096E">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_E9E20" xlate="true">Elevation</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="ElevationMarkStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_4D41D">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_C9C10" xlate="true">Position Mark</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="PositionMarkStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_5C7F9">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_2ACEA" xlate="true">Level</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="LevelHeightSignStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_7A936">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_03A21" xlate="true">Level Recalculate</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="RecalcLevelHeightSignStart"/>
+      </MenuItem>
+    </ToolbarButton>
+  </Toolbar>
+        <Toolbar ToolbarOrient="right" ToolbarVisible="show" UID="TBU_200_DBC52" rows="1" xval="200" yval="200">
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Alias>Insulations</Alias>
+          <Name UID="XLS_200_CA8D5" xlate="true">Insulations</Name>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_096DB">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_73D07" xlate="true">Rigid</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="RigidInsulationStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_66B91">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_253C4" xlate="true">Soft</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SoftInsulationStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_C84D0">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_FD04D" xlate="true">Waterproofing</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="HydroInsulationStart"/>
+      </MenuItem>
+    </ToolbarButton>
+  </Toolbar>
+        <Toolbar ToolbarOrient="right" ToolbarVisible="show" UID="TBU_200_A11A1" rows="1" xval="200" yval="200">
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Alias>Layer Management</Alias>
+          <Name UID="XLS_200_E70C7" xlate="true">Layer Management</Name>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_A9091">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_49B16" xlate="true">Switch off all but one</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SwitchOffAllLayersButOneStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_846D3">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_24391" xlate="true">Switch off only one</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SwitchOffLayerStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_450E6">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_E63FD" xlate="true">Switch on all</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SwitchOnAllLayersStart"/>
+      </MenuItem>
+    </ToolbarButton>
+  </Toolbar>
+        <Toolbar ToolbarOrient="right" ToolbarVisible="show" UID="TBU_200_91CDD" rows="1" xval="200" yval="200">
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Alias>Sheets and Profiles</Alias>
+          <Name UID="XLS_200_62525" xlate="true">Sheets and Profiles</Name>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_2F776">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_45BBD" xlate="true">Polyline to profile</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="PolyToProfileStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_AC594">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_F0743" xlate="true">Profile to polyline</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="ProfileToPolyStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_11F15">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_466F3" xlate="true">Unfold 3D</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="Unfold3DSheetProfileStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_67BA9">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_C53F5" xlate="true">Unfold 2D</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="Unfold2DSheetProfileStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_4A496">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_4FE78" xlate="true">Sheet description</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="SheetDescriptionStart"/>
+      </MenuItem>
+    </ToolbarButton>
+  </Toolbar>
+        <Toolbar ToolbarOrient="right" ToolbarVisible="show" UID="TBU_200_8CF00" rows="1" xval="200" yval="200">
+          <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+          <Alias>Misc</Alias>
+          <Name UID="XLS_200_A0B89" xlate="true">Misc</Name>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_0525F">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_1A7ED" xlate="true">Gear</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="GearsStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_781D4">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_51E46" xlate="true">PointCloud</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="PointCloudStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_75A87">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_BA26E" xlate="true">Plotter</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="PlotterStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_AF82E">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_7AAE8" xlate="true">Extract attributes</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="ExtractAttributesStart"/>
+      </MenuItem>
+    </ToolbarButton>
+          <ToolbarButton IsSeparator="false" UID="TBBU_200_C61AA">
+            <ModifiedRev MajorVersion="20" MinorVersion="0" UserVersion="1"/>
+            <Name UID="XLS_200_556C3" xlate="true">Check attributes</Name>
+            <MenuItem>
+              <MacroRef MenuMacroID="ChkAttrIsInExcelStart"/>
+      </MenuItem>
+    </ToolbarButton>
+  </Toolbar>
+</ToolbarRoot>    
+    </MenuRoot>
+  </MenuGroup>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</CustSection>

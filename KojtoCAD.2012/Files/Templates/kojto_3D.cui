@@ -875,123 +875,87 @@
         <PopMenu UID="ID_MyPop1" hasDiesel="false">
           <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
           <Alias>POP15</Alias>
-          <Name UID="XLS_190_05194" xlate="true">KOJTO_3D</Name>
-          <PopMenuItem IsSeparator="false" UID="PMIU_190_79389" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_B287D" xlate="true">CALCULATE FORMULA</NameRef>
-            <MenuItem>
-              <MacroRef MenuMacroID="ID_KCAD_CALCULATE_FORMULA"/>
-            </MenuItem>
-          </PopMenuItem>
-          <PopMenuItem IsSeparator="true" UID="PMIU_190_A2477" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          </PopMenuItem>
-          <PopMenuItem IsSeparator="false" UID="PMIU_190_F7CE0" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_0615F" xlate="true">NETLOAD</NameRef>
-            <MenuItem>
-              <MacroRef MenuMacroID="ID_NETLOAD"/>
-            </MenuItem>
-          </PopMenuItem>
-          <PopMenuItem IsSeparator="true" UID="PMIU_190_47D53" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          </PopMenuItem>
-          <PopMenuItem IsSeparator="false" UID="PMIU_190_D61F4" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_0C05E" xlate="true">HELP</NameRef>
-            <MenuItem>
-              <MacroRef MenuMacroID="ID_KCAD_HELP"/>
-            </MenuItem>
-          </PopMenuItem>
-          <PopMenuItem IsSeparator="true" UID="PMIU_190_25F8E" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          </PopMenuItem>
+          <Name UID="XLS_190_05194" xlate="true">Kojto 3D</Name>
+          
+          
+          
+          
+          
+          
           <PopMenuItem IsSeparator="false" UID="PMIU_190_CE0DD" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_60DFD" xlate="true">SETTINGS</NameRef>
+            <NameRef UID="XLS_190_60DFD" xlate="true">Kojto 3D Settings</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_SETTINGS"/>
             </MenuItem>
           </PopMenuItem>
-          <PopMenuItem IsSeparator="true" UID="PMIU_190_BC21B" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          </PopMenuItem>
+          
           <PopMenuRef UID="PMRU_190_60CC8" pUID="ID_SubscMESH">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
           </PopMenuRef>
-          <PopMenuItem IsSeparator="true" UID="PMIU_190_EA69B" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          </PopMenuItem>
+          
           <PopMenuRef UID="PMRU_190_FAC88" pUID="ID_GLASS">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
           </PopMenuRef>
-          <PopMenuItem IsSeparator="true" UID="PMIU_190_69113" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          </PopMenuItem>
+          
           <PopMenuRef UID="PMRU_190_27AAC" pUID="ID_CAM_Tools">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
           </PopMenuRef>
-          <PopMenuItem IsSeparator="true" UID="PMIU_190_95069" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          </PopMenuItem>
+          
           <PopMenuRef UID="PMRU_190_BE8F1" pUID="ID_SubProfiles">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
           </PopMenuRef>
-          <PopMenuItem IsSeparator="true" UID="PMIU_190_C9FBD" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          </PopMenuItem>
+          
           <PopMenuRef UID="PMRU_190_0AB27" pUID="ID_Placement_3D">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
           </PopMenuRef>
-          <PopMenuItem IsSeparator="true" UID="PMIU_190_6E68B" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          </PopMenuItem>
+          
           <PopMenuRef UID="PMRU_190_8840D" pUID="ID_CSV_Elements">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
           </PopMenuRef>
-          <PopMenuItem IsSeparator="true" UID="PMIU_190_E3615" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          </PopMenuItem>
+          
           <PopMenuRef UID="PMRU_190_85352" pUID="ID_Deviation_tools">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
           </PopMenuRef>
-          <PopMenuItem IsSeparator="true" UID="PMIU_190_7D55B" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          </PopMenuItem>
           <PopMenuRef UID="PMRU_190_86F1C" pUID="ID_Solid_Geometry">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          </PopMenuRef>
+          </PopMenuRef><PopMenuItem IsSeparator="false" UID="PMIU_190_D61F4" hasDiesel="false">
+            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
+            <NameRef UID="XLS_190_0C05E" xlate="true">Help</NameRef>
+            <MenuItem>
+              <MacroRef MenuMacroID="ID_KCAD_HELP"/>
+            </MenuItem>
+          </PopMenuItem>
+          
         </PopMenu>
         <PopMenu UID="ID_SubscMESH" hasDiesel="false">
           <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          <Name UID="XLS_190_ACA9E" xlate="true">MESH</Name>
+          <Name UID="XLS_190_ACA9E" xlate="true">Mesh</Name>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_1795E" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_086C4" xlate="true">CREATE  MESH</NameRef>
+            <NameRef UID="XLS_190_086C4" xlate="true">Create mesh</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_CREATEMESH"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_33EE0" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_87BF5" xlate="true">READ MESH FROM CSV file</NameRef>
+            <NameRef UID="XLS_190_87BF5" xlate="true">Read mesh from CSV file</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_READ_MESH_FROM_CSV"/>
             </MenuItem>
           </PopMenuItem>
-          <PopMenuItem IsSeparator="true" UID="PMIU_190_BB79A" hasDiesel="false">
-            <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          </PopMenuItem>
+          
           <PopMenuItem IsSeparator="false" UID="PMIU_190_054EF" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_52D48" xlate="true">READ  MESH from this DWG (from dictionary)</NameRef>
+            <NameRef UID="XLS_190_52D48" xlate="true">Read mesh from this DWG (from dictionary)</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_READMESH"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_EF7B8" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_C049F" xlate="true">READ  MESH from External TXT file</NameRef>
+            <NameRef UID="XLS_190_C049F" xlate="true">Read mesh from external TXT file</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_READ_CONTAINER_FROM_EXTERNAL_FILE"/>
             </MenuItem>
@@ -1008,14 +972,14 @@
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_B6935" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_C753C" xlate="true">SAVE  MESH in this DWG (in dictionary)</NameRef>
+            <NameRef UID="XLS_190_C753C" xlate="true">Save mesh to this DWG (in dictionary)</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_SAVEMESH"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_68CA1" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_4112A" xlate="true">SAVE  MESH to External TXT File</NameRef>
+            <NameRef UID="XLS_190_4112A" xlate="true">Save mesh to external TXT File</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_SAVE_CONTAINER_IN_EXTERNAL_FILE"/>
             </MenuItem>
@@ -1032,7 +996,7 @@
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_05ACB" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_4CDBB" xlate="true">Delete Mesh Data from Dictionary</NameRef>
+            <NameRef UID="XLS_190_4CDBB" xlate="true">Delete mesh mata from DWG (from dictionary)</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_DELETE_MESH_DATA"/>
             </MenuItem>
@@ -1052,28 +1016,28 @@
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_F11BE" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_79D1E" xlate="true">DRAW</NameRef>
+            <NameRef UID="XLS_190_79D1E" xlate="true">Draw</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_DRAW"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_D9DFF" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_41512" xlate="true">DRAW  NORMALS</NameRef>
+            <NameRef UID="XLS_190_41512" xlate="true">Draw normals</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_DRAW_NORMAL"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_69EFB" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_47BF8" xlate="true">LINK the ENDS of NORMALS in the NODES</NameRef>
+            <NameRef UID="XLS_190_47BF8" xlate="true">Link the ends of normals in the nodes</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_DRAW_SECOND_MESH"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_B3378" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_E3B1F" xlate="true">CREATE NEW MESH FROM CURRENT THROUGH END OF NORMALS</NameRef>
+            <NameRef UID="XLS_190_E3B1F" xlate="true">Create new mesh from current trough end of normals</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="MMU_190_C24EB"/>
             </MenuItem>
@@ -1083,14 +1047,14 @@
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_B51AF" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_DCAFC" xlate="true">DRAW  NODE NORMALS BY NoFictive Bends</NameRef>
+            <NameRef UID="XLS_190_DCAFC" xlate="true">Draw normals by no fictictive bends</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_DRAW_NODES_NORMALS_BY_NOFICTIVE"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_F0DDE" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_7CC4A" xlate="true">HELP</NameRef>
+            <NameRef UID="XLS_190_7CC4A" xlate="true">Help to "draw normals by no fictictive bends"</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_DRAW_NODES_NORMALS_BY_NOFICTIVE_HELP"/>
             </MenuItem>
@@ -1100,14 +1064,14 @@
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_0AD04" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_AFE8C" xlate="true">DRAW  NODE UCS BY NoFictive Bends</NameRef>
+            <NameRef UID="XLS_190_AFE8C" xlate="true">Draw node UCS by nofictive bends</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_DRAW_NODE_UCS"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_ECDBB" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_BCFD6" xlate="true">DRAW  NUMERS</NameRef>
+            <NameRef UID="XLS_190_BCFD6" xlate="true">Draw numbers</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_DRAW_NUMERS"/>
             </MenuItem>
@@ -1117,14 +1081,14 @@
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_244F4" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_C488C" xlate="true">GET_BY_NUMER</NameRef>
+            <NameRef UID="XLS_190_C488C" xlate="true">Get by number</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_GET_BY_NUMER"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_0E14E" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_A102E" xlate="true">GET_BY_SELECTION</NameRef>
+            <NameRef UID="XLS_190_A102E" xlate="true">Get by selection</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_GET_BY_SELECTION"/>
             </MenuItem>
@@ -1176,7 +1140,7 @@
         </PopMenu>
         <PopMenu UID="PMU_190_FE4BC" hasDiesel="false">
           <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          <Name UID="XLS_190_341E4" xlate="true">MODIFY NORMALS</Name>
+          <Name UID="XLS_190_341E4" xlate="true">Modify normals</Name>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_499ED" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
             <NameRef UID="XLS_190_A1E06" xlate="true">REVERSE NORMALS</NameRef>
@@ -1249,31 +1213,31 @@
         </PopMenu>
         <PopMenu UID="ID_GLASS" hasDiesel="false">
           <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          <Name UID="XLS_190_1323C" xlate="true">GLASS</Name>
+          <Name UID="XLS_190_1323C" xlate="true">Glass</Name>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_7C475" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_77D29" xlate="true">MAKE and SHOW  GLASS</NameRef>
+            <NameRef UID="XLS_190_77D29" xlate="true">Make and show glass</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_SHOW_GLASS"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_D9CDF" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_53613" xlate="true">HIDE  GLASS</NameRef>
+            <NameRef UID="XLS_190_53613" xlate="true">Hide glass</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_HIDE_GLASS"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_B515A" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_C270F" xlate="true">SHOW HIDEN GLASS</NameRef>
+            <NameRef UID="XLS_190_C270F" xlate="true">Show hidden glass</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_SHOW_HIDEN_GLASS"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_94CBB" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_975F5" xlate="true">ERASE GLASS 3D and from database</NameRef>
+            <NameRef UID="XLS_190_975F5" xlate="true">Erase glass 3D from database</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_3D_GLASS_DELETE"/>
             </MenuItem>
@@ -1283,28 +1247,28 @@
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_92E2C" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_D2047" xlate="true">spots from glass on the triangles - Center of Gravity</NameRef>
+            <NameRef UID="XLS_190_D2047" xlate="true">Spots from glass on the triangles - Center of Gravity</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_GET_GLASS_CONTURS_CENTROID"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_A582C" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_01774" xlate="true">SHOW GLASS EDGES (spots from glass on the triangles)</NameRef>
+            <NameRef UID="XLS_190_01774" xlate="true">Show glass edges (spots from glass on the triangles)</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_GLASS_EDGES"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_FC3C0" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_9F0B7" xlate="true">SHOW GlASS_CONTURS_BY_LEVEL</NameRef>
+            <NameRef UID="XLS_190_9F0B7" xlate="true">Show glass contours by level</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_GlASS_CONTURS_BY_LEVEL"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_7F524" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_9868A" xlate="true">SHOW GlASS_CONTURS_UNFOLD_BY_LEVEL</NameRef>
+            <NameRef UID="XLS_190_9868A" xlate="true">Show glass conturs unfold by level</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_GlASS_CONTURS_UNFOLD_BY_LEVEL"/>
             </MenuItem>
@@ -1344,21 +1308,21 @@
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_383DD" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_5346A" xlate="true">GLASS  DISTANCE  FOR  BEND</NameRef>
+            <NameRef UID="XLS_190_5346A" xlate="true">Glass distance for bend</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_SET_GLASS_DISTANCE_FOR_BEND"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_0964B" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_59C83" xlate="true">GLASS  DISTANCE  FOR  ALL BENDS</NameRef>
+            <NameRef UID="XLS_190_59C83" xlate="true">Glass distance for all bends</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_SET_GLASS_DISTANCE_FOR_ALL_BENDS"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_E1BEA" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_74209" xlate="true">SET GLASS DISTANCE TO BEND BY NUMER</NameRef>
+            <NameRef UID="XLS_190_74209" xlate="true">Set glass distance to bend by number</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_SET_GLASS_DISTANCE_TO_BEND_BY_NUMER"/>
             </MenuItem>
@@ -1366,31 +1330,31 @@
         </PopMenu>
         <PopMenu UID="ID_GLASS_DOUBLE" hasDiesel="false">
           <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          <Name UID="XLS_190_EBF76" xlate="true">DOUBLE GLASS</Name>
+          <Name UID="XLS_190_EBF76" xlate="true">Double glass</Name>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_9B5CF" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_767D4" xlate="true">SHOW</NameRef>
+            <NameRef UID="XLS_190_767D4" xlate="true">Show double glass</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_SHOW_DOUBLE_GLAS"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_F4FF0" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_6B9E3" xlate="true">HIDE DOUBLE GLASS</NameRef>
+            <NameRef UID="XLS_190_6B9E3" xlate="true">Hide double glass</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_HIDE_DOUBLE_GLASS"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_DF958" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_54F57" xlate="true">SHOW HIDEN DOUBLE GLASS</NameRef>
+            <NameRef UID="XLS_190_54F57" xlate="true">Show hidden double dlass</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_SHOW_HIDEN_DOUBLE_GLASS"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_A7A60" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_5643B" xlate="true">ERASE GLASS 3D and from database</NameRef>
+            <NameRef UID="XLS_190_5643B" xlate="true">Erase glass 3D and from database</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_PLACEMENT_3D_GLASS_DELETE"/>
             </MenuItem>
@@ -1400,21 +1364,21 @@
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_10FEF" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_CD978" xlate="true">UNFOLD TRIANGULAR GLASS</NameRef>
+            <NameRef UID="XLS_190_CD978" xlate="true">Unfold triangular glass</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_DOUBLE_GlASS_UNFOLDS_TRIANGLE"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_068F3" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_46ED2" xlate="true">BENDS TO SEPARATE DRAWINGS</NameRef>
+            <NameRef UID="XLS_190_46ED2" xlate="true">Bends to separate drawings</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_BENDS_TO_SEPARATE_DRAWINGS"/>
             </MenuItem>
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_FE9C6" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_7321D" xlate="true">BENDS SECTIONS TO SEPARATE DRAWINGS</NameRef>
+            <NameRef UID="XLS_190_7321D" xlate="true">Bends sections to separate drawings</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_BEND_SECTION_TO_SEPARATE_DRAWINGS"/>
             </MenuItem>
@@ -1440,7 +1404,7 @@
         </PopMenu>
         <PopMenu UID="ID_SubProfiles" hasDiesel="false">
           <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          <Name UID="XLS_190_FC540" xlate="true">PROFILES</Name>
+          <Name UID="XLS_190_FC540" xlate="true">Profiles</Name>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_0F611" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
             <NameRef UID="XLS_190_5E69B" xlate="true">SOLID EXTRUDE FROM REGIONS IN BLOCK</NameRef>
@@ -1495,7 +1459,7 @@
         </PopMenu>
         <PopMenu UID="ID_Placement_3D" hasDiesel="false">
           <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-          <Name UID="XLS_190_B04A7" xlate="true">SHOW PLACEMENT IN 3D</Name>
+          <Name UID="XLS_190_B04A7" xlate="true">Show placement in 3D</Name>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_8DF81" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
             <NameRef UID="XLS_190_EF9FD" xlate="true">Real Center of Gravity</NameRef>
@@ -1861,7 +1825,7 @@
           </PopMenuItem>
           <PopMenuItem IsSeparator="false" UID="PMIU_190_0CE90" hasDiesel="false">
             <ModifiedRev MajorVersion="19" MinorVersion="0" UserVersion="1"/>
-            <NameRef UID="XLS_190_438A5" xlate="true">Global - Thicnes of the CutProfile</NameRef>
+            <NameRef UID="XLS_190_438A5" xlate="true">Global - Thickness of the CutProfile</NameRef>
             <MenuItem>
               <MacroRef MenuMacroID="ID_KCAD_SET_CUT_SOLID_TH"/>
             </MenuItem>
@@ -1929,7 +1893,10 @@
       </PopMenuRoot>
       <QuickAccessToolbarRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <QuickPropertiesRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
-      <RibbonRoot/>
+      <RibbonRoot>
+        <RibbonTabSourceCollection/>
+        <RibbonPanelSourceCollection/>
+      </RibbonRoot>
       <RolloverTooltipRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <ScreenMenuRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <TabletMenuRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
@@ -1937,5 +1904,6 @@
       <ToolbarRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </MenuRoot>
   </MenuGroup>
+
 
 </CustSection>
