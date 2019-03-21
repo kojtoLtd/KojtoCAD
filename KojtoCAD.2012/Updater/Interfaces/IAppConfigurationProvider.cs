@@ -2,7 +2,7 @@
 {
     public interface IAppConfigurationProvider
     {
-        string GetBlobConnectionString();
+        string GetBlobContainerUri();
 
         string GetBlobContainerName();
 

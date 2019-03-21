@@ -1,12 +1,11 @@
-﻿using System;
+﻿using KojtoCAD.Persistence.Interfaces;
+using KojtoCAD.Updater.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using KojtoCAD.Updater.Interfaces;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Blob;
 
 namespace KojtoCAD.Updater
 {
@@ -15,28 +14,26 @@ namespace KojtoCAD.Updater
         private readonly IKojtoCadVersionProvider _versionProvider;
         private readonly IAppConfigurationProvider _configurationProvider;
         private readonly IKojtoCadVersionValidator _versionValidator;
+        private readonly IBlobRepository _blobRepository;
 
         public InstallationPackageRepository(IKojtoCadVersionProvider versionProvider, 
-            IAppConfigurationProvider configurationProvider, IKojtoCadVersionValidator versionValidator)
+            IAppConfigurationProvider configurationProvider, IKojtoCadVersionValidator versionValidator,
+             IBlobRepository blobRepository)
         {
             _versionProvider = versionProvider;
             _configurationProvider = configurationProvider;
             _versionValidator = versionValidator;
+            _blobRepository = blobRepository;
         }
 
         public IEnumerable<KojtoCadVersion> GetAvailablePackageVersions()
         {
-            var storageAccount = CloudStorageAccount.Parse(_configurationProvider.GetBlobConnectionString());
-            var blobClient = storageAccount.CreateCloudBlobClient();
-            var container = blobClient.GetContainerReference(_configurationProvider.GetBlobContainerName());
-            var dirWithVersions = container.GetDirectoryReference(_configurationProvider.GetKojtoCadVirtualDirectoryName());
+            var containerUri = new Uri(_configurationProvider.GetBlobContainerUri());
+            var directoryHoldingNewVersions = _configurationProvider.GetKojtoCadVirtualDirectoryName();
+            var newVersions = _blobRepository.GetDirectories(containerUri, directoryHoldingNewVersions);
             return
-                dirWithVersions.ListBlobs()
-                    .Select(x => x as CloudBlobDirectory)
-                    .Where(x => x != null)
-                    .Select(x => ExtractVersionFromDirectoryName(x.Prefix))
-                    .Where(_versionValidator.IsValid)
-                    .Select(_versionProvider.GetVersionFromText);
+                newVersions.Select(x => ExtractVersionFromDirectoryName(x.Prefix))
+                .Where(_versionValidator.IsValid).Select(_versionProvider.GetVersionFromText);
         }
 
         public async Task<IEnumerable<KojtoCadVersion>> GetAvailablePackageVersionsAsync()
@@ -46,31 +43,14 @@ namespace KojtoCAD.Updater
 
         public void DownloadPackage(KojtoCadVersion packageVersion, string destinationDir)
         {
-            var storageAccount = CloudStorageAccount.Parse(_configurationProvider.GetBlobConnectionString());
-            var blobClient = storageAccount.CreateCloudBlobClient();
-            var container = blobClient.GetContainerReference(_configurationProvider.GetBlobContainerName());
-            var dirWithVersions = container.GetDirectoryReference(_configurationProvider.GetKojtoCadVirtualDirectoryName());
-            var newVersionDirs = dirWithVersions.ListBlobs().Select(x => x as CloudBlobDirectory).ToList();
+            var containerUri = new Uri(_configurationProvider.GetBlobContainerUri());
+            var directoryHoldingNewVersions = _configurationProvider.GetKojtoCadVirtualDirectoryName();
+            var specifiedVersionDir = Path.Combine(directoryHoldingNewVersions, GetDirectoryCorrespondingToVersion(packageVersion));
+            var blobs = _blobRepository.GetBlobsFromDirectory(containerUri, specifiedVersionDir);
 
-            var newVersionDir =
-                newVersionDirs.Where(x => x != null)
-                    .Select(x => new Tuple<CloudBlobDirectory, string>(x, ExtractVersionFromDirectoryName(x.Prefix)))
-                    .Where(x => _versionValidator.IsValid(x.Item2))
-                    .Select(
-                        x =>
-                            new Tuple<CloudBlobDirectory, KojtoCadVersion>(x.Item1,
-                                _versionProvider.GetVersionFromText(x.Item2)))
-                    .FirstOrDefault(x => packageVersion.Equals(x.Item2));
-            
-            if (newVersionDir == null)
+            foreach (var cloudBlockBlob in blobs)
             {
-                throw new ArgumentException("packageVersion");
-            }
-
-            var downloadTasks = newVersionDir.Item1.ListBlobs(true).Select(x => x as CloudBlockBlob).Where(x => x != null);
-            foreach (var cloudBlockBlob in downloadTasks)
-            {
-                var relativePath = cloudBlockBlob.Name.Substring(newVersionDir.Item1.Prefix.Length);
+                var relativePath = cloudBlockBlob.Name.Substring(specifiedVersionDir.Length);
                 var file = Path.Combine(destinationDir, relativePath);
 
                 new FileInfo(file).Directory.Create();
@@ -91,44 +71,22 @@ namespace KojtoCAD.Updater
             {
                 cancellationToken.ThrowIfCancellationRequested();
 
-                var storageAccount = CloudStorageAccount.Parse(_configurationProvider.GetBlobConnectionString());
-                var blobClient = storageAccount.CreateCloudBlobClient();
-                var container = blobClient.GetContainerReference(_configurationProvider.GetBlobContainerName());
-                var dirWithVersions =
-                    container.GetDirectoryReference(_configurationProvider.GetKojtoCadVirtualDirectoryName());
+                var containerUri = new Uri(_configurationProvider.GetBlobContainerUri());
+                var directoryHoldingNewVersions = _configurationProvider.GetKojtoCadVirtualDirectoryName();
+                var specifiedVersionDir = Path.Combine(directoryHoldingNewVersions, GetDirectoryCorrespondingToVersion(packageVersion));
+                var blobs = _blobRepository.GetBlobsFromDirectory(containerUri, specifiedVersionDir);
 
-                var newVersionDirs = dirWithVersions.ListBlobs().Select(x => x as CloudBlobDirectory).ToList();
-                var newVersionDir =
-                    newVersionDirs.Where(x => x != null)
-                        .Select(x => new Tuple<CloudBlobDirectory, string>(x, ExtractVersionFromDirectoryName(x.Prefix)))
-                        .Where(x => _versionValidator.IsValid(x.Item2))
-                        .Select(
-                            x =>
-                                new Tuple<CloudBlobDirectory, KojtoCadVersion>(x.Item1,
-                                    _versionProvider.GetVersionFromText(x.Item2)))
-                        .FirstOrDefault(x => packageVersion.Equals(x.Item2));
-
-                if (newVersionDir == null)
-                {
-                    throw new ArgumentException("packageVersion");
-                }
-                var downloadTasks =
-                    newVersionDir.Item1.ListBlobs(true).Select(x => x as CloudBlockBlob).Where(x => x != null).ToArray();
-                var count = downloadTasks.Length;
-                for (var i = 0; i < downloadTasks.Length; i++)
+                var count = blobs.Length;
+                for (var i = 0; i < blobs.Length; i++)
                 {
                     cancellationToken.ThrowIfCancellationRequested();
 
-                    var cloudBlockBlob = downloadTasks[i];
-                    var relativePath = cloudBlockBlob.Name.Substring(newVersionDir.Item1.Prefix.Length);
+                    var cloudBlockBlob = blobs[i];
+                    // make the same directory structure using relative paths
+                    var relativePath = cloudBlockBlob.Name.Substring(specifiedVersionDir.Length+1);
                     var file = Path.Combine(destinationDir, relativePath);
 
                     new FileInfo(file).Directory.Create();
-                    // test area
-
-                    //var asdas = cloudBlockBlob.DownloadToFileAsync("", FileMode.Append);
-
-                    // ***********************
                     cloudBlockBlob.DownloadToFile(file, FileMode.Create);
                     progress.Report(new UpdateProgressData
                     {
@@ -147,6 +105,11 @@ namespace KojtoCAD.Updater
         private string ExtractVersionFromDirectoryName(string directoryName)
         {
             return directoryName.Split(new[] {'/'}, StringSplitOptions.RemoveEmptyEntries)[1];
+        }
+
+        private string GetDirectoryCorrespondingToVersion(KojtoCadVersion packageVersion)
+        {
+            return packageVersion.ToString();
         }
     }
 }

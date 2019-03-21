@@ -500,6 +500,12 @@
     <Compile Include="..\KojtoCAD.2012\ObjectCopier\DrawingObjectCopier.cs">
       <Link>ObjectCopier\DrawingObjectCopier.cs</Link>
     </Compile>
+    <Compile Include="..\KojtoCAD.2012\Persistence\AzureBlobRepository.cs">
+      <Link>Persistence\AzureBlobRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\KojtoCAD.2012\Persistence\Interfaces\IBlobRepository.cs">
+      <Link>Persistence\Interfaces\IBlobRepository.cs</Link>
+    </Compile>
     <Compile Include="..\KojtoCAD.2012\Plotter\PlotterForm.cs">
       <Link>Plotter\PlotterForm.cs</Link>
       <SubType>Form</SubType>

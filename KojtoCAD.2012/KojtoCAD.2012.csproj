@@ -252,6 +252,8 @@
     </Compile>
     <Compile Include="KojtoCAD3D\UtilityClasses.cs" />
     <Compile Include="KojtoCAD3D\WorkClasses.cs" />
+    <Compile Include="Persistence\AzureBlobRepository.cs" />
+    <Compile Include="Persistence\Interfaces\IBlobRepository.cs" />
     <Compile Include="Updater\AppConfigurationProvider.cs" />
     <Compile Include="Updater\AutoCadAutoloaderSettingsService.cs" />
     <Compile Include="Updater\BricsCadAutoloaderSettingsService.cs" />

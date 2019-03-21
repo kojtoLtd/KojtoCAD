@@ -1,7 +1,7 @@
-﻿using System;
-using System.IO;
-using KojtoCAD.Updater.Interfaces;
+﻿using KojtoCAD.Updater.Interfaces;
+using System;
 using System.Configuration;
+using System.IO;
 using System.Reflection;
 
 namespace KojtoCAD.Updater
@@ -14,11 +14,10 @@ namespace KojtoCAD.Updater
         {
             _config = ConfigurationManager.OpenExeConfiguration(Assembly.GetExecutingAssembly().Location);
         }
-        public string GetBlobConnectionString()
+        public string GetBlobContainerUri()
         {
-            return _config.AppSettings.Settings["BlobConnectionString"].Value;
+            return _config.AppSettings.Settings["BlobContainerUri"].Value;
         }
-
         public string GetBlobContainerName()
         {
             return _config.AppSettings.Settings["BlobContainerName"].Value;
