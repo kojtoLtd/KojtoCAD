@@ -1726,5 +1726,17 @@ namespace KojtoCAD.Properties {
                 this["plotTransparency"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool WebTrackerIsEnabled {
+            get {
+                return ((bool)(this["WebTrackerIsEnabled"]));
+            }
+            set {
+                this["WebTrackerIsEnabled"] = value;
+            }
+        }
     }
 }
