@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using KojtoCAD.Properties;
 
@@ -16,6 +18,16 @@ namespace KojtoCAD.Utilities
         public static readonly string BcadCuiFile = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), Settings.Default.templatesDir, "kojto.cui");
         public static readonly string Bcad3DCuiFile = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), Settings.Default.templatesDir, "kojto_3D.cui");
         public static readonly string KCad3DMenuSchema = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), Settings.Default.templatesDir, "KojtoCAD_3D.xml");
-        public static readonly string BcadCadTempDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"Bricsys\BricsCAD\V17x64\en_US\Support");
+        public static string BcadCadTempDir
+        {
+            get
+            {
+                // version 16, 17, 18 etc...
+                var bricsCadVersion = Process
+                    .GetProcesses().First(x => x.ProcessName.Equals("BRICSCAD", StringComparison.OrdinalIgnoreCase)).MainModule.FileVersionInfo.ProductMajorPart;
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                    $@"Bricsys\BricsCAD\V{bricsCadVersion}x64\en_US\Support");
+            }
+        }
     }
 }

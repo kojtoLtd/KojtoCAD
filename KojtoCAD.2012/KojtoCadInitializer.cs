@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reflection;
 using System.Runtime.ExceptionServices;
-
 using KojtoCAD.IoC;
 using KojtoCAD.Ui.Interfaces;
 using KojtoCAD.Updater.Interfaces;

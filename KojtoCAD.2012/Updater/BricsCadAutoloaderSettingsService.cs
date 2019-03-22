@@ -1,6 +1,7 @@
 ﻿using KojtoCAD.Updater.Interfaces;
 using Microsoft.Win32;
 using System;
+using System.Linq;
 using System.Security.AccessControl;
 using System.Threading.Tasks;
 
@@ -8,26 +9,28 @@ namespace KojtoCAD.Updater
 {
     public class BricsCadAutoloaderSettingsService : IAutoloaderSettingsService
     {
-        private string _oldValue;
+        private readonly int[] _supportedVersions = { 16, 17, 18, 19, 20 };
 
         public void EditSettingsSoTheNewVersionWillBeLoadedOnNextStartup(string newVersionDir)
         {
-            var kojtoCadKey =
-                RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
+            var installedVersionsKeys = _supportedVersions.Select(x => RegistryKey
+                    .OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64)
                     .OpenSubKey("SOFTWARE")
                     ?.OpenSubKey("Bricsys")
                     ?.OpenSubKey("ObjectDRX")
-                    ?.OpenSubKey("V17x64")
+                    ?.OpenSubKey($"V{x}x64")
                     ?.OpenSubKey("Applications")
-                    ?.OpenSubKey("KojtoCAD", RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl);
-            if (kojtoCadKey == null)
+                    ?.OpenSubKey("KojtoCAD", RegistryKeyPermissionCheck.ReadWriteSubTree, RegistryRights.FullControl))
+                .Where(x => x != null).ToList();
+
+            installedVersionsKeys.ForEach(x =>
             {
-                return;
-            }
-            var oldValue = (string) kojtoCadKey.GetValue("LOADER");
-            _oldValue = oldValue;
-            var newValue = $"{newVersionDir}\\{oldValue.Substring(oldValue.LastIndexOf("\\") + 1)}";
-            kojtoCadKey.SetValue("LOADER", newValue, RegistryValueKind.String);
+                var oldValue = (string)x.GetValue("LOADER");
+                var dllName =
+                    oldValue.Substring(oldValue.LastIndexOf("\\", StringComparison.InvariantCultureIgnoreCase) + 1);
+                var newValue = $"{newVersionDir}\\{dllName}";
+                x.SetValue("LOADER", newValue, RegistryValueKind.String);
+            });
         }
 
         public Task EditSettingsSoTheNewVersionWillBeLoadedOnNextStartupAsync(string newVersionDir)
@@ -40,11 +43,6 @@ namespace KojtoCAD.Updater
 
         public void RevertOldValues()
         {
-            if (string.IsNullOrEmpty(_oldValue))
-            {
-                return;
-            }
-
             throw new NotImplementedException();
         }
     }

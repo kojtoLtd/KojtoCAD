@@ -29,6 +29,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,6 +39,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BricscadApp, Version=17.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -66,8 +68,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\libs\colorComboboxControl.dll</HintPath>
     </Reference>
-    <Reference Include="DocumentFormat.OpenXml">
-      <HintPath>..\..\..\libs\openXML\DocumentFormat.OpenXml.dll</HintPath>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
     <Reference Include="ExcelWriter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -106,7 +108,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
@@ -498,6 +500,12 @@
     <Compile Include="..\KojtoCAD.2012\ObjectCopier\DrawingObjectCopier.cs">
       <Link>ObjectCopier\DrawingObjectCopier.cs</Link>
     </Compile>
+    <Compile Include="..\KojtoCAD.2012\Persistence\AzureBlobRepository.cs">
+      <Link>Persistence\AzureBlobRepository.cs</Link>
+    </Compile>
+    <Compile Include="..\KojtoCAD.2012\Persistence\Interfaces\IBlobRepository.cs">
+      <Link>Persistence\Interfaces\IBlobRepository.cs</Link>
+    </Compile>
     <Compile Include="..\KojtoCAD.2012\Plotter\PlotterForm.cs">
       <Link>Plotter\PlotterForm.cs</Link>
       <SubType>Form</SubType>
@@ -801,7 +809,9 @@
       <Link>Files\Templates\kojto_3D.cui</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Resources\Prototyp.png" />
     <None Include="Resources\kf.PNG" />
     <None Include="Resources\bd.PNG" />

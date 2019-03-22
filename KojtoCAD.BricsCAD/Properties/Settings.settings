@@ -428,15 +428,6 @@
     <Setting Name="plotTransparency" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="BlobContainerName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">kojtocad</Value>
-    </Setting>
-    <Setting Name="NewVersionsVirtualDirectory" Type="System.String" Scope="User">
-      <Value Profile="(Default)">InstallVersions</Value>
-    </Setting>
-    <Setting Name="BlobConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="WebTrackerIsEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>

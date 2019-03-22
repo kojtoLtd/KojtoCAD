@@ -11,7 +11,6 @@ namespace KojtoCAD.Updater
     public class AutoCadAutoloaderSettingsService : IAutoloaderSettingsService
     {
         private readonly IAppConfigurationProvider _appConfigurationProvider;
-        private string _supportPathOldValue;
 
         public AutoCadAutoloaderSettingsService(IAppConfigurationProvider appConfigurationProvider)
         {
@@ -31,8 +30,7 @@ namespace KojtoCAD.Updater
             foreach (var runtimeRequirement in runtimeRequirements)
             {
                 var supportPathAtt = runtimeRequirement.Attribute("SupportPath");
-                //_supportPathOldValue = supportPathAtt.Value;
-                supportPathAtt.SetValue(string.Format("./{0}", newVersionDirRelativePath));
+                supportPathAtt.SetValue($"./{newVersionDirRelativePath}");
             }
 
             // ComponentEntry elements
@@ -42,8 +40,7 @@ namespace KojtoCAD.Updater
                 var moduleNameAttribute = componentEntry.Attribute("ModuleName");
                 //_oldValues.Add(moduleNameAttribute.BaseUri, moduleNameAttribute.Value);
                 var dllName = moduleNameAttribute.Value.Substring(moduleNameAttribute.Value.LastIndexOf('/') + 1);
-                componentEntry.Attribute("ModuleName").SetValue(string.Format("./{0}/{1}", newVersionDirRelativePath,
-                    dllName));
+                componentEntry.Attribute("ModuleName").SetValue($"./{newVersionDirRelativePath}/{dllName}");
             }
 
             // save the file
@@ -63,11 +60,6 @@ namespace KojtoCAD.Updater
 
         public void RevertOldValues()
         {
-            if (string.IsNullOrEmpty(_supportPathOldValue))
-            {
-                return;
-            }
-
             throw new NotImplementedException();
         }
     }
