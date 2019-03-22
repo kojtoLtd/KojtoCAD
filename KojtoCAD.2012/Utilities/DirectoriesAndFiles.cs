@@ -15,7 +15,7 @@ namespace KojtoCAD.Utilities
         public static readonly string SuretyFile2D = KojtoCadTempDir + "\\" + Settings.Default.appName + "Surety.xml";
         public static readonly string SuretyFile3D = KojtoCadTempDir + "\\" + Settings.Default.appName + "Surety3D.xml";
 
-        public static readonly string BcadCuiFile = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), Settings.Default.templatesDir, "kojto.cui");
+        public static readonly string BcadCuiFile = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), Settings.Default.templatesDir, "kojto_2D.cui");
         public static readonly string Bcad3DCuiFile = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), Settings.Default.templatesDir, "kojto_3D.cui");
         public static readonly string KCad3DMenuSchema = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), Settings.Default.templatesDir, "KojtoCAD_3D.xml");
         public static string BcadCadTempDir

@@ -47,6 +47,15 @@ namespace KojtoCAD.Ui
             }
 
             string kojtoCadCuiDir = DirectoriesAndFiles.KojtoCadTempDir;
+            try
+            {
+                this.CreateUiFolderIfNotExists(kojtoCadCuiDir);
+            }
+            catch (IOException exception)
+            {
+                Logger.Error(Resources.ErrorCreatingUiDirectory, exception);
+                Application.DocumentManager.MdiActiveDocument.Editor.WriteMessage(Resources.ErrorCreatingUiDirectory);
+            }
             string kojtoCadCuiFile = kojtoCadCuiDir + "\\" + Settings.Default.appName + this.GetCuiExtensionForCurrentVersion();
 
             if (this.GetMainCustomizationSection().PartialCuiFiles.Contains(kojtoCadCuiFile) && regenerateIfExists)
@@ -62,17 +71,7 @@ namespace KojtoCAD.Ui
             {
                 File.Delete(kojtoCadCuiFile);
             }
-     
-            try
-            {
-                this.CreateUiFolderIfNotExists(kojtoCadCuiDir);
-            }
-            catch ( IOException exception )
-            {
-                Logger.Error(Resources.ErrorCreatingUiDirectory, exception);
-                Application.DocumentManager.MdiActiveDocument.Editor.WriteMessage(Resources.ErrorCreatingUiDirectory);
-            }
- 
+
             try
             {
                 var kojtoCui = 
@@ -89,7 +88,7 @@ namespace KojtoCAD.Ui
             //this.LoadKojtoCAD3DUi();
             //LoadKojtoCad3DUserInterface();
             LoadKojtoCad3DUi();
-
+            
             //EditorHelper.WriteMessage(Resources.SuccessCreatingUi);
 
         }

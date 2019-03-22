@@ -33,7 +33,7 @@ namespace KojtoCAD.Ui
             string iconFile;
             try
             {
-                iconFile = _fileService.GetFile(iconsFolder.Replace("Icons\\", ""), iconName  + iconSize.ToString() , ".bmp");
+                iconFile = _fileService.GetFile(iconsFolder.Replace("Icons\\", ""), iconName  + iconSize.ToString() , ".png");
                 if (iconFile == null)
                 {
                     throw new FileNotFoundException();

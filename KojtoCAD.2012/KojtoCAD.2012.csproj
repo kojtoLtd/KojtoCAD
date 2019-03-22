@@ -298,8 +298,9 @@
     <Compile Include="Updater\UpdateProgressData.cs" />
     <Compile Include="Utilities\AiUsageTracker.cs" />
     <Compile Include="Utilities\BcadExtensionMethods.cs" />
-    <Compile Include="Utilities\Interfaces\ITracker.cs" />
+    <Compile Include="Utilities\Interfaces\IWebTracker.cs" />
     <Compile Include="Utilities\Interfaces\IUtilityClass.cs" />
+    <Compile Include="Utilities\LogToFileLogger.cs" />
     <Compile Include="Utilities\UtilityClass.cs" />
     <Compile Include="Utilities\DirectoriesAndFiles.cs" />
     <Compile Include="Utilities\ErrorReporting\Exceptions\MultipleFilesFoundException.cs" />
