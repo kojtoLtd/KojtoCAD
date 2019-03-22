@@ -793,14 +793,17 @@
     <Compile Include="..\KojtoCAD.2012\Utilities\Interfaces\IPaperSizeFactory.cs">
       <Link>Utilities\Interfaces\IPaperSizeFactory.cs</Link>
     </Compile>
-    <Compile Include="..\KojtoCAD.2012\Utilities\Interfaces\ITracker.cs">
-      <Link>Utilities\Interfaces\ITracker.cs</Link>
-    </Compile>
     <Compile Include="..\KojtoCAD.2012\Utilities\Interfaces\IUtilityClass.cs">
       <Link>Utilities\Interfaces\IUtilityClass.cs</Link>
     </Compile>
+    <Compile Include="..\KojtoCAD.2012\Utilities\Interfaces\IWebTracker.cs">
+      <Link>Utilities\Interfaces\IWebTracker.cs</Link>
+    </Compile>
     <Compile Include="..\KojtoCAD.2012\Utilities\LayerManipulator.cs">
       <Link>Utilities\LayerManipulator.cs</Link>
+    </Compile>
+    <Compile Include="..\KojtoCAD.2012\Utilities\LogToFileLogger.cs">
+      <Link>Utilities\LogToFileLogger.cs</Link>
     </Compile>
     <Compile Include="..\KojtoCAD.2012\Utilities\MeasurementUnitsConverter.cs">
       <Link>Utilities\MeasurementUnitsConverter.cs</Link>

@@ -34,10 +34,10 @@ namespace KojtoCAD.Ui
         public override void GenerateUi(bool regenerateIfExists)
         {
             // 2d
-            GenerateInternal(regenerateIfExists, Settings.Default.appName, DirectoriesAndFiles.BcadCuiFile);
+            GenerateInternal(regenerateIfExists, "kojto_2D", DirectoriesAndFiles.BcadCuiFile);
 
             // 3d
-            GenerateInternal(regenerateIfExists, "kojto_3d", DirectoriesAndFiles.Bcad3DCuiFile);
+            GenerateInternal(regenerateIfExists, "kojto_3D", DirectoriesAndFiles.Bcad3DCuiFile);
         }
 
         private void GenerateInternal(bool regenerateIfExists, string appname, string appCuiFile)
