@@ -16,7 +16,7 @@
               Manufacturer="Kojto Ltd"
               Description="Installs KojtoCAD plugin for AutoCAD 2012+ and BricsCAD 16+"
               Keywords="Kojto,KojtoCAD,AutoCAD plug-in, BricsCAD plug-in"
-              Comments="(c) 2017 Kojto Ltd"
+              Comments="(c) 2019 Kojto Ltd"
               Platform="x64" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />

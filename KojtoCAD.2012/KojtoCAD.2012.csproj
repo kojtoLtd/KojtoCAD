@@ -150,7 +150,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationCore">
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />

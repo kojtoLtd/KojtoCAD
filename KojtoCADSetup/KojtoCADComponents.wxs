@@ -71,6 +71,9 @@
       <Component Id="cmp9DE2DDF45E74643DD83FF98E1D7C58ED" Guid="3D9A3D05-F512-42F4-9222-82FF2A5335C4">
         <File Id="fil75AEF742F8EC2321378178AB15345D06" KeyPath="yes" Source="$(var.FilesPath)\XPTable.dll" />
       </Component>
+      <Component Id="cmp7916CFECA87B4C87B2FDF5FC0AAF4470" Guid="B03B896B-746A-4EA8-ADA0-029BB0E96193">
+        <File Id="fil38835C11C55741489A7AD0E2565C9C68" KeyPath="yes" Source="$(var.FilesPath)\Microsoft.ApplicationInsights.dll" />
+      </Component>
       <Directory Id="dir69A81B71B3436B3F1BF22FB24CE6929D" Name="Files">
         <Directory Id="dirDFAF9E8936489B468D2A3460CBEA597B" Name="Documentation">
           <Component Id="cmpAAC79E9BC3A027B24DFCC360CD900D47" Guid="B045F6F9-E549-4201-AE32-DD296A5967EB">
@@ -820,6 +823,7 @@
       <ComponentRef Id="cmpD29BFE5A5ACB89375D57D96CDECAE9E3" />
       <ComponentRef Id="cmpEEC9B0100E4F04682E7EED90B9B0EEE1" />
       <ComponentRef Id="cmpA45D61D039E1DB2F3561895928B4504F" />
+      <ComponentRef Id="cmp7916CFECA87B4C87B2FDF5FC0AAF4470" />
       <ComponentRef Id="cmp6C4E3CD38FE93E6C5E5B4611008982D2" />
       <ComponentRef Id="cmp12EDCBB84BF5B8C02B77B16278CC7762" />
       <ComponentRef Id="cmpB3547BBB0D31B101A95A33D460E30111" />
