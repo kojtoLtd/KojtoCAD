@@ -3,6 +3,8 @@ using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using KojtoCAD.Properties;
 using KojtoCAD.Utilities;
@@ -12,7 +14,7 @@ using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.Runtime;
-using Autodesk.AutoCAD.PlottingServices;     
+using Autodesk.AutoCAD.PlottingServices;
 using Exception = Autodesk.AutoCAD.Runtime.Exception;
 using PlotType = Autodesk.AutoCAD.DatabaseServices.PlotType;
 using Application = Autodesk.AutoCAD.ApplicationServices.Application;
@@ -28,7 +30,7 @@ using Application = Bricscad.ApplicationServices.Application;
 
 using PlotCfg = KojtoCAD.Properties.Settings;
 
-[assembly: CommandClass( typeof( KojtoCAD.Plotter.Plotter ) )]
+[assembly: CommandClass(typeof(KojtoCAD.Plotter.Plotter))]
 
 namespace KojtoCAD.Plotter
 {
@@ -62,7 +64,8 @@ namespace KojtoCAD.Plotter
 
         #endregion
 
-        private static readonly EditorHelper _editorHelper = new EditorHelper(Application.DocumentManager.MdiActiveDocument);
+        private static readonly EditorHelper _editorHelper =
+            new EditorHelper(Application.DocumentManager.MdiActiveDocument);
 
         public class ReportLog
         {
@@ -109,14 +112,8 @@ namespace KojtoCAD.Plotter
 
         public static List<PublishInfo> PubInfos
         {
-            set
-            {
-                _pubInfos = value;
-            }
-            get
-            {
-                return _pubInfos;
-            }
+            set { _pubInfos = value; }
+            get { return _pubInfos; }
         }
 
         public static PublishStatusDlg PublishStatusDialog;
@@ -127,13 +124,11 @@ namespace KojtoCAD.Plotter
         [CommandMethod("pplot", CommandFlags.Session)]
         public static void PlotterStart()
         {
-#if !bcad
-            
-
             if (new UtilityClass().HostAppVersion() < 17)
             {
                 throw new System.Exception("Application does not support versions before AutoCAD 2007");
             }
+
             _pubInfos.Clear();
 
             // Exit if SDI
@@ -149,16 +144,27 @@ namespace KojtoCAD.Plotter
             // Get the state of certain system variables, to be stored in the XML and retrieved later
             Object FileDiaStatus = Application.GetSystemVariable("FILEDIA");
             Object BackGroundPlotStatus = Application.GetSystemVariable("BACKGROUNDPLOT");
+#if !bcad
             Object RecoveryModeStatus = Application.GetSystemVariable("RECOVERYMODE");
+#else
+            Object RecoveryModeStatus = null;
+#endif
+
 
             // Show the initial dialog on first run
             PlotterForm PlotterDialog = new PlotterForm();
             DialogResult result = Application.ShowModalDialog(PlotterDialog);
 
-            if (result != DialogResult.OK) return;
+            if (result != DialogResult.OK)
+            {
+                return;
+            }
 
-            if (!PlotterDialog.Publish) return;
-                             
+            if (!PlotterDialog.Publish)
+            {
+                return;
+            }
+
             string srcDir = PlotCfg.Default.plotSourcePath;
             string saveDir = PlotCfg.Default.plotSavePath;
             bool plotDwf = PlotCfg.Default.plotMakeDwf;
@@ -214,7 +220,7 @@ namespace KojtoCAD.Plotter
                 OutputFileType.PDF,
                 Settings.Default.plotPlotAllDWGs ? SearchOption.AllDirectories : SearchOption.TopDirectoryOnly,
                 Settings.Default.plotTransparency
-                );
+            );
 
 
             FilePlotConfig FilePlotConfigDwf = new FilePlotConfig(
@@ -285,7 +291,9 @@ namespace KojtoCAD.Plotter
                 // Set our system variables to help programmatic publishing
                 Application.SetSystemVariable("FILEDIA", 0);
                 Application.SetSystemVariable("BACKGROUNDPLOT", 0);
+#if !bcad
                 Application.SetSystemVariable("RECOVERYMODE", 0);
+#endif
 
                 // Show the modeless dialog and start to publish
                 PublishStatusDialog = new PublishStatusDlg();
@@ -309,16 +317,28 @@ namespace KojtoCAD.Plotter
                     if (info.Published)
                     {
                         string status = strDone;
-                        if (info.SkipDwg) status = strSkipped;
-                        else if (info.Failed && info.CanRetry) status = strFailed;
-                        else if (info.Failed && !info.CanRetry) status = strCorruptDwg;
+                        if (info.SkipDwg)
+                        {
+                            status = strSkipped;
+                        }
+                        else if (info.Failed && info.CanRetry)
+                        {
+                            status = strFailed;
+                        }
+                        else if (info.Failed && !info.CanRetry)
+                        {
+                            status = strCorruptDwg;
+                        }
 
                         if (plotPdf)
                         {
                             string publishedPath = saveDir + "\\" + Path.GetFileNameWithoutExtension(info.DwgName)
                                                    + ".pdf";
 
-                            if (info.SkipDwg || info.Failed) publishedPath = "";
+                            if (info.SkipDwg || info.Failed)
+                            {
+                                publishedPath = "";
+                            }
 
                             PublishStatusDialog.UpdateFileStatus(
                                 info.Index, status, publishedPath, false, info.PdfPubTime);
@@ -335,7 +355,10 @@ namespace KojtoCAD.Plotter
                             string publishedPath = saveDir + "\\" + Path.GetFileNameWithoutExtension(info.DwgName) + "."
                                                    + dwfExt;
 
-                            if (info.SkipDwg || info.Failed) publishedPath = "";
+                            if (info.SkipDwg || info.Failed)
+                            {
+                                publishedPath = "";
+                            }
 
                             PublishStatusDialog.UpdateFileStatus(
                                 info.Index, status, publishedPath, true, info.DwfPubTime);
@@ -346,6 +369,7 @@ namespace KojtoCAD.Plotter
                                 dwfLog.Log(logString);
                             }
                         }
+
                         PublishStatusDialog.newFile();
                         continue;
                     }
@@ -362,15 +386,27 @@ namespace KojtoCAD.Plotter
 
                     bool failed = false;
 
-                    if (retry) failed = !info.CanRetry;
-                    else failed = info.Failed;
+                    if (retry)
+                    {
+                        failed = !info.CanRetry;
+                    }
+                    else
+                    {
+                        failed = info.Failed;
+                    }
 
                     if (failed)
                     {
                         string strStatus = strDone;
 
-                        if (info.Failed && info.CanRetry) strStatus = strFailed;
-                        else if (info.Failed && !info.CanRetry) strStatus = strCorruptDwg;
+                        if (info.Failed && info.CanRetry)
+                        {
+                            strStatus = strFailed;
+                        }
+                        else if (info.Failed && !info.CanRetry)
+                        {
+                            strStatus = strCorruptDwg;
+                        }
 
                         PublishStatusDialog.UpdateFileStatus(info.Index, strStatus, "", true, info.DwfPubTime);
 
@@ -412,19 +448,23 @@ namespace KojtoCAD.Plotter
                             {
                                 string command;
                                 if (Settings.Default.plotPaperSizePrint != "Auto")
+                                {
                                     command = PrintString(
                                         str.Trim(),
                                         Settings.Default.plotDevicePrinter,
                                         Settings.Default.plotPaperSizePrint,
                                         rotations[counter],
                                         Settings.Default.plotStyleTable);
+                                }
                                 else
+                                {
                                     command = PrintString(
                                         str.Trim(),
                                         Settings.Default.plotDevicePrinter,
                                         formats[counter],
                                         rotations[counter],
                                         Settings.Default.plotStyleTable);
+                                }
 
                                 try
                                 {
@@ -432,26 +472,28 @@ namespace KojtoCAD.Plotter
                                     object ActiveDocument = openDoc.AcadDocument;
 #endif
 #if acad2013
-                                   object ActiveDocument = Application.DocumentManager.MdiActiveDocument.GetAcadDocument();
+                                   object ActiveDocument =
+ Application.DocumentManager.MdiActiveDocument.GetAcadDocument();
 #endif
 #if bcad
-                                   object ActiveDocument = Application.DocumentManager.MdiActiveDocument.AcadDocument;
+                                    object ActiveDocument = Application.DocumentManager.MdiActiveDocument.AcadDocument;
 #endif
 
 
                                     object[] data = { command };
                                     ActiveDocument.GetType()
-                                                  .InvokeMember(
-                                                      "SendCommand",
-                                                      System.Reflection.BindingFlags.InvokeMethod,
-                                                      null,
-                                                      ActiveDocument,
-                                                      data);
+                                        .InvokeMember(
+                                            "SendCommand",
+                                            System.Reflection.BindingFlags.InvokeMethod,
+                                            null,
+                                            ActiveDocument,
+                                            data);
                                 }
                                 catch
                                 {
                                     error += str + " ERROR ";
                                 }
+
                                 counter++;
                             }
 
@@ -485,13 +527,25 @@ namespace KojtoCAD.Plotter
                 int failCount = 0;
                 foreach (PublishInfo info in _pubInfos)
                 {
-                    if (PublishStatusDialog.Stop) return;
+                    if (PublishStatusDialog.Stop)
+                    {
+                        return;
+                    }
 
-                    if (info.Failed && info.CanRetry) failCount++;
+                    if (info.Failed && info.CanRetry)
+                    {
+                        failCount++;
+                    }
 
                     string status = "";
-                    if (info.SkipDwg) status = strSkipped;
-                    else if (info.Failed) status = strFailed;
+                    if (info.SkipDwg)
+                    {
+                        status = strSkipped;
+                    }
+                    else if (info.Failed)
+                    {
+                        status = strFailed;
+                    }
 
                     if (plotPdf)
                     {
@@ -511,6 +565,7 @@ namespace KojtoCAD.Plotter
                         }
                     }
                 }
+
                 PublishStatusDialog.PublishOver(failCount);
             }
             catch (Exception Ex)
@@ -522,16 +577,14 @@ namespace KojtoCAD.Plotter
                 // restore AutoCAD envirioment
                 Application.SetSystemVariable("FILEDIA", FileDiaStatus);
                 Application.SetSystemVariable("BACKGROUNDPLOT", BackGroundPlotStatus);
+#if !bcad
                 Application.SetSystemVariable("RECOVERYMODE", RecoveryModeStatus);
-
+#endif
                 Application.SetSystemVariable("USERS1", "");
                 Application.SetSystemVariable("USERI1", 0);
                 // Delete the main XML file
                 XmlUtils.DeleteXml();
             }
-#else
-            MessageBox.Show("Not available in BricsCAD", "Warning", MessageBoxButtons.OK);
-#endif
         }
 
         /// <summary>
@@ -585,6 +638,7 @@ namespace KojtoCAD.Plotter
                         PreparePublishList(file, true);
                     }
                 }
+
                 if (aReadDxf)
                 {
                     foreach (string file in dxfFiles)
@@ -633,6 +687,7 @@ namespace KojtoCAD.Plotter
                             Layout Layout = (Layout)Tr.GetObject((ObjectId)DictEntryLayout.Value, OpenMode.ForRead);
                             PublishInfo.Add(DictEntryLayout.Key.ToString(), Layout.Handle, Layout.ModelType);
                         }
+
                         Tr.Commit();
                     }
                 }
@@ -644,9 +699,10 @@ namespace KojtoCAD.Plotter
                 PublishInfo.CanRetry = false;
                 pubListIsOk = false;
             }
+
             return pubListIsOk;
         }
-#if !bcad
+
         /// <summary>
         /// Start the plot job for the current drawing (DB). All Layouts are in.
         /// </summary>
@@ -693,12 +749,16 @@ namespace KojtoCAD.Plotter
                         PlotInfo PlotInfo = new PlotInfo();
 
                         // A PlotEngine does the actual plotting (can also create one for Preview)
+
+
                         if (PlotFactory.ProcessPlotState == ProcessPlotState.NotPlotting)
                         {
+
                             PlotEngine PlotEngine = PlotFactory.CreatePublishEngine();
                             using (PlotEngine)
                             {
-                                DBDictionary layoutDict = Tr.GetObject(Db.LayoutDictionaryId, OpenMode.ForRead) as DBDictionary;
+                                DBDictionary layoutDict =
+                                    Tr.GetObject(Db.LayoutDictionaryId, OpenMode.ForRead) as DBDictionary;
                                 var LayoutsToPlot = new ObjectId[layoutDict.Count];
                                 int actualLayoutsToPlotCount = 0;
                                 foreach (ObjectId BtrId in Bt)
@@ -715,7 +775,7 @@ namespace KojtoCAD.Plotter
                                                 var frameExtents = FindPlotWindowExtents(Tr, Btr, aPltCfg);
                                                 if (frameExtents != new Extents2d())
                                                 {
-                                                    LayoutsToPlot[currLayout.TabOrder]=BtrId;
+                                                    LayoutsToPlot[currLayout.TabOrder] = BtrId;
                                                     actualLayoutsToPlotCount++;
                                                 }
                                             }
@@ -728,9 +788,8 @@ namespace KojtoCAD.Plotter
                                     PublishStatusDialog.UpdateFileStatus(
                                         aInfo.Index, strNoLayouts, "", false, aInfo.DwfPubTime);
                                     return;
-                                    //Ed.WriteMessage( "There are no layouts in the configuration. File : " + Db.Filename );
                                 }
-                                
+
                                 // Create a Progress Dialog to provide info and allow the user to cancel
                                 PlotProgressDialog PlotProgressDialog = new PlotProgressDialog(
                                     false, actualLayoutsToPlotCount, true);
@@ -747,70 +806,60 @@ namespace KojtoCAD.Plotter
                                         {
                                             continue;
                                         }
+
                                         BlockTableRecord LayoutBtr =
                                             (BlockTableRecord)Tr.GetObject(LayoutId, OpenMode.ForRead);
                                         Layout Lt = (Layout)Tr.GetObject(LayoutBtr.LayoutId, OpenMode.ForRead);
 
-                                        string new_canonicalPaperSize = "";
-
-                                        try
+                                        // if concrete paper sheet is picked
+                                        if (aPltCfg.canonicalPaperSize != "Auto")
                                         {
-                                            new_canonicalPaperSize = aPltCfg.canonicalPaperSize;
+                                            var dimensions =
+                                                PlotterForm.CanonicalMediaNamesFilter
+                                                    .Matches(aPltCfg.canonicalPaperSize).OfType<Match>()
+                                                    .Select(x => x.Value).ToArray();
+                                            double w = Convert.ToDouble(dimensions[0]);
+                                            double h = Convert.ToDouble(dimensions[1]);
+                                            bool isRotated = w < h;
 
-                                            if ((aPltCfg.canonicalPaperSize != "Auto"))
+                                            frameExtents = FindPlotWindowExtents(Tr, LayoutBtr, aPltCfg);
+
+                                            var isR = frameExtents.MaxPoint.Y - frameExtents.MinPoint.Y
+                                                      > frameExtents.MaxPoint.X - frameExtents.MinPoint.X;
+
+                                            if (isRotated)
                                             {
-                                                string[] split = new_canonicalPaperSize.Split(new[] { '(', ')' });
-                                                string[] split1 = split[1].Split(new[] { '_' });
-
-                                                double w = Convert.ToDouble(split1[0]);
-                                                double h = Convert.ToDouble(split1[2]);
-                                                bool isRotated = w < h;
-
-                                                frameExtents = FindPlotWindowExtents(Tr, LayoutBtr, aPltCfg);
-                                                if (frameExtents == null)
-                                                {
-                                                    numSheet++;
-                                                }
-                                                var isR = frameExtents.MaxPoint.Y - frameExtents.MinPoint.Y
-                                                          > frameExtents.MaxPoint.X - frameExtents.MinPoint.X;
-
-                                                if (isRotated)
-                                                {
-                                                    Rotation = isR ? PlotRotation.Degrees000 : PlotRotation.Degrees090;
-                                                }
-                                                else
-                                                {
-                                                    Rotation = isR ? PlotRotation.Degrees090 : PlotRotation.Degrees000;
-                                                }
+                                                Rotation = isR ? PlotRotation.Degrees000 : PlotRotation.Degrees090;
+                                            }
+                                            else
+                                            {
+                                                Rotation = isR ? PlotRotation.Degrees090 : PlotRotation.Degrees000;
                                             }
                                         }
-                                        catch
-                                        {
-                                            aPltCfg.canonicalPaperSize = new_canonicalPaperSize;
-                                        }
 
-                                        // If the user selected "Auto" paper attemtp to find the correct paper size 
+                                        // If user has selected "Auto", find the correct paper size
                                         if (aPltCfg.canonicalPaperSize == "Auto")
                                         {
                                             string[] formats =
-                                                {
-                                                    "ISO_full_bleed_A4_(210.00_x_297.00_MM)",
-                                                    "ISO_full_bleed_A3_(297.00_x_420.00_MM)",
-                                                    "ISO_full_bleed_A2_(420.00_x_594.00_MM)",
-                                                    "ISO_full_bleed_A1_(594.00_x_841.00_MM)",
-                                                    "ISO_full_bleed_A0_(841.00_x_1189.00_MM)"
-                                                };
+                                            {
+                                                "ISO_full_bleed_A4_(210.00_x_297.00_MM)",
+                                                "ISO_full_bleed_A3_(297.00_x_420.00_MM)",
+                                                "ISO_full_bleed_A2_(420.00_x_594.00_MM)",
+                                                "ISO_full_bleed_A1_(594.00_x_841.00_MM)",
+                                                "ISO_full_bleed_A0_(841.00_x_1189.00_MM)"
+                                            };
                                             double[] areas =
-                                                {
-                                                    210.00 * 297.00, 297.00 * 420.00, 420.00 * 594.00,
-                                                    594.00 * 841.00, 841.00 * 1189.00
-                                                };
+                                            {
+                                                210.00 * 297.00, 297.00 * 420.00, 420.00 * 594.00,
+                                                594.00 * 841.00, 841.00 * 1189.00
+                                            };
 
                                             frameExtents = FindPlotWindowExtents(Tr, LayoutBtr, aPltCfg);
                                             if (frameExtents == new Extents2d())
                                             {
                                                 continue;
                                             }
+
                                             var isR = frameExtents.MaxPoint.Y - frameExtents.MinPoint.Y
                                                       > frameExtents.MaxPoint.X - frameExtents.MinPoint.X;
                                             var area = Math.Abs(frameExtents.MaxPoint.Y - frameExtents.MinPoint.Y)
@@ -896,6 +945,7 @@ namespace KojtoCAD.Plotter
                                                     true,
                                                     aPltCfg.savePath + "\\" + aPltCfg.fileName + ext);
                                             }
+
                                             DeleteFile(
                                                 aPltCfg.savePath + "\\" + aPltCfg.fileName + "_" + Lt.LayoutName + "."
                                                 + ext);
@@ -905,7 +955,7 @@ namespace KojtoCAD.Plotter
                                         PlotProgressDialog.StatusMsgString = "Plotting "
                                                                              + aDoc.Name.Substring(
                                                                                  aDoc.Name.LastIndexOf("\\") + 1)
-                                                                             + " - sheet " + numSheet.ToString()
+                                                                             + " - sheet " + numSheet
                                                                              + " of " + actualLayoutsToPlotCount;
 
                                         PlotProgressDialog.OnBeginSheet();
@@ -918,12 +968,14 @@ namespace KojtoCAD.Plotter
 
                                         if (aPltCfg.plotMultiSheet)
                                         {
-                                            PlotEngine.BeginPage(ppi, PlotInfo, (numSheet == actualLayoutsToPlotCount), null);
+                                            PlotEngine.BeginPage(ppi, PlotInfo, numSheet == actualLayoutsToPlotCount,
+                                                null);
                                         }
                                         else
                                         {
                                             PlotEngine.BeginPage(ppi, PlotInfo, true, null);
                                         }
+
                                         PlotProgressDialog.SheetProgressPos = 40;
 
                                         PlotEngine.BeginGenerateGraphics(null);
@@ -972,6 +1024,7 @@ namespace KojtoCAD.Plotter
                         }
                     }
                 }
+
                 Application.SetSystemVariable(systemVarDwgCheck, dwgCheckPrevious);
 
                 PublishStatusDialog.UpdateFileStatus(aInfo.Index, strPublished, "", false, aInfo.DwfPubTime);
@@ -981,8 +1034,7 @@ namespace KojtoCAD.Plotter
                 PublishStatusDialog.UpdateFileStatus(aInfo.Index, Ex.Message, "", false, aInfo.DwfPubTime);
             }
         }
-#endif
-#if !bcad
+
         private static PlotInfo GetValidatedPlotInfo(
             Database Db, Layout Lt, FilePlotConfig aPltCfg, PlotRotation Rotation, Extents2d frameExtents)
         {
@@ -1009,7 +1061,8 @@ namespace KojtoCAD.Plotter
 
             plotSettingsValidator.SetPlotCentered(plotSettings, aPltCfg.centerPlot);
 
-            plotSettingsValidator.SetPlotConfigurationName(plotSettings, aPltCfg.plotDevice, aPltCfg.canonicalPaperSize);
+            plotSettingsValidator.SetPlotConfigurationName(plotSettings, aPltCfg.plotDevice,
+                aPltCfg.canonicalPaperSize);
             plotSettingsValidator.RefreshLists(plotSettings);
 
             plotSettingsValidator.SetCurrentStyleSheet(plotSettings, aPltCfg.plotStyleTable);
@@ -1019,7 +1072,7 @@ namespace KojtoCAD.Plotter
 
             plotSettings.PlotTransparency = aPltCfg.PlotTransparency;
             // We need a PlotInfo object linked to the layout
-            PlotInfo plotInfo = new PlotInfo {Layout = Lt.Id};
+            PlotInfo plotInfo = new PlotInfo { Layout = Lt.Id };
 
             // Make the layout we're plotting current
             LayoutManager.Current.CurrentLayout = Lt.LayoutName;
@@ -1043,7 +1096,7 @@ namespace KojtoCAD.Plotter
 
             return plotInfo;
         }
-          
+
         private static StringCollection PublishFileA(
             PublishInfo aInfo, ref Document aDoc, ref List<bool> rotations, ref StringCollection formats)
         {
@@ -1063,6 +1116,7 @@ namespace KojtoCAD.Plotter
                 {
                     return LayoutsToPlot;
                 }
+
                 Editor Ed = aDoc.Editor;
                 Database Db = aDoc.Database;
                 using (DocumentLock DocLock = aDoc.LockDocument())
@@ -1074,14 +1128,14 @@ namespace KojtoCAD.Plotter
                         // A PlotEngine does the actual plotting (can also create one for Preview)
                         Layout currLayout;
                         var filePlotConfig = new FilePlotConfig
-                                                 {
-                                                     drawingFrameLayer =
-                                                         GetExactBlockAndFrameNames(
-                                                             Settings.Default.plotDrawingFrameLayer),
-                                                     drawingFrameName =
-                                                         GetExactBlockAndFrameNames(
-                                                             Settings.Default.plotDrawingFrameName)
-                                                 };
+                        {
+                            drawingFrameLayer =
+                                GetExactBlockAndFrameNames(
+                                    Settings.Default.plotDrawingFrameLayer),
+                            drawingFrameName =
+                                GetExactBlockAndFrameNames(
+                                    Settings.Default.plotDrawingFrameName)
+                        };
                         foreach (ObjectId BtrId in Bt)
                         {
                             BlockTableRecord Btr = (BlockTableRecord)Tr.GetObject(BtrId, OpenMode.ForRead);
@@ -1108,12 +1162,14 @@ namespace KojtoCAD.Plotter
 
                         if (LayoutsToPlot.Count == 0)
                         {
-                            PublishStatusDialog.UpdateFileStatus(aInfo.Index, strNoLayouts, "", false, aInfo.DwfPubTime);
+                            PublishStatusDialog.UpdateFileStatus(aInfo.Index, strNoLayouts, "", false,
+                                aInfo.DwfPubTime);
                             Ed.WriteMessage("There are no layouts in the configuration. File : " + Db.Filename);
                         }
                     }
 
                 }
+
                 //return LayoutsToPlot;
             }
             catch /*(Autodesk.AutoCAD.Runtime.Exception Ex)*/
@@ -1121,6 +1177,7 @@ namespace KojtoCAD.Plotter
                 //MessageBox.Show(Ex.Message + "\n" + Ex.Source + "\n" + Ex.StackTrace);
                 // PublishStatusDialog.UpdateFileStatus(aInfo.Index, Ex.Message, "", false, aInfo.DwfPubTime);
             }
+
             /*         
             string device = Settings.Default.plotDevicePrinter.Trim();
             string PS = Settings.Default.paperSizePrint.Trim();
@@ -1135,7 +1192,7 @@ namespace KojtoCAD.Plotter
         */
             return LayoutsToPlot;
         }
-#endif
+
         private static string PrintString(
             string LayoutName, string DeviceName, string PaperSize, bool DrawingOrientation, string plotStyleTable)
         {
@@ -1171,6 +1228,7 @@ namespace KojtoCAD.Plotter
             {
                 command += "L";
             }
+
             command += "\n"; //Entrer
 
             //Plot upside down? [Yes/No] <No>:
@@ -1232,7 +1290,8 @@ namespace KojtoCAD.Plotter
             return command;
         }
 
-        private static Extents2d FindPlotWindowExtents(Transaction transaction, BlockTableRecord layoutBtr, FilePlotConfig plotConfig)
+        private static Extents2d FindPlotWindowExtents(Transaction transaction, BlockTableRecord layoutBtr,
+            FilePlotConfig plotConfig)
         {
             foreach (var objectId in layoutBtr)
             {
@@ -1245,15 +1304,20 @@ namespace KojtoCAD.Plotter
                         polyline.GeometricExtents.MaxPoint.X,
                         polyline.GeometricExtents.MaxPoint.Y);
                 }
+
                 var blockReference = transaction.GetObject(objectId, OpenMode.ForRead) as BlockReference;
                 if (blockReference != null)
                 {
                     // DynamicBlockTableRecord does not return only dynamic block table record. 
                     // When the block is ( for example ) pure polyline in block and not a dynamic block at all then the
                     // DynamicBlockTableRecord property returns the blockTableRecord of the normal block -> they overlap in this case.x
-                    
+
                     //var dynamicBlockId = blockReference.DynamicBlockTableRecord;
                     var blockId = blockReference.DynamicBlockTableRecord;
+                    if (blockId.IsNull)
+                    {
+                        continue;
+                    }
                     var block = transaction.GetObject(blockId, OpenMode.ForRead) as BlockTableRecord;
                     if (block != null && plotConfig.drawingFrameName.Contains(block.Name.ToUpper()))
                     {
@@ -1265,6 +1329,7 @@ namespace KojtoCAD.Plotter
                     }
                 }
             }
+
             return new Extents2d();
         }
 
@@ -1289,6 +1354,7 @@ namespace KojtoCAD.Plotter
             {
                 names[i] = names[i].Trim().ToUpper();
             }
+
             return new List<string>(names);
         }
 
@@ -1301,28 +1367,30 @@ namespace KojtoCAD.Plotter
             try
             {
                 PromptSelectionResult viewportSelection = editor.SelectAll(new SelectionFilter(viewportFilter));
-                if ( viewportSelection.Value.Count.Equals(0) )
+                if (viewportSelection.Value.Count.Equals(0))
                 {
                     return;
                 }
+
                 SelectionSet selectionSet = viewportSelection.Value as SelectionSet;
-                using ( Transaction transaction = document.Database.TransactionManager.StartTransaction() )
+                using (Transaction transaction = document.Database.TransactionManager.StartTransaction())
                 {
-                    foreach ( ObjectId objectId in selectionSet.GetObjectIds() )
+                    foreach (ObjectId objectId in selectionSet.GetObjectIds())
                     {
-                        Viewport viewport = (Viewport) transaction.GetObject(objectId, OpenMode.ForWrite);
-                        if ( !viewport.On )
+                        Viewport viewport = (Viewport)transaction.GetObject(objectId, OpenMode.ForWrite);
+                        if (!viewport.On)
                         {
                             try
                             {
                                 viewport.On = true;
                                 viewport.UpdateDisplay();
                             }
-                            catch ( Exception )
+                            catch (Exception)
                             {
                             }
                         }
                     }
+
                     transaction.Commit();
                 }
             }
@@ -1340,65 +1408,45 @@ namespace KojtoCAD.Plotter
     public class LayoutInfo
     {
         private string _layout;
+
         public string Layout
         {
-            set
-            {
-                _layout = value;
-            }
-            get
-            {
-                return _layout;
-            }
+            set { _layout = value; }
+            get { return _layout; }
         }
 
         private Handle _handle;
+
         public Handle Handle
         {
-            set
-            {
-                _handle = value;
-            }
-            get
-            {
-                return _handle;
-            }
+            set { _handle = value; }
+            get { return _handle; }
         }
 
         private bool _bIsModel;
+
         public bool IsModel
         {
-            set
-            {
-                _bIsModel = value;
-            }
-            get
-            {
-                return _bIsModel;
-            }
+            set { _bIsModel = value; }
+            get { return _bIsModel; }
         }
 
         private bool _publish;
+
         public bool Publish
         {
-            set
-            {
-                _publish = value;
-            }
-            get
-            {
-                return _publish;
-            }
+            set { _publish = value; }
+            get { return _publish; }
         }
 
-        public LayoutInfo ( )
+        public LayoutInfo()
         {
             _publish = true;
         }
 
-        public LayoutInfo Copy ( )
+        public LayoutInfo Copy()
         {
-            LayoutInfo info = new LayoutInfo( );
+            LayoutInfo info = new LayoutInfo();
             info.Layout = Layout;
             info.Publish = Publish;
             info._bIsModel = _bIsModel;
@@ -1406,7 +1454,7 @@ namespace KojtoCAD.Plotter
         }
 
         // Required for check/uncheck feature
-        public override string ToString ( )
+        public override string ToString()
         {
             return Layout;
         }
@@ -1415,159 +1463,115 @@ namespace KojtoCAD.Plotter
     // Info on drawing selected to publish which contains Layout info
     public class PublishInfo
     {
-        public PublishInfo ( )
+        public PublishInfo()
         {
-            _layoutInfos = new List<LayoutInfo>( );
+            _layoutInfos = new List<LayoutInfo>();
             _failedFile = false;
             _skipDwg = false;
         }
 
         private List<LayoutInfo> _layoutInfos;
+
         public List<LayoutInfo> LayoutInfos
         {
-            set
-            {
-                _layoutInfos = value;
-            }
-            get
-            {
-                return _layoutInfos;
-            }
+            set { _layoutInfos = value; }
+            get { return _layoutInfos; }
         }
 
         private string _dwfPubTime = "";
+
         public string DwfPubTime
         {
-            set
-            {
-                _dwfPubTime = value;
-            }
-            get
-            {
-                return _dwfPubTime;
-            }
+            set { _dwfPubTime = value; }
+            get { return _dwfPubTime; }
         }
 
         private string _pdfPubTime = "";
+
         public string PdfPubTime
         {
-            set
-            {
-                _pdfPubTime = value;
-            }
-            get
-            {
-                return _pdfPubTime;
-            }
+            set { _pdfPubTime = value; }
+            get { return _pdfPubTime; }
         }
 
         private string _dwgName;
+
         public string DwgName
         {
-            set
-            {
-                _dwgName = value;
-            }
-            get
-            {
-                return _dwgName;
-            }
+            set { _dwgName = value; }
+            get { return _dwgName; }
         }
 
         private bool _published = false;
+
         public bool Published
         {
-            set
-            {
-                _published = value;
-            }
-            get
-            {
-                return _published;
-            }
+            set { _published = value; }
+            get { return _published; }
         }
 
         private int _idx = 0;
+
         public int Index
         {
-            set
-            {
-                _idx = value;
-            }
-            get
-            {
-                return _idx;
-            }
+            set { _idx = value; }
+            get { return _idx; }
         }
 
         private bool _canRetry = true;
+
         public bool CanRetry
         {
-            set
-            {
-                _canRetry = value;
-            }
-            get
-            {
-                return _canRetry;
-            }
+            set { _canRetry = value; }
+            get { return _canRetry; }
         }
 
         private bool _skipDwg;
+
         public bool SkipDwg
         {
-            set
-            {
-                _skipDwg = value;
-            }
-            get
-            {
-                return _skipDwg;
-            }
+            set { _skipDwg = value; }
+            get { return _skipDwg; }
         }
 
         private bool _failedFile;
+
         public bool Failed
         {
-            set
-            {
-                _failedFile = value;
-            }
-            get
-            {
-                return _failedFile;
-            }
+            set { _failedFile = value; }
+            get { return _failedFile; }
         }
 
-        public void Add ( string LayoutName, Handle LayoutHandle, bool IsModel )
+        public void Add(string LayoutName, Handle LayoutHandle, bool IsModel)
         {
-            LayoutInfo layoutInfo = new LayoutInfo( );
+            LayoutInfo layoutInfo = new LayoutInfo();
             layoutInfo.Layout = LayoutName;
             layoutInfo.Handle = LayoutHandle;
             layoutInfo.IsModel = IsModel;
-            _layoutInfos.Add( layoutInfo );
+            _layoutInfos.Add(layoutInfo);
         }
 
-        public PublishInfo Copy ( )
+        public PublishInfo Copy()
         {
-            PublishInfo copy = new PublishInfo( );
+            PublishInfo copy = new PublishInfo();
             copy.Failed = _failedFile;
             copy.Index = _idx;
             copy.SkipDwg = _skipDwg;
             copy.DwgName = _dwgName;
             copy.CanRetry = _canRetry;
 
-            foreach ( LayoutInfo info in _layoutInfos )
+            foreach (LayoutInfo info in _layoutInfos)
             {
-                LayoutInfo copyInfo = info.Copy( );
-                copy.LayoutInfos.Add( copyInfo );
+                LayoutInfo copyInfo = info.Copy();
+                copy.LayoutInfos.Add(copyInfo);
             }
+
             return copy;
         }
 
-        public override string ToString ( )
+        public override string ToString()
         {
-            return Path.GetFileNameWithoutExtension( _dwgName );
+            return Path.GetFileNameWithoutExtension(_dwgName);
         }
     }
 
@@ -1592,22 +1596,22 @@ namespace KojtoCAD.Plotter
         public SearchOption DirSearchOpts;
         public OutputFileType OutputFileType;
 
-        public FilePlotConfig ( string aPlotDevice,
-                              string aCanonicalPaperSize,
-                              string aPlotStyle,
-                              string aSavePath,
-                              string aSourcePath,
-                              string aFileName,
-                              List<string> aDrawingFrameLayer,
-                              List<string> aDrawingFrameName,
-                              bool aPlotMultiSheet,
-                              bool aTurnOnAllViewPorts,
-                              bool aFitToPage,
-                              bool aIgnoreModelSpace,
-                              bool aCenterPlot,
-                              OutputFileType aOutputFileType,
-                              SearchOption aDirSearchOpts,
-                              bool plotTransparency)
+        public FilePlotConfig(string aPlotDevice,
+            string aCanonicalPaperSize,
+            string aPlotStyle,
+            string aSavePath,
+            string aSourcePath,
+            string aFileName,
+            List<string> aDrawingFrameLayer,
+            List<string> aDrawingFrameName,
+            bool aPlotMultiSheet,
+            bool aTurnOnAllViewPorts,
+            bool aFitToPage,
+            bool aIgnoreModelSpace,
+            bool aCenterPlot,
+            OutputFileType aOutputFileType,
+            SearchOption aDirSearchOpts,
+            bool plotTransparency)
         {
             plotDevice = aPlotDevice;
             canonicalPaperSize = aCanonicalPaperSize;
@@ -1628,6 +1632,12 @@ namespace KojtoCAD.Plotter
         }
     }
 
-    public enum OutputFileType { PDF = 1, DWF, DWFx, None };
+    public enum OutputFileType
+    {
+        PDF = 1,
+        DWF,
+        DWFx,
+        None
+    };
 
 }

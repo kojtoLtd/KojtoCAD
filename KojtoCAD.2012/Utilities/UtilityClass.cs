@@ -116,8 +116,7 @@ namespace KojtoCAD.Utilities
 
         public int HostAppVersion()
         {
-            var version = Application.Version.Split(new[] {'.'}, StringSplitOptions.RemoveEmptyEntries).First();
-            return int.Parse(version);
+            return Application.Version.Major;
         }
 
         public string[] PlotDevicesNames()

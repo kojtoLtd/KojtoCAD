@@ -42,18 +42,18 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BricscadApp, Version=17.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BricsCAD.17.ComInterop.tlbImported.BricscadApp.17.0.0.0\lib\net452\BricscadApp.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="BricscadApp, Version=19.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BricsCAD.19.ComInterop.tlbImported.BricscadApp.19.0.0\lib\net452\BricscadApp.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="BricscadDb, Version=17.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BricsCAD.17.ComInterop.tlbImported.BricscadDb.17.0.0.0\lib\net452\BricscadDb.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="BricscadDb, Version=19.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BricsCAD.19.ComInterop.tlbImported.BricscadDb.19.0.0\lib\net452\BricscadDb.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="BrxMgd, Version=20.1.6228.25803, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\BricsCAD.17.BrxMgd.20.1.6228.25806\lib\net452\BrxMgd.dll</HintPath>
+    <Reference Include="BrxMgd, Version=19.2.0.13090, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\BricsCAD.19.BrxMgd.19.2.0.13090\lib\net452\BrxMgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
@@ -123,12 +123,12 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TD_Mgd, Version=4.2.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\BricsCAD.17.TD_Mgd.4.2.0.0\lib\net452\TD_Mgd.dll</HintPath>
+    <Reference Include="TD_Mgd, Version=19.5.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\BricsCAD.19.TD_Mgd.19.5.0\lib\net452\TD_Mgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="TD_MgdBrep, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\BricsCAD.17.TD_MgdBrep.0.0.0.0\lib\net452\TD_MgdBrep.dll</HintPath>
+      <HintPath>..\packages\BricsCAD.19.TD_MgdBrep.0.0.0\lib\net452\TD_MgdBrep.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="WindowsBase" />
