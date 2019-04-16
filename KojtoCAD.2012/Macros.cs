@@ -3,7 +3,6 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-
 using Castle.Core.Logging;
 #if !bcad
 using Autodesk.AutoCAD.ApplicationServices;
@@ -14,7 +13,6 @@ using Autodesk.AutoCAD.Runtime;
 #else
 using Bricscad.ApplicationServices;
 using Bricscad.EditorInput;
-using Bricscad.PlottingServices;
 using Teigha.DatabaseServices;
 using Teigha.Geometry;
 using Teigha.Runtime;
