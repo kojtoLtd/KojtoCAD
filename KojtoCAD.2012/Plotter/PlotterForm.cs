@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using KojtoCAD.Utilities;
 #if !bcad
@@ -19,8 +20,6 @@ namespace KojtoCAD.Plotter
     public partial class PlotterForm : Form
     {
         #region fields and properties
-
-        private static string[] mCanonicalArray;
 
         // current layout publish info
         private PublishInfo _curPubInfo = null;
@@ -41,8 +40,6 @@ namespace KojtoCAD.Plotter
                 return _publish;
             }
         }
-
-        #region UnusedProperties
 
         public string SavePath
         {
@@ -164,7 +161,7 @@ namespace KojtoCAD.Plotter
             }
         }
 
-        #endregion
+        public static Regex CanonicalMediaNamesFilter = new Regex(@"\d+\.\d+");
 
         private bool _authorizedCheckDwg;
 
@@ -397,38 +394,29 @@ namespace KojtoCAD.Plotter
         public void UpdatePaperListbox(ComboBox aCmbPlotDevice, ComboBox aCmbPaperSize, string aDeviceName)
         {
             aCmbPaperSize.Items.Clear();
+
             if (aCmbPlotDevice.Text == "None" || string.IsNullOrEmpty(aCmbPlotDevice.Text))
             {
-                aCmbPaperSize.Items.Clear();
                 return;
             }
 
             try
             {
                 PlotConfig pc = PlotConfigManager.SetCurrentConfig(aDeviceName);
-                int i = 0;
-
-                if (aCmbPlotDevice.Text == "DWG To PDF.pc3")
+                if (pc.IsPlotToFile || pc.PlotToFileCapability == PlotToFileCapability.MustPlotToFile || pc.PlotToFileCapability == PlotToFileCapability.PlotToFileAllowed)
                 {
-                    mCanonicalArray = new string[pc.CanonicalMediaNames.Count + 1];
                     aCmbPaperSize.Items.Add("Auto");
-                    i++;
                 }
-                else
-                {
-                    mCanonicalArray = new string[pc.CanonicalMediaNames.Count];
-                }
-
-                //mCanonicalArray = new string[pc.CanonicalMediaNames.Count];
 
                 foreach (string str in pc.CanonicalMediaNames)
                 {
-                    if (str.Contains("A0") || str.Contains("A1") || str.Contains("A2") || str.Contains("A3")
-                        || str.Contains("A4") || str.Contains("A5") || str.Contains("A6"))
+                    if (CanonicalMediaNamesFilter.IsMatch(str))
                     {
+#if !bcad
                         aCmbPaperSize.Items.Add(pc.GetLocalMediaName(str));
-                        mCanonicalArray[i] = str;
-                        ++i;
+#else
+                        aCmbPaperSize.Items.Add(str);
+#endif
                     }
                 }
                 aCmbPaperSize.Text = aCmbPaperSize.Items[0].ToString();
@@ -620,8 +608,8 @@ namespace KojtoCAD.Plotter
                 if (!Directory.Exists(this.textBoxSavePath.Text))
                 {
                     // Show error message and return...
-                   Application.ShowAlertDialog(
-                        "Specified directory " + this.textBoxSavePath.Text + " not present.");
+                    Application.ShowAlertDialog(
+                         "Specified directory " + this.textBoxSavePath.Text + " not present.");
                     textBoxSavePath.Focus();
                     return;
                 }

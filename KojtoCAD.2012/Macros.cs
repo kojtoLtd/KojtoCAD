@@ -3,6 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+
 using Castle.Core.Logging;
 #if !bcad
 using Autodesk.AutoCAD.ApplicationServices;
@@ -12,10 +13,11 @@ using Autodesk.AutoCAD.Geometry;
 using Autodesk.AutoCAD.Runtime;
 #else
 using Bricscad.ApplicationServices;
+using Bricscad.EditorInput;
+using Bricscad.PlottingServices;
 using Teigha.DatabaseServices;
 using Teigha.Geometry;
 using Teigha.Runtime;
-using Bricscad.EditorInput;
 #endif
 using KojtoCAD.Properties;
 using KojtoCAD.Utilities;
@@ -556,89 +558,6 @@ namespace KojtoCAD
                     }
                     destBaseTr.Commit();
                 }
-            }
-        }
-
-
-        [CommandMethod("arcen")]
-        public void CreateArc()
-        {
-            var doc = Application.DocumentManager.MdiActiveDocument;
-            using (var tr = doc.TransactionManager.StartTransaction())
-            {
-                var bt = (BlockTable)doc.Database.BlockTableId.GetObject(OpenMode.ForWrite);
-                var modelSpace = (BlockTableRecord)bt["*Model_Space"].GetObject(OpenMode.ForWrite);
-                var arc = new Arc(new Point3d(4.5, 4.5, 0), 4, 0, Math.PI) {Center = new Point3d(4.5, 4.5, 0)};
-                modelSpace.AppendEntity(arc);
-                tr.AddNewlyCreatedDBObject(arc, true);
-                tr.Commit();
-            }
-        }
-
-        [CommandMethod("texten")]
-        public void Ttexten()
-        {
-            var doc = Application.DocumentManager.MdiActiveDocument;
-            using (var tr = doc.TransactionManager.StartTransaction())
-            {
-                var bt = (BlockTable)doc.Database.BlockTableId.GetObject(OpenMode.ForWrite);
-                var modelSpace = (BlockTableRecord)bt["*Model_Space"].GetObject(OpenMode.ForWrite);
-                
-                //var text = new DBText();
-                //text.Position = new Point3d(1,1,0);
-                //text.TextString = "asdasdadsdadadasd \n asdasdadasd";
-
-                var text = new MText
-                {
-                    Location = new Point3d(1, 1, 0),
-                    Contents = "{\\A0Area:\\~4294645.99864\\~mm\\S2; }\\P" + "\n" +
-                               "{\\A0Area:\\~4294645.99864\\~mm\\S2; }\\P" + "\n" +
-                               "{\\A0Iy:\\~1441453088113.21000\\~mm\\S4; }\\P" + "\n" +
-                               "{\\A0Wy_Upper:\\~1216547872.30720\\~mm\\S3; }\\P" + "\n" +
-                               " {\\A0Wy_Lower:\\~1191541292.55626\\~mm\\S3; }\\P" + "\n" +
-                               "{\\A0D_Upper:\\~1184.87165\\~mm\\S; }\\P" + "\n" +
-                               "{\\A0D_Lower:\\~1209.73826\\~mm\\S; }\\P" + "\n" +
-                               "{\\A0Iyy:\\~579.34408\\~mm\\S; }\\P" + "\n" +
-                               "{\\A0Iz:\\~1691571769220.42000\\~mm\\S4; }\\P" + "\n" +
-                               "{\\A0Wz_Right:\\~1401993702.92224\\~mm\\S3; }\\P" + "\n" +
-                               "{\\A0Wz_Left:\\~1412426375.38493\\~mm\\S3; }\\P" + "\n" +
-                               "{\\A0D_Right:\\~1206.54734\\~mm\\S; }\\P" + "\n" +
-                               "{\\A0D_Left:\\~1197.63536\\~mm\\S; }\\P" + "\n" +
-                               "{\\A0Izz:\\~627.59797\\~mm\\S; }\\P" + "\n" +
-                               "{\\A0Imin:\\~2027917918149.74000\\~mm\\S4; }\\P" + "\n" +
-                               "{\\A0Imax:\\~1105106939183.89000\\~mm\\S4; }\\P" + "\n" +
-                               "{\\A0Density:\\~1000.00000\\~Kg / m\\S3; }\\P" + "\n" +
-                               "{\\A0G:\\~4294.64600\\~Kgf / m}\\P"
-                };
-
-                modelSpace.AppendEntity(text);
-                tr.AddNewlyCreatedDBObject(text, true);
-                tr.Commit();
-            }
-        }
-
-        private ObjectId arcId;
-
-        [CommandMethod("referencen")]
-        public void referencen()
-        {
-            var doc = Application.DocumentManager.MdiActiveDocument;
-            using (var tr = doc.TransactionManager.StartTransaction())
-            {
-                if (arcId != ObjectId.Null)
-                {
-                    var arcen = (Arc)tr.GetObject(arcId, OpenMode.ForRead);
-                    _ed.WriteMessage(arcen.Radius.ToString());
-
-                    return;
-                }
-                var bt = (BlockTable)doc.Database.BlockTableId.GetObject(OpenMode.ForWrite);
-                var modelSpace = (BlockTableRecord)bt["*Model_Space"].GetObject(OpenMode.ForWrite);
-                var arc = new Arc(new Point3d(4.5, 4.5, 0), 4, 0, Math.PI) { Center = new Point3d(4.5, 4.5, 0) };
-                modelSpace.AppendEntity(arc);
-                arcId = arc.ObjectId;
-                tr.AddNewlyCreatedDBObject(arc, true);
-                tr.Commit();
             }
         }
     }
