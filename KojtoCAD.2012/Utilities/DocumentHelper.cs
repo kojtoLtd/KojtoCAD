@@ -227,7 +227,7 @@ namespace KojtoCAD.Utilities
                             return resultingObjectId;
                         }
                         // There is not such block definition, so we are inserting/creating new one
-                        var sourceBlockId = _db.Insert(dynamicBlockPath, inMemoryDb, false);
+                        var sourceBlockId = _db.Insert(blockname, inMemoryDb, false);
 
                         // We continue the creation of the new block definition of the sourceDWG
                         var btrec = (BlockTableRecord) sourceBlockId.GetObject(OpenMode.ForRead);
