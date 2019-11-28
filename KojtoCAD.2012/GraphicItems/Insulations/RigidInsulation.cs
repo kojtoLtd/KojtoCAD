@@ -73,7 +73,7 @@ namespace KojtoCAD.GraphicItems.Insulations
                 return;
             }
             _drawingHelper.ImportDynamicBlockAndFillItsProperties(
-               dynamicBlockPath, insertionPointResult.Value, new System.Collections.Hashtable { { "Distance", 10d } }, new System.Collections.Hashtable());
+               dynamicBlockPath, insertionPointResult.Value, new System.Collections.Hashtable { { "Distance", 100d } }, new System.Collections.Hashtable());
         }
 
         private void DrawByLineAndThickness(Point3d firstPoint)
