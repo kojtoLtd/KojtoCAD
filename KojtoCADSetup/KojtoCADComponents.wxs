@@ -102,6 +102,15 @@
           <Component Id="cmpA45D61D039E1DB2F3561895928B4504F" Guid="4AC0D83B-52BC-4CAF-BA39-0D6592C3C3B7">
             <File Id="filD3B81D73BC60350FE336ADC4DCFA3384" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\SiliconJointWithSilica.dwg" />
           </Component>
+          <Component Id="cmpFF9DEEA8F076409AAF47A93B69D0A81B" Guid="422A847B-1C31-4C13-B4B6-11DAC6A8457A">
+            <File Id="fil59093C8BB6A44585862DA0B72B7C8BB0" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\RigidInsulation.dwg" />
+          </Component>
+          <Component Id="cmp81297D91CBB04F089B0D587B048ADAA2" Guid="5D7816F6-B0C8-4E84-B18F-664DA5AA3955">
+            <File Id="filE5B54734665048A7BD4CA342CD9EB6C6" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\SoftInsulation.dwg" />
+          </Component>
+          <Component Id="cmpCBE2F2F23C5A46E6A277F3EC3DD35A26" Guid="ED7C6E27-4066-49D6-81EA-9ADB69C7B4F2">
+            <File Id="fil5D1D13B221EA47CCB772C80797A6BAE9" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\WeldingLine.dwg" />
+          </Component>
           <Directory Id="dir85DFCC1FE6934BBC9F434C5BD6EDE003" Name="DGU">
             <Component Id="cmp6C4E3CD38FE93E6C5E5B4611008982D2" Guid="E8EEC392-15E9-40E1-884F-B52E9BEDA104">
               <File Id="filAFEFA3563C9942DFDD2F5EDD9A2E0317" KeyPath="yes" Source="$(var.FilesPath)\Files\Dynamic_blocks\DGU\PSYMB_DGU_Inner_Laminated.dwg" />
@@ -823,6 +832,9 @@
       <ComponentRef Id="cmpD29BFE5A5ACB89375D57D96CDECAE9E3" />
       <ComponentRef Id="cmpEEC9B0100E4F04682E7EED90B9B0EEE1" />
       <ComponentRef Id="cmpA45D61D039E1DB2F3561895928B4504F" />
+      <ComponentRef Id="cmpFF9DEEA8F076409AAF47A93B69D0A81B" />
+      <ComponentRef Id="cmp81297D91CBB04F089B0D587B048ADAA2" />
+      <ComponentRef Id="cmpCBE2F2F23C5A46E6A277F3EC3DD35A26" />
       <ComponentRef Id="cmp7916CFECA87B4C87B2FDF5FC0AAF4470" />
       <ComponentRef Id="cmp6C4E3CD38FE93E6C5E5B4611008982D2" />
       <ComponentRef Id="cmp12EDCBB84BF5B8C02B77B16278CC7762" />
