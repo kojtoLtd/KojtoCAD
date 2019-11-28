@@ -578,7 +578,7 @@ namespace KojtoCAD.GraphicItems.Insulations
                 return;
             }
             _documentHelper.ImportDynamicBlockAndFillItsProperties(
-               dynamicBlockPath, insertionPointResult.Value, new System.Collections.Hashtable() { { "Distance1", 10d } }, new System.Collections.Hashtable());
+               dynamicBlockPath, insertionPointResult.Value, new System.Collections.Hashtable() { { "Distance1", 100d } }, new System.Collections.Hashtable());
         }
 
         private void CreateInsulationPolylineAndAppendToModelSpace(Point3d[] inputPoints, int rk,
