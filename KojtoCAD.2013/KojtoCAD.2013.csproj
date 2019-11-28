@@ -1683,6 +1683,18 @@
     <Content Include="..\KojtoCAD.2012\PackageContents.xml">
       <Link>PackageContents.xml</Link>
     </Content>
+    <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\RigidInsulation.dwg">
+      <Link>Files\Dynamic_blocks\RigidInsulation.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\SoftInsulation.dwg">
+      <Link>Files\Dynamic_blocks\SoftInsulation.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\WeldingLine.dwg">
+      <Link>Files\Dynamic_blocks\WeldingLine.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\KojtoCAD.2012\Files\Lisp\flat.lsp">
       <Link>Files\Lisp\flat.lsp</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

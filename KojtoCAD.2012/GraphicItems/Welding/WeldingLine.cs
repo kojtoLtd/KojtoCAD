@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using KojtoCAD.Mathematics.Geometry;
 using KojtoCAD.Properties;
 using KojtoCAD.Utilities;
+using KojtoCAD.BlockItems.Interfaces;
+using System.Reflection;
 #if !bcad
 using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.DatabaseServices;
@@ -28,14 +30,25 @@ namespace KojtoCAD.GraphicItems.Welding
 {
     public class WeldingLine : IDisposable
     {
-        private readonly Document _doc = Application.DocumentManager.MdiActiveDocument;
-        private readonly Editor _ed = Application.DocumentManager.MdiActiveDocument.Editor;
-        private readonly Database _db = Application.DocumentManager.MdiActiveDocument.Database;
-        private readonly DocumentHelper _drawingHelper = new DocumentHelper(Application.DocumentManager.MdiActiveDocument);
-        private readonly EditorHelper _editorHelper = new EditorHelper(Application.DocumentManager.MdiActiveDocument);
+        private readonly Document _doc;
+        private readonly Editor _ed;
+        private readonly Database _db;
+        private readonly DocumentHelper _drawingHelper;
+        private readonly EditorHelper _editorHelper;
+        private readonly IBlockDrawingProvider _blockDrawingProvider;
 
         private DBObjectCollection _weldingArcs = new DBObjectCollection();
         private Point3dCollection _weldingVertices = new Point3dCollection();
+
+        public WeldingLine()
+        {
+            _doc = Application.DocumentManager.MdiActiveDocument;
+            _ed = Application.DocumentManager.MdiActiveDocument.Editor;
+            _db = Application.DocumentManager.MdiActiveDocument.Database;
+            _drawingHelper = new DocumentHelper(Application.DocumentManager.MdiActiveDocument);
+            _editorHelper = new EditorHelper(Application.DocumentManager.MdiActiveDocument);
+            _blockDrawingProvider = IoC.ContainerRegistrar.Container.Resolve<IBlockDrawingProvider>();
+        }
 
         /// <summary>
         /// Welding Line
@@ -43,7 +56,7 @@ namespace KojtoCAD.GraphicItems.Welding
         [CommandMethod("wl")]
         public void WeldingLineStart()
         {
-            
+
             #region Select welding mode
             var weldingModeOpts = new PromptKeywordOptions("\nWeld over points or object? ");
             weldingModeOpts.Keywords.Add("Points");
@@ -51,12 +64,19 @@ namespace KojtoCAD.GraphicItems.Welding
             weldingModeOpts.Keywords.Add("Line");
             weldingModeOpts.Keywords.Add("Circle");
             weldingModeOpts.Keywords.Add("Arc");
+            weldingModeOpts.Keywords.Add("Block");
             weldingModeOpts.Keywords.Default = "Points";
 
             var weldingModeRslt = _ed.GetKeywords(weldingModeOpts);
             // If the user pressed cancel - return with no error
             if (weldingModeRslt.Status != PromptStatus.OK)
             {
+                return;
+            }
+
+            if (weldingModeRslt.StringResult == "Block")
+            {
+                ImportInsulationBlock();
                 return;
             }
 
@@ -190,30 +210,30 @@ namespace KojtoCAD.GraphicItems.Welding
                         // слага ги в глобалната
                         _weldingVertices[i] = _weldingVertices[i].TransformBy(GeometryUtility.GetTransforMatrixToWcs());
                     }
-                    using (var tr = _doc.Database.TransactionManager.StartTransaction())        
-                    { 
+                    using (var tr = _doc.Database.TransactionManager.StartTransaction())
+                    {
                         var sPt = new Point3d(sidePoint.X + 0.00001, sidePoint.Y + 0.00001, sidePoint.Z);
-                        sPt = sPt.TransformBy(GeometryUtility.GetTransforMatrixToWcs());                            
+                        sPt = sPt.TransformBy(GeometryUtility.GetTransforMatrixToWcs());
                         // реперната точка и тя в глобалната
 
                         var tP1 = new Point3d(0, 0, 0);
                         var tP2 = new Point3d(_weldingVertices[1].X - _weldingVertices[0].X, _weldingVertices[1].Y - _weldingVertices[0].Y, _weldingVertices[1].Z - _weldingVertices[0].Z);
                         var tP3 = new Point3d(sPt.X - _weldingVertices[0].X, sPt.Y - _weldingVertices[0].Y, sPt.Z - _weldingVertices[0].Z);
 
-                      
+
                         var ucs = GeometryUtility.GetUcs(tP1, tP2, tP3, false);
                         for (var i = 0; i < _weldingVertices.Count; i++)
                         {
-                            _weldingVertices[i] = _weldingVertices[i].TransformBy(ucs);                       
+                            _weldingVertices[i] = _weldingVertices[i].TransformBy(ucs);
                         }
-                        if (weldingSideRslt.StringResult == "Side")                                          
+                        if (weldingSideRslt.StringResult == "Side")
                         {
-                            sidePoint = sidePoint.TransformBy(_ed.CurrentUserCoordinateSystem);               
-                            sidePoint = sidePoint.TransformBy(ucs);                                          
+                            sidePoint = sidePoint.TransformBy(_ed.CurrentUserCoordinateSystem);
+                            sidePoint = sidePoint.TransformBy(ucs);
                         }
 
-                        var oldUcs = _ed.CurrentUserCoordinateSystem;  
-                        _ed.CurrentUserCoordinateSystem = Matrix3d.Identity; 
+                        var oldUcs = _ed.CurrentUserCoordinateSystem;
+                        _ed.CurrentUserCoordinateSystem = Matrix3d.Identity;
 
                         _weldingArcs = BuildWeldingArcsOverPts(_weldingVertices,
                                                               sidePoint,
@@ -222,11 +242,11 @@ namespace KojtoCAD.GraphicItems.Welding
                                                               weldingArcsOffsetRslt.Value / 2);
                         DrawWeldingLine(_weldingArcs, tr);
 
-                        _ed.CurrentUserCoordinateSystem = oldUcs;  
+                        _ed.CurrentUserCoordinateSystem = oldUcs;
 
-                        foreach (Arc a in _weldingArcs)            
+                        foreach (Arc a in _weldingArcs)
                         {
-                            a.TransformBy(ucs.Inverse());         
+                            a.TransformBy(ucs.Inverse());
                         }
 
 
@@ -245,24 +265,24 @@ namespace KojtoCAD.GraphicItems.Welding
                         var name = ent.GetType().ToString();                                                                                                   // Lishkov 07/07/2012 
                         if ((name.IndexOf("Line") < 0) || (name.IndexOf("Polyline") >= 0)) { MessageBox.Show("Selection is not  Line !", "E R R O R"); break; }   // Lishkov 07/07/2012 
 
-                        var weldingLine = (Line) tr.GetObject(selectedObjectId, OpenMode.ForWrite);
- 
+                        var weldingLine = (Line)tr.GetObject(selectedObjectId, OpenMode.ForWrite);
+
                         var sPt = new Point3d(sidePoint.X + 0.00001, sidePoint.Y + 0.00001, sidePoint.Z);
-                        sPt = sPt.TransformBy(GeometryUtility.GetTransforMatrixToWcs());                     
+                        sPt = sPt.TransformBy(GeometryUtility.GetTransforMatrixToWcs());
 
                         var tP1 = new Point3d(0, 0, 0);
                         var tP2 = new Point3d(weldingLine.EndPoint.X - weldingLine.StartPoint.X, weldingLine.EndPoint.Y - weldingLine.StartPoint.Y, weldingLine.EndPoint.Z - weldingLine.StartPoint.Z);
                         var tP3 = new Point3d(sPt.X - weldingLine.StartPoint.X, sPt.Y - weldingLine.StartPoint.Y, sPt.Z - weldingLine.StartPoint.Z);
-    
+
                         var ucs = GeometryUtility.GetUcs(tP1, tP2, tP3, false);
-                        weldingLine.TransformBy(ucs);                                                        
-                        if (weldingSideRslt.StringResult == "Side")                                          
+                        weldingLine.TransformBy(ucs);
+                        if (weldingSideRslt.StringResult == "Side")
                         {
-                            sidePoint = sidePoint.TransformBy(_ed.CurrentUserCoordinateSystem);               
-                            sidePoint = sidePoint.TransformBy(ucs);                                          
+                            sidePoint = sidePoint.TransformBy(_ed.CurrentUserCoordinateSystem);
+                            sidePoint = sidePoint.TransformBy(ucs);
                         }
 
-                        var oldUcs = _ed.CurrentUserCoordinateSystem;  
+                        var oldUcs = _ed.CurrentUserCoordinateSystem;
                         _ed.CurrentUserCoordinateSystem = Matrix3d.Identity;
 
                         _weldingVertices.Add(weldingLine.StartPoint);
@@ -275,14 +295,14 @@ namespace KojtoCAD.GraphicItems.Welding
                                                               weldingArcsOffsetRslt.Value / 2);
                         DrawWeldingLine(_weldingArcs, tr);
 
-                        _ed.CurrentUserCoordinateSystem = oldUcs;  
+                        _ed.CurrentUserCoordinateSystem = oldUcs;
 
-                        foreach (Arc a in _weldingArcs)            
+                        foreach (Arc a in _weldingArcs)
                         {
-                            a.TransformBy(ucs.Inverse());         
+                            a.TransformBy(ucs.Inverse());
                         }
 
-                        weldingLine.TransformBy(ucs.Inverse());   
+                        weldingLine.TransformBy(ucs.Inverse());
 
 
                         tr.Commit();
@@ -301,16 +321,16 @@ namespace KojtoCAD.GraphicItems.Welding
                         var weldingPoly = tr.GetObject(selectedObjectId, OpenMode.ForWrite) as Polyline;
                         if (weldingPoly == null)
                         {
-                            MessageBox.Show("Selection is not  PolyLine !", "E R R O R"); 
+                            MessageBox.Show("Selection is not  PolyLine !", "E R R O R");
                             break;
-                        }  
+                        }
 
                         var temp = new Point3dCollection();
                         var temp1 = new Point3dCollection();
                         DBObjectCollection acDbObjColl = null; //acPoly.GetOffsetCurves(0.25);
 
                         var acBlkTbl = tr.GetObject(_db.BlockTableId, OpenMode.ForRead) as BlockTable;
-                        var acBlkTblRec = (BlockTableRecord) tr.GetObject(acBlkTbl[BlockTableRecord.ModelSpace], OpenMode.ForWrite);
+                        var acBlkTblRec = (BlockTableRecord)tr.GetObject(acBlkTbl[BlockTableRecord.ModelSpace], OpenMode.ForWrite);
 
                         //офсетирано копие
                         acDbObjColl = weldingPoly.GetOffsetCurves(0.001);//тестова на много малко разстояние от оригинала // Lishkov 07/07/2012 
@@ -330,7 +350,7 @@ namespace KojtoCAD.GraphicItems.Welding
                         {
                             //точките деления по двете полилинии             
                             temp = GeometryUtility.DividePoly(ref weldingPoly, weldingArcsOffsetRslt.Value);
-                            temp1 = GeometryUtility.DividePoly(ref  weldingPolyOffset, weldingArcsOffsetRslt.Value);
+                            temp1 = GeometryUtility.DividePoly(ref weldingPolyOffset, weldingArcsOffsetRslt.Value);
 
                             //проверка вярна ли е посоката на офсетиране
                             var tP = sidePoint.TransformBy(GeometryUtility.GetTransforMatrixToWcs());
@@ -367,7 +387,7 @@ namespace KojtoCAD.GraphicItems.Welding
                                     MessageBox.Show("Offset error", "E R R O R");
                                     return;
                                 }
-                                temp1 = GeometryUtility.DividePoly(ref  weldingPolyOffset, weldingArcsOffsetRslt.Value);
+                                temp1 = GeometryUtility.DividePoly(ref weldingPolyOffset, weldingArcsOffsetRslt.Value);
                             }
                             else //ако посоката е вярна изтриваме тестовата и правим в същата поскока на зададеното разстояние // Lishkov 07/07/2012 
                             {
@@ -388,7 +408,7 @@ namespace KojtoCAD.GraphicItems.Welding
                                     MessageBox.Show("Offset error", "E R R O R");
                                     return;
                                 }
-                                temp1 = GeometryUtility.DividePoly(ref  weldingPolyOffset, weldingArcsOffsetRslt.Value);
+                                temp1 = GeometryUtility.DividePoly(ref weldingPolyOffset, weldingArcsOffsetRslt.Value);
                             }
                             #endregion
 
@@ -415,10 +435,10 @@ namespace KojtoCAD.GraphicItems.Welding
                                 if (weldingSideRslt.StringResult != "Side")
                                 {
                                     acArc = new Arc(
-                                        new Point3d(0, 0, 0), 
-                                        weldingArcsChordRslt.Value/2,
-                                        Math.PI/2.0 + Math.PI, 
-                                        Math.PI/2.0 + Math.PI + Math.PI
+                                        new Point3d(0, 0, 0),
+                                        weldingArcsChordRslt.Value / 2,
+                                        Math.PI / 2.0 + Math.PI,
+                                        Math.PI / 2.0 + Math.PI + Math.PI
                                         );
                                 }
                                 else
@@ -426,10 +446,11 @@ namespace KojtoCAD.GraphicItems.Welding
                                     // BricsCAD hack
                                     acArc = new Arc(
                                         new Point3d(),
-                                        weldingArcsChordRslt.Value/2,
-                                        Math.PI/2.0 + Math.PI,
-                                        Math.PI/2.0 + Math.PI + Math.PI
-                                        ) {Center = new Point3d(0, weldingArcsChordRslt.Value/2, 0)};
+                                        weldingArcsChordRslt.Value / 2,
+                                        Math.PI / 2.0 + Math.PI,
+                                        Math.PI / 2.0 + Math.PI + Math.PI
+                                        )
+                                    { Center = new Point3d(0, weldingArcsChordRslt.Value / 2, 0) };
                                 }
 
                                 _weldingArcs.Add(acArc);
@@ -468,7 +489,7 @@ namespace KojtoCAD.GraphicItems.Welding
                             if (!weldingPoly.Closed)
                             {
                                 var acA = (Arc)_weldingArcs[_weldingArcs.Count - 1];
-                                var acArc = (Entity) acA.Clone();
+                                var acArc = (Entity)acA.Clone();
                                 acArc.TransformBy(Matrix3d.Displacement(temp[temp.Count - 2].GetVectorTo(temp[temp.Count - 1])));
                                 _weldingArcs.Add(acArc);
                             }
@@ -525,7 +546,7 @@ namespace KojtoCAD.GraphicItems.Welding
                                                                       weldingCircle.Radius,
                                                                       0.0,
                                                                       2 * Math.PI,
-                                    /* sAng ,  */
+                                                                      /* sAng ,  */
                                                                       weldingArcsChordRslt.Value,
                                                                       weldingArcsOffsetRslt.Value,
                                                                       0,
@@ -616,7 +637,7 @@ namespace KojtoCAD.GraphicItems.Welding
                         tr.Commit();
                     }
                     break;
-                #endregion
+                    #endregion
             }
             #endregion
 
@@ -682,10 +703,11 @@ namespace KojtoCAD.GraphicItems.Welding
                     p3 = GeometryUtility.GetPlanePolarPoint(p1, ang1 + ang3, size);
                     p2 = GeometryUtility.GetPlanePolarPoint(p1, ang1 + ang3, size / 2);
                     pCarc = GeometryUtility.GetPlanePolarPoint(p2, ang1 + ang3 + GeometryUtility.DoubleToRadians(90), c);
-                    localWeldingArcs.Add(new Arc(new Point3d(), 
+                    localWeldingArcs.Add(new Arc(new Point3d(),
                         radius,
                         GeometryUtility.GetAngleFromXAxis(pCarc, p1),
-                        GeometryUtility.GetAngleFromXAxis(pCarc, p3)) {Center = pCarc}/*BricsCAD hack*/);
+                        GeometryUtility.GetAngleFromXAxis(pCarc, p3))
+                    { Center = pCarc }/*BricsCAD hack*/);
                     ang1 = ang1 + da;
                 }
             }
@@ -698,10 +720,11 @@ namespace KojtoCAD.GraphicItems.Welding
                     p3 = GeometryUtility.GetPlanePolarPoint(p1, ang2 + ang3, size);
                     p2 = GeometryUtility.GetPlanePolarPoint(p1, ang2 + ang3, size / 2);
                     pCarc = GeometryUtility.GetPlanePolarPoint(p2, ang2 + ang3 + GeometryUtility.DoubleToRadians(90), c);
-                    localWeldingArcs.Add(new Arc(new Point3d(), 
+                    localWeldingArcs.Add(new Arc(new Point3d(),
                                                    radius,
                                                    GeometryUtility.GetAngleFromXAxis(pCarc, p1),
-                                                   GeometryUtility.GetAngleFromXAxis(pCarc, p3)) {Center = pCarc}/*BricsCAD hack*/);
+                                                   GeometryUtility.GetAngleFromXAxis(pCarc, p3))
+                    { Center = pCarc }/*BricsCAD hack*/);
                     ang2 = ang2 - da;
                 }
             }
@@ -717,7 +740,8 @@ namespace KojtoCAD.GraphicItems.Welding
                     localWeldingArcs.Add(new Arc(pCarc,
                                                  radius,
                                                  GeometryUtility.GetAngleFromXAxis(pCarc, p1),
-                                                 GeometryUtility.GetAngleFromXAxis(pCarc, p3)) {Center = pCarc}/*BricsCAD hack*/);
+                                                 GeometryUtility.GetAngleFromXAxis(pCarc, p3))
+                    { Center = pCarc }/*BricsCAD hack*/);
                     ang2 = ang2 - da;
                 }
             }
@@ -862,9 +886,9 @@ namespace KojtoCAD.GraphicItems.Welding
         /// <param name="tr"></param>
         private void DrawWeldingLine(DBObjectCollection weldingArcs, Transaction tr)
         {
-            var previousLayer = (LayerTableRecord) tr.GetObject(_db.Clayer, OpenMode.ForRead);
-            var bt = (BlockTable) tr.GetObject(_db.BlockTableId, OpenMode.ForWrite);
-            using (var currentSpace = (BlockTableRecord) tr.GetObject(_db.CurrentSpaceId, OpenMode.ForWrite))
+            var previousLayer = (LayerTableRecord)tr.GetObject(_db.Clayer, OpenMode.ForRead);
+            var bt = (BlockTable)tr.GetObject(_db.BlockTableId, OpenMode.ForWrite);
+            using (var currentSpace = (BlockTableRecord)tr.GetObject(_db.CurrentSpaceId, OpenMode.ForWrite))
             {
                 if (!_drawingHelper.LayerManipulator.LayerExists(Settings.Default.weldingLineLayer))
                 {
@@ -882,7 +906,7 @@ namespace KojtoCAD.GraphicItems.Welding
 
                 foreach (DBObject arcObject in weldingArcs)
                 {
-                    var mArc = (Arc) arcObject;
+                    var mArc = (Arc)arcObject;
                     mArc.Layer = "0";
                     weldingLineDefinition.AppendEntity(mArc);
                     tr.AddNewlyCreatedDBObject(arcObject, true);
@@ -895,6 +919,23 @@ namespace KojtoCAD.GraphicItems.Welding
 
                 _drawingHelper.LayerManipulator.ChangeLayer(previousLayer.Name);
             }
+        }
+
+        private void ImportInsulationBlock()
+        {
+            var insertionPointResult = _editorHelper.PromptForPoint("Pick insertion point : ");
+            if (insertionPointResult.Status != PromptStatus.OK)
+            {
+                return;
+            }
+            var dynamicBlockPath = _blockDrawingProvider.GetBlockFile(MethodBase.GetCurrentMethod().DeclaringType.Name);
+            if (dynamicBlockPath == null)
+            {
+                _editorHelper.WriteMessage("Dynamic block WeldingLine.dwg does not exist.");
+                return;
+            }
+            _drawingHelper.ImportDynamicBlockAndFillItsProperties(
+               dynamicBlockPath, insertionPointResult.Value, new System.Collections.Hashtable() { { "Abstand", 10d } }, new System.Collections.Hashtable());
         }
 
         public void Dispose()

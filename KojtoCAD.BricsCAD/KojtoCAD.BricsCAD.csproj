@@ -805,6 +805,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\RigidInsulation.dwg">
+      <Link>Files\Dynamic_blocks\RigidInsulation.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\SoftInsulation.dwg">
+      <Link>Files\Dynamic_blocks\SoftInsulation.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\KojtoCAD.2012\Files\Dynamic_blocks\WeldingLine.dwg">
+      <Link>Files\Dynamic_blocks\WeldingLine.dwg</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\KojtoCAD.2012\Files\Templates\kojto_2D.cui">
       <Link>Files\Templates\kojto_2D.cui</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

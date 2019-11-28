@@ -5,6 +5,8 @@ using KojtoCAD.Utilities;
 using System;
 using KojtoCAD.Mathematics.Geometry;
 using Line2d = KojtoCAD.Mathematics.Geometry.KLine2D;
+using KojtoCAD.BlockItems.Interfaces;
+using System.Reflection;
 #if !bcad
 using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.EditorInput;
@@ -29,6 +31,7 @@ namespace KojtoCAD.GraphicItems.Insulations
         private static ILogger _logger = NullLogger.Instance;
         private readonly EditorHelper _editorHelper;
         private readonly DocumentHelper _documentHelper;
+        private readonly IBlockDrawingProvider _blockDrawingProvider;
 
         public static ILogger Logger
         {
@@ -41,14 +44,15 @@ namespace KojtoCAD.GraphicItems.Insulations
             _editorHelper = new EditorHelper(Application.DocumentManager.MdiActiveDocument);
             _documentHelper = new DocumentHelper(Application.DocumentManager.MdiActiveDocument);
             _logger = IoC.ContainerRegistrar.Container.Resolve<ILogger>();
+            _blockDrawingProvider = IoC.ContainerRegistrar.Container.Resolve<IBlockDrawingProvider>();
         }
 
         [CommandMethod("si")]
         public void SoftInsulationStart()
         {
-            
-            var promptPointOptions = new PromptPointOptions("\nSelect First Point or [3points/4points/Polyline]",
-                                                            "3points 4points Polyline");
+
+            var promptPointOptions = new PromptPointOptions("\nSelect First Point or [3points/4points/Polyline/Block]",
+                                                            "3points 4points Polyline Block");
             var ppr = _editorHelper.PromptForPoint(promptPointOptions);
             if (ppr.Status == PromptStatus.Keyword || ppr.Status == PromptStatus.OK)
             {
@@ -62,6 +66,9 @@ namespace KojtoCAD.GraphicItems.Insulations
                         break;
                     case "Polyline":
                         DrawInsulationOnPolyline();
+                        break;
+                    case "Block":
+                        ImportInsulationBlock();
                         break;
                     default:
                         DrawInsulationOnTwoPointsTwoHeights(ppr);
@@ -117,7 +124,7 @@ namespace KojtoCAD.GraphicItems.Insulations
                                    ? thicknessAtFirstPointResult.Value
                                    : thicknessAtSecondPointResult.Value;
             var segmentsCount =
-                (int) Math.Ceiling((firstPointResult.Value.DistanceTo(secondPointResult.Value)/minThickness)/0.35);
+                (int)Math.Ceiling((firstPointResult.Value.DistanceTo(secondPointResult.Value) / minThickness) / 0.35);
 
             var botLeftPoint = new Complex(0, 0);
             var botRightPoint = new Complex(firstPointResult.Value.DistanceTo(secondPointResult.Value), 0);
@@ -138,12 +145,12 @@ namespace KojtoCAD.GraphicItems.Insulations
             var vectorOfBaseLine = new Complex(secondPointResult.Value.X, secondPointResult.Value.Y) -
                                    new Complex(firstPointResult.Value.X, firstPointResult.Value.Y);
 
-            var radiusBotCircle = firstPointResult.Value.DistanceTo(secondPointResult.Value)/(segmentsCount + 0.5);
+            var radiusBotCircle = firstPointResult.Value.DistanceTo(secondPointResult.Value) / (segmentsCount + 0.5);
             radiusBotCircle /= 2.0;
 
             var vectorTopEdge = topRightPoint - topLeftPoint;
-            var vectorTopEdgeOrt = vectorTopEdge/vectorTopEdge.abs();
-            var vectorNormalOfTopEdge = vectorTopEdgeOrt*(new Complex(0, 1.0));
+            var vectorTopEdgeOrt = vectorTopEdge / vectorTopEdge.abs();
+            var vectorNormalOfTopEdge = vectorTopEdgeOrt * (new Complex(0, 1.0));
 
             #endregion
 
@@ -152,17 +159,17 @@ namespace KojtoCAD.GraphicItems.Insulations
             var centersBotCircles = new List<Complex>();
             for (var i = 0; i < segmentsCount + 1; i++)
             {
-                centersBotCircles.Add(new Complex(i*2*radiusBotCircle, radiusBotCircle));
+                centersBotCircles.Add(new Complex(i * 2 * radiusBotCircle, radiusBotCircle));
             }
 
             var centersTopCircles = new List<KeyValuePair<double, Complex>>();
             var ordinate = new Line2d(new Complex(radiusBotCircle, 0), new Complex(radiusBotCircle, 100));
-            var offsetTopEdge = new Line2d(topLeftPoint - vectorNormalOfTopEdge*radiusBotCircle,
-                                           topRightPoint - vectorNormalOfTopEdge*radiusBotCircle);
+            var offsetTopEdge = new Line2d(topLeftPoint - vectorNormalOfTopEdge * radiusBotCircle,
+                                           topRightPoint - vectorNormalOfTopEdge * radiusBotCircle);
             var centerFirstUpperCircle = offsetTopEdge.IntersectWitch(ordinate);
             centersTopCircles.Add(new KeyValuePair<double, Complex>(radiusBotCircle, centerFirstUpperCircle));
 
-            if (((topRightPoint - topLeftPoint).arg())*180.0/Math.PI <= 5)
+            if (((topRightPoint - topLeftPoint).arg()) * 180.0 / Math.PI <= 5)
             {
                 for (var i = 1; i < segmentsCount + 1; i++)
                 {
@@ -174,13 +181,13 @@ namespace KojtoCAD.GraphicItems.Insulations
                         Math.Abs(
                             (centersTopCircles[i - 1].Value - lineParallelToX.IntersectWitch(rightVerticalEdge)).abs() -
                             centersTopCircles[i - 1].Key);
-                    var radiusTopCircle = (distFromCurrentCircleToRightVertEdge/(segmentsCount - i + 0.5))/2.0;
+                    var radiusTopCircle = (distFromCurrentCircleToRightVertEdge / (segmentsCount - i + 0.5)) / 2.0;
 
                     var rR = centersTopCircles[i - 1].Key + radiusTopCircle;
                     var dR = Math.Abs(radiusTopCircle - centersTopCircles[i - 1].Key);
-                    var distBetweenCenters = Math.Sqrt(rR*rR - dR*dR);
-                    var centerNextTopCircle = centersTopCircles[i - 1].Value - vectorNormalOfTopEdge*dR +
-                                              vectorTopEdgeOrt*distBetweenCenters;
+                    var distBetweenCenters = Math.Sqrt(rR * rR - dR * dR);
+                    var centerNextTopCircle = centersTopCircles[i - 1].Value - vectorNormalOfTopEdge * dR +
+                                              vectorTopEdgeOrt * distBetweenCenters;
                     centersTopCircles.Add(new KeyValuePair<double, Complex>(radiusTopCircle, centerNextTopCircle));
                 }
             }
@@ -193,19 +200,19 @@ namespace KojtoCAD.GraphicItems.Insulations
                                                                                centersTopCircles[i - 1].Value,
                                                                                centersTopCircles[i - 1].Key, true);
                     var vectorCommonTangent = tangentPoints.Value - tangentPoints.Key;
-                    var vectorCommonTangentOrt = vectorCommonTangent/vectorCommonTangent.abs();
-                    var vectorTranslationTopCircle = vectorCommonTangentOrt*(new Complex(0, 1.0));
+                    var vectorCommonTangentOrt = vectorCommonTangent / vectorCommonTangent.abs();
+                    var vectorTranslationTopCircle = vectorCommonTangentOrt * (new Complex(0, 1.0));
 
-                    var dL = new Line2d(tangentPoints.Value, tangentPoints.Value + vectorTranslationTopCircle*100);
+                    var dL = new Line2d(tangentPoints.Value, tangentPoints.Value + vectorTranslationTopCircle * 100);
                     var rightVerticalEdge = new Line2d(botRightPoint, topRightPoint);
                     var dist = (tangentPoints.Value - dL.IntersectWitch(rightVerticalEdge)).abs();
-                    var radiusTopCircle = (dist/(segmentsCount - i + 0.5))/2.0;
+                    var radiusTopCircle = (dist / (segmentsCount - i + 0.5)) / 2.0;
 
-                    var hlpLine = new Line2d(tangentPoints.Key - vectorTranslationTopCircle*radiusTopCircle,
-                                             tangentPoints.Value - vectorTranslationTopCircle*radiusTopCircle);
+                    var hlpLine = new Line2d(tangentPoints.Key - vectorTranslationTopCircle * radiusTopCircle,
+                                             tangentPoints.Value - vectorTranslationTopCircle * radiusTopCircle);
                     var offsetTopEdgeOnRadiusTopCircle = new Line2d(
-                        topLeftPoint - vectorNormalOfTopEdge*radiusTopCircle,
-                        topRightPoint - vectorNormalOfTopEdge*radiusTopCircle);
+                        topLeftPoint - vectorNormalOfTopEdge * radiusTopCircle,
+                        topRightPoint - vectorNormalOfTopEdge * radiusTopCircle);
                     centersTopCircles.Add(new KeyValuePair<double, Complex>(radiusTopCircle,
                                                                             offsetTopEdgeOnRadiusTopCircle
                                                                                 .IntersectWitch(hlpLine)));
@@ -222,10 +229,10 @@ namespace KojtoCAD.GraphicItems.Insulations
                                                                                 radiusBotCircle,
                                                                                 centersTopCircles[0].Value,
                                                                                 centersTopCircles[0].Key, false);
-            var ang = ((firstPairTangentPoints.Key - centersBotCircles[0])/-centersBotCircles[0]).arg();
+            var ang = ((firstPairTangentPoints.Key - centersBotCircles[0]) / -centersBotCircles[0]).arg();
             insulationPolyline.AddVertexAt(0,
                                            new Point2d(firstPairTangentPoints.Key.real(),
-                                                       firstPairTangentPoints.Key.imag()), -Math.Tan(ang/4), 0, 0);
+                                                       firstPairTangentPoints.Key.imag()), -Math.Tan(ang / 4), 0, 0);
             insulationPolyline.AddVertexAt(0,
                                            new Point2d(firstPairTangentPoints.Value.real(),
                                                        firstPairTangentPoints.Value.imag()), 0, 0, 0);
@@ -234,11 +241,11 @@ namespace KojtoCAD.GraphicItems.Insulations
                                                                                  centersTopCircles[0].Value,
                                                                                  centersTopCircles[0].Key, true);
             ang =
-                ((centersTopCircles[0].Value - firstPairTangentPoints.Value)/
+                ((centersTopCircles[0].Value - firstPairTangentPoints.Value) /
                  (centersTopCircles[0].Value - secondPairTangentPoints.Value)).arg();
             insulationPolyline.AddVertexAt(0,
                                            new Point2d(secondPairTangentPoints.Value.real(),
-                                                       secondPairTangentPoints.Value.imag()), Math.Tan(ang/4), 0,
+                                                       secondPairTangentPoints.Value.imag()), Math.Tan(ang / 4), 0,
                                            0);
             insulationPolyline.AddVertexAt(0,
                                            new Point2d(secondPairTangentPoints.Key.real(),
@@ -256,22 +263,22 @@ namespace KojtoCAD.GraphicItems.Insulations
                                                                                  centersTopCircles[i].Value,
                                                                                  centersTopCircles[i].Key,
                                                                                  true);
-                ang = ((pairBotRightTopLeft.Key - centersBotCircles[i])/(oldPair.Key - centersBotCircles[i])).arg();
+                ang = ((pairBotRightTopLeft.Key - centersBotCircles[i]) / (oldPair.Key - centersBotCircles[i])).arg();
                 insulationPolyline.AddVertexAt(0,
                                                new Point2d(pairBotRightTopLeft.Key.real(),
                                                            pairBotRightTopLeft.Key.imag()),
-                                               -Math.Tan(ang/4), 0, 0);
+                                               -Math.Tan(ang / 4), 0, 0);
                 insulationPolyline.AddVertexAt(0,
                                                new Point2d(pairBotRightTopLeft.Value.real(),
                                                            pairBotRightTopLeft.Value.imag()), 0, 0, 0);
 
                 ang =
-                    ((centersTopCircles[i].Value - pairBotRightTopLeft.Value)/
+                    ((centersTopCircles[i].Value - pairBotRightTopLeft.Value) /
                      (centersTopCircles[i].Value - pairTopRightBotLeft.Value)).arg();
                 insulationPolyline.AddVertexAt(0,
                                                new Point2d(pairTopRightBotLeft.Value.real(),
                                                            pairTopRightBotLeft.Value.imag()),
-                                               Math.Tan(ang/4), 0, 0);
+                                               Math.Tan(ang / 4), 0, 0);
                 insulationPolyline.AddVertexAt(0,
                                                new Point2d(pairTopRightBotLeft.Key.real(),
                                                            pairTopRightBotLeft.Key.imag()), 0, 0, 0);
@@ -284,11 +291,11 @@ namespace KojtoCAD.GraphicItems.Insulations
                                                                                centersTopCircles[segmentsCount].Key,
                                                                                false);
             ang =
-                ((lastPairTangentPoints.Key - centersBotCircles[segmentsCount])/
+                ((lastPairTangentPoints.Key - centersBotCircles[segmentsCount]) /
                  (oldPair.Key - centersBotCircles[segmentsCount])).arg();
             insulationPolyline.AddVertexAt(0,
                                            new Point2d(lastPairTangentPoints.Key.real(),
-                                                       lastPairTangentPoints.Key.imag()), -Math.Tan(ang/4), 0, 0);
+                                                       lastPairTangentPoints.Key.imag()), -Math.Tan(ang / 4), 0, 0);
             insulationPolyline.AddVertexAt(0,
                                            new Point2d(lastPairTangentPoints.Value.real(),
                                                        lastPairTangentPoints.Value.imag()), 0, 0, 0);
@@ -297,10 +304,10 @@ namespace KojtoCAD.GraphicItems.Insulations
                                                    centersTopCircles[segmentsCount].Value.imag() +
                                                    centersTopCircles[segmentsCount].Key);
             ang =
-                ((centersTopCircles[segmentsCount].Value - lastPairTangentPoints.Value)/
+                ((centersTopCircles[segmentsCount].Value - lastPairTangentPoints.Value) /
                  (centersTopCircles[segmentsCount].Value - hlpPointForLastBulge)).arg();
             insulationPolyline.AddVertexAt(0, new Point2d(hlpPointForLastBulge.real(), hlpPointForLastBulge.imag()),
-                                           Math.Tan(ang/4), 0, 0);
+                                           Math.Tan(ang / 4), 0, 0);
 
             #endregion
 
@@ -321,8 +328,8 @@ namespace KojtoCAD.GraphicItems.Insulations
 
             if (thicknessAtFirstPointResult.Value > thicknessAtSecondPointResult.Value)
             {
-                var acPtFrom = new Point3d(botRightPoint.x/2, botRightPoint.y/2, 0);
-                var acPtTo = new Point3d(botRightPoint.x/2, 100, 0);
+                var acPtFrom = new Point3d(botRightPoint.x / 2, botRightPoint.y / 2, 0);
+                var acPtTo = new Point3d(botRightPoint.x / 2, 100, 0);
                 var acLine3d = new Line3d(acPtFrom, acPtTo);
                 insulationPolyline.TransformBy(Matrix3d.Mirroring(acLine3d));
             }
@@ -360,7 +367,8 @@ namespace KojtoCAD.GraphicItems.Insulations
                 acTrans.AddNewlyCreatedDBObject(insulationPolyline, true);
 
                 var rigidInsulationRef = new BlockReference(firstPointResult.Value,
-                                                            softInsulationBlock.ObjectId) { Layer = "3-0" };
+                                                            softInsulationBlock.ObjectId)
+                { Layer = "3-0" };
                 var currentSpace =
                     (BlockTableRecord)
                     acTrans.GetObject(
@@ -440,9 +448,9 @@ namespace KojtoCAD.GraphicItems.Insulations
                 return;
             }
             inputPoints[3] = thirdPointResult.Value;
-            inputPoints[2] = new Point3d((inputPoints[3].X + inputPoints[1].X)/2.0,
-                                         (inputPoints[3].Y + inputPoints[1].Y)/2.0,
-                                         (inputPoints[3].Z + inputPoints[1].Z)/2.0);
+            inputPoints[2] = new Point3d((inputPoints[3].X + inputPoints[1].X) / 2.0,
+                                         (inputPoints[3].Y + inputPoints[1].Y) / 2.0,
+                                         (inputPoints[3].Z + inputPoints[1].Z) / 2.0);
 
             CreateInsulationPolylineAndAppendToModelSpace(inputPoints, 3, true);
         }
@@ -451,18 +459,18 @@ namespace KojtoCAD.GraphicItems.Insulations
         private void DrawInsulationOnPolyline()
         {
             var typedValues = new TypedValue[4];
-            typedValues.SetValue(new TypedValue((int) DxfCode.Operator, "<or"), 0);
-            typedValues.SetValue(new TypedValue((int) DxfCode.Start, "POLYLINE"), 1);
-            typedValues.SetValue(new TypedValue((int) DxfCode.Start, "LWPOLYLINE"), 2);
-            typedValues.SetValue(new TypedValue((int) DxfCode.Operator, "or>"), 3);
+            typedValues.SetValue(new TypedValue((int)DxfCode.Operator, "<or"), 0);
+            typedValues.SetValue(new TypedValue((int)DxfCode.Start, "POLYLINE"), 1);
+            typedValues.SetValue(new TypedValue((int)DxfCode.Start, "LWPOLYLINE"), 2);
+            typedValues.SetValue(new TypedValue((int)DxfCode.Operator, "or>"), 3);
 
             var selectionFilter = new SelectionFilter(typedValues);
             var sOptions = new PromptSelectionOptions
-                {
-                    MessageForAdding = "\r\nSelect polyline ",
-                    AllowDuplicates = true,
-                    SingleOnly = true
-                };
+            {
+                MessageForAdding = "\r\nSelect polyline ",
+                AllowDuplicates = true,
+                SingleOnly = true
+            };
             var selectionPromptResult = _editorHelper.PromptForSelection(sOptions, selectionFilter);
             if (selectionPromptResult.Status != PromptStatus.OK)
             {
@@ -538,9 +546,9 @@ namespace KojtoCAD.GraphicItems.Insulations
                     inputPointsTriangle[0] = inputPointsFromPolyline[0];
                     inputPointsTriangle[1] = inputPointsFromPolyline[1];
                     inputPointsTriangle[3] = inputPointsFromPolyline[2];
-                    inputPointsTriangle[2] = new Point3d((inputPointsTriangle[3].X + inputPointsTriangle[1].X)/2.0,
-                                                         (inputPointsTriangle[3].Y + inputPointsTriangle[1].Y)/2.0,
-                                                         (inputPointsTriangle[3].Z + inputPointsTriangle[1].Z)/2.0);
+                    inputPointsTriangle[2] = new Point3d((inputPointsTriangle[3].X + inputPointsTriangle[1].X) / 2.0,
+                                                         (inputPointsTriangle[3].Y + inputPointsTriangle[1].Y) / 2.0,
+                                                         (inputPointsTriangle[3].Z + inputPointsTriangle[1].Z) / 2.0);
                     CreateInsulationPolylineAndAppendToModelSpace(inputPointsTriangle, 3, false);
                     break;
                 case 4:
@@ -553,6 +561,24 @@ namespace KojtoCAD.GraphicItems.Insulations
                     break;
             }
 
+        }
+
+        //Dynamic block
+        private void ImportInsulationBlock()
+        {
+            var insertionPointResult = _editorHelper.PromptForPoint("Pick insertion point : ");
+            if (insertionPointResult.Status != PromptStatus.OK)
+            {
+                return;
+            }
+            var dynamicBlockPath = _blockDrawingProvider.GetBlockFile(MethodBase.GetCurrentMethod().DeclaringType.Name);
+            if (dynamicBlockPath == null)
+            {
+                _editorHelper.WriteMessage("Dynamic block SoftInsulation.dwg does not exist.");
+                return;
+            }
+            _documentHelper.ImportDynamicBlockAndFillItsProperties(
+               dynamicBlockPath, insertionPointResult.Value, new System.Collections.Hashtable() { { "Distance1", 10d } }, new System.Collections.Hashtable());
         }
 
         private void CreateInsulationPolylineAndAppendToModelSpace(Point3d[] inputPoints, int rk,
@@ -678,9 +704,9 @@ namespace KojtoCAD.GraphicItems.Insulations
             var minThickness = (complexPoints[2].imag() < complexPoints[3].imag())
                                    ? complexPoints[2].imag()
                                    : complexPoints[3].imag();
-            var segmentsCount = (int) Math.Ceiling((sidesOffPolygon[0].abs()/minThickness)/0.35);
+            var segmentsCount = (int)Math.Ceiling((sidesOffPolygon[0].abs() / minThickness) / 0.35);
 
-            var radius = sidesOffPolygon[0].abs()*2/(segmentsCount*2);
+            var radius = sidesOffPolygon[0].abs() * 2 / (segmentsCount * 2);
             radius /= rk;
 
             var lowerLine = new List<Complex>();
@@ -712,67 +738,67 @@ namespace KojtoCAD.GraphicItems.Insulations
 
             var variant = 0;
             if (pointsFromOffset[3].real() < pointsFromOffset[0].real() &&
-                (pointsFromOffset[3] - pointsFromOffset[0]).abs()/(radius*2) > 1 &&
-                Math.Abs(pointsFromOffset[2].real() - pointsFromOffset[1].real()) > radius*2)
+                (pointsFromOffset[3] - pointsFromOffset[0]).abs() / (radius * 2) > 1 &&
+                Math.Abs(pointsFromOffset[2].real() - pointsFromOffset[1].real()) > radius * 2)
             {
                 variant = 1;
                 lowerLine.Add(pointsFromOffset[0]);
                 var xPos = pointsFromOffset[0].real();
                 do
                 {
-                    xPos += radius*2.0;
-                    if (xPos <= pointsFromOffset[1].real() + radius*2/3)
+                    xPos += radius * 2.0;
+                    if (xPos <= pointsFromOffset[1].real() + radius * 2 / 3)
                     {
                         lowerLine.Add(new Complex(xPos, radius));
                     }
-                } while (xPos < (pointsFromOffset[0] - pointsFromOffset[1]).abs() + radius*2/3);
+                } while (xPos < (pointsFromOffset[0] - pointsFromOffset[1]).abs() + radius * 2 / 3);
 
                 xPos = 0;
-                var ort = (pointsFromOffset[3] - pointsFromOffset[0])/
+                var ort = (pointsFromOffset[3] - pointsFromOffset[0]) /
                           (pointsFromOffset[3] - pointsFromOffset[0]).abs();
                 var k = Math.Abs(Math.Cos(ort.arg()));
                 k -= 0.01;
                 do
                 {
-                    xPos += 2*radius/Math.Abs(k);
-                    if (xPos < (pointsFromOffset[3] - pointsFromOffset[0]).abs() + radius*2/3)
+                    xPos += 2 * radius / Math.Abs(k);
+                    if (xPos < (pointsFromOffset[3] - pointsFromOffset[0]).abs() + radius * 2 / 3)
                     {
-                        lowerLine.Insert(0, ort*xPos + pointsFromOffset[0]);
+                        lowerLine.Insert(0, ort * xPos + pointsFromOffset[0]);
                     }
-                } while (xPos < (pointsFromOffset[3] - pointsFromOffset[0]).abs() + radius*2/3);
+                } while (xPos < (pointsFromOffset[3] - pointsFromOffset[0]).abs() + radius * 2 / 3);
                 lowerLine.RemoveAt(0);
             }
 
             if (pointsFromOffset[1].real() < pointsFromOffset[2].real() &&
-                (pointsFromOffset[2] - pointsFromOffset[1]).abs()/(radius*2) > 1 &&
-                Math.Abs(pointsFromOffset[2].real() - pointsFromOffset[1].real()) > radius*2)
+                (pointsFromOffset[2] - pointsFromOffset[1]).abs() / (radius * 2) > 1 &&
+                Math.Abs(pointsFromOffset[2].real() - pointsFromOffset[1].real()) > radius * 2)
             {
                 variant = 2;
                 lowerLine.Add(pointsFromOffset[1]);
                 var xPos = pointsFromOffset[1].real();
                 do
                 {
-                    xPos -= radius*2.0;
-                    if (xPos >= pointsFromOffset[0].real() - radius*2.0/3.0)
+                    xPos -= radius * 2.0;
+                    if (xPos >= pointsFromOffset[0].real() - radius * 2.0 / 3.0)
                     {
                         lowerLine.Insert(0, new Complex(xPos, radius));
                     }
-                } while (xPos > pointsFromOffset[0].real() - radius*2.0/3.0);
+                } while (xPos > pointsFromOffset[0].real() - radius * 2.0 / 3.0);
 
 
                 xPos = 0;
-                var ort = (pointsFromOffset[2] - pointsFromOffset[1])/
+                var ort = (pointsFromOffset[2] - pointsFromOffset[1]) /
                           (pointsFromOffset[2] - pointsFromOffset[1]).abs();
                 var k = Math.Abs(Math.Cos(ort.arg()));
                 k -= 0.01;
                 do
                 {
-                    xPos += 2*radius/Math.Abs(k);
-                    if (xPos < (pointsFromOffset[2] - pointsFromOffset[1]).abs() + radius*2.0/3.0)
+                    xPos += 2 * radius / Math.Abs(k);
+                    if (xPos < (pointsFromOffset[2] - pointsFromOffset[1]).abs() + radius * 2.0 / 3.0)
                     {
-                        lowerLine.Add(ort*xPos + pointsFromOffset[1]);
+                        lowerLine.Add(ort * xPos + pointsFromOffset[1]);
                     }
-                } while (xPos < (pointsFromOffset[2] - pointsFromOffset[1]).abs() + radius*2.0/3.0);
+                } while (xPos < (pointsFromOffset[2] - pointsFromOffset[1]).abs() + radius * 2.0 / 3.0);
 
             }
             if (variant == 0)
@@ -781,12 +807,12 @@ namespace KojtoCAD.GraphicItems.Insulations
                 var xPos = pointsFromOffset[0].real();
                 do
                 {
-                    xPos += radius*2.0;
-                    if (xPos <= pointsFromOffset[1].real() + radius*2.0)
+                    xPos += radius * 2.0;
+                    if (xPos <= pointsFromOffset[1].real() + radius * 2.0)
                     {
                         lowerLine.Add(new Complex(xPos, radius));
                     }
-                } while (xPos < (pointsFromOffset[0] - pointsFromOffset[1]).abs() + radius*2.0);
+                } while (xPos < (pointsFromOffset[0] - pointsFromOffset[1]).abs() + radius * 2.0);
             }
 
             var insulationPolyline = new Polyline();
@@ -794,7 +820,7 @@ namespace KojtoCAD.GraphicItems.Insulations
             var old = new KeyValuePair<Complex, Complex>();
             for (var i = 1; i < lowerLine.Count; i++)
             {
-                var hlpPoint = (lowerLine[i] + lowerLine[i - 1])/2.0;
+                var hlpPoint = (lowerLine[i] + lowerLine[i - 1]) / 2.0;
 
                 var verticalLine = new Line(new Point3d(hlpPoint.real(), hlpPoint.imag(), 0),
                                             new Point3d(hlpPoint.real(), hlpPoint.imag() + 0.01, 0));
@@ -814,7 +840,7 @@ namespace KojtoCAD.GraphicItems.Insulations
                 }
                 var p = (pts[0].Y > pts[1].Y) ? pts[0] : pts[1];
                 var cc = new Complex(p.X, p.Y);
-                if ((cc - hlpPoint).abs() > 2*radius)
+                if ((cc - hlpPoint).abs() > 2 * radius)
                 {
                     upperLine.Add(new Complex(p.X, p.Y));
 
@@ -830,12 +856,12 @@ namespace KojtoCAD.GraphicItems.Insulations
                         double ang1 = 0;
 
                         ang1 =
-                            ((lowerLine[i - 1] - tangentPointsBotRightTopLeft.Key)/(lowerLine[i - 1] - old.Value))
+                            ((lowerLine[i - 1] - tangentPointsBotRightTopLeft.Key) / (lowerLine[i - 1] - old.Value))
                                 .arg();
                         insulationPolyline.AddVertexAt(0,
                                                        new Point2d(tangentPointsBotRightTopLeft.Key.real(),
                                                                    tangentPointsBotRightTopLeft.Key.imag()),
-                                                       -Math.Tan(ang1/4), 0, 0);
+                                                       -Math.Tan(ang1 / 4), 0, 0);
 
                     }
                     else
@@ -845,7 +871,7 @@ namespace KojtoCAD.GraphicItems.Insulations
                                                                    tangentPointsBotRightTopLeft.Key.imag()), 0, 0, 0);
                     }
                     double ang =
-                        ((cc - tangentPointsBotRightTopLeft.Value)/(cc - tangentPointsTopLeftBotRight.Key)).arg();
+                        ((cc - tangentPointsBotRightTopLeft.Value) / (cc - tangentPointsTopLeftBotRight.Key)).arg();
                     insulationPolyline.AddVertexAt(0,
                                                    new Point2d(tangentPointsBotRightTopLeft.Value.real(),
                                                                tangentPointsBotRightTopLeft.Value.imag()), 0, 0, 0);
@@ -853,7 +879,7 @@ namespace KojtoCAD.GraphicItems.Insulations
                     insulationPolyline.AddVertexAt(0,
                                                    new Point2d(tangentPointsTopLeftBotRight.Key.real(),
                                                                tangentPointsTopLeftBotRight.Key.imag()),
-                                                   Math.Tan(ang/4), 0, 0);
+                                                   Math.Tan(ang / 4), 0, 0);
                     insulationPolyline.AddVertexAt(0,
                                                    new Point2d(tangentPointsTopLeftBotRight.Value.real(),
                                                                tangentPointsTopLeftBotRight.Value.imag()), 0, 0, 0);
@@ -863,7 +889,7 @@ namespace KojtoCAD.GraphicItems.Insulations
                 else
                 {
 
-                    if (i < lowerLine.Count/2)
+                    if (i < lowerLine.Count / 2)
                     {
                         lowerLine.RemoveAt(i - 1);
                     }
@@ -916,9 +942,10 @@ namespace KojtoCAD.GraphicItems.Insulations
                     acTrans.AddNewlyCreatedDBObject(insulationPerimeter, true);
                 }
                 var rigidInsulationRef = new BlockReference(inputPoints[0],
-                                                            softInsulationBlock.ObjectId) { Layer = "3-0" };
+                                                            softInsulationBlock.ObjectId)
+                { Layer = "3-0" };
                 var currentSpace =
-                    (BlockTableRecord) acTrans.GetObject(_documentHelper.Database.CurrentSpaceId, OpenMode.ForWrite);
+                    (BlockTableRecord)acTrans.GetObject(_documentHelper.Database.CurrentSpaceId, OpenMode.ForWrite);
                 currentSpace.AppendEntity(rigidInsulationRef);
                 acTrans.AddNewlyCreatedDBObject(rigidInsulationRef, true);
                 acTrans.Commit();
@@ -934,8 +961,8 @@ namespace KojtoCAD.GraphicItems.Insulations
         {
 
             var cathetus = radiusFirstCircle + radiusSecondCircle;
-            var centralAngleFi = Math.Asin(cathetus/(centerSecondCircle - centerFirstCircle).abs());
-            centralAngleFi = Math.PI/2.0 - centralAngleFi;
+            var centralAngleFi = Math.Asin(cathetus / (centerSecondCircle - centerFirstCircle).abs());
+            centralAngleFi = Math.PI / 2.0 - centralAngleFi;
             var angleBetweenOxAndCathetus = (centerSecondCircle - centerFirstCircle).arg() +
                                             ((isRisingThrough) ? centralAngleFi : -centralAngleFi);
 
@@ -955,8 +982,8 @@ namespace KojtoCAD.GraphicItems.Insulations
                                                                                       double radiusSecondCircle, bool b)
         {
             var cathetus = radiusSecondCircle - radiusFirstCircle;
-            var centralAngleFi = Math.Asin(cathetus/(centerSecondCircle - centerFirstCircle).abs());
-            centralAngleFi = Math.PI/2.0 - centralAngleFi;
+            var centralAngleFi = Math.Asin(cathetus / (centerSecondCircle - centerFirstCircle).abs());
+            centralAngleFi = Math.PI / 2.0 - centralAngleFi;
             var angleBetweenOxAndCathetus = (centerSecondCircle - centerFirstCircle).arg() +
                                             ((b) ? centralAngleFi : -centralAngleFi);
 
@@ -985,7 +1012,7 @@ namespace KojtoCAD.GraphicItems.Insulations
             var vectorNextEdge = arr[nextIndex] - arr[pointIndex];
             var vectorPrevEdge = arr[preIndex] - arr[pointIndex];
 
-            return (vectorPrevEdge/vectorNextEdge).arg();
+            return (vectorPrevEdge / vectorNextEdge).arg();
         }
     }
-}                                    
+}
