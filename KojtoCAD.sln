@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KojtoCAD.2012", "KojtoCAD.2012\KojtoCAD.2012.csproj", "{DDB3238D-EB30-4496-82F2-90ECBA542B81}"
 EndProject
@@ -123,5 +123,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {250103F1-8B81-48D1-BBBC-D944D81AE9A9}
 	EndGlobalSection
 EndGlobal

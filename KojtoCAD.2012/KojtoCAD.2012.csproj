@@ -1172,6 +1172,7 @@
     <Content Include="Files\Templates\KOJTO_3D_light.mnr">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="HowToBuild.txt" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -1319,12 +1320,24 @@
   <ItemGroup>
     <SourceFiles Include="bin\Debug\**\*" />
   </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <AssemblyAttributes Include="AssemblyFileVersion">
+        <_Parameter1>$(Version)</_Parameter1>
+      </AssemblyAttributes>
+    </ItemGroup>
+    <MakeDir Directories="$(IntermediateOutputPath)" />
+    <WriteCodeFragment Language="C#" OutputFile="$(IntermediateOutputPath)Version.cs" AssemblyAttributes="@(AssemblyAttributes)" />
+    <ItemGroup>
+      <Compile Include="$(IntermediateOutputPath)Version.cs" />
+    </ItemGroup>
+  </Target>
   <PropertyGroup>
     <Dest>C:\Program Files\Autodesk\ApplicationPlugins\KojtoCad.bundle\</Dest>
   </PropertyGroup>
-  <Target Name="AfterBuild">
+  <!--<Target Name="AfterBuild">
     <CallTarget Condition=" '$(Configuration)' == 'Debug' " Targets="CopyFilesIfDebuging" />
-  </Target>
+  </Target>-->
   <Target Name="CopyFilesIfDebuging">
     <Copy SourceFiles="@(SourceFiles)" DestinationFiles="@(SourceFiles->'$(Dest)%(RecursiveDir)%(FileName)%(Extension)')" />
   </Target>

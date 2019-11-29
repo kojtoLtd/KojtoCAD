@@ -1680,6 +1680,9 @@
       <Link>Files\Templates\KojtoCAD_3D.xml</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\KojtoCAD.2012\HowToBuild.txt">
+      <Link>HowToBuild.txt</Link>
+    </Content>
     <Content Include="..\KojtoCAD.2012\PackageContents.xml">
       <Link>PackageContents.xml</Link>
     </Content>
@@ -1913,12 +1916,24 @@
   <ItemGroup>
     <SourceFiles Include="bin\Debug\**\*" />
   </ItemGroup>
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <AssemblyAttributes Include="AssemblyFileVersion">
+        <_Parameter1>$(Version)</_Parameter1>
+      </AssemblyAttributes>
+    </ItemGroup>
+    <MakeDir Directories="$(IntermediateOutputPath)" />
+    <WriteCodeFragment Language="C#" OutputFile="$(IntermediateOutputPath)Version.cs" AssemblyAttributes="@(AssemblyAttributes)" />
+    <ItemGroup>
+      <Compile Include="$(IntermediateOutputPath)Version.cs" />
+    </ItemGroup>
+  </Target>
   <PropertyGroup>
     <Dest>C:\Program Files\Autodesk\ApplicationPlugins\KojtoCad.bundle\</Dest>
   </PropertyGroup>
-  <Target Name="AfterBuild">
+  <!--<Target Name="AfterBuild">
     <CallTarget Condition=" '$(Configuration)' == 'Debug' " Targets="CopyFilesIfDebuging" />
-  </Target>
+  </Target>-->
   <Target Name="CopyFilesIfDebuging">
     <Copy SourceFiles="@(SourceFiles)" DestinationFiles="@(SourceFiles->'$(Dest)%(RecursiveDir)%(FileName)%(Extension)')" />
   </Target>

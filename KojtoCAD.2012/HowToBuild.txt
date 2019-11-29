@@ -1,0 +1,4 @@
+﻿- Each .csproj contains AfterBuild event "CopyFilesIfDebuging" which enables automatic netload for AutoCAD
+
+- Set the new AssemblyFileVersion via Version parameter. Versions sticks to the following format: 1.2019.106.1 which means 1.[YEAR].[YEAR_DAY].[BUILD_NUMBER]
+msbuild.exe /p:Configuration=Release /p:Version=1.2019.106.1
