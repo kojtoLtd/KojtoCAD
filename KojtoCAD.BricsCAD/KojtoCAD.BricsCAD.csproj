@@ -821,10 +821,30 @@
       <Link>Files\Templates\kojto_2D.cui</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Content Include="..\KojtoCAD.2012\Files\Templates\kojto_2D.cuix">
+      <Link>Files\Templates\kojto_2D.cuix</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Templates\kojto_2D.mnr">
+      <Link>Files\Templates\kojto_2D.mnr</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Templates\kojto_2D_light.mnr">
+      <Link>Files\Templates\kojto_2D_light.mnr</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="..\KojtoCAD.2012\Files\Templates\kojto_3D.cui">
       <Link>Files\Templates\kojto_3D.cui</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Content Include="..\KojtoCAD.2012\Files\Templates\KOJTO_3D.mnr">
+      <Link>Files\Templates\KOJTO_3D.mnr</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\KojtoCAD.2012\Files\Templates\KOJTO_3D_light.mnr">
+      <Link>Files\Templates\KOJTO_3D_light.mnr</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

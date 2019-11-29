@@ -789,6 +789,21 @@
           <Component Id="cmpC7F272BC845D4DDAAD503CB020300A10" Guid="66156104-C98C-47FD-B0C5-B54A05F58F83">
             <File Id="fil7CFF41453AC74A34863D489F4958DC26" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\KojtoCAD_3D.xml" />
           </Component>
+          <Component Id="cmp6CF0467946984AE0B94AF979A66BACB3" Guid="1FA7C408-33F8-4450-892A-116006E405BE">
+            <File Id="filFCDDD035D4CC40B08B7F63C2418AD8E4" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\kojto_2D.cuix" />
+          </Component>
+          <Component Id="cmp759330704640414AB2C68585CD9E3911" Guid="27DA2CD7-BDBD-4929-B4F3-3AB70175193A">
+            <File Id="fil7F1DDB66CCD54A0B940F40ADC3C83067" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\kojto_2D.mnr" />
+          </Component>
+          <Component Id="cmpB934E357B084444EB76C5ABB8A9D0C9A" Guid="3AA1F97C-1724-44F2-8202-79C7EA99DAFB">
+            <File Id="filB4B03CDA5FEB4106AE2ACFDC9DCB2AC0" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\kojto_2D_light.mnr" />
+          </Component>
+          <Component Id="cmp772E8F138ED74A8AA18D64D222D2E6F7" Guid="881C3639-B363-4FB7-BBB9-B5B6B8F9346A">
+            <File Id="filE3F73F8F7F8F46E1B9584FA92FC1053F" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\KOJTO_3D.mnr" />
+          </Component>
+          <Component Id="cmp3A965834A9A141D1A2CB9460F38D5E5B" Guid="72B220D4-BA5B-4EB1-B9FE-325A9F9A77BF">
+            <File Id="fil8A0C1BD650A640F8BB98D98F3B2AD378" KeyPath="yes" Source="$(var.FilesPath)\Files\Templates\KOJTO_3D_light.mnr" />
+          </Component>
         </Directory>
       </Directory>
     </DirectoryRef>
@@ -1056,6 +1071,11 @@
       <ComponentRef Id="cmp0EC7808DA2364BE4B044D3B8DE24D648" />
       <ComponentRef Id="cmp5E35C43592954FFB9186BD1A69AF595F" />
       <ComponentRef Id="cmpC7F272BC845D4DDAAD503CB020300A10" />
+      <ComponentRef Id="cmp6CF0467946984AE0B94AF979A66BACB3" />
+      <ComponentRef Id="cmp759330704640414AB2C68585CD9E3911" />
+      <ComponentRef Id="cmpB934E357B084444EB76C5ABB8A9D0C9A" />
+      <ComponentRef Id="cmp772E8F138ED74A8AA18D64D222D2E6F7" />
+      <ComponentRef Id="cmp3A965834A9A141D1A2CB9460F38D5E5B" />
     </ComponentGroup>
   </Fragment>
 </Wix>
