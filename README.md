@@ -1,3 +1,3 @@
 # KojtoCAD
 
-## Facade engineering tools for AutoCAD&reg;&trade; and BricsCAD&reg;&trade;
+## Facade engineering tools for AutoCAD&reg; and BricsCAD&reg;
