@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
@@ -20,7 +21,10 @@ using Teigha.Runtime;
 using KojtoCAD.Properties;
 using KojtoCAD.Utilities;
 using KojtoCAD.Utilities.Interfaces;
-
+using KojtoCAD.Attribute;
+#if !bcad
+using OpenFileDialog = Autodesk.AutoCAD.Windows.OpenFileDialog;
+#endif
 #if acad2013
 using Application = Autodesk.AutoCAD.ApplicationServices.Core.Application;
 #endif
@@ -29,6 +33,8 @@ using Application = Autodesk.AutoCAD.ApplicationServices.Application;
 #endif
 #if bcad
 using Application = Bricscad.ApplicationServices.Application;
+using OpenFileDialog = Bricscad.Windows.OpenFileDialog;
+
 #endif
 
 [assembly: CommandClass(typeof(KojtoCAD.Macros))]
@@ -68,24 +74,24 @@ namespace KojtoCAD
             object activeDocument = Application.DocumentManager.MdiActiveDocument.AcadDocument;
 #endif
 
-            
+
             object[] data;
 
-            data = new object[] {"-layer\nSet\n0\n\n"};
+            data = new object[] { "-layer\nSet\n0\n\n" };
             activeDocument.GetType().InvokeMember("SendCommand", BindingFlags.InvokeMethod, null, activeDocument, data);
-            data = new object[] {"zoom\ne\n"};
+            data = new object[] { "zoom\ne\n" };
             activeDocument.GetType().InvokeMember("SendCommand", BindingFlags.InvokeMethod, null, activeDocument, data);
-            data = new object[] {"audit\nYes\n"};
+            data = new object[] { "audit\nYes\n" };
             activeDocument.GetType().InvokeMember("SendCommand", BindingFlags.InvokeMethod, null, activeDocument, data);
-            data = new object[] {"-purge\nall\n*\nNo\n"};
+            data = new object[] { "-purge\nall\n*\nNo\n" };
             activeDocument.GetType().InvokeMember("SendCommand", BindingFlags.InvokeMethod, null, activeDocument, data);
-            data = new object[] {"tilemode\n0\n"};
+            data = new object[] { "tilemode\n0\n" };
             activeDocument.GetType().InvokeMember("SendCommand", BindingFlags.InvokeMethod, null, activeDocument, data);
-            data = new object[] {"zoom\ne\n"};
+            data = new object[] { "zoom\ne\n" };
             activeDocument.GetType().InvokeMember("SendCommand", BindingFlags.InvokeMethod, null, activeDocument, data);
-            data = new object[] {"qsave\n"};
+            data = new object[] { "qsave\n" };
             activeDocument.GetType().InvokeMember("SendCommand", BindingFlags.InvokeMethod, null, activeDocument, data);
-            data = new object[] {"close\n"};
+            data = new object[] { "close\n" };
             activeDocument.GetType().InvokeMember("SendCommand", BindingFlags.InvokeMethod, null, activeDocument, data);
 
             //_ed.Command("-layer", "Set", 0, " " );
@@ -113,7 +119,7 @@ namespace KojtoCAD
             // search through the current assembly for CommandMethods
             Assembly currentAssembly = Assembly.GetExecutingAssembly();
 
-            object[] customAttributes = currentAssembly.GetCustomAttributes(typeof (CommandClassAttribute), true);
+            object[] customAttributes = currentAssembly.GetCustomAttributes(typeof(CommandClassAttribute), true);
             Type[] exportedTypes;
             int typesCount = customAttributes.Length;
 
@@ -142,10 +148,10 @@ namespace KojtoCAD
                 foreach (MethodInfo meth in meths)
                 {
 
-                    customAttributes = meth.GetCustomAttributes(typeof (CommandMethodAttribute), true);
+                    customAttributes = meth.GetCustomAttributes(typeof(CommandMethodAttribute), true);
                     foreach (object obj in customAttributes)
                     {
-                        CommandMethodAttribute commandMethodAttribute = (CommandMethodAttribute) obj;
+                        CommandMethodAttribute commandMethodAttribute = (CommandMethodAttribute)obj;
                         stringBuilder.Append("\n " + (index++) + " :  " + commandMethodAttribute.GlobalName + " =>  " +
                                              meth.Name);
                     }
@@ -162,7 +168,7 @@ namespace KojtoCAD
         [CommandMethod("pedit3d")]
         public void Join3DLinesToPolyStart()
         {
-            
+
             if (!_doc.UserData.Contains("pedit3d.lsp_LOADED"))
             {
                 string lispDir =
@@ -187,7 +193,7 @@ namespace KojtoCAD
         [CommandMethod("smash")]
         public void LevelUpAllToZeroStart()
         {
-            
+
             if (!_doc.UserData.Contains("smash.lsp_LOADED"))
             {
 
@@ -218,7 +224,7 @@ namespace KojtoCAD
         [CommandMethod("flat")]
         public void FlattensAllToZeroStart()
         {
-            
+
             if (!_doc.UserData.Contains("flat.lsp_LOADED"))
             {
 
@@ -249,7 +255,7 @@ namespace KojtoCAD
         [CommandMethod("cb")]
         public void CopyBlockDefInNewDefStart()
         {
-            
+
             if (!_doc.UserData.Contains("CopyBlock.lsp_LOADED"))
             {
                 string lispFile =
@@ -279,7 +285,7 @@ namespace KojtoCAD
         [CommandMethod("rb")]
         public void RenameBlockDefInNewDefStart()
         {
-            
+
             if (!_doc.UserData.Contains("CopyBlock.lsp_LOADED"))
             {
                 string lispFile =
@@ -309,17 +315,17 @@ namespace KojtoCAD
         [CommandMethod("repb")]
         public void ReplaceBlockWithFileStart()
         {
-            
+
             Application.SetSystemVariable("FILEDIA", 1);
             var editorUtility = new EditorHelper(Application.DocumentManager.MdiActiveDocument);
             PromptEntityResult blockToReplaceResult = editorUtility.PromptForObject("Select the block to replace : ",
-                typeof (BlockReference), false);
+                typeof(BlockReference), false);
             if (blockToReplaceResult.Status != PromptStatus.OK)
             {
                 return;
             }
 
-            var openFileDialog = new OpenFileDialog();
+            var openFileDialog = new System.Windows.Forms.OpenFileDialog();
             if (openFileDialog.ShowDialog() != DialogResult.OK)
             {
                 return;
@@ -341,10 +347,10 @@ namespace KojtoCAD
 
             using (Transaction transaction = _db.TransactionManager.StartTransaction())
             {
-                BlockTable blockTable = (BlockTable) transaction.GetObject(_db.BlockTableId, OpenMode.ForWrite);
-                Entity selectedEntity = (Entity) transaction.GetObject(blockToReplaceResult.ObjectId, OpenMode.ForWrite);
+                BlockTable blockTable = (BlockTable)transaction.GetObject(_db.BlockTableId, OpenMode.ForWrite);
+                Entity selectedEntity = (Entity)transaction.GetObject(blockToReplaceResult.ObjectId, OpenMode.ForWrite);
 
-                selectedEntityPoint = ((BlockReference) selectedEntity).Position;
+                selectedEntityPoint = ((BlockReference)selectedEntity).Position;
                 selectedEntity.Erase();
 
                 blockTable.DowngradeOpen();
@@ -398,7 +404,7 @@ namespace KojtoCAD
                     using (var transaction = destinationDocument.TransactionManager.StartTransaction())
                     {
                         var destinationDatabaseBlockTable =
-                            (BlockTable) transaction.GetObject(destinationDb.BlockTableId, OpenMode.ForRead);
+                            (BlockTable)transaction.GetObject(destinationDb.BlockTableId, OpenMode.ForRead);
                         ObjectId sourceBlockObjectId;
                         if (destinationDatabaseBlockTable.Has(blockname))
                         {
@@ -407,7 +413,7 @@ namespace KojtoCAD
                                             " already exists.\n Attempting to create block reference...");
 
                             var destinationDatabaseCurrentSpace =
-                                (BlockTableRecord) destinationDb.CurrentSpaceId.GetObject(OpenMode.ForWrite);
+                                (BlockTableRecord)destinationDb.CurrentSpaceId.GetObject(OpenMode.ForWrite);
 
                             var destinationDatabaseBlockDefinition =
                                 (BlockTableRecord)
@@ -441,7 +447,7 @@ namespace KojtoCAD
 
                         // We continue here the creation of the new block reference of the already imported block definition
                         var sourceDatabaseCurrentSpace =
-                            (BlockTableRecord) destinationDb.CurrentSpaceId.GetObject(OpenMode.ForWrite);
+                            (BlockTableRecord)destinationDb.CurrentSpaceId.GetObject(OpenMode.ForWrite);
 
                         using (var blockReference = new BlockReference(insertionPoint, sourceBlockObjectId))
                         {
@@ -450,11 +456,11 @@ namespace KojtoCAD
                             transaction.AddNewlyCreatedDBObject(blockReference, true);
 
                             var blockTableRecord =
-                                (BlockTableRecord) blockReference.BlockTableRecord.GetObject(OpenMode.ForRead);
+                                (BlockTableRecord)blockReference.BlockTableRecord.GetObject(OpenMode.ForRead);
                             var atcoll = blockReference.AttributeCollection;
                             foreach (ObjectId subid in blockTableRecord)
                             {
-                                var entity = (Entity) subid.GetObject(OpenMode.ForRead);
+                                var entity = (Entity)subid.GetObject(OpenMode.ForRead);
                                 var attributeDefinition = entity as AttributeDefinition;
 
                                 if (attributeDefinition == null)
@@ -499,7 +505,7 @@ namespace KojtoCAD
         [CommandMethod("kojtoversion")]
         public void KojtoVersion()
         {
-            
+
             var utils = new UtilityClass();
             var productName = utils.GetApplicationName();
             var assemblyFileVersion = utils.GetCurrentAssemblyFileVersion();
@@ -523,16 +529,16 @@ namespace KojtoCAD
             {
                 using (var destBaseTr = _db.TransactionManager.StartTransaction())
                 {
-                    var destUcsTable = (UcsTable) destBaseTr.GetObject(_db.UcsTableId, OpenMode.ForWrite);
+                    var destUcsTable = (UcsTable)destBaseTr.GetObject(_db.UcsTableId, OpenMode.ForWrite);
                     using (var sourceDb = new Database(false, true))
                     {
                         sourceDb.ReadDwgFile(res.StringResult, FileOpenMode.OpenForReadAndAllShare, true, "");
                         using (var tr = sourceDb.TransactionManager.StartTransaction())
                         {
-                            var sourceUcsTable = (UcsTable) tr.GetObject(sourceDb.UcsTableId, OpenMode.ForRead);
+                            var sourceUcsTable = (UcsTable)tr.GetObject(sourceDb.UcsTableId, OpenMode.ForRead);
                             foreach (ObjectId uscRecordId in sourceUcsTable)
                             {
-                                var ucsTr = (UcsTableRecord) tr.GetObject(uscRecordId, OpenMode.ForRead);
+                                var ucsTr = (UcsTableRecord)tr.GetObject(uscRecordId, OpenMode.ForRead);
                                 var suffix = 1;
                                 var name = ucsTr.Name;
                                 while (destUcsTable.Has(name))
@@ -557,6 +563,103 @@ namespace KojtoCAD
                     destBaseTr.Commit();
                 }
             }
+        }
+
+        [CommandMethod("edu")]
+        public void OpenSaveDwgRemoveEduWatermark()
+        {
+            //var openFileDialog = new OpenFileDialog(
+            //    "Select dwg file...", null, "dwg", null, OpenFileDialog.OpenFileDialogFlags.DefaultIsFolder | OpenFileDialog.OpenFileDialogFlags.AllowMultiple);
+
+            //DialogResult dr = openFileDialog.ShowDialog();
+
+            //if (dr != DialogResult.OK)
+            //{
+            //    return;
+            //}
+
+            var dir = new DirectoryInfo(@".\");
+            var validationResultFile = dir.GetFiles("ValidationResult*.csv", SearchOption.TopDirectoryOnly).FirstOrDefault();
+            var files = File.ReadAllLines(validationResultFile.FullName).Select(x => x.Split(new[] { "@@" }, StringSplitOptions.RemoveEmptyEntries))
+                //.Where(x => !x[2].StartsWith("Clean")).Select(x => x[0]).ToArray();
+                .Where(x => x[2].StartsWith("Infected")).Select(x => x[0]).ToArray();
+            //var dirPath = AttributeHelper.GetFolder();
+            //var dir = new DirectoryInfo(dirPath);
+            var cleanedFile = "CleanedDwgs.csv";
+            var alreadyCleaned = File.Exists(cleanedFile) ? File.ReadAllLines(cleanedFile) : new string[0];
+            using (var logger = new StreamWriter(cleanedFile, true))
+            using (var errorLogger = new StreamWriter("Errors.csv", true))
+            using (Application.DocumentManager.MdiActiveDocument.LockDocument())
+                foreach (var x in files)
+                {
+                    if (alreadyCleaned.Contains(x))
+                    {
+                        continue;
+                    }
+
+                    try
+                    {
+                        using (var db = new Database(false, true))
+                        {
+                            //var path = Path.Combine(@"D:\DwgWork", x.Substring(49));
+                            //var longPath = $@"\\?\{path}";
+                            //new FileInfo(path).IsReadOnly = false;
+
+                            var longPath = $@"\\?\UNC{x.Substring(1)}";
+                            db.ReadDwgFile(longPath, FileShare.ReadWrite, false, "");
+                            db.SaveAs(longPath, db.OriginalFileSavedByVersion /*db.OriginalFileVersion*/);
+                        }
+                    }
+                    catch (System.Exception e)
+                    {
+                        errorLogger.WriteLine($"{x} -> { e.Message}");
+                    }
+
+                    logger.WriteLine(x);
+                }
+        }
+
+        [CommandMethod("Recover_files_with_error", CommandFlags.Session)]
+        public void RecoverTest()
+        {
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+            DocumentCollection docs = Application.DocumentManager;
+            Editor ed = doc.Editor;
+
+#if !acad2013
+            ed.WriteMessage("Not supported in ACAD versions lower than 2015.");
+            return;
+#else
+            var oldValue = Application.GetSystemVariable("PROXYNOTICE");
+            Application.SetSystemVariable("PROXYNOTICE", 0);
+
+
+            var errorsFile = @"errors.csv";
+            var content = File.ReadAllLines(errorsFile).Select(x => x.Split(new[] { " -> " }, StringSplitOptions.RemoveEmptyEntries));
+            var forRepair = content.Where(x => x[1].Equals("eDwgNeedsRecovery")).Select(x => x[0]);
+            using (var errorLogger = new StreamWriter("Errors_Recovery.csv", true) { AutoFlush = true })
+            {
+                foreach (var file in forRepair)
+                {
+                    //var path = $@"\\?\{file}";
+                    try
+                    {
+                        var path = Path.Combine(@"D:\DwgWork", file.Substring(49));
+                        //path = $@"\\?\{path}";
+                        docs.AppContextRecoverDocument(path);
+                        Application.DocumentManager.MdiActiveDocument.CloseAndSave(path);
+                    }
+                    catch (System.Exception e)
+                    {
+                        errorLogger.WriteLine($"{file} -> {e.Message}");
+                    }
+                }
+
+            }
+
+            Application.SetSystemVariable("PROXYNOTICE", oldValue);
+#endif
+
         }
     }
 }

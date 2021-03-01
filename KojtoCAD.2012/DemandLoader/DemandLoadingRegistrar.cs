@@ -14,8 +14,10 @@ using Teigha.Runtime;
 using Application = Bricscad.ApplicationServices.Application;
 #endif
 using Module = System.Reflection.Module;
+using RegistryKey = Microsoft.Win32.RegistryKey;
+using Registry = Microsoft.Win32.Registry;
 
-[assembly :CommandClass(typeof(KojtoCAD.DemandLoader.DemandLoadingRegistrar))]
+[assembly: CommandClass(typeof(KojtoCAD.DemandLoader.DemandLoadingRegistrar))]
 namespace KojtoCAD.DemandLoader
 {
     public class DemandLoadingRegistrar
@@ -146,7 +148,7 @@ namespace KojtoCAD.DemandLoader
 #endif
 
 #if acad2013
-      RegistryKey ack = hive.OpenSubKey( HostApplicationServices.Current.UserRegistryProductRootKey, true);
+            RegistryKey ack = hive.OpenSubKey(HostApplicationServices.Current.UserRegistryProductRootKey, true);
 #endif
 #if bcad
             RegistryKey ack = hive.OpenSubKey(HostApplicationServices.Current.RegistryProductRootKey, true);
