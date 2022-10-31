@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using KojtoCAD.Mathematics.Geometry;
 #if !bcad
 using Autodesk.AutoCAD.DatabaseServices;
@@ -13,7 +14,7 @@ namespace KojtoCAD.LayoutCommands
 {
     public static class LayoutHelper
     {
-        public static Pair<Point3d, Point3d> GetVPortToModelSpaceDiagpnal(ref Viewport vpr)
+        public static ViewportInModelSpace GetVPortToModelSpaceDiagonal(Viewport vpr)
         {
             double xLnegth = vpr.Width / vpr.CustomScale;
             double yLength = vpr.Height / vpr.CustomScale;
@@ -36,66 +37,110 @@ namespace KojtoCAD.LayoutCommands
 
             c += qMOV; c1 += qMOV; c2 += qMOV;
 
-            return new Pair<Point3d, Point3d>(new Point3d(c1.GetX(), c1.GetY(), 0), new Point3d(c2.GetX(), c2.GetY(), 0));
+            return new ViewportInModelSpace(new Point3d(c2.GetX(), c2.GetY(), 0), new Point3d(c1.GetX(), c1.GetY(), 0));
         }
 
-        public static List<Pair<Pair<string, ObjectId>, List<Pair<Point3d, Point3d>>>> CreateArrayOfLayoutNamesAndViewportsDiagonals()
+        /// <summary>
+        /// NB: Layouts without Viewports will be skipped.
+        /// </summary>
+        /// <returns></returns>
+        public static ICollection<LayoutForSplitting> CreateArrayOfLayoutNamesAndViewportsDiagonals()
         {
-            List<Pair<Pair<string, ObjectId>, List<Pair<Point3d, Point3d>>>> rez = new List<Pair<Pair<string, ObjectId>, List<Pair<Point3d, Point3d>>>>();
+            var res = new List<LayoutForSplitting>();
 
             Database db = HostApplicationServices.WorkingDatabase;
 
-            using ( Transaction transaction = db.TransactionManager.StartTransaction() )
+            using (Transaction transaction = db.TransactionManager.StartTransaction())
             {
-                BlockTable blockTable = transaction.GetObject(db.BlockTableId, OpenMode.ForRead) as BlockTable;
+                var blockTable = transaction.GetObject(db.BlockTableId, OpenMode.ForRead) as BlockTable;
 
-                foreach ( ObjectId btrId in blockTable )
+                foreach (ObjectId btrId in blockTable)
                 {
                     var btr = (BlockTableRecord)transaction.GetObject(btrId, OpenMode.ForRead);
-                    if ( btr.IsLayout && btr.Name.ToUpper() != BlockTableRecord.ModelSpace.ToUpper() )
+                    if (!btr.IsLayout || btr.Name.ToUpper() == BlockTableRecord.ModelSpace.ToUpper())
                     {
-                        Layout lo = (Layout)transaction.GetObject(btr.LayoutId, OpenMode.ForRead);
-                        List<Pair<Point3d, Point3d>> curARR = new List<Pair<Point3d, Point3d>>();
-                        //---------------------  make layout current -----
-                        // LayoutManager acLayoutMgr;
-                        // acLayoutMgr = LayoutManager.Current;
-                        // acLayoutMgr.CurrentLayout = lo.LayoutName;
-                        //------------------------------------------------------------------
-                        int count = 0;
-                        foreach ( ObjectId LayoutObjId in btr )
+                        continue;
+                    }
+
+                    Layout lo = (Layout)transaction.GetObject(btr.LayoutId, OpenMode.ForRead);
+                    var viewports = new List<ViewportInModelSpace>();
+
+                    // LayoutManager.Current.CurrentLayout = layoutName; // NB: NO, it's slow!
+                    var defaultViewport = true;
+                    foreach (ObjectId LayoutObjId in btr)
+                    {
+                        var vpr = transaction.GetObject(LayoutObjId, OpenMode.ForWrite) as Viewport;
+                        if (vpr != null)
                         {
-                            Object Bref = transaction.GetObject(LayoutObjId, OpenMode.ForWrite) as Object;
-                            if ( Bref != null )
+                            if (defaultViewport)
                             {
-                                string type = Bref.GetType().ToString();
-                                if ( type == "Autodesk.AutoCAD.DatabaseServices.Viewport" )
-                                {
-                                    if ( count > 0 )
-                                    {
-
-                                        var vpr = (Viewport)Bref;
-                                        Pair<Point3d, Point3d> diagonal = GetVPortToModelSpaceDiagpnal(ref vpr);
-                                        curARR.Add(diagonal);
-
-                                    }
-                                    else
-                                    {
-                                        count++;
-                                    }
-                                }
+                                defaultViewport = false;
+                                continue;
                             }
+                            var diagonal = GetVPortToModelSpaceDiagonal(vpr);
+                            viewports.Add(diagonal);
                         }
-                        if ( curARR.Count > 0 )
-                        {
-                            Pair<string, ObjectId> rezs = new Pair<string, ObjectId>(lo.LayoutName, lo.ObjectId);
-                            rez.Add(new Pair<Pair<string, ObjectId>, List<Pair<Point3d, Point3d>>>(rezs, curARR));
-                        }
+                    }
+                    if (viewports.Count > 0)
+                    {
+                        var layoutViewports = new LayoutForSplitting(lo.LayoutName, lo.ObjectId, viewports);
+                        res.Add(layoutViewports);
                     }
                 }
             }
 
-            return rez;
+            return res;
         }
 
+        /// <summary>
+        /// NB: Layouts without Viewports will be skipped.
+        /// </summary>
+        /// <returns></returns>
+        public static ICollection<LayoutForSplitting> CreateArrayOfLayoutNamesAndViewportsDiagonals(string[] layoutNames)
+        {
+            var res = new List<LayoutForSplitting>();
+            Database db = HostApplicationServices.WorkingDatabase;
+            using (var tr = db.TransactionManager.StartTransaction())
+            {
+                var layoutsDictionary = tr.GetObject(db.LayoutDictionaryId, OpenMode.ForRead) as DBDictionary;
+                foreach (var layoutName in layoutNames)
+                {
+                    // Making current Layout active will set Viewport's number property.
+                    // We have to skip the viewport with Number=1, because it is the default layout's viewport. 
+                    // We choose not to do that, because layout switching it's slow.
+                    // LayoutManager.Current.CurrentLayout = layoutName; // NB: NO, it's slow!
+
+                    var layout = tr.GetObject(layoutsDictionary.GetAt(layoutName), OpenMode.ForRead) as Layout;
+                    var layoutBtr = tr.GetObject(layout.BlockTableRecordId, OpenMode.ForRead) as BlockTableRecord;
+                    var viewports = new List<ViewportInModelSpace>();
+                    var layoutViewports = new LayoutForSplitting(layoutName, layout.BlockTableRecordId, viewports);
+
+                    var defaultViewport =  true;
+                    foreach (var objId in layoutBtr)
+                    {
+                        var vp = tr.GetObject(objId, OpenMode.ForRead) as Viewport;
+                        if (vp is null) 
+                        {
+                            continue;
+                        }
+                        if (defaultViewport)
+                        {
+                            // The first found viewport is always the layout's default one. We have to skip it.
+                            defaultViewport = false;
+                            continue;
+                        }
+                        var diagonal = GetVPortToModelSpaceDiagonal(vp);
+                        viewports.Add(diagonal);
+                    }
+
+                    if (viewports.Count > 0)
+                    {
+                        res.Add(layoutViewports);
+                    }
+                }
+            }
+
+            return res;
+        }
     }
 }

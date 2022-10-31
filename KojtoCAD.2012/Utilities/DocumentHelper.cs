@@ -11,6 +11,7 @@ using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.Geometry;
 using Exception = Autodesk.AutoCAD.Runtime.Exception;
 using TransactionManager = Autodesk.AutoCAD.DatabaseServices.TransactionManager;
+using Application = Autodesk.AutoCAD.ApplicationServices.Application;
 #else
 using Bricscad.ApplicationServices;
 using Teigha.DatabaseServices;
@@ -18,6 +19,7 @@ using Teigha.Geometry;
 using Bricscad.EditorInput;
 using Exception = Teigha.Runtime.Exception;
 using TransactionManager = Teigha.DatabaseServices.TransactionManager;
+using Application = Bricscad.ApplicationServices.Application;
 #endif
 
 namespace KojtoCAD.Utilities
@@ -478,6 +480,29 @@ namespace KojtoCAD.Utilities
                 transaction.Commit();
             }
             return dimStylesCollection;
+        }
+
+        public ObjectIdCollection GetAllModelSpaceObjects()
+        {
+            ObjectIdCollection allModelEntities = new();
+            using (DocumentLock DocLock = _doc.LockDocument())
+            {
+                using (Transaction acTrans = _db.TransactionManager.StartTransaction())
+                {
+                    var blockTable = acTrans.GetObject(_db.BlockTableId, OpenMode.ForRead) as BlockTable;
+                    var modelSpaceBtr = acTrans.GetObject(blockTable[BlockTableRecord.ModelSpace], OpenMode.ForRead) as BlockTableRecord;
+                    foreach (ObjectId id in modelSpaceBtr)
+                    {
+                        allModelEntities.Add(id);
+                    }
+                }
+            }
+            return allModelEntities;
+        }
+
+        public void SwitchToModelSpace()
+        {
+            Application.SetSystemVariable("TILEMODE", 1);
         }
     }
 } 

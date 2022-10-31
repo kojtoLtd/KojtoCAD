@@ -479,14 +479,39 @@
     <Compile Include="..\KojtoCAD.2012\LayerCommands\LayerCommands.cs">
       <Link>LayerCommands\LayerCommands.cs</Link>
     </Compile>
+    <Compile Include="..\KojtoCAD.2012\LayoutCommands\LayoutForSplitting.cs">
+      <Link>LayoutCommands\LayoutForSplitting.cs</Link>
+    </Compile>
     <Compile Include="..\KojtoCAD.2012\LayoutCommands\LayoutHelper.cs">
       <Link>LayoutCommands\LayoutHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\KojtoCAD.2012\LayoutCommands\LayoutsGroups.cs">
+      <Link>LayoutCommands\LayoutsGroups.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\KojtoCAD.2012\LayoutCommands\LayoutsGroups.designer.cs">
+      <Link>LayoutCommands\LayoutsGroups.designer.cs</Link>
+      <DependentUpon>LayoutsGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\KojtoCAD.2012\LayoutCommands\LayoutsList.cs">
+      <Link>LayoutCommands\LayoutsList.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\KojtoCAD.2012\LayoutCommands\LayoutsList.designer.cs">
+      <Link>LayoutCommands\LayoutsList.designer.cs</Link>
+      <DependentUpon>LayoutsList.cs</DependentUpon>
     </Compile>
     <Compile Include="..\KojtoCAD.2012\LayoutCommands\LayoutSplitter.cs">
       <Link>LayoutCommands\LayoutSplitter.cs</Link>
     </Compile>
     <Compile Include="..\KojtoCAD.2012\LayoutCommands\Pair.cs">
       <Link>LayoutCommands\Pair.cs</Link>
+    </Compile>
+    <Compile Include="..\KojtoCAD.2012\LayoutCommands\SplitFileResult.cs">
+      <Link>LayoutCommands\SplitFileResult.cs</Link>
+    </Compile>
+    <Compile Include="..\KojtoCAD.2012\LayoutCommands\ViewportInModelSpace.cs">
+      <Link>LayoutCommands\ViewportInModelSpace.cs</Link>
     </Compile>
     <Compile Include="..\KojtoCAD.2012\Macros.cs">
       <Link>Macros.cs</Link>
@@ -890,6 +915,10 @@
     <EmbeddedResource Include="..\KojtoCAD.2012\KojtoCAD3D\SettingsForm.resx">
       <Link>KojtoCAD3D\SettingsForm.resx</Link>
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\KojtoCAD.2012\LayoutCommands\LayoutsGroups.resx">
+      <Link>LayoutCommands\LayoutsGroups.resx</Link>
+      <DependentUpon>LayoutsGroups.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="..\KojtoCAD.2012\Plotter\PlotterForm.resx">
       <Link>Plotter\PlotterForm.resx</Link>

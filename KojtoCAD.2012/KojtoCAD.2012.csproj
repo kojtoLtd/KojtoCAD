@@ -250,6 +250,21 @@
     </Compile>
     <Compile Include="KojtoCAD3D\UtilityClasses.cs" />
     <Compile Include="KojtoCAD3D\WorkClasses.cs" />
+    <Compile Include="LayoutCommands\LayoutForSplitting.cs" />
+    <Compile Include="LayoutCommands\LayoutsGroups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LayoutCommands\LayoutsGroups.Designer.cs">
+      <DependentUpon>LayoutsGroups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutCommands\LayoutsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LayoutCommands\LayoutsList.Designer.cs">
+      <DependentUpon>LayoutsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LayoutCommands\SplitFileResult.cs" />
+    <Compile Include="LayoutCommands\ViewportInModelSpace.cs" />
     <Compile Include="Persistence\AzureBlobRepository.cs" />
     <Compile Include="Persistence\Interfaces\IBlobRepository.cs" />
     <Compile Include="Updater\AppConfigurationProvider.cs" />
@@ -529,6 +544,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KojtoCAD3D\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayoutCommands\LayoutsGroups.resx">
+      <DependentUpon>LayoutsGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LayoutCommands\LayoutsList.resx">
+      <DependentUpon>LayoutsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Plotter\PlotterForm.resx">
       <DependentUpon>PlotterForm.cs</DependentUpon>
