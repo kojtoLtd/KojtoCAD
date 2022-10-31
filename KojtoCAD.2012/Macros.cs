@@ -579,8 +579,8 @@ namespace KojtoCAD
             //}
 
             var dir = new DirectoryInfo(@".\");
-            var validationResultFile = dir.GetFiles("ValidationResult*.csv", SearchOption.TopDirectoryOnly).FirstOrDefault();
-            var files = File.ReadAllLines(validationResultFile.FullName).Select(x => x.Split(new[] { "@@" }, StringSplitOptions.RemoveEmptyEntries))
+            var validationResultFile = dir.GetFiles("ValidationResult*.txt", SearchOption.TopDirectoryOnly).FirstOrDefault();
+            var files = File.ReadAllLines(validationResultFile.FullName).Select(x => x.Split(new[] { "<:>" }, StringSplitOptions.RemoveEmptyEntries))
                 //.Where(x => !x[2].StartsWith("Clean")).Select(x => x[0]).ToArray();
                 .Where(x => x[2].StartsWith("Infected")).Select(x => x[0]).ToArray();
             //var dirPath = AttributeHelper.GetFolder();
@@ -606,6 +606,15 @@ namespace KojtoCAD
                             //new FileInfo(path).IsReadOnly = false;
 
                             var longPath = $@"\\?\UNC{x.Substring(1)}";
+                            try
+                            {
+                                new FileInfo(x).IsReadOnly = false;
+                            }
+                            catch (System.Exception)
+                            {
+                                // suppress exception for files with long path
+                            }
+
                             db.ReadDwgFile(longPath, FileShare.ReadWrite, false, "");
                             db.SaveAs(longPath, db.OriginalFileSavedByVersion /*db.OriginalFileVersion*/);
                         }
@@ -616,6 +625,47 @@ namespace KojtoCAD
                     }
 
                     logger.WriteLine(x);
+                }
+        }
+
+        [CommandMethod("fix_invalid_dwg_version")]
+        public void FixInvalidDwgVersion()
+        {
+            var dir = new DirectoryInfo(@".\");
+            var validationResultFile = dir.GetFiles("errors.csv", SearchOption.TopDirectoryOnly).FirstOrDefault();
+            var files = File.ReadAllLines(validationResultFile.FullName).Select(x => x.Split(new[] { " -> " }, StringSplitOptions.RemoveEmptyEntries))
+                .Where(x => x[1].StartsWith("eInvalidDwgVersion")).Select(x => x[0]).ToArray();
+            using (var errorLogger = new StreamWriter("Errors_version_fix.csv", true))
+            using (Application.DocumentManager.MdiActiveDocument.LockDocument())
+                foreach (var x in files)
+                {
+                    try
+                    {
+                        using (var db = new Database(false, true))
+                        {
+                            var longPath = $@"\\?\UNC{x.Substring(1)}";
+                            try
+                            {
+                                new FileInfo(x).IsReadOnly = false;
+                            }
+                            catch (System.Exception)
+                            {
+                                // suppress exception for files with long path
+                            }
+
+                            db.ReadDwgFile(longPath, FileShare.ReadWrite, false, "");
+#if acad2012
+                            db.SaveAs(longPath, DwgVersion.AC1024 /*db.OriginalFileVersion*/);
+#else
+                            db.SaveAs(longPath, DwgVersion.AC1027 /*db.OriginalFileVersion*/);
+#endif
+
+                        }
+                    }
+                    catch (System.Exception e)
+                    {
+                        errorLogger.WriteLine($"{x} -> { e.Message}");
+                    }
                 }
         }
 
@@ -633,21 +683,30 @@ namespace KojtoCAD
             var oldValue = Application.GetSystemVariable("PROXYNOTICE");
             Application.SetSystemVariable("PROXYNOTICE", 0);
 
-
-            var errorsFile = @"errors.csv";
-            var content = File.ReadAllLines(errorsFile).Select(x => x.Split(new[] { " -> " }, StringSplitOptions.RemoveEmptyEntries));
+            var dir = new DirectoryInfo(@".\");
+            var errorFile = dir.GetFiles("errors.csv", SearchOption.TopDirectoryOnly).FirstOrDefault();
+            var content = File.ReadAllLines(errorFile.FullName).Select(x => x.Split(new[] { " -> " }, StringSplitOptions.RemoveEmptyEntries));
             var forRepair = content.Where(x => x[1].Equals("eDwgNeedsRecovery")).Select(x => x[0]);
             using (var errorLogger = new StreamWriter("Errors_Recovery.csv", true) { AutoFlush = true })
             {
                 foreach (var file in forRepair)
                 {
                     //var path = $@"\\?\{file}";
+                    var longPath = $@"\\?\UNC{file.Substring(1)}";
                     try
                     {
-                        var path = Path.Combine(@"D:\DwgWork", file.Substring(49));
+                        //var path = Path.Combine(@"D:\DwgWork", file.Substring(49));
                         //path = $@"\\?\{path}";
-                        docs.AppContextRecoverDocument(path);
-                        Application.DocumentManager.MdiActiveDocument.CloseAndSave(path);
+                        try
+                        {
+                            new FileInfo(file).IsReadOnly = false;
+                        }
+                        catch (System.Exception)
+                        {
+                            // suppress exception for files with long path
+                        }
+                        docs.AppContextRecoverDocument(file);
+                        Application.DocumentManager.MdiActiveDocument.CloseAndSave(file);
                     }
                     catch (System.Exception e)
                     {
