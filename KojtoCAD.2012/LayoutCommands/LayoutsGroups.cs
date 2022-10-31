@@ -26,6 +26,7 @@ namespace KojtoCAD.LayoutCommands
         private void OK_Click(object sender, EventArgs e)
         {
             var error = false;
+            ResultFiles.Clear();
 
             // Gather all required data
             ResultsPath = FolderBrowserDialog.SelectedPath;
@@ -36,23 +37,33 @@ namespace KojtoCAD.LayoutCommands
 
             foreach (DataGridViewRow row in GroupsTable.Rows)
             {
+                // Validation: no missing result file names
                 var fileName = (string)row.Cells[1].Value;
                 if (string.IsNullOrEmpty(fileName))
                 {
                     error = true;
                 }
+
+                // Validation: no empty layout groups
                 var text = (string)row.Cells[0].Value;
                 var selectedLayouts = text.Split(new[] { ';', ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 if (selectedLayouts.Length == 0)
                 {
                     error = true;
                 }
+
+                // Validation: no duplicate result file names
+                if (ResultFiles.Any(x=>x.FileName == fileName))
+                {
+                    error = true;
+                }
+
                 ResultFiles.Add(new(fileName, selectedLayouts));
             }
 
             if (error)
             {
-                ErrorMessage.Text = "Make sure the output directory is selected and result file names are provided for each group. Empty layout groups are not allowed.";
+                ErrorMessage.Text = "Make sure the output directory is selected and unique file names are provided for each group. Empty layout groups are not allowed.";
                 ErrorMessage.Show();
                 return;
             }
@@ -87,9 +98,15 @@ namespace KojtoCAD.LayoutCommands
                 return;
             }
 
-            var selectedLayous = _layoutsListForm.Layouts.SelectedItems.Cast<string>().ToArray();
-            GroupsTable.Rows.Add(string.Join("; ", selectedLayous), string.Empty, "X");
-
+            var selectedLayous = _layoutsListForm.Layouts.SelectedItems
+                .Cast<string>()
+                .OrderBy(x => x)
+                .ToArray();
+            
+            GroupsTable.Rows.Add(
+                string.Join("; ", selectedLayous),
+                selectedLayous.Length != 0 ? selectedLayous[0] : string.Empty,
+                "X");// X - the delete button in the last column
         }
 
         private void GroupsTable_CellClick(object sender, DataGridViewCellEventArgs e)
