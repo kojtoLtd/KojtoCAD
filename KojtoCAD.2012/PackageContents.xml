@@ -7,7 +7,7 @@
     </ComponentEntry>
   </Components>
   <Components>
-    <RuntimeRequirements SupportPath="./" OS="Win64|Win32" Platform="AutoCAD*" SeriesMin="R19.0" SeriesMax="R21.0" />
+    <RuntimeRequirements SupportPath="./" OS="Win64|Win32" Platform="AutoCAD*" SeriesMin="R19.0" SeriesMax="R24.2" />
     <ComponentEntry AppName="KojtoCAD" ModuleName="./KojtoCAD2013.dll" LoadOnAutoCADStartup="True" LoadOnCommandInvocation="True" LoadOnAppearance="True">
     </ComponentEntry>
   </Components>

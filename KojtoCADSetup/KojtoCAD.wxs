@@ -16,7 +16,7 @@
               Manufacturer="Kojto Ltd"
               Description="Installs KojtoCAD plugin for AutoCAD 2012+ and BricsCAD 16+"
               Keywords="Kojto,KojtoCAD,AutoCAD plug-in, BricsCAD plug-in"
-              Comments="(c) 2019 Kojto Ltd"
+              Comments="(c) 2023 Kojto Ltd"
               Platform="x64" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
@@ -137,6 +137,22 @@
         <ComponentRef Id="RegistryEntries20" />
         <Condition Level="1">BCAD20</Condition>
       </Feature>
+		<Feature Id="RegistryEntries21" Level="0">
+        <ComponentRef Id="RegistryEntries21" />
+        <Condition Level="1">BCAD21</Condition>
+      </Feature>
+		<Feature Id="RegistryEntries22" Level="0">
+        <ComponentRef Id="RegistryEntries22" />
+        <Condition Level="1">BCAD22</Condition>
+      </Feature>
+		<Feature Id="RegistryEntries23" Level="0">
+        <ComponentRef Id="RegistryEntries23" />
+        <Condition Level="1">BCAD23</Condition>
+      </Feature>
+		<Feature Id="RegistryEntries24" Level="0">
+        <ComponentRef Id="RegistryEntries24" />
+        <Condition Level="1">BCAD24</Condition>
+      </Feature>
     </Feature>
 
 
@@ -186,6 +202,34 @@
                       Name="CURVER"
                       Type="raw" />
     </Property>
+	  <Property Id="BCAD21">
+      <RegistrySearch Id="RegistrySearch21"
+                      Root="HKLM"
+                      Key="Software\Bricsys\Bricscad\V21x64"
+                      Name="CURVER"
+                      Type="raw" />
+      </Property>
+	  <Property Id="BCAD22">
+		  <RegistrySearch Id="RegistrySearch22"
+						  Root="HKLM"
+						  Key="Software\Bricsys\Bricscad\V22x64"
+						  Name="CURVER"
+						  Type="raw" />
+	  </Property>
+	  <Property Id="BCAD23">
+		  <RegistrySearch Id="RegistrySearch23"
+						  Root="HKLM"
+						  Key="Software\Bricsys\Bricscad\V23x64"
+						  Name="CURVER"
+						  Type="raw" />
+	  </Property>
+	  <Property Id="BCAD24">
+		  <RegistrySearch Id="RegistrySearch24"
+						  Root="HKLM"
+						  Key="Software\Bricsys\Bricscad\V24x64"
+						  Name="CURVER"
+						  Type="raw" />
+	  </Property>
 
     <CustomAction Id="AssignTargetDir" Property="TARGETDIR" Value="C:\" Execute="firstSequence" />
     <InstallUISequence>
@@ -255,6 +299,42 @@
           <RegistryValue Type="integer" Name="MANAGED" Value="1"/>
         </RegistryKey>
       </Component>
+		<Component Id="RegistryEntries21" Guid="D483F8F6-5526-4988-B3B6-61552830D581">
+			<RegistryKey Root="HKLM"
+						 Key="Software\Bricsys\ObjectDRX\V21x64\Applications\KojtoCAD">
+				<RegistryValue Type="string" Name="LOADER" Value="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCad.bundle\KojtoCAD.BricsCAD.dll" KeyPath="yes"/>
+				<RegistryValue Type="string" Name="DESCRIPTION" Value="KojtoCAD"/>
+				<RegistryValue Type="integer" Name="LOADCTRLS" Value="14"/>
+				<RegistryValue Type="integer" Name="MANAGED" Value="1"/>
+			</RegistryKey>
+		</Component>
+		<Component Id="RegistryEntries22" Guid="AA1F6697-EAD2-408A-8730-DA72949A8163">
+			<RegistryKey Root="HKLM"
+						 Key="Software\Bricsys\ObjectDRX\V22x64\Applications\KojtoCAD">
+				<RegistryValue Type="string" Name="LOADER" Value="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCad.bundle\KojtoCAD.BricsCAD.dll" KeyPath="yes"/>
+				<RegistryValue Type="string" Name="DESCRIPTION" Value="KojtoCAD"/>
+				<RegistryValue Type="integer" Name="LOADCTRLS" Value="14"/>
+				<RegistryValue Type="integer" Name="MANAGED" Value="1"/>
+			</RegistryKey>
+		</Component>
+		<Component Id="RegistryEntries23" Guid="E1F56B92-01ED-473A-8147-3DB51004D6D8">
+			<RegistryKey Root="HKLM"
+						 Key="Software\Bricsys\ObjectDRX\V23x64\Applications\KojtoCAD">
+				<RegistryValue Type="string" Name="LOADER" Value="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCad.bundle\KojtoCAD.BricsCAD.dll" KeyPath="yes"/>
+				<RegistryValue Type="string" Name="DESCRIPTION" Value="KojtoCAD"/>
+				<RegistryValue Type="integer" Name="LOADCTRLS" Value="14"/>
+				<RegistryValue Type="integer" Name="MANAGED" Value="1"/>
+			</RegistryKey>
+		</Component>
+		<Component Id="RegistryEntries24" Guid="EECA4557-FFE3-4E07-A935-0BC44395A08D">
+			<RegistryKey Root="HKLM"
+						 Key="Software\Bricsys\ObjectDRX\V24x64\Applications\KojtoCAD">
+				<RegistryValue Type="string" Name="LOADER" Value="C:\Program Files\Autodesk\ApplicationPlugins\KojtoCad.bundle\KojtoCAD.BricsCAD.dll" KeyPath="yes"/>
+				<RegistryValue Type="string" Name="DESCRIPTION" Value="KojtoCAD"/>
+				<RegistryValue Type="integer" Name="LOADCTRLS" Value="14"/>
+				<RegistryValue Type="integer" Name="MANAGED" Value="1"/>
+			</RegistryKey>
+		</Component>
     </DirectoryRef>
   </Fragment>
 </Wix>
